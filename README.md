@@ -2,11 +2,15 @@
 
 1. Fork this Repo
 2. Clone it to your own
-3. Create a pull request **only once** as soon as you have changed or added a single thing
-4. Commit regulary to automatically update the pull request:
+3. Switch to develop branch:
+   -  git checkout develop
+   -  git checkout -b feature_name
+4. Create a pull request **only once** as soon as you have changed or added something
+5. Commit regulary to automatically update the pull request:
    - git add .
    - git commit -m "message"
    - git push
+6.
 
 After a merge, type **git pull upstream main**!!!
 
