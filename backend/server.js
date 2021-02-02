@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 mongoose.connect(
-    'mongodb+srv://user:user@cluster0.bhid2.mongodb.net/user?retryWrites=true&w=majority', { useNewUrlParser: true },
+    "mongodb+srv://user:user@cluster0.bhid2.mongodb.net/user?retryWrites=true&w=majority", { useNewUrlParser: true },
     () => console.log('connected to DB')
 );
 
