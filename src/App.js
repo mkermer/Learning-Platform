@@ -1,10 +1,13 @@
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import UserLandingpage from './components/user-landingpage/UserLandingpage';
 import './App.css';
+
 import Footer from "./components/FooterSection/Footer";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
-    <div>
+    <div className="App">
+      <UserLandingpage/>
 
      <Router>
      </Router>
