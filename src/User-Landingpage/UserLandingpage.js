@@ -1,17 +1,17 @@
 import React, { useContext} from 'react';
 import moment from 'moment';
-import { Jumbotron, Container, Row } from 'react-bootstrap';
+import { Jumbotron, Container, Row, Button } from 'react-bootstrap';
 import Slideshow from './Slideshow';
 import Continue from './Continue';
 import Dashboard from './Dashboard';
-import {Context} from '../Context';
+import {DashContext} from '../DashContext';
 import './UserLandingpage.css';
 
-function UserLandingpage(){
+function UserLandingpage(props){
     const {
         sidebar,
         showSidebar
-      } = useContext(Context);
+      } = useContext(DashContext);
 
     const date = moment().format("HH");
     const daytime = (date) => {
@@ -29,6 +29,7 @@ function UserLandingpage(){
             <div className={sidebar ? "cart-menu active" : "cart-menu"}>
                 <Dashboard/>
             </div>
+            <Button onClick={showSidebar}>Dashboard</Button>
             
 
             <Jumbotron fluid>

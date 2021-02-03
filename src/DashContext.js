@@ -1,20 +1,22 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext } from "react";
 
-export const Context = createContext();
+
+export const DashContext = createContext();
+
 
 export const Prov = (props) => {
 
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
     return (
-        <Context.Provider
+        <DashContext.Provider
             value={{
                 showSidebar,
                 sidebar
             }}>
             {props.children}
-        </Context.Provider>
+        </DashContext.Provider>
     )
 }
 
-export default Context;
+export default DashContext;

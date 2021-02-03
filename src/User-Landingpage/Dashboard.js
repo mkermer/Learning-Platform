@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
 import { XSquare } from 'react-bootstrap-icons';
-import {Context} from '../Context';
+import {DashContext} from '../DashContext';
 
 
 function Dashboard(props){
     const {
         showSidebar
-      } = useContext(Context);
+      } = useContext(DashContext);
 
     return(
         <div className="Dashboard">
