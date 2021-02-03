@@ -2,14 +2,21 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Facebook, Instagram, Twitter } from 'react-bootstrap-icons';
+import { Facebook, Instagram, Twitter, Youtube } from 'react-bootstrap-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Button from 'react-bootstrap/Button';
-// import HelpfulLinks from './HelpfulLinks';
-// import SignUp from './SignUp';
+// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+// import {
+//   faYoutube,
+//   faFacebook,
+//   faTwitter,
+//   faInstagram,
+// } from "@fortawesome/free-brands-svg-icons";
+
+import UsefulLinks from './UsefulLinks';
+import TermsOfService from './TermsOfService';
 // import Contact from './Contact';
 import './Footer.css';
-
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -18,8 +25,7 @@ function Footer() {
       <Container className="Footer">
         <Row>
           <Col xs={12} sm={6} md={4}  className="background">
-           
-            <h4> TeachYourBest INC </h4>
+            <h4> TeachYourBest INC  </h4>
            <p> We are a newly created teaching platform aiming to make your quarantine more productive and fun !
                Here you will find endless opportunities to learn new things or you will be the one who teach to the 
                thousands !
@@ -29,15 +35,24 @@ function Footer() {
           </Col>
         
           <Col xs={12} sm={6} md={4}   className="background">
-          <h4> Useful Links </h4>
-            <ul className ="list-unstyled">
-              <li> Link1</li>
-              <li> Link2</li>
-              <li> Link3</li>
-              <li> Link4</li>
-              <li> Link5</li>
-              <li> Link6</li>
-              </ul>
+          <h4>Useful Links</h4>
+            <ul>
+              <li className="list-unstyled-link">
+                <a href="#!">Fun</a>
+              </li>
+              <li className="list-unstyled-link">
+                <a href="#!">DIY</a>
+              </li>
+              <li className="list-unstyled-link">
+                <a href="#!">Something3</a>
+              </li>
+              <li className="list-unstyled-link">
+                <a href="#!">Something4</a>
+              </li>
+              <li className="list-unstyled-link">
+                <a href="#!">Something5</a>
+              </li>
+            </ul>
           
           </Col>
           <Col xs={12} sm={6} md={4}   className="background">
@@ -46,22 +61,33 @@ function Footer() {
               <li>Example Street 123</li>
               <li>Vienna,Austria</li>
                </ul>
-            <ul className ="footer-social-links">
-             <li> 
-							<a href="#">
-								<i class="fa fa-facebook" aria-hidden="true"></i>
-							</a>
-							<a href="#">
-								<i class="fa fa-twitter" aria-hidden="true"></i>
-							</a>
-							<a href="#">
-								<i class="fa fa-linkedin" aria-hidden="true"></i>
-							</a>
-							<a href="#">
-								<i class="fa fa-youtube" aria-hidden="true"></i>
-							</a>
-						</li>
-              </ul>
+               
+                <h3>Social Media</h3>
+                <a href="https:/www.youtube.com"
+                className="Youtube Social"
+                >
+                <Youtube size={25}/>
+                </a>
+                <a href="https:/www.facebook.com"
+                
+                >
+                <Facebook size={25}/>
+                </a>
+                <a href="https:/www.twitter.com"
+                
+                >
+                <Twitter size={25}/>
+                </a>
+                <a href="https:/www.instagram.com"
+                
+                >
+                <Instagram size={25}/>
+
+                </a>
+                
+           
+              
+              
            </Col>
         </Row>
       </Container>
@@ -69,7 +95,7 @@ function Footer() {
       <Container className="FooterTwo">
         <Row>
           <Col  >
-            <p>&copy; {new Date().getFullYear()} TeachYourBest INC  | All right reserved  | Terms of Service  | Privacy</p>
+            <p>&copy; {new Date().getFullYear()} TeachYourBest INC  | All right reserved  |  <a href="https://www.mdbootstrap.com"> Terms of Service </a>| Privacy</p>
           </Col>
          
         </Row>
