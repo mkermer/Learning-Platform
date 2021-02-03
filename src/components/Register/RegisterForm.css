@@ -24,6 +24,16 @@
     width: 650px;
 }
 
+.logo {
+    font-size: 60px;
+    margin-bottom: 30px;
+    color: #2073d9;
+}
+
 .imge {
     width: 100%;
+}
+
+.form-elem {
+    margin-top: 80px;
 }

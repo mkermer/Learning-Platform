@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
-import config from '../config/config'
+import config from '../../config/config'
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Alert } from 'react-bootstrap';
 import axios from 'axios';
+import './RegisterForm.css'
+import teaching from '../../images/teaching.svg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -88,7 +90,7 @@ const RegisterForm = (props) => {
         <div className="container">
             <div className="left">
                 <div className="inner">
-                    <div className="logo"></div>
+                    <div className="logo">Share valuable Skills</div>
 
                     <Form className="form-elem">
                         <Form.Group controlId="formBasicCategory">
@@ -156,7 +158,7 @@ const RegisterForm = (props) => {
             </div>
 
             <div className="right">
-
+                <img src={teaching} className="imge" alt="" />
             </div>
 
         </div>

@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const axios = require('axios');
 
 require('dotenv').config();
 
@@ -17,10 +18,13 @@ mongoose.connect(
 );
 
 const studentRouter = require('./routes/student');
-const instructorRouter = require('./routes/instructor')
+const instructorRouter = require('./routes/instructor');
+const verificationRouter = require('./routes/verification');
+
 
 app.use('/instructor', instructorRouter)
 app.use('/student', studentRouter);
+app.use('/verification', verificationRouter)
 
 
 app.listen(port, () => {
