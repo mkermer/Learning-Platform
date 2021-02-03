@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    margin-top: 50px;
+}
+
+.left {
+    background-size: cover;
+    background-position: center center;
+    padding: 0 40px 40px;
+    width: 100%;
+}
+
+.inner {
+    max-width: 600px;
+    margin: auto;
+}
+
+.right {
+    width: 50%;
+}
+
+.right img {
+    width: 650px;
+}
+
+.logo {
+    font-size: 60px;
+    margin-bottom: 30px;
+    color: #2073d9;
+}
+
+.imge {
+    width: 100%;
+}
+
+.form-elem {
+    margin-top: 80px;
+}
