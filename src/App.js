@@ -1,5 +1,5 @@
 import './App.css';
-import UserLandingpage from './components/user-landingpage/UserLandingpage';
+import UserLandingpage from './User-Landingpage/UserLandingpage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
