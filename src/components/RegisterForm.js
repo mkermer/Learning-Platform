@@ -83,6 +83,7 @@ const RegisterForm = (props) => {
         }
     }
 
+
     return (
         <div className="container">
             <div className="left">
