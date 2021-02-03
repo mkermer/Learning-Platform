@@ -1,0 +1,88 @@
+
+###
+GET http://localhost:2000/student
+
+###
+GET http://localhost:2000/instructor
+
+
+###
+ POST http://localhost:2000/student/add
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "studentName": "JohnDoe",
+    "password": "student",
+    "description": "cool student who wants to learn something",
+    "subHeader": "cool student",
+    "contact": "johndoe@contact",
+    "image": "",
+    "score": 100,
+    "interests": ["coding", "piano"],
+    "courses": [],
+    "reviews": [],
+    "schedules": [] 
+}
+
+###
+ POST http://localhost:2000/instructor/add
+Content-Type: application/json
+
+{
+    "firstName": "Doe",
+    "lastName": "John",
+    "instructorName": "DoeJohn",
+    "password": "instructor",
+    "description": "cool instructor who wants to teach something",
+    "subHeader": "cool instructor",
+    "contact": "doejohn@contact",
+    "image": "",
+    "score": 100,
+    "interests": ["coding", "stocks"],
+    "courses": [],
+    "reviews": [],
+    "schedules": [] 
+}
+
+
+###
+ POST http://localhost:2000/instructor/update/60192ab8b5581925cc2fd0d0
+Content-Type: application/json
+
+{
+    "firstName": "Doe",
+    "lastName": "Jo",
+    "instructorName": "DoeJohn",
+    "password": "instructor",
+    "description": "cool instructor who wants to teach something",
+    "subHeader": "cool instructor",
+    "contact": "doejohn@contact",
+    "image": "",
+    "score": 100,
+    "interests": ["coding", "stocks"],
+    "courses": [],
+    "reviews": [],
+    "schedules": [] 
+}
+
+###
+ POST http://localhost:2000/student/update/601929a3b5581925cc2fd0ce
+Content-Type: application/json
+
+{
+    "firstName": "Jo",
+    "lastName": "Doe",
+    "studentName": "JohnDoe",
+    "password": "student",
+    "description": "cool student who wants to learn something",
+    "subHeader": "cool student",
+    "contact": "johndoe@contact",
+    "image": "",
+    "score": 100,
+    "interests": ["coding", "piano"],
+    "courses": [],
+    "reviews": [],
+    "schedules": [] 
+}
