@@ -1,7 +1,8 @@
 import react from 'react';
 import moment from 'moment';
-import { Jumbotron, Container, Row, Col, Button, Card } from 'react-bootstrap';
-import Slideshow from './Slideshow'
+import { Jumbotron, Container, Row } from 'react-bootstrap';
+import Slideshow from './Slideshow';
+import Continue from './Continue';
 import './UserLandingpage.css';
 
 function UserLandingpage(){
@@ -30,31 +31,8 @@ const date = moment().format("HH");
                 </Row>
             </Container>
 
-            <Container>
-                <h2>Continue</h2>
-                <Row>
-                    <Col xs={12} lg={8}>
-                        <iframe
-                            className="video"
-                            src="https://www.youtube.com/embed/hQAHSlTtcmY?controls=0"
-                            alt="Video Name"
-                            />
-                    </Col>
-                    <Col xs={12} lg={4}>
-                    <h2></h2>
-                        <Card>
-                            <Card.Img variant="top" src="https://cdn0.iconfinder.com/data/icons/different-characters/1200/Untitled-1-17-512.png" />
-                            <Card.Body>
-                                <Card.Title>Course Name starring Instructor Name</Card.Title>
-                                <Card.Text>
-                                Course Description
-                                </Card.Text>
-                                <Button variant="primary">Start your next meeting</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
+            <Continue/>
+
             
         </div>
     )
