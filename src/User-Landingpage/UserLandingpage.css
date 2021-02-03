@@ -37,13 +37,19 @@
     color: black;
   }
 
-  
-@keyframes slide {
-    0% {
-      transform: translateX(200px);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  .cart-menu {
+    overflow: auto;
+    margin-top: 95px;
+    background: white;
+    width: 350px;
+    height: 100vh;
+    position: fixed;
+    right: -80%;
+    top: 0;
+    transition: 1200ms ease;
   }
-
+  
+  .cart-menu.active {
+    right: 0;
+    transition: 800ms ease;
+  }

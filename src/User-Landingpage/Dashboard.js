@@ -1,8 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { XSquare } from 'react-bootstrap-icons';
+import {Context} from '../Context';
 
-function Dashboard(){
+
+function Dashboard(props){
+    const {
+        showSidebar
+      } = useContext(Context);
+
     return(
         <div className="Dashboard">
+            <XSquare className="close" onClick={showSidebar}/>
+ 
             <table>
                 <thead>
                     <tr>
@@ -38,10 +47,5 @@ function Dashboard(){
 
 export default Dashboard;
 
-const showSidebar = () => setSidebar(!sidebar);
 
-{/* <div className="cart-container">
-<div className="cart-banner">
-  <h2 className="close" onClick={showSidebar}>
-    X
-  </h2> */}
+

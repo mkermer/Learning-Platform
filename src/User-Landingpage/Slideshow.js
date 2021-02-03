@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import {Carousel, Col} from 'react-bootstrap';
 
 

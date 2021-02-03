@@ -1,13 +1,19 @@
-import react from 'react';
+import React, { useContext} from 'react';
 import moment from 'moment';
 import { Jumbotron, Container, Row } from 'react-bootstrap';
 import Slideshow from './Slideshow';
 import Continue from './Continue';
+import Dashboard from './Dashboard';
+import {Context} from '../Context';
 import './UserLandingpage.css';
 
 function UserLandingpage(){
-// const start = 
-const date = moment().format("HH");
+    const {
+        sidebar,
+        showSidebar
+      } = useContext(Context);
+
+    const date = moment().format("HH");
     const daytime = (date) => {
         if(date >= 5 && date <12){
             return ("Good Morning ");
@@ -20,6 +26,11 @@ const date = moment().format("HH");
 
     return(
         <div className="UserLPage">
+            <div className={sidebar ? "cart-menu active" : "cart-menu"}>
+                <Dashboard/>
+            </div>
+            
+
             <Jumbotron fluid>
                 <h1>{daytime(date)} Username</h1>
             </Jumbotron>
