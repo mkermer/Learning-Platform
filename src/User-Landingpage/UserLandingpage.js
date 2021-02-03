@@ -6,6 +6,13 @@ import Continue from './Continue';
 import Dashboard from './Dashboard';
 import {DashContext} from '../DashContext';
 import './UserLandingpage.css';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../actions/app.action';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+
 
 function UserLandingpage(props){
     console.log(useContext(DashContext))
@@ -34,7 +41,7 @@ function UserLandingpage(props){
             
 
             <Jumbotron fluid>
-                <h1>{daytime(date)} Username</h1>
+                {/* <h1>{daytime(date)} {props.applicationState.user.studentName}</h1> */}
             </Jumbotron>
 
 
@@ -51,4 +58,6 @@ function UserLandingpage(props){
     )
 };
 
-export default UserLandingpage;
+const mapStateToProps = state => ({ applicationState: state });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+export default connect(mapStateToProps, mapDispatchToProps)(UserLandingpage);
