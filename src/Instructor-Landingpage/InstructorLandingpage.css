@@ -1,0 +1,24 @@
+.Upload{
+    border: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    width: 30%;
+    height: 300px;
+    padding: 20px 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Upload button {
+    width:100% !important;
+    margin-top: 10px;
+}
+
+.Upload .form-control-file{
+    width: 75% !important;
+    margin: 0 auto;
+}
+
+.Upload .form-label, .form-file-label{
+    margin: 15px 0;
+}
