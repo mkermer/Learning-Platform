@@ -7,11 +7,15 @@ import { Alert } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/app.action';
+import { Redirect, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 
 function Login(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    // const history = useHistory();
 
     const history = useHistory();
 
@@ -29,7 +33,7 @@ function Login(props) {
             const loginUser = user.data
             if (loginUser !== "Wrong login information") {
                 props.actions.storeUserData(loginUser)
-                history.push('/landing')
+                console.log()
             } else {
 
             }
@@ -65,8 +69,8 @@ function Login(props) {
                         </Form.Group>
 
                         <Button className="btn" variant="primary" onClick={authentication}>
-                            Login
-                            </Button>
+                            <Link to="/UserLandingpage">Login</Link>
+                        </Button>
                         <div className="registerLink">
                             <a href="/">do not have an account yet? Register</a>
                         </div>
