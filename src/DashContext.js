@@ -1,7 +1,7 @@
 import React, { useState, createContext } from "react";
 
 
-export const DashContext = createContext();
+export const DashContext = createContext({showSidebar: () => {}, sidebar: {}});
 
 
 export const Prov = (props) => {
@@ -19,4 +19,4 @@ export const Prov = (props) => {
     )
 }
 
-export default DashContext;
+

@@ -8,6 +8,7 @@ import {DashContext} from '../DashContext';
 import './UserLandingpage.css';
 
 function UserLandingpage(props){
+    console.log(useContext(DashContext))
     const {
         sidebar,
         showSidebar
