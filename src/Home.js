@@ -1,9 +1,9 @@
-import {Container, Row, Col, Card, Form, Button } from "react-bootstrap";
-// import { withRouter } from "react-router";
+import {Container, Row, Col} from "react-bootstrap";
+import { withRouter } from "react-router";
 import Sidebar from "./Sidebar.js";
 import './Sidebar.css'
 
-function Dash(props) {
+function Home(props) {
 
     return (
         <>
@@ -21,6 +21,6 @@ function Dash(props) {
         </>
         );
   };
-//   const Dashboard = withRouter(Dash);
-//   export default Dashboard;
-export default Dash;
+//   const Navigation = withRouter(Home);
+//   export default Navigation;
+export default Home;

@@ -1,13 +1,12 @@
-import Dash from './Navbar.js'
+import Home from './Home.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
 
 
 function App() {
   return (
     <div className="App">
-      <Dash/>
+      <Home/>
     </div>
   );
 }

@@ -33,6 +33,6 @@ function Sidebar(props) {
         </>
         );
   };
-//   const Sidebar = withRouter(Side);
-//   export default Sidebar
+//   const Side = withRouter(Sidebar);
+//   export default Side
 export default Sidebar;
