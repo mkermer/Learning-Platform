@@ -33,8 +33,9 @@ function Login(props) {
             const loginUser = user.data
             if (loginUser !== "Wrong login information") {
                 props.actions.storeUserData(loginUser)
-                // history.push('/UserLandingpage')
                 console.log(props.applicationState.user)
+                history.push('/UserLandingpage')
+
             } else {
 
             }

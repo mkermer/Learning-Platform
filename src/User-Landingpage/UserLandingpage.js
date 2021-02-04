@@ -32,6 +32,8 @@ function UserLandingpage(props) {
         };
     };
 
+
+
     return (
         <div className="UserLPage">
             <div className={sidebar ? "cart-menu active" : "cart-menu"}>

@@ -1,4 +1,4 @@
-import { STORE_USER_DATA, RESET_REDUX } from '../actions/app.action';
+import { STORE_USER_DATA } from '../actions/app.action';
 
 const initialState = {
     user: false,
@@ -16,11 +16,8 @@ function appReducer(state = initialState, action) {
                 user: action.user,
 
             };
-
-        // case RESET_REDUX:
-        //     console.log('Reducer: RESET_REDUX')
-        //     return initialState; //Always return the initial state
-
+        default:
+            return state;
     }
 
 }
