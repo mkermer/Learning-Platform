@@ -47,7 +47,7 @@ margin:0 auto;
 }
 
 .list-unstyled li{
-	padding:15px;
+	padding:5px;
 	margin-bottom: 10px;
 	font-size: 15px;
 	text-align: center;
@@ -87,7 +87,7 @@ h3 {
 } */
 .Twit {
 color: #49a1eb;
-padding-right:10px;
+
 }
 .Insta {
 color:black;
@@ -97,8 +97,6 @@ color: #4968ad;
 }
 .YouTube {
 color: #eb3223;
-
-	
 
 }
 

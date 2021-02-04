@@ -4,21 +4,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Facebook, Instagram, Twitter, Youtube } from 'react-bootstrap-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-// import {
-//   faYoutube,
-//   faFacebook,
-//   faTwitter,
-//   faInstagram,
-// } from "@fortawesome/free-brands-svg-icons";
 
 import UsefulLinks from './UsefulLinks';
 import TermsOfService from './TermsOfService';
-// import Contact from './Contact';
+
 import './Footer.css';
 import { Link } from "react-router-dom";
-// import map from "./map.js";
-// import {ReactComponent as IntroImg } from "../../images/map_icon.svg" ;
+
 
 
 
@@ -94,7 +86,7 @@ function Footer() {
           
           </Col>
           <Col xs={12} sm={6} md={4}   className="background">
-          {/* <IntroImg /> */}
+         
           <h4> Find Us</h4>
            
           <ul className ="list-unstyled">
