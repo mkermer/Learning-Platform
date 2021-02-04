@@ -89,6 +89,7 @@ const RegisterForm = (props) => {
 
 
     return (
+        <>
         <div className="container">
             <div className="left">
                 <div className="inner">
@@ -162,8 +163,10 @@ const RegisterForm = (props) => {
             <div className="right">
                 <img src={teaching} className="imge" alt="" />
             </div>
-        <Login />
+        
         </div>
+        <Login />
+        </>
     )
 }
 

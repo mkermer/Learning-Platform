@@ -1,6 +1,8 @@
 import {Container, Row, Col} from "react-bootstrap";
-import { withRouter } from "react-router";
-import Sidebar from "./Sidebar.js";
+// import { withRouter } from "react-router";
+import Sidebar from "./Sidebar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import UserLandingpage from './User-Landingpage/UserLandingpage';
 import './Sidebar.css'
 
 function Home(props) {
@@ -14,6 +16,7 @@ function Home(props) {
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
                         Components here
+                        <UserLandingpage/>
                     </Col> 
                 </Row>
   

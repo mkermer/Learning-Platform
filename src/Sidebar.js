@@ -1,6 +1,8 @@
 import React from "react";
 import {Nav} from "react-bootstrap";
-import { withRouter } from "react-router";
+// import { withRouter } from "react-router";
+import { NavHashLink } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 import './Sidebar.css'
 
 function Sidebar(props) {
@@ -15,18 +17,16 @@ function Sidebar(props) {
             >
                 <div className="sidebar-sticky"></div>
             <Nav.Item>
-                <Nav.Link href="/home">Active</Nav.Link>
+                <Nav.Link as={HashLink} smooth to="/#home">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="link-1">Link</Nav.Link>
+                <Nav.Link as={HashLink} smooth to="/#Link">Link</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="link-2">Link</Nav.Link>
+                <Nav.Link as={HashLink} smooth to="/#Link">Link</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="disabled" disabled>
-                Disabled
-                </Nav.Link>
+                <Nav.Link as={HashLink} smooth to="/#Link"> Link</Nav.Link>
             </Nav.Item>
             </Nav>
           
