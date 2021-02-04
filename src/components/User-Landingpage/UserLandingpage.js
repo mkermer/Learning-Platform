@@ -4,11 +4,11 @@ import { Jumbotron, Container, Row, Button } from 'react-bootstrap';
 import Slideshow from './Slideshow';
 import Continue from './Continue';
 import Dashboard from './Dashboard';
-import { DashContext } from '../DashContext';
+import { DashContext } from '../../DashContext';
 import './UserLandingpage.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/app.action';
+import * as actions from '../../actions/app.action';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 

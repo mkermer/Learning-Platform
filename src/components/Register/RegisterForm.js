@@ -89,7 +89,6 @@ const RegisterForm = (props) => {
 
 
     return (
-        <>
         <div className="register">
 
 
@@ -172,8 +171,7 @@ const RegisterForm = (props) => {
 
             </div>
         </div>
-        <Login />
-        </>
+        
     )
 }
 

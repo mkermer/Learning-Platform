@@ -2,7 +2,7 @@ import {Container, Row, Col} from "react-bootstrap";
 // import { withRouter } from "react-router";
 import Sidebar from "./Sidebar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import UserLandingpage from './User-Landingpage/UserLandingpage';
+import UserLandingpage from '../User-Landingpage/UserLandingpage';
 import './Sidebar.css'
 
 function Home(props) {

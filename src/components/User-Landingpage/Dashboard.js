@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import { XSquare } from 'react-bootstrap-icons';
-import {DashContext} from '../DashContext';
+import {DashContext} from '../../DashContext';
 
 
 function Dashboard(props){

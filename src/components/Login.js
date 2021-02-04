@@ -34,7 +34,7 @@ function Login(props) {
             if (loginUser !== "Wrong login information") {
                 props.actions.storeUserData(loginUser)
                 console.log(props.applicationState.user)
-                history.push('/UserLandingpage')
+                history.push('/Home')
 
             } else {
 
@@ -71,7 +71,7 @@ function Login(props) {
                         </Form.Group>
 
                         <Button className="btn" variant="primary" onClick={authentication}>
-                            <Link to="/Home">Login</Link> 
+                            Login
                             </Button>
                         <div className="registerLink">
                             <a href="/">do not have an account yet? Register</a>
