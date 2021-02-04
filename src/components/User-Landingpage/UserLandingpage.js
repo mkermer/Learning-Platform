@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 
 function UserLandingpage(props) {
-    console.log(useContext(DashContext))
+    
     const {
         sidebar,
         showSidebar
