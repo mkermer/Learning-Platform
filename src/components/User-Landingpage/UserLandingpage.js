@@ -36,7 +36,7 @@ function UserLandingpage(props) {
 
     return (
         <div className="UserLPage">
-            <div className={sidebar ? "cart-menu active" : "cart-menu"}>
+            <div className={sidebar ? "cart-menu active": "cart-menu"}>
                 <Dashboard />
             </div>
             <Button onClick={showSidebar}>Dashboard</Button>

@@ -39,8 +39,6 @@
 
   .cart-menu {
     overflow: auto;
-    margin-top: 95px;
-    background: white;
     width: 350px;
     height: 100vh;
     position: fixed;
