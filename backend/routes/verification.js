@@ -22,6 +22,7 @@ router.route('/').get(async (req, res) => {
             }
         });
 
+
         const student = await Student.find();
 
         student.map(student => {

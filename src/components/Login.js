@@ -17,6 +17,7 @@ function Login(props) {
     const [password, setPassword] = useState("");
     // const history = useHistory();
 
+    const history = useHistory();
 
     const authentication = async () => {
         const verification = {
@@ -32,8 +33,9 @@ function Login(props) {
             const loginUser = user.data
             if (loginUser !== "Wrong login information") {
                 props.actions.storeUserData(loginUser)
-                console.log()
-                // history.push("/UserLandingpage")
+                console.log(props.applicationState.user)
+                history.push('/UserLandingpage')
+
             } else {
 
             }
@@ -69,8 +71,8 @@ function Login(props) {
                         </Form.Group>
 
                         <Button className="btn" variant="primary" onClick={authentication}>
-                            <Link to="/UserLandingpage">Login</Link> 
-                            </Button>
+                            Login
+                        </Button>
                         <div className="registerLink">
                             <a href="/">do not have an account yet? Register</a>
                         </div>
