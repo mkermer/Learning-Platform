@@ -3,7 +3,7 @@ import {Nav} from "react-bootstrap";
 import { withRouter } from "react-router";
 import './Sidebar.css'
 
-function Side(props) {
+function Sidebar(props) {
    
 
     return (
@@ -35,4 +35,4 @@ function Side(props) {
   };
 //   const Sidebar = withRouter(Side);
 //   export default Sidebar
-export default Side;
+export default Sidebar;

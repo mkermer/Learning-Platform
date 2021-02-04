@@ -1,6 +1,6 @@
 import {Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 // import { withRouter } from "react-router";
-import Side from "./Sidebar.js";
+import Sidebar from "./Sidebar.js";
 import './Sidebar.css'
 
 function Dash(props) {
@@ -10,10 +10,10 @@ function Dash(props) {
          <Container fluid>
                 <Row>
                     <Col xs={2} id="sidebar-wrapper">      
-                      <Side />
+                      <Sidebar />
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
-                        this is a test
+                        Components here
                     </Col> 
                 </Row>
   
