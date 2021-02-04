@@ -10,6 +10,7 @@
 	box-sizing:border-box;
 	border-color: #2073d9 !important;
 	
+	
     /* background-image: url('../../img/ico.webp');
 	background-repeat: no-repeat;
     background-position: left; */
@@ -22,10 +23,18 @@ color:black;
 
 
 }
+.main-footer  {
+	display:inline-block;
+	vertical-align:top;
+	position:relative;
+	justify-content: center;
+	
+
+}
 .background {
 background-color: #7aadeb !important;
 border-color: #2073d9 !important;
-/* padding:15px; */
+padding:15px;
 
 border: solid 2px;
 box-sizing: border-box;
@@ -37,8 +46,6 @@ margin:0 auto;
 	background-color: #7aadeb !important;
 }
 
-
-
 .list-unstyled li{
 	padding:15px;
 	margin-bottom: 10px;
@@ -46,6 +53,7 @@ margin:0 auto;
 	text-align: center;
 	
 }
+
 .h4 {
 	font-size: 32px;
     margin-top: 72px;
@@ -74,11 +82,28 @@ h3 {
 	padding:15px;
 	text-decoration: underline;
 }
-.list-unstyled a{
-	display:block;
-	padding: 20px;
-	line-height: 7;
-	display: flex; 
-    justify-content: center; 
-	margin: 0 auto;
+/* .IntroImg {
+	width:10%
+} */
+.Twit {
+color: #49a1eb;
+padding-right:10px;
+}
+.Insta {
+color:black;
+}
+.Face {
+color: #4968ad;
+}
+.YouTube {
+color: #eb3223;
+
+	
+
+}
+
+.background-social{
+	display: flex;
+	justify-content: space-around;
+	/* border: solid; */
 }

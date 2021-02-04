@@ -13,14 +13,14 @@ function App() {
     <div className="App">
 
       
-      <UserLandingpage/>
+      
 
      <Router>
      
      </Router>
     
   
-
+     <UserLandingpage/>
       <RegisterForm />
       <Login />
       <Footer /> 
