@@ -5,7 +5,11 @@ GET http://localhost:2000/student
 ###
 GET http://localhost:2000/instructor
 
+###
+GET http://localhost:2000/verification
 
+###
+GET http://localhost:2000/verification/verification
 ###
  POST http://localhost:2000/student/add
 Content-Type: application/json
@@ -44,6 +48,17 @@ Content-Type: application/json
     "courses": [],
     "reviews": [],
     "schedules": [] 
+}
+
+###
+POST http://localhost:2000/verification/add
+Content-Type: application/json
+
+{
+    
+    "username": "DoeJohn",
+    "password": "instructor"
+    
 }
 
 
