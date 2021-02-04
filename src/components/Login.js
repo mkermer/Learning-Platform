@@ -69,7 +69,7 @@ function Login(props) {
                         </Form.Group>
 
                         <Button className="btn" variant="primary" onClick={authentication}>
-                            <Link to="/UserLandingpage">Login</Link> 
+                            <Link to="/Home">Login</Link> 
                             </Button>
                         <div className="registerLink">
                             <a href="/">do not have an account yet? Register</a>

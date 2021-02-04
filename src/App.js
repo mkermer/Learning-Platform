@@ -1,7 +1,6 @@
 import Home from './Home.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {Prov} from './DashContext';
 import RegisterForm from './components/Register/RegisterForm'
 // import Login from './components/Login'
@@ -14,8 +13,8 @@ function App() {
   return (
     <Router>
         <Switch>
-            {/* <Route path="/" component={RegisterForm}/> */}
-            <Route path="/" component={UserLandingpage}/>
+            <Route path="/" component={RegisterForm}/>
+            <Route path="/Home" component={Home}/>
         </Switch> 
     </Router>
       
