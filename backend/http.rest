@@ -56,8 +56,8 @@ Content-Type: application/json
 
 {
     
-    "username": "DoeJohn",
-    "password": "instructor"
+    "username": "Test",
+    "password": "Test"
     
 }
 

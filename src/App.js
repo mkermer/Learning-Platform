@@ -5,6 +5,7 @@ import { Prov } from './DashContext';
 import RegisterForm from './components/Register/RegisterForm'
 import Login from './components/Login'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import InstructorLandingpage from './Instructor-Landingpage/InstructorLandingpage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" exact component={RegisterForm} />
           <Route path="/login" component={Login} />
           <Route path="/Userlandingpage" component={UserLandingpage} />
+          <Route path="/Instructorlandingpage" component={InstructorLandingpage} />
         </Switch>
 
       </div>
