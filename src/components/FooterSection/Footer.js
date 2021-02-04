@@ -84,10 +84,7 @@ function Footer() {
                 <Instagram size={25}/>
 
                 </a>
-                
-           
-              
-              
+            
            </Col>
         </Row>
       </Container>
