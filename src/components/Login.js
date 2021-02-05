@@ -31,14 +31,24 @@ function Login(props) {
 
             const user = await axios.get(config.baseUrl + '/verification')
             const loginUser = user.data
-            if (loginUser !== "Wrong login information") {
-                props.actions.storeUserData(loginUser)
-                console.log(props.applicationState.user)
-                history.push('/UserLandingpage')
 
-            } else {
+
+            if (loginUser !== "Wrong login information") {
+                if (loginUser.studentName !== "") {
+                    props.actions.storeUserData(loginUser)
+                    console.log(props.applicationState.user)
+                    history.push('/UserLandingpage')
+                }
+
+                if (loginUser.instructorName !== "") {
+                    props.actions.storeUserData(loginUser)
+                    console.log(props.applicationState.user)
+                    history.push('/InstructorLandingpage')
+                }
 
             }
+
+
         }
         catch (err) {
 
