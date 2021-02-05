@@ -1,17 +1,12 @@
 import React, { useState, createContext } from "react";
 
 
-export const DashContext = createContext({showSidebar: () => {DashContext.sidebar = !DashContext.sidebar;}, sidebar: false});
-DashContext.showSidebar = () => {
-    console.log("function invoked");
-    DashContext.sidebar = !DashContext.sidebar;
-}
+const DashContext = createContext();
 
-
-export const Prov = (props) => {
-
-    const [sidebar, setSidebar] = useState(false);
+export const DashProvider = (props) => {
+    const [sidebar, setSidebar] = useState(false);   
     const showSidebar = () => setSidebar(!sidebar);
+
     return (
         <DashContext.Provider
             value={{
@@ -23,4 +18,4 @@ export const Prov = (props) => {
     )
 }
 
-
+export default DashContext;
