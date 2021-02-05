@@ -9,18 +9,18 @@ function Home(props) {
 
     return (
         <>
-         <Container fluid>
+         {/* <Container fluid>
                 <Row>
                     <Col xs={2} id="sidebar-wrapper">      
                       <Sidebar />
                     </Col>
                     <Col  xs={10} id="page-content-wrapper">
-                        Components here
+                        Components here */}
                         <UserLandingpage/>
-                    </Col> 
+                    {/* </Col> 
                 </Row>
   
-            </Container>
+            </Container> */}
         </>
         );
   };
