@@ -1,12 +1,62 @@
 import React from 'react';
 import {Carousel, Col} from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import axios from 'axios'
+import config from '../../config/config';
 
 
-function Slideshow(){
+function Slideshow(props){
+    const [category, setCategory] = useState([]);
+
+    useEffect(async() => {
+        const response = await axios.get(config.baseUrl + '/instructor');
+        console.log(response.data)
+        const instructors = response.data;
+        const category2 = instructors;
+        console.log(category2);
+        instructors.map(instructor => {
+            instructor.courses.map(course => {
+                const categories = course.category
+                // setCategory(category => [...category, categories])
+            })
+
+        })
+        console.log( category);
+        console.log('Hi'); 
+      });
+    //   const setCoursesArray = () => {
+    //     setCourses(courses => [...courses, course])
+    //   }
+    
+    
+    // const interest = props.applicationState.user.interests;
+    // const category = instructors.courses.category;
+
+
+    // const displayVideo = () => {
+    //     const randomInterest = interest[Math.floor(Math.random() * interest.length)];
+    //     const arrVideos = [];
+    //     for (let i = 0; i <= category.length; i++){
+    //             if (randomInterest === category[i]["category"]){
+    //                 arrVideos.push(category[i]["url"]);
+    //             }
+    //         }
+    //     const randomVideos = [];
+    //     const randVid = 0;
+    //     for (let j = 0; j < 3; j++){
+    //         randVid = Math.floor(Math.random() * arrVideos.length);
+    //         randomVideos.push(arrVideos[randVid]);
+    //         arrVideos = arrVideos.splice(randVid,randVid);
+    //     }
+    //         return (randomVideos);
+    //     }
+
+
     return(
         <>
             <Col xs={12} md={6} lg={4}>
-                    <h2> Featured in Category(Music) </h2>
+                    {/* <h2> Featured in {randomInterest} </h2> */}
+
                     <Carousel>
                         <Carousel.Item>
                             <iframe
@@ -36,7 +86,8 @@ function Slideshow(){
                 </Col>
 
                 <Col xs={12} md={6} lg={4}>
-                    <h2> Featured in Category(Sport) </h2>
+                    {/* <h2> Featured in {category} </h2> */}
+
                     <Carousel>
                         <Carousel.Item>
                             <iframe
@@ -66,7 +117,9 @@ function Slideshow(){
                 </Col>
 
                 <Col xs={12} md={6} lg={4}>
-                    <h2> Featured in Category(IT) </h2>
+
+                    {/* <h2> Featured in {category} </h2> */}
+
                     <Carousel>
                         <Carousel.Item>
                             <iframe

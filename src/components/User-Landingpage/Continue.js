@@ -1,7 +1,8 @@
 import React from "react";
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 
-function Continue(){
+
+function Continue(props){
     return(    
             <Container>
                 <h2>Continue</h2>
@@ -17,7 +18,7 @@ function Continue(){
                         <Card>
                             <Card.Img variant="top" src="https://cdn0.iconfinder.com/data/icons/different-characters/1200/Untitled-1-17-512.png" />
                             <Card.Body>
-                                <Card.Title>Course Name starring Instructor Name</Card.Title>
+                                {/* <Card.Title>Course Name starring {props.applicationState.user.instructorName}</Card.Title> */}
                                 <Card.Text>
                                 Course Description
                                 </Card.Text>

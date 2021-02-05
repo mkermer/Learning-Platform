@@ -31,71 +31,66 @@ function Login(props) {
 
             const user = await axios.get(config.baseUrl + '/verification')
             const loginUser = user.data
-
-
             if (loginUser !== "Wrong login information") {
-                if (loginUser.studentName !== "") {
-                    props.actions.storeUserData(loginUser)
-                    console.log(props.applicationState.user)
-                    history.push('/UserLandingpage')
-                }
+                props.actions.storeUserData(loginUser)
+                console.log(props.applicationState.user)
+                history.push('/Home')
 
-                if (loginUser.instructorName !== "") {
-                    props.actions.storeUserData(loginUser)
-                    console.log(props.applicationState.user)
-                    history.push('/InstructorLandingpage')
-                }
 
             }
+            // if (loginUser.instructorName !== "") {
+            //     props.actions.storeUserData(loginUser)
+            //     console.log(props.applicationState.user)
+            //     history.push('/InstructorLandingpage')
+            // }
 
+
+        } catch (err) {
 
         }
-        catch (err) {
 
-        }
-    }
+        return (
+            <div className="container">
+                <div className="left">
+                    <div className="inner">
+                        <div className="logo">Login</div>
 
-    return (
-        <div className="container">
-            <div className="left">
-                <div className="inner">
-                    <div className="logo">Login</div>
-
-                    <Form className="form-elem">
+                        <Form className="form-elem">
 
 
-                        <Form.Group controlId="formBasicUsername">
-                            <Form.Label>Username</Form.Label>
-                            <Form.Control type="username" placeholder=""
-                                value={username} onChange={(e) => setUsername(e.target.value)} />
-                        </Form.Group>
+                            <Form.Group controlId="formBasicUsername">
+                                <Form.Label>Username</Form.Label>
+                                <Form.Control type="username" placeholder=""
+                                    value={username} onChange={(e) => setUsername(e.target.value)} />
+                            </Form.Group>
 
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder=""
-                                value={password} onChange={(e) => setPassword(e.target.value)} />
-                        </Form.Group>
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder=""
+                                    value={password} onChange={(e) => setPassword(e.target.value)} />
+                            </Form.Group>
 
-                        <Form.Group controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="save password" />
-                        </Form.Group>
+                            <Form.Group controlId="formBasicCheckbox">
+                                <Form.Check type="checkbox" label="save password" />
+                            </Form.Group>
 
-                        <Button className="btn" variant="primary" onClick={authentication}>
-                            Login
-                        </Button>
-                        <div className="registerLink">
-                            <a href="/">do not have an account yet? Register</a>
-                        </div>
-                    </Form>
+                            <Button className="btn" variant="primary" onClick={authentication}>
+                                Login
+                            </Button>
+                            <div className="registerLink">
+                                <a href="/">do not have an account yet? Register</a>
+                            </div>
+                        </Form>
+                    </div>
+                </div>
+                <div className="right">
+
                 </div>
             </div>
-            <div className="right">
+        )
+    }
 
-            </div>
-        </div>
-    )
+    const mapStateToProps = state => ({ applicationState: state });
+    const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+    export default connect(mapStateToProps, mapDispatchToProps)(Login)
 }
-
-const mapStateToProps = state => ({ applicationState: state });
-const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
-export default connect(mapStateToProps, mapDispatchToProps)(Login);

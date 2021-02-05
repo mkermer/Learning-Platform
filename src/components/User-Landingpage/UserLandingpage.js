@@ -4,18 +4,18 @@ import { Jumbotron, Container, Row, Button } from 'react-bootstrap';
 import Slideshow from './Slideshow';
 import Continue from './Continue';
 import Dashboard from './Dashboard';
-import { DashContext } from '../DashContext';
+import { DashContext } from '../../DashContext';
 import './UserLandingpage.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/app.action';
+import * as actions from '../../actions/app.action';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 
 
 function UserLandingpage(props) {
-    console.log(useContext(DashContext))
+    
     const {
         sidebar,
         showSidebar
@@ -33,10 +33,9 @@ function UserLandingpage(props) {
     };
 
 
-
     return (
         <div className="UserLPage">
-            <div className={sidebar ? "cart-menu active" : "cart-menu"}>
+            <div className={sidebar ? "cart-menu active": "cart-menu"}>
                 <Dashboard />
             </div>
             <Button onClick={showSidebar}>Dashboard</Button>
@@ -56,10 +55,13 @@ function UserLandingpage(props) {
             <Continue />
 
 
+
         </div>
     )
 };
 
+
 const mapStateToProps = state => ({ applicationState: state });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
 export default connect(mapStateToProps, mapDispatchToProps)(UserLandingpage);
+
