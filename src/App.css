@@ -11,7 +11,7 @@ p{
 
 h1 {
     font-size: 72px;
-    font-weight: Semi-bold 600;
+    font-weight: Semi-bold 60;
     line-height: 1.6;
     text-transform: uppercase;
     margin-bottom: 42px;
@@ -20,7 +20,7 @@ h1 {
 
 h2{
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 40;
     letter-spacing: 3px;
 }
 
@@ -48,7 +48,7 @@ h5{
 
 
 p {
-    font-weight: 300;
+    font-weight: 30;
     margin-bottom: 32px;
     line-height: 1.8;
 }
@@ -74,3 +74,4 @@ p {
 .button:hover{
     cursor: pointer;
 }
+
