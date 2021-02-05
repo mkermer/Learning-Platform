@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Form, Container, Button, Modal } from 'react-bootstrap'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/app.action';
+import * as actions from '../../actions/app.action';
 import axios from 'axios';
-import config from '../config/config';
+import config from '../../config/config';
 
 
 function Upload2(props) {
@@ -22,6 +22,8 @@ function Upload2(props) {
     const setButton = () => {
         setDisabled(false)
     }
+
+
 
     // const debug = async () => {
 
@@ -70,6 +72,9 @@ function Upload2(props) {
 
     }
 
+    const setCourseUrl = (newUrl) => {
+        setUrl(newUrl);
+    }
 
     const debug2 = async () => {
         const newVideo = {
@@ -78,6 +83,8 @@ function Upload2(props) {
             instructor: instructor,
             url: url
         }
+
+        console.log(newVideo)
     }
 
 

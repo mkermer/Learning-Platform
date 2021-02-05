@@ -11,6 +11,6 @@ const videoSchema = new Schema({
     url: { type: String }
 });
 
-const Video = mongoose.model('Video', videoSchema);
+const Video = mongoose.model('video', videoSchema);
 
 module.exports = Video;
