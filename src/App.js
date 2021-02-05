@@ -7,17 +7,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import RegisterForm from './components/Register/RegisterForm';
 import Login from './components/Login';
 import Footer from "./components/FooterSection/Footer";
-
+import Sidebar from './components/HomeUser/Sidebar';
+import {DashProvider} from './DashContext'
 
 function App() {
   return (
     <Router>
+
+      <DashProvider>
+
+      <Sidebar />
+
         <Switch>
-        <Route path="/" exact component={RegisterForm} />
+          <Route path="/" exact component={RegisterForm} />
           <Route path="/login" component={Login} />
           <Route path="/Home" component={Home}/>
-        </Switch>
-        <Footer /> 
+        </Switch> 
+      </DashProvider>
+      <Footer />
     </Router>
 
 
