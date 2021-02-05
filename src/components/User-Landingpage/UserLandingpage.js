@@ -1,63 +1,67 @@
-import react from 'react';
+import React, { useContext } from 'react';
 import moment from 'moment';
-import { Jumbotron, Container, Row, Col, Button, Card } from 'react-bootstrap';
-import Slideshow from './Slideshow'
+import { Jumbotron, Container, Row, Button } from 'react-bootstrap';
+import Slideshow from './Slideshow';
+import Continue from './Continue';
+import Dashboard from './Dashboard';
+import { DashContext } from '../../DashContext';
 import './UserLandingpage.css';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.action';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function UserLandingpage(){
-// const start = 
-const date = moment().format("HH");
+
+
+function UserLandingpage(props) {
+    
+    const {
+        sidebar,
+        showSidebar
+    } = useContext(DashContext);
+
+    const date = moment().format("HH");
     const daytime = (date) => {
-        if(date >= 5 && date <12){
+        if (date >= 5 && date < 12) {
             return ("Good Morning ");
-        } else if(date >= 12 && date <17){
+        } else if (date >= 12 && date < 17) {
             return ("Welcome back ");
-        } else if(date >= 17 || date <5){
+        } else if (date >= 17 || date < 5) {
             return ("Good evening ");
         };
     };
 
-    return(
+
+    return (
         <div className="UserLPage">
+            <div className={sidebar ? "cart-menu active": "cart-menu"}>
+                <Dashboard />
+            </div>
+            <Button onClick={showSidebar}>Dashboard</Button>
+
+
             <Jumbotron fluid>
-                <h1>{daytime(date)} Username</h1>
+                <h1>{daytime(date)} {props.applicationState.user.firstName}</h1>
             </Jumbotron>
 
 
             <Container className="carousel">
                 <Row>
-                        <Slideshow/>
+                    <Slideshow />
                 </Row>
             </Container>
 
-            <Container>
-                <h2>Continue</h2>
-                <Row>
-                    <Col xs={12} lg={8}>
-                        <iframe
-                            className="video"
-                            src="https://www.youtube.com/embed/hQAHSlTtcmY?controls=0"
-                            alt="Video Name"
-                            />
-                    </Col>
-                    <Col xs={12} lg={4}>
-                    <h2></h2>
-                        <Card>
-                            <Card.Img variant="top" src="https://cdn0.iconfinder.com/data/icons/different-characters/1200/Untitled-1-17-512.png" />
-                            <Card.Body>
-                                <Card.Title>Course Name starring Instructor Name</Card.Title>
-                                <Card.Text>
-                                Course Description
-                                </Card.Text>
-                                <Button variant="primary">Start your next meeting</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
-            
+            <Continue />
+
+
+
         </div>
     )
 };
 
-export default UserLandingpage;
+
+const mapStateToProps = state => ({ applicationState: state });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+export default connect(mapStateToProps, mapDispatchToProps)(UserLandingpage);
+
