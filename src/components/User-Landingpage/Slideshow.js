@@ -56,6 +56,7 @@ function Slideshow(props){
         <>
             <Col xs={12} md={6} lg={4}>
                     {/* <h2> Featured in {randomInterest} </h2> */}
+
                     <Carousel>
                         <Carousel.Item>
                             <iframe
@@ -86,6 +87,7 @@ function Slideshow(props){
 
                 <Col xs={12} md={6} lg={4}>
                     {/* <h2> Featured in {category} </h2> */}
+
                     <Carousel>
                         <Carousel.Item>
                             <iframe
@@ -115,7 +117,9 @@ function Slideshow(props){
                 </Col>
 
                 <Col xs={12} md={6} lg={4}>
+
                     {/* <h2> Featured in {category} </h2> */}
+
                     <Carousel>
                         <Carousel.Item>
                             <iframe

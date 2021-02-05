@@ -33,7 +33,6 @@ function UserLandingpage(props) {
     };
 
 
-
     return (
         <div className="UserLPage">
             <div className={sidebar ? "cart-menu active": "cart-menu"}>
@@ -56,10 +55,13 @@ function UserLandingpage(props) {
             <Continue />
 
 
+
         </div>
     )
 };
 
+
 const mapStateToProps = state => ({ applicationState: state });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
 export default connect(mapStateToProps, mapDispatchToProps)(UserLandingpage);
+

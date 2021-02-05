@@ -1,11 +1,12 @@
 import Home from './components/HomeUser/Home.js'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import UserLandingpage from './components/User-Landingpage/UserLandingpage';
 import './App.css';
-import {Prov} from './DashContext';
+import UserLandingpage from './User-Landingpage/UserLandingpage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import RegisterForm from './components/Register/RegisterForm';
 import Login from './components/Login';
-// import Login from './components/Login'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Footer from "./components/FooterSection/Footer";
 
 
 function App() {
@@ -14,11 +15,11 @@ function App() {
         <Switch>
         <Route path="/" exact component={RegisterForm} />
           <Route path="/login" component={Login} />
-
-          {/* <Route path="/Instructorlandingpage" component={InstructorLandingpage} /> */}
           <Route path="/Home" component={Home}/>
-        </Switch> 
+        </Switch>
+        <Footer /> 
     </Router>
+
 
   );
 }
