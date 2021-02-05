@@ -6,12 +6,16 @@ import RegisterForm from './components/Register/RegisterForm';
 import Login from './components/Login';
 // import Login from './components/Login'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import Sidebar from './components/HomeUser/Sidebar';
 
 function App() {
   return (
     <Router>
+
       <DashProvider>
+
+      <Sidebar />
+
         <Switch>
           <Route path="/" exact component={RegisterForm} />
           <Route path="/login" component={Login} />
