@@ -32,17 +32,21 @@ function Login(props) {
             const user = await axios.get(config.baseUrl + '/verification')
             const loginUser = user.data
             if (loginUser !== "Wrong login information") {
-                props.actions.storeUserData(loginUser)
-                console.log(props.applicationState.user)
-                history.push('/Home')
 
+                if (loginUser.studentName !== "") {
+                    props.actions.storeUserData(loginUser)
+                    console.log(props.applicationState.user)
+                    history.push('/Home')
+                }
+
+                if (loginUser.instructorName !== "") {
+                    props.actions.storeUserData(loginUser)
+                    console.log(props.applicationState.user)
+                    history.push('/InstructorLandingpage')
+                }
 
             }
-            // if (loginUser.instructorName !== "") {
-            //     props.actions.storeUserData(loginUser)
-            //     console.log(props.applicationState.user)
-            //     history.push('/InstructorLandingpage')
-            // }
+
 
 
         } catch (err) {
@@ -89,8 +93,9 @@ function Login(props) {
             </div>
         )
     }
-
-    const mapStateToProps = state => ({ applicationState: state });
-    const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
-    export default connect(mapStateToProps, mapDispatchToProps)(Login)
 }
+
+
+const mapStateToProps = state => ({ applicationState: state });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
