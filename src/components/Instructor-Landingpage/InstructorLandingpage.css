@@ -1,24 +1,27 @@
 .Upload{
-    border: solid;
-    border-radius: 10px;
-    border-width: 1px;
-    width: 30%;
-    height: 300px;
-    padding: 20px 15px;
+    min-height: 600px;
+    background-image: url(../../SVG/undraw_uploading_go67.svg);
+    background-size: 140%;
+    background-position: 10% 100%;
+    background-repeat: no-repeat;
+    border: solid white;
+}
+
+.UploadForm {
+    width:  45%;
+    height: 250px;
+    position: absolute;
+    top: 200px;
+    left: 150px;
+}
+
+.UploadButton{
+    width: 90%;
     margin: 0 auto;
-    text-align: center;
 }
 
-.Upload button {
-    width:100% !important;
-    margin-top: 10px;
+.Upload .form-control{
+    box-shadow: 10px 10px;
 }
 
-.Upload .form-control-file{
-    width: 75% !important;
-    margin: 0 auto;
-}
 
-.Upload .form-label, .form-file-label{
-    margin: 15px 0;
-}
