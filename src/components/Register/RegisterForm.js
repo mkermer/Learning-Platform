@@ -165,9 +165,6 @@ const RegisterForm = (props) => {
                     </div>
                 </div>
 
-                <div className="right">
-                    <img src={teaching} className="imge" alt="" />
-                </div>
 
             </div>
         </div>

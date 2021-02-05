@@ -2,11 +2,15 @@
     display: flex;
     min-height: 100vh;
     margin-top: 50px;
-} */
+    background-image: url(../../SVG/undraw_No_data_re_kwbl.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    border: solid;
+    
+} 
 
 .left{
-    background-size: cover;
-    background-position: center center;
     padding: 0 40px 40px;
     width: 100%;
 }
@@ -16,13 +20,6 @@
     margin: auto;
 }
 
-.right {
-    width: 50%;
-}
-
-.right img {
-    width: 650px;
-}
 
 .logo {
     font-size: 60px;
@@ -30,9 +27,7 @@
     color: #2073d9;
 }
 
-.imge {
-    width: 100%;
-}
+
 
 .form-elem {
     margin-top: 80px;
