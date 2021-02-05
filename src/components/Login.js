@@ -7,12 +7,17 @@ import { Alert } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/app.action';
+import { Redirect, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 
 function Login(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    // const history = useHistory();
 
+    const history = useHistory();
 
     const authentication = async () => {
         const verification = {
@@ -28,7 +33,9 @@ function Login(props) {
             const loginUser = user.data
             if (loginUser !== "Wrong login information") {
                 props.actions.storeUserData(loginUser)
-                console.log()
+                console.log(props.applicationState.user)
+                history.push('/UserLandingpage')
+
             } else {
 
             }
@@ -65,7 +72,7 @@ function Login(props) {
 
                         <Button className="btn" variant="primary" onClick={authentication}>
                             Login
-                            </Button>
+                        </Button>
                         <div className="registerLink">
                             <a href="/">do not have an account yet? Register</a>
                         </div>
