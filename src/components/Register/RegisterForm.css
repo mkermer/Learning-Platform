@@ -1,17 +1,17 @@
-.container-register {
+.register .container {
     display: flex;
     min-height: 100vh;
     margin-top: 50px;
 }
 
-.left-register {
+.left{
     background-size: cover;
     background-position: center center;
     padding: 0 40px 40px;
     width: 100%;
 }
 
-.inner-register {
+.inner {
     max-width: 600px;
     margin: auto;
 }
