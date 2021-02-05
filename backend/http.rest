@@ -9,7 +9,19 @@ GET http://localhost:2000/instructor
 GET http://localhost:2000/verification
 
 ###
-GET http://localhost:2000/verification/verification
+GET http://localhost:2000/video
+
+###
+POST http://localhost:2000/video/add
+Content-Type: application/json
+
+{
+    	"courseName": "mmm",
+        "category" : "mm",
+        "instructor": "sss",
+        "url": "https://www.youtube.com/watch?v=_AyFP5s69N4"
+}
+
 ###
  POST http://localhost:2000/student/add
 Content-Type: application/json
@@ -37,7 +49,7 @@ Content-Type: application/json
 {
     "firstName": "Doe",
     "lastName": "John",
-    "instructorName": "DoeJohn",
+    "instructorName": "Test3",
     "password": "instructor",
     "description": "cool instructor who wants to teach something",
     "subHeader": "cool instructor",
@@ -45,7 +57,12 @@ Content-Type: application/json
     "image": "",
     "score": 100,
     "interests": ["coding", "stocks"],
-    "courses": [],
+    "courses": [{
+        "courseName":"DD",
+        "category": "Technologies",
+        "instructor":"Test3",
+        "url":"http://res.cloudinary.com/davidwalzer/video/upload/v1612455312/eyney0z..."
+    }],
     "reviews": [],
     "schedules": [] 
 }
@@ -56,8 +73,8 @@ Content-Type: application/json
 
 {
     
-    "username": "DoeJohn",
-    "password": "instructor"
+    "username": "Test",
+    "password": "Test"
     
 }
 
