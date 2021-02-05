@@ -1,4 +1,3 @@
-import Home from './components/HomeUser/Home.js'
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import UserLandingpage from './components/User-Landingpage/UserLandingpage';
 import './App.css';
@@ -22,7 +21,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={RegisterForm} />
           <Route path="/login" component={Login} />
-          <Route path="/Home" component={Home}/>
+          <Route path="/UserLandingpage" component={UserLandingpage}/>
+          <Route path="/InstructorLandingpage" component={InstructorLandingpage}/>
         </Switch> 
       </DashProvider>
       <Footer />

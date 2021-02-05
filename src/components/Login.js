@@ -34,7 +34,7 @@ function Login(props) {
             if (loginUser !== "Wrong login information") {
                 props.actions.storeUserData(loginUser)
                 console.log(props.applicationState.user)
-                history.push('/Home')
+                history.push('/UserLandingpage')
 
 
             }
