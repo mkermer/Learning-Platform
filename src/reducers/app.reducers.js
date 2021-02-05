@@ -10,7 +10,7 @@ function appReducer(state = initialState, action) {
 
     switch (action.type) {
         case STORE_USER_DATA:
-            console.log('Hi')
+
             return {
                 ...state,
                 user: action.user,

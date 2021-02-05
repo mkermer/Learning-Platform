@@ -15,14 +15,14 @@ function InstructorLandingpage() {
                 Upload
                 </Button>
 
-            {/* <Upload
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-            /> */}
-            <Upload2
+            <Upload
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
+            {/* <Upload2
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            /> */}
 
         </div>
     )
