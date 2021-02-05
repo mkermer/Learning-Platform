@@ -19,8 +19,6 @@ router.route('/add').post(async (req, res) => {
     const url = req.body.url;
 
 
-
-
     const newVideo = new Video({
         courseName,
         category,

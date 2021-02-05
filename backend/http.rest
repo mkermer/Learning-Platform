@@ -9,7 +9,19 @@ GET http://localhost:2000/instructor
 GET http://localhost:2000/verification
 
 ###
-GET http://localhost:2000/verification/verification
+GET http://localhost:2000/video
+
+###
+POST http://localhost:2000/video/add
+Content-Type: application/json
+
+{
+    	"courseName": "mmm",
+        "category" : "mm",
+        "instructor": "sss",
+        "url": "https://www.youtube.com/watch?v=_AyFP5s69N4"
+}
+
 ###
  POST http://localhost:2000/student/add
 Content-Type: application/json

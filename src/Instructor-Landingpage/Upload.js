@@ -5,12 +5,13 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../actions/app.action';
 import axios from 'axios';
 import config from '../config/config';
-import { useStateWithCallbackLazy } from 'use-state-with-callback';
+
 
 function Upload(props) {
   const [video, setVideo] = useState("");
   const [url, setUrl] = useState("");
-  const [courses, setCourses] = useStateWithCallbackLazy(props.applicationState.user.courses);
+
+  const [courses, setCourses] = useState(props.applicationState.user.courses);
   const [course, setCourse] = useState({
     courseName: "",
     category: "",
@@ -19,6 +20,8 @@ function Upload(props) {
 
   })
   const [disabled, setDisabled] = useState(true)
+
+
   const firstName = props.applicationState.user.firstName;
   const lastName = props.applicationState.user.lastName;
   const instructorName = props.applicationState.user.instructorName;
@@ -137,8 +140,6 @@ function Upload(props) {
   const setCourseUrl = (newUrl) => {
     setCourse(prevState => {
       return { ...prevState, url: newUrl }
-    }, () => {
-      console.log('Hi')
     });
 
   }
