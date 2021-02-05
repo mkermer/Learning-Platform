@@ -7,18 +7,26 @@ import InstructorLandingpage from './components/Instructor-Landingpage/Instructo
 import RegisterForm from './components/Register/RegisterForm';
 import Login from './components/Login';
 import Footer from "./components/FooterSection/Footer";
-
+import Sidebar from './components/HomeUser/Sidebar';
+import { DashProvider } from './DashContext'
 
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={RegisterForm} />
-        <Route path="/login" component={Login} />
-        <Route path="/Home" component={Home} />
-        <Route path="/InstructorLandingpage" component={InstructorLandingpage} />
-      </Switch>
+
+
+      <DashProvider>
+
+        <Sidebar />
+
+        <Switch>
+          <Route path="/" exact component={RegisterForm} />
+          <Route path="/login" component={Login} />
+          <Route path="/Home" component={Home} />
+          <Route path="/InstructorLandingpage" component={InstructorLandingpage} />
+        </Switch>
+      </DashProvider>
       <Footer />
     </Router>
 

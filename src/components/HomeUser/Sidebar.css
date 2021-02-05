@@ -1,17 +1,23 @@
-.sidebar {
+/* .sidebar {
     position: fixed;
     top: 0;
-    bottom: 0;
-    left: 0;
-    min-height: 100vh !important;
-    z-index: 100;
-    padding: 48px 0 0;
+    bottom:auto;
+    left:0;
+    
+    padding: 64px;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    justify-content: start;
+    
+    background-color: #7aadeb !important;
+    height:100vh;
+    font-size: 1.2rem;
+    align-items: center;
+    text-align:center;
+    
 }
-#sidebar-wrapper{
-    min-height: 100vh !important;
-    width: 100vw;
-    margin-left: -1rem;
+#sidebar-sticky{
+   height: auto;
+    
     -webkit-transition: margin .25s ease-out;
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
@@ -24,5 +30,79 @@
 
 #page-content-wrapper {
     min-width: 0;
+    width: auto;
+} */
+.navbar {
+background-color: #7aadeb !important;
+ height:80px;
+ display:flex;
+ justify-content: start;
+ align-items: center;
+
+
+}
+.menu-bars {
+    margin-left:2 rem;
+    font-size: 2rem;
+    background: none;
+
+}
+.nav-menu {
+    background-color: #7aadeb !important;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top:0;
+    left:-100%;
+    transition: 850ms;
+}
+
+.nav-menu.active {
+    left:0 ;
+    transition:350 ms;
+}
+.nav-text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 0px 16px;
+    list-style:none;
+    height: 60px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+    
+
+.nav-text a {
+    text-decoration: none;
+    color:  #2073d9 !important;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius:4px;
+    
+}
+.nav-text a:hover {
+    background-color: #1a83ff;
+    
+}
+.nav-menu-items{
+    width: 100 %;
+}
+.navbar-toogle {
+    background-color: #2073d9 !important;
     width: 100%;
+    height:80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+span {
+    margin-left: 10px;
 }
