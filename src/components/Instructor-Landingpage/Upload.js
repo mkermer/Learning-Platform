@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import axios from 'axios';
 import config from '../../config/config';
+import { CloudArrowUp } from 'react-bootstrap-icons';
 
 
 function Upload(props) {
@@ -174,29 +175,28 @@ function Upload(props) {
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
+        
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
+            Upload your Videos
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form className="Upload">
+          <div className="Upload">
+          <Form className="UploadForm">
             <Form.Group>
-              <Form.Label>Course name</Form.Label>
-              <Form.Control type="text" value={course.courseName}
-                onChange={setCourseName
-                } />
+              <Form.Control type="text" placeholder="Course Name" value={course.courseName}
+                onChange={setCourseName} />
             </Form.Group>
             {/* "Coding", "Music", "Selfdevelopement", "Stocks", "Technolgies", "Books" */}
             <Form.Group controlId="formBasicCategory">
-              <Form.Label>Category</Form.Label>
               <Form.Control
                 as="select"
                 value={course.category}
                 onChange={setCourseCategory}
               >
-                <option value=''>please select type</option>
+                <option value=''>Select Category</option>
                 <option value="Coding">Coding</option>
                 <option value="Music">Music</option>
                 <option value="Selfdevelopement">Selfdevelopement</option>
@@ -207,25 +207,25 @@ function Upload(props) {
             </Form.Group>
 
             <Form.Group>
-              <Form.Label>Video ID </Form.Label>
               <Form.Control type="url" value="https://www.youtube.com/embed/" />
             </Form.Group>
 
             <Form.Group>
-              <Form.File accept="video/*" label="Upload Video" onChange={SetVideo} />
+              <Form.File accept="video/*" label="OR" onChange={SetVideo} />
             </Form.Group>
 
-            <Button variant="primary" onClick={setVideoUrl} >
-              Upload
-                </Button>
-            <Button variant="primary" onClick={debug2} disabled={disabled}>
-              Debug
-                </Button>
           </Form>
+          </div>
 
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
+          <Button variant="primary" className="UploadButton" onClick={setVideoUrl} >
+              <CloudArrowUp size= {20} /> Upload
+          </Button>
+          {/* <Button variant="primary" onClick={debug2} disabled={disabled}>
+              Debug
+          </Button> */}
+          
         </Modal.Footer>
       </Modal>
 
