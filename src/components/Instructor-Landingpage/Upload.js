@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Form, Container, Button, Modal } from 'react-bootstrap'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/app.action';
+import * as actions from '../../actions/app.action';
 import axios from 'axios';
-import config from '../config/config';
+import config from '../../config/config';
 
 
 function Upload(props) {

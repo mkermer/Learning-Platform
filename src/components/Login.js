@@ -38,16 +38,18 @@ function Login(props) {
 
 
             }
-            // if (loginUser.instructorName !== "") {
-            //     props.actions.storeUserData(loginUser)
-            //     console.log(props.applicationState.user)
-            //     history.push('/InstructorLandingpage')
-            // }
+            if (loginUser.instructorName !== "") {
+                props.actions.storeUserData(loginUser)
+                console.log(props.applicationState.user)
+                history.push('/InstructorLandingpage')
+            }
 
 
         } catch (err) {
 
         }
+    }
+
 
         return (
             <div className="container">
@@ -93,4 +95,3 @@ function Login(props) {
     const mapStateToProps = state => ({ applicationState: state });
     const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
     export default connect(mapStateToProps, mapDispatchToProps)(Login)
-}

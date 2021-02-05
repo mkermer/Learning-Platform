@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 import { Alert } from 'react-bootstrap';
 import axios from 'axios';
 import './RegisterForm.css'
-import teaching from '../../images/teaching.svg'
+import teaching from '../../SVG/teaching.svg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from '../Login';
 import { Link } from "react-router-dom";
