@@ -11,92 +11,33 @@ import { CloudArrowUp } from 'react-bootstrap-icons';
 function Upload(props) {
   const [video, setVideo] = useState("");
   const [url, setUrl] = useState("");
+  const [category, setCategory] = useState("");
+  const [courseName, setCourseName] = useState("");
+  const instructor = props.applicationState.user.instructorName
 
-  const [courses, setCourses] = useState(props.applicationState.user.courses);
-  const [course, setCourse] = useState({
-    courseName: "",
-    category: "",
-    instructor: props.applicationState.user.instructorName,
-    url: "",
 
-  })
   const [disabled, setDisabled] = useState(true)
 
 
-  const firstName = props.applicationState.user.firstName;
-  const lastName = props.applicationState.user.lastName;
-  const instructorName = props.applicationState.user.instructorName;
-  const password = props.applicationState.user.password;
-  const description = props.applicationState.user.description;
-  const subHeader = props.applicationState.user.subHeader;
-  const contact = props.applicationState.user.contact;
-  const image = props.applicationState.user.image;
-  const score = props.applicationState.user.score;
-  const expertise = props.applicationState.user.expertise;
-  const reviews = props.applicationState.user.reviews;
-  const schedules = props.applicationState.user.schedules;
-
-  // useEffect(() => {
-  //   if (course.url !== "") {
-  //     setCourses(courses => [...courses, course])
-  //     console.log(courses)
-  //   }
-
-
-  // }, [courses])
-
-  // useEffect(() => {
-  //   if (course.url !== "") {
-  //     setCoursesArray();
-  //     console.log(courses)
-  //   } else {
-  //     document.title = 'No threshold reached.';
-  //   }
-  // }, [courses]);
-
-  const setCourseName = (e) => {
-    const newName = e.target.value;
-    setCourse(prevState => {
-      return { ...prevState, courseName: newName }
-
-    });
-  }
-
-
-  const setCourseCategory = (e) => {
-    const newCategory = e.target.value;
-    setCourse(prevState => {
-      return { ...prevState, category: newCategory }
-    });
-  }
 
   const setButton = () => {
     setDisabled(false)
   }
 
-  const debug = async () => {
 
-    console.log(course);
-    console.log(courses);
-    const updatedInstructorCourse = {
-      firstName: firstName,
-      lastName: lastName,
-      instructorName: instructorName,
-      password: password,
-      description: description,
-      subHeader: subHeader,
-      contact: contact,
-      image: image,
-      score: score,
-      expertise: expertise,
-      courses: courses,
-      reviews: reviews,
-      schedules: schedules,
+
+  const addVideo = async () => {
+
+    const newVideo = {
+      courseName: courseName,
+      category: category,
+      instructor: instructor,
+      url: url
     }
 
     try {
       const response = await axios.post(config.baseUrl +
-        `/instructor/update/${props.applicationState.user._id}`, updatedInstructorCourse);
+        `/video/add`, newVideo);
       console.log(response.data);
     } catch (err) {
 
@@ -122,9 +63,6 @@ function Upload(props) {
         if (newUrl !== "") {
           setCourseUrl(newUrl);
           setButton();
-          // setCoursesArray();
-
-
 
         }
 
@@ -139,25 +77,26 @@ function Upload(props) {
   }
 
   const setCourseUrl = (newUrl) => {
-    setCourse(prevState => {
-      return { ...prevState, url: newUrl }
-    });
-
+    setUrl(newUrl);
   }
 
   const debug2 = async () => {
-    console.log(course);
-    console.log(courses)
+    const newVideo = {
+      courseName: courseName,
+      category: category,
+      instructor: instructor,
+      url: url
+    }
 
-  }
+    console.log('Hi')
 
-  const setCoursesArray = async () => {
-    setCourses(courses => [...courses, course])
-  }
+    try {
+      const response = await axios.post(config.baseUrl +
+        `/video/add`, newVideo);
+      console.log(response.data);
+    } catch (err) {
 
-  const postDetails = () => {
-
-
+    }
   }
 
 
@@ -186,15 +125,15 @@ function Upload(props) {
           <div className="Upload">
           <Form className="UploadForm">
             <Form.Group>
-              <Form.Control type="text" placeholder="Course Name" value={course.courseName}
-                onChange={setCourseName} />
+              <Form.Control type="text" placeholder="Course Name" value={courseName}
+                onChange={(e) => setCourseName(e.target.value)
+                } />
             </Form.Group>
-            {/* "Coding", "Music", "Selfdevelopement", "Stocks", "Technolgies", "Books" */}
             <Form.Group controlId="formBasicCategory">
               <Form.Control
                 as="select"
-                value={course.category}
-                onChange={setCourseCategory}
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
               >
                 <option value=''>Select Category</option>
                 <option value="Coding">Coding</option>
