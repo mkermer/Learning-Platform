@@ -1,53 +1,77 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const SidebarLink= styled(Link)`
-display:flex;
-color:#e1e9fc;
-justify-content: space-between;
-align-items:center;
-padding:20px;
-list-style: none;
-height:60px;
-text.decoration:none;
-font-size:18px;
+const SidebarLink = styled(Link)`
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  list-style: none;
+  height: 70px;
+  text-decoration: none;
+  font-size: 18px;
+  &:hover {
+    background: #2073d9 !important;
+    border-left: 4px solid #632ce4;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    
+  }
+`;
 
-&:hover {
-    background:#252831;
-    border-left:4px solid #632ce4;
-    cursor:pointer;
-}
+const SidebarLabel = styled.span`
+  margin-left: 16px;
+`;
 
-`; 
-const SidebarLabel =styled.span `
-margin-left:16px
+const DropdownLink = styled(Link)`
+  background: #2073d9 !important;
+  height: 60px;
+  padding-left: 3rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 18px;
+  &:hover {
+    background: #632ce4;
+    cursor: pointer;
+    
+  }
 `;
 
 const SubMenu = ({ item }) => {
-const {subnav,setSubnav}= useState(false)
+  const [subnav, setSubnav] = useState(false);
 
-const showSubnav = () =>setSubnav(!subnav)
+  const showSubnav = () => setSubnav(!subnav);
 
-    const Submenu = ({ item }) =>
-    return (
-<>
-<SidebarLink to ={item.path} onclick= {item.subNav && showSubnav}>
-    <div>
-        {item.icon}
-        <SidebarLabel>{item.titel}</SidebarLabel>
+  return (
+    <>
+      <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
+        <div>
+          {item.icon}
+          <SidebarLabel>{item.title}</SidebarLabel>
         </div>
         <div>
-            {item.subNav && subnav
-             ? item.iconOpened 
-             : item. subNav 
-             ? item.iconClosed
+          {item.subNav && subnav
+            ? item.iconOpened
+            : item.subNav
+            ? item.iconClosed
             : null}
-            </div>
-        <SidebarLink>
-            </>
-            );
-    
-
+        </div>
+      </SidebarLink>
+      {subnav &&
+        item.subNav.map((item, index) => {
+          return (
+            <DropdownLink to={item.path} key={index}>
+              {item.icon}
+              <SidebarLabel>{item.title}</SidebarLabel>
+            </DropdownLink>
+          );
+        })}
+    </>
+  );
 };
+
 export default SubMenu;
