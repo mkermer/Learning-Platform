@@ -13,13 +13,16 @@ function Slideshow(props) {
 
 
     useEffect(async () => {
+
+        setRandomVidFunction();
+    }, []);
+
+
+    const setRandomVidFunction = async () => {
         const response = await axios.get(config.baseUrl + '/video');
         console.log(response.data);
         const interest = props.applicationState.user.interests;
         const category = response.data;
-
-
-
 
         // const displayVideo = () => {
         const randomInterest = interest[Math.floor(Math.random() * interest.length)];
@@ -39,13 +42,10 @@ function Slideshow(props) {
             randomVideos.push(arrVideos[randVid]);
             arrVideos = arrVideos.splice(randVid, randVid);
         }
-        console.log(randomVideos)
+        // console.log(randomVideos)
         setRandomVideos(randomVideos)
         console.log(randomVid)
-    }, []);
-
-
-
+    }
 
 
 
@@ -60,27 +60,26 @@ function Slideshow(props) {
 
 
                 <Carousel>
-                    {/* {randomVideos.map(vid => {
-                        return (
-                            <Carousel.Item>
-                                <iframe
-                                    className="d-block w-100"
-                                    src={vid}
-                                    alt="Video Name"
-                                />
-                               
-                            </Carousel.Item>)
-                    })} */}
+                    Rendered on userspecific
+                    {randomVid.map(vid => {
+                    return (
+                        <Carousel.Item>
+                            <iframe
+                                className="d-block w-100"
+                                src={vid}
+                                alt="Video Name"
+                            />
 
-                    <Carousel.Item>
+                        </Carousel.Item>)
+                })}
+
+                    {/* <Carousel.Item>
                         <iframe
                             className="d-block w-100"
                             src="https://www.youtube.com/embed/EPxqPw1N1Qk?controls=0"
                             alt="Video Name"
                         />
-                        {/* <Carousel.Caption>
-                            <h3>Video Name</h3>
-                            </Carousel.Caption> */}
+                        
                     </Carousel.Item>
                     <Carousel.Item>
                         <iframe
@@ -95,7 +94,7 @@ function Slideshow(props) {
                             src="https://www.youtube.com/embed/BBz-Jyr23M4?controls=0"
                             alt="Video Name"
                         />
-                    </Carousel.Item>
+                    </Carousel.Item> */}
                 </Carousel>
             </Col>
 
