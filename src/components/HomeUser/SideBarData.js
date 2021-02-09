@@ -3,63 +3,91 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
+import * as Io5Icons from "react-icons/io5";
+import * as BiIcons from "react-icons/bi";
+import * as GiIcons from "react-icons/gi";
+export const SidebarData = [
+  {
+    title: 'Home',
+    path: '/',
+    icon: <AiIcons.AiFillHome />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
 
+    subNav: [
+      {
+        title: 'Dropdown1',
+        path: '/',
+        icon: <RiIcons.RiProfileLine />
+      },
+      {
+        title: 'Dropdown2',
+        path: '/',
+        icon: <IoIcons.IoIosPaper />
+      }
+    ]
+  },
+  {
+    title: 'Categories',
+    path: '/',
+    icon: <GiIcons.GiTeacher />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
 
-export const SideBarData = [
-    {
-        title:'Overview',
-        path: '/overview',
-        icon: <AiIcons.AiFillHome />,
-        iconClosed:<RiIcons.RiArrowDownSFill />,
-        iconClosed:<RiIcons.RiArrowUpSFill />,
-        subNav: [
-            {
-                title: 'Users',
-                path: '/overviev/users',
-                icon: <IoIcons.IoIosPaper />,
-             },
-             {
-                title: 'Revenue',
-                path: '/overviev/revenue',
-                icon: <IoIcons.IoIosPaper />,
-             },
-             {
-                title: 'Revenue',
-                path: '/overviev/revenue',
-                icon: <IoIcons.IoIosPaper />,
-             }
-        ]
-    },
-    {
-        title: 'Categories',
+    subNav: [
+      {
+        title: 'Dropdown1',
         path: '/',
-        icon: <FaIcons.FaCartPlus />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Team',
+        icon: <GiIcons.GiTeacher />,
+        cName: 'sub-nav'
+      },
+      {
+        title: 'Dropdown2',
         path: '/',
-        icon: <IoIcons.IoMdPeople/>,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Contact',
+        icon: <IoIcons.IoIosPaper />,
+        cName: 'sub-nav'
+      },
+      {
+        title: 'Dropdown3',
         path: '/',
-        icon: <FaIcons.FaEnvelopeOpenText />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Calender',
-        path: '/',
-        icon: <FaIcons.FaRegCalendarCheck />,
-        cName: 'nav-text'
-    },
+        icon: <IoIcons.IoIosPaper />
+      }
+    ]
+  },
+  {
+    title: 'Easy Access',
+    path: '/',
+    icon: <FaIcons.FaCartPlus />
+  },
+  {
+    title: 'Calendar',
+    path: '/Calendar',
+    icon: <BiIcons.BiCalendar />
+  },
+  {
+    title: 'Profiles',
+    path: '/Login',
+    icon: <RiIcons.RiProfileLine/>,
 
-    {
-        title: 'Log Out',
-        path: '/',
-        icon: <FaIcons.FaPowerOff />,
-        cName: 'nav-text'
-    },
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
 
-]
+    subNav: [
+      {
+        title: 'Teacher',
+        path: '/Instructor-Landingpage/InstructorLandingpage',
+        icon: <RiIcons.RiProfileLine />
+      },
+      {
+        title: 'Student',
+        path: '/User-Landingpage/Dasboard',
+        icon: <RiIcons.RiProfileLine />
+      }
+    ]
+  },
+  {
+    title: 'Support',
+    path: '/Login',
+    icon: <IoIcons.IoMdHelpCircle />
+  }
+];

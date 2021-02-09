@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { XSquare } from 'react-bootstrap-icons';
 import DashContext from '../../DashContext';
-
+import {Container, Row, Col} from "react-bootstrap";
 
 function Dashboard(props){
     const {
@@ -10,6 +10,9 @@ function Dashboard(props){
 
     return(
         <div className="Dashboard">
+        <Container>
+        <Row>
+        <Col>
             <XSquare className="close" onClick={showSidebar}/>
  
             <table>
@@ -39,8 +42,10 @@ function Dashboard(props){
                         </td>
                     </tr>
                 </tbody>
-            </table>        
-                
+            </table>   
+            </Col>
+            </Row>     
+           </Container>     
         </div>
     )
 }

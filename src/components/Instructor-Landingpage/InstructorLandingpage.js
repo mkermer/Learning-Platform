@@ -51,10 +51,6 @@ function InstructorLandingpage(props) {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
-            {/* <Upload2
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-            /> */}
 
         </div>
     )

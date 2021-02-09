@@ -1,5 +1,7 @@
+
  .register .container {
     background-image: url(../../SVG/Register.svg);
+
     background-repeat: no-repeat;
     background-size: 600px;
     background-position: top;
@@ -8,6 +10,7 @@
     width: 800px !important;
     height: 700px;
     margin: 20px auto;
+
 } 
 
 /* .left{

@@ -1,10 +1,4 @@
-.home {
-    display: flex;
-    height: 90vh;
-    align-items: center;
-    justify-content:center ;
-    font-size: 3rem;
-}
+
 h1,
 h2,
 h3,
@@ -80,6 +74,20 @@ p {
 
 .button:hover{
     cursor: pointer;
+}
+.table {
+  margin: 0 auto 20px;
+}
+
+
+.today {
+  background-color:#2073d9 !important;
+  color: #fff;
+}
+
+.in-prev-month,
+.in-next-month {
+  opacity: 0.5;
 }
 
 .container{
