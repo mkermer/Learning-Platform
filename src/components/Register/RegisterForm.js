@@ -48,6 +48,7 @@ const RegisterForm = (props) => {
                 courses: courses,
                 reviews: reviews,
                 schedules: schedules,
+                type: type
             }
 
             try {
@@ -74,6 +75,7 @@ const RegisterForm = (props) => {
                 courses: courses,
                 reviews: reviews,
                 schedules: schedules,
+                type: type
             }
 
             try {

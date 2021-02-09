@@ -26,7 +26,7 @@ router.route('/add').post(async (req, res) => {
     const courses = req.body.courses;
     const reviews = req.body.reviews;
     const schedules = req.body.schedules;
-
+    const type = req.body.type;
 
     const newStudent = new Student({
         firstName,
@@ -42,6 +42,7 @@ router.route('/add').post(async (req, res) => {
         courses,
         reviews,
         schedules,
+        type
     });
 
     try {
@@ -68,6 +69,7 @@ router.route('/update/:id').post((req, res) => {
             student.courses = req.body.courses;
             student.reviews = req.body.reviews;
             student.schedules = req.body.schedules;
+            student.type = req.body.type;
 
             student.save()
                 .then(() => res.json(student))

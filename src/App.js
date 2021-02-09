@@ -9,6 +9,10 @@ import Footer from "./components/FooterSection/Footer";
 import Sidebar from './components/HomeUser/Sidebar';
 import { DashProvider } from './DashContext'
 import Login2 from './components/Register/Login2';
+import SearchVideos from './components/SearchVideos/searchVideos';
+import DisplayVideo from './components/SearchVideos/DisplayVideo';
+import Updateform from './components/UpdateForm/Userupdateform';
+
 
 function App() {
   return (
@@ -21,17 +25,26 @@ function App() {
 
         <Switch>
           <Route path="/" exact component={RegisterForm} />
+          <Route path="/update" exact component={Updateform} />
+          <Route path="/videoSearch" component={SearchVideos} />
+          <Route path="/displayVideo" component={DisplayVideo} />
           <Route path="/login" component={Login} />
-          <Route path="/UserLandingpage" component={UserLandingpage}/>
-          <Route path="/InstructorLandingpage" component={InstructorLandingpage}/>
-        </Switch> 
+          <Route path="/UserLandingpage" component={UserLandingpage} />
+          <Route path="/InstructorLandingpage" component={InstructorLandingpage} />
+        </Switch>
       </DashProvider>
       <Footer />
-     
-    </Router> 
+
+    </Router>
 
     // <Login />
-
+    // <Router>
+    //   <Switch>
+    //     <Route path="/" component={SearchVideos} />
+    //     <Route path="/displayVideo" component={Login} />
+    //   </Switch>
+    // </Router>
+    // <DisplayVideo />
 
   );
 }

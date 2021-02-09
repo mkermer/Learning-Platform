@@ -18,6 +18,7 @@ const studentSchema = new Schema({
     courses: [],
     reviews: [],
     schedules: [],
+    type: { type: String }
 });
 
 const Student = mongoose.model('Student', studentSchema);

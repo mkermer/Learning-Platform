@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 
 function UserLandingpage(props) {
-    
+
     const {
         sidebar,
         showSidebar
@@ -35,11 +35,14 @@ function UserLandingpage(props) {
 
     return (
         <div className="UserLPage">
-            <div className={sidebar ? "cart-menu active": "cart-menu"}>
+            <div className={sidebar ? "cart-menu active" : "cart-menu"}>
                 <Dashboard />
+
+
             </div>
             <Button onClick={showSidebar}>Dashboard</Button>
-
+            <Button className="btn" variant="primary" ><Link to="/update">Update</Link></Button>
+            <Button className="btn" variant="primary" ><Link to="/videoSearch">Videos</Link></Button>
 
             <Jumbotron fluid>
                 <h1>{daytime(date)} {props.applicationState.user.firstName}</h1>
