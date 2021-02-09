@@ -125,11 +125,13 @@ function Upload(props) {
           <div className="Upload">
           <Form className="UploadForm">
             <Form.Group>
-              <Form.Control type="text" placeholder="Course Name" value={courseName}
+              <div className="mandatory">*</div>
+              <Form.Control type="text" required controlId="formBasicCategory" placeholder="Course Name" value={courseName}
                 onChange={(e) => setCourseName(e.target.value)
                 } />
             </Form.Group>
-            <Form.Group controlId="formBasicCategory">
+            <Form.Group required controlId="formBasicCategory">
+              <div className="mandatory">*</div>
               <Form.Control
                 as="select"
                 value={category}
@@ -144,13 +146,13 @@ function Upload(props) {
                 <option value="Books">Books</option>
               </Form.Control>
             </Form.Group>
-
+                <div className="or"><strong>OR</strong></div>
             <Form.Group>
-              <Form.Control type="url" value="https://www.youtube.com/embed/" />
+              <Form.Control type="url" placeholder="https://www.youtube.com/embed/" />
             </Form.Group>
 
             <Form.Group>
-              <Form.File accept="video/*" label="OR" onChange={SetVideo} />
+              <Form.File accept="video/*" onChange={SetVideo} />
             </Form.Group>
 
           </Form>

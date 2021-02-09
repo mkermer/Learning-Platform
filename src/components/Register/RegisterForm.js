@@ -1,15 +1,11 @@
 import React, { useState } from 'react'
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 import config from '../../config/config'
-import { Form } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
-import { Alert } from 'react-bootstrap';
+import { Button, Container, Form, Row, Col} from 'react-bootstrap';
 import axios from 'axios';
 import './RegisterForm.css'
-import teaching from '../../SVG/teaching.svg'
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { Link } from "react-router-dom";
+
 
 
 
@@ -90,83 +86,110 @@ const RegisterForm = (props) => {
 
     return (
         <div className="register">
-
-
-            <div className="container">
-                <div className="left">
-                    <div className="inner">
-                        <div className="logo">Share valuable Skills</div>
-
+                    <Container>
+                        
+                        
                         <Form className="form-elem">
-                            <Form.Group controlId="formBasicCategory">
-                                <Form.Label>Learn or teach ?</Form.Label>
-                                <Form.Control
-                                    as="select"
-                                    value={type}
-                                    onChange={(e) => setType(e.target.value)}
-                                >
-                                    <option value=''>please select type</option>
-                                    <option value="student">Student</option>
-                                    <option value="instructor">Instructor</option>
-                                </Form.Control>
-                            </Form.Group>
-
-                            <Form.Group controlId="formBasicUsername">
-                                <Form.Label>First Name</Form.Label>
-                                <Form.Control value={firstName} onChange={(e) => setFirstName(e.target.value)}
-                                    type="firstName" placeholder="" />
-                            </Form.Group>
-
-                            <Form.Group controlId="formBasicUsername">
-                                <Form.Label>Last Name</Form.Label>
-                                <Form.Control value={lastName} onChange={(e) => setLastName(e.target.value)}
-                                    type="lastName" placeholder="" />
-                            </Form.Group>
-
-                            <Form.Group controlId="formBasicUsername">
-                                <Form.Label>Username</Form.Label>
-                                <Form.Control value={username} onChange={(e) => setUsername(e.target.value)}
-                                    type="username" placeholder="" />
-                            </Form.Group>
-
-                            <Form.Group controlId="formBasicUsername">
-                                <Form.Label>Contact</Form.Label>
-                                <Form.Control value={contact} onChange={(e) => setContact(e.target.value)}
-                                    type="e-mail" placeholder="" />
-                            </Form.Group>
-                            <Form.Group controlId="formBasicUsername">
-                                <Form.Label>Interests/Expertise</Form.Label>
-                                <DropdownMultiselect
-                                    options={["Coding", "Music", "Selfdevelopement", "Stocks", "Technolgies", "Books"]}
-                                    name="countries"
-                                    handleOnChange={(selected) => {
-                                        setExpInt(selected);
-                                    }}
-                                />
-                            </Form.Group>
-
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="" />
-                            </Form.Group>
-
+                        <Row>
+                            <Col md={12}>
+                                <Form.Group controlId="formBasicCategory">
+                                    <Form.Label><h3>Learn or teach ?</h3></Form.Label>
+                                    <Form.Control
+                                        as="select"
+                                        value={type}
+                                        onChange={(e) => setType(e.target.value)}
+                                    >
+                                        <option value=''>please select type</option>
+                                        <option value="student">Student</option>
+                                        <option value="instructor">Instructor</option>
+                                    </Form.Control>
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={6}>
+                                <Form.Group controlId="formBasicUsername">
+                                    <Form.Label>First Name</Form.Label>
+                                    <Form.Control value={firstName} onChange={(e) => setFirstName(e.target.value)}
+                                        type="firstName" placeholder="John" />
+                                </Form.Group>
+                            </Col>
+                            <Col md={6}>
+                                <Form.Group controlId="formBasicUsername">
+                                    <Form.Label>Last Name</Form.Label>
+                                    <Form.Control value={lastName} onChange={(e) => setLastName(e.target.value)}
+                                        type="lastName" placeholder="Doe" />
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12}>
+                                <Form.Group controlId="formBasicUsername">
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control value={contact} onChange={(e) => setContact(e.target.value)}
+                                        type="e-mail" placeholder="john.doe@example.com" />
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={6}>
+                                <Form.Group controlId="formBasicUsername">
+                                    <Form.Label>Username</Form.Label>
+                                    <Form.Control value={username} onChange={(e) => setUsername(e.target.value)}
+                                        type="username" placeholder="Jonny123" />
+                                </Form.Group>
+                            </Col>
+                            <Col md={6}>
+                                <Form.Group controlId="formBasicPassword">
+                                    <Form.Label>Password</Form.Label>
+                                    <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="****" />
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12}>
+                                <Form.Group controlId="formBasicUsername">
+                                    <Form.Label>Interests/Expertise</Form.Label>
+                                    <DropdownMultiselect
+                                        options={["Coding", "Music", "Selfdevelopement", "Stocks", "Technolgies", "Books"]}
+                                        name="countries"
+                                        handleOnChange={(selected) => {
+                                            setExpInt(selected);
+                                        }}
+                                    />
+                                </Form.Group>
+                            </Col>
+                        </Row>
                             <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="save password" />
+                                <Form.Check type="checkbox" label="Save password" />
                             </Form.Group>
 
 
                             <Button className="btn" variant="primary" onClick={register} >
                                 Register
-                        </Button>
+                            </Button>
                             <Button className="btn" variant="primary" >
-                                <Link to="/login">Return to login</Link>
+                                <Link to="/login">Return to Login</Link>
                             </Button>
                         </Form>
-                    </div>
-                </div>
+                            {/* </Col>
+                            <Col xs={12} xl={1}> */}
+                                <div className="logo">
+                                    <div className="logo-text">
+                                        <span>SHARE</span> <span>VALUEABLE</span> <span>SKILLS AT</span> 
+                                    </div>
+                                    <div className="logo-brand">
+                                        <span> TeachYourBest </span>
+                                    </div>
+                                </div>
+                            {/* </Col>
+                        
+                        </Row> */}
+                    
+                    </Container>
 
 
-            </div>
+            
         </div>
 
     )

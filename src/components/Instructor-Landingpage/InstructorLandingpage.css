@@ -1,8 +1,65 @@
+.ShowRating{
+    border: 1px rgb(182, 182, 182) solid;
+    border-radius: 10px;
+    height: 500px;
+    width: 400px;
+    background-color: rgb(248, 248, 248);
+    box-shadow: 1px 1px 3px rgb(153, 153, 153);
+    overflow-y: scroll;
+}
+
+.ShowRating .heading{
+    box-shadow: 1px 1px 3px rgb(153, 153, 153);
+    border-radius: 3px;
+    border-bottom: 1px rgb(182, 182, 182) solid;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 15px !important;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.ShowRating .toast .toast-header button{
+    display: none;
+}
+
+.ShowRating .toast .toast-header{
+    height: 40px;
+}
+
+.ShowRating .toast{
+    margin:0 auto;
+}
+
+.ShowRating .toast:nth-of-type(4n+2) .toast-header{
+    background-image: linear-gradient(to right, rgba(32, 115, 217, 0.1) 0%, white 80%);
+}
+
+.ShowRating .toast:nth-of-type(4n+3) .toast-header{
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0.1) 0%, white 80%);
+}
+
+.ShowRating .toast:nth-of-type(4n+4) .toast-header{
+    background-image: linear-gradient(to right, rgba(102, 255, 51, 0.1) 0%, white 80%);
+}
+
+.ShowRating .toast:nth-of-type(4n+5) .toast-header{
+    background-image: linear-gradient(to right, rgba(255, 255, 0, 0.1) 0%, white 80%);
+}
+
+.MyVideo p{
+    border: solid;
+    cursor: pointer;
+}
+
 .Upload{
     min-height: 600px;
     background-image: url(../../SVG/undraw_uploading_go67.svg);
     background-size: 140%;
-    background-position: 10% 100%;
+    background-position: -30px -150px;
     background-repeat: no-repeat;
     border: solid white;
 }
@@ -11,7 +68,7 @@
     width:  45%;
     height: 250px;
     position: absolute;
-    top: 200px;
+    top: 190px;
     left: 150px;
 }
 
@@ -20,8 +77,48 @@
     margin: 0 auto;
 }
 
-.Upload .form-control{
-    box-shadow: 10px 10px;
+.Upload .form-control, .form-file{
+    box-shadow: 10px 10px rgb(87, 87, 87);
+}
+
+.Upload .form-file {
+    border: lightgrey solid;
+    border-width: 1px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.Upload .mandatory{
+    position: absolute;
+    left: -10px;
+    color: red;
+}
+
+.Upload .or{
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -25px;
+    top: 140px;
+}
+
+@media (max-width:991px){
+    .Upload{
+        min-height: 400px;
+        background-image: url(../../SVG/undraw_uploading_go67.svg);
+        background-size: 180%;
+        background-position: -90px -130px;
+        background-repeat: no-repeat;
+        border: solid white;
+    }
+
+    .UploadForm {
+        width:  45%;
+        height: 250px;
+        position: absolute;
+        top: 130px;
+        left: 60px;
+    }
 }
 
 
