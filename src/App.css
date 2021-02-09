@@ -75,4 +75,16 @@ p {
 .button:hover{
     cursor: pointer;
 }
+.table {
+  margin: 0 auto 20px;
+}
 
+.today {
+  background-color:#2073d9 !important;
+  color: #fff;
+}
+
+.in-prev-month,
+.in-next-month {
+  opacity: 0.5;
+}

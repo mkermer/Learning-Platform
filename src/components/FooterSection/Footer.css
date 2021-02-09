@@ -4,17 +4,19 @@
     width: 100%;
     margin: 0 auto !important;
     height:auto;
-	position: relative;
+	position:relative;
 	display:block;
 	background-color: #7aadeb !important;
 	box-sizing:border-box;
 	border-color: #2073d9 !important;
 	
 	
-    /* background-image: url('../../img/ico.webp');
+    background-image: url('../../img/pres.png');
 	background-repeat: no-repeat;
-    background-position: left; */
-	
+    background-size:12rem;
+	background-position: bottom;
+	background-position: left;
+
 }
 .Footer {
 padding:0 auto;
@@ -24,6 +26,7 @@ color:black;
 
 }
 .main-footer  {
+	background-color:#7aadeb !important;
 	display:inline-block;
 	vertical-align:top;
 	position:relative;
@@ -32,9 +35,9 @@ color:black;
 
 }
 .background {
-background-color: #7aadeb !important;
-border-color: #2073d9 !important;
-padding:15px;
+background-color:  #2073d9 !important;
+border-color:2px solid;
+padding:10px;
 
 border: solid 2px;
 box-sizing: border-box;
@@ -44,59 +47,36 @@ margin:0 auto;
 .FooterTwo {
     text-align:center;
 	background-color: #7aadeb !important;
+	border-color:2px solid;
+	padding:5px;
 }
 
 .list-unstyled li{
 	padding:5px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	font-size: 15px;
 	text-align: center;
 	
 }
-/* 
-.h4 {
-	font-size: 32px;
-    margin-top: 72px;
-    margin-bottom: 48px;
-    text-align: center; 
-    text-transform: uppercase;
-	
-}
-p {
-    font-weight: 30;
-    margin-bottom: 32px;
-    line-height: 1.8;
-	font-family: 'Poppins', sans-serif;
-	margin-top:20px;
-	
-}
-h3 {
-    font-size: 22px;
-    margin-top: 36px;
-    margin-bottom: 36px;
-    line-height: 36px;
-	text-align: center;
-	
-} */
+
 .list-unstyled-link {
 	padding:15px;
 	text-decoration: underline;
+	color:black;
 }
-/* .IntroImg {
-	width:10%
-} */
+
 .Twit {
-color: #49a1eb;
+color: #blue;
 
 }
 .Insta {
 color:black;
 }
 .Face {
-color: #4968ad;
+color: #blue;
 }
 .YouTube {
-color: #eb3223;
+color: red;
 
 }
 
@@ -104,4 +84,18 @@ color: #eb3223;
 	display: flex;
 	justify-content: space-around;
 	/* border: solid; */
+	
+}
+.background ul li a {
+	color:black;
+	font-size: 18px;
+}
+.mapp {
+	text-align:center;
+}
+.background h3 {
+	text-align: center;
+}
+.background p{
+	margin-top: 20px;
 }

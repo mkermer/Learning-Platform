@@ -18,7 +18,7 @@ const Nav = styled.div`
 
 const NavIcon = styled(Link)`
   margin-left: 2rem;
-  font-size: 3rem;
+  font-size: 2rem;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -27,7 +27,7 @@ const NavIcon = styled(Link)`
 
 const SidebarNav = styled.nav`
   background: #7aadeb !important;
-  width: 250px;
+  width: 190px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -36,6 +36,7 @@ const SidebarNav = styled.nav`
   left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
   z-index: 10;
+  border:2px solid;
 `;
 
 const SidebarWrap = styled.div`

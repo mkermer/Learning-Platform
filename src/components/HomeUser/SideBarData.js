@@ -4,24 +4,25 @@ import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
 import * as Io5Icons from "react-icons/io5";
-
+import * as BiIcons from "react-icons/bi";
+import * as GiIcons from "react-icons/gi";
 export const SidebarData = [
   {
     title: 'Home',
-    path: '/overview',
+    path: '/',
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
     subNav: [
       {
-        title: 'Profile',
-        path: '/overview/users',
-        icon: <IoIcons.IoIosPaper />
+        title: 'Dropdown1',
+        path: '/',
+        icon: <RiIcons.RiProfileLine />
       },
       {
-        title: 'Revenue',
-        path: '/overview/revenue',
+        title: 'Dropdown2',
+        path: '/',
         icon: <IoIcons.IoIosPaper />
       }
     ]
@@ -29,64 +30,64 @@ export const SidebarData = [
   {
     title: 'Categories',
     path: '/',
-    icon: <IoIcons.IoIosPaper />,
+    icon: <GiIcons.GiTeacher />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
     subNav: [
       {
-        title: 'Reports',
-        path: '/reports/Category1',
+        title: 'Dropdown1',
+        path: '/',
+        icon: <GiIcons.GiTeacher />,
+        cName: 'sub-nav'
+      },
+      {
+        title: 'Dropdown2',
+        path: '/',
         icon: <IoIcons.IoIosPaper />,
         cName: 'sub-nav'
       },
       {
-        title: 'Reports 2',
-        path: '/reports/Category2',
-        icon: <IoIcons.IoIosPaper />,
-        cName: 'sub-nav'
-      },
-      {
-        title: 'Reports 3',
-        path: '/reports/Category',
+        title: 'Dropdown3',
+        path: '/',
         icon: <IoIcons.IoIosPaper />
       }
     ]
   },
   {
     title: 'Easy Access',
-    path: '/products',
+    path: '/',
     icon: <FaIcons.FaCartPlus />
   },
   {
-    title: 'Zoom',
-    path: '/Zoom',
-    icon: <Io5Icons.IoVideocam />
+    title: 'Calendar',
+    path: '/Calendar',
+    icon: <BiIcons.BiCalendar />
   },
   {
-    title: 'Contact Us',
-    path: '/messages',
-    icon: <FaIcons.FaEnvelopeOpenText />,
+    title: 'Profiles',
+    path: '/Login',
+    icon: <RiIcons.RiProfileLine/>,
 
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
     subNav: [
       {
-        title: 'Send an email',
-        path: '/messages/message1',
-        icon: <IoIcons.IoIosPaper />
+        title: 'Teacher',
+        path: '/Instructor-Landingpage/InstructorLandingpage',
+        icon: <RiIcons.RiProfileLine />
       },
       {
-        title: 'Social Media',
-        path: '/messages/message2',
-        icon: <IoIcons.IoIosPaper />
+        title: 'Student',
+        path: '/User-Landingpage/Dasboard',
+        icon: <RiIcons.RiProfileLine />
       }
     ]
   },
   {
     title: 'Support',
-    path: '/support',
+    path: '/Login',
     icon: <IoIcons.IoMdHelpCircle />
   }
 ];

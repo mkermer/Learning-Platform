@@ -57,7 +57,7 @@ function Footer() {
            <p> We are a newly created teaching platform aiming to make your quarantine more productive and fun !
                Here you will find endless opportunities to learn new things or you will be the one who teach to the 
                thousands !
-               What are your waiting for ? </p>
+              What are you waiting for ? </p>
                <h3>Join the Community</h3>
               
              
@@ -96,8 +96,9 @@ function Footer() {
            <li> Austria</li>
           
         </ul>
+        <div className="mapp">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2657.8721706102933!2d16.353713015399407!3d48.228335979230756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d07c28ba6fad5%3A0x9277b1d2d683038e!2sTalent%20Garden%20Austria!5e0!3m2!1sde!2sat!4v1612439366816!5m2!1sde!2sat"></iframe>
-            
+        </div>   
            </Col>
         </Row>
       </Container>
