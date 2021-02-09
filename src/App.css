@@ -79,6 +79,7 @@ p {
   margin: 0 auto 20px;
 }
 
+
 .today {
   background-color:#2073d9 !important;
   color: #fff;
@@ -88,3 +89,9 @@ p {
 .in-next-month {
   opacity: 0.5;
 }
+
+.container{
+    width: 60% !important;
+
+}
+

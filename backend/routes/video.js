@@ -19,13 +19,18 @@ router.route('/add').post(async (req, res) => {
     const category = req.body.category;
     const instructor = req.body.instructor;
     const url = req.body.url;
-
+    const description = req.body.description;
+    const timestamp = Number(req.body.timestamp);
+    const videoName = req.body.videoName
 
     const newVideo = new Video({
         courseName,
         category,
         instructor,
         url,
+        timestamp,
+        description,
+        videoName
     });
 
     try {

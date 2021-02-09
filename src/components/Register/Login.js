@@ -38,11 +38,11 @@ function Login(props) {
                 props.actions.storeUserData(loginUser)
                 console.log(props.applicationState.user)
 
-                if (props.applicationState.user.studentName !== undefined) {
+                if (loginUser.studentName !== undefined) {
                     history.push("/UserLandingpage")
                 }
 
-                if (props.applicationState.user.instructorName !== undefined) {
+                if (loginUser.instructorName !== undefined) {
                     history.push("/InstructorLandingpage")
                 }
 

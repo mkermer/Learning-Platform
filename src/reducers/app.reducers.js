@@ -1,8 +1,8 @@
-import { STORE_USER_DATA } from '../actions/app.action';
+import { STORE_USER_DATA, STORE_VIDEO_DATA } from '../actions/app.action';
 
 const initialState = {
     user: false,
-
+    video: false
 };
 
 function appReducer(state = initialState, action) {
@@ -16,6 +16,12 @@ function appReducer(state = initialState, action) {
                 user: action.user,
 
             };
+        case STORE_VIDEO_DATA: {
+            return {
+                ...state,
+                video: action.video
+            }
+        }
         default:
             return state;
     }

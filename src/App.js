@@ -12,6 +12,10 @@ import { DashProvider } from './DashContext'
 import Login2 from './components/Register/Login2';
 import Zoom from './components/pages/Zoom';
 import Calendar from './components/Calendar';
+import SearchVideos from './components/SearchVideos/searchVideos';
+import DisplayVideo from './components/SearchVideos/DisplayVideo';
+import Updateform from './components/UpdateForm/Userupdateform';
+
 function App() {
   return (
     <Fragment>
@@ -19,11 +23,12 @@ function App() {
 
 
       <DashProvider>
-        
         <Sidebar />
-
         <Switch>
           <Route path="/" exact component={RegisterForm} />
+          <Route path="/update" exact component={Updateform} />
+          <Route path="/videoSearch" component={SearchVideos} />
+          <Route path="/displayVideo" component={DisplayVideo} />
           <Route path="/login" component={Login} />
           <Route path="/UserLandingpage" component={UserLandingpage}/>
           <Route path="/InstructorLandingpage" component={InstructorLandingpage}/>
@@ -32,10 +37,7 @@ function App() {
       </DashProvider>
       <Footer />
      
-    </Router> 
-{/* 
-    // <Login /> // */}
-</Fragment>
+    </Router>
 
   );
 }
