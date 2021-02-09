@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import UserLandingpage from './components/User-Landingpage/UserLandingpage';
 import './App.css';
@@ -18,7 +18,7 @@ import Updateform from './components/UpdateForm/Userupdateform';
 
 function App() {
   return (
-    <Fragment>
+    
     <Router>
 
 
@@ -36,7 +36,6 @@ function App() {
         </Switch> 
       </DashProvider>
       <Footer />
-     
     </Router>
 
   );

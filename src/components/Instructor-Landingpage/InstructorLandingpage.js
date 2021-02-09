@@ -29,7 +29,7 @@ function InstructorLandingpage(props) {
 
         <div className="Instr">
              <Jumbotron fluid>
-                {/* <h1>{daytime(date)} {props.applicationState.user.firstName}</h1> */}
+                {/* <h1>{daytime(date)} {props.applicationState.user.InstructorName}</h1> */}
             </Jumbotron>
 
             <Container>
