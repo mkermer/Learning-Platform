@@ -132,6 +132,7 @@ function Upload(props) {
         </Modal.Header>
         <Modal.Body>
           <div className="Upload">
+
             <Form className="UploadForm">
               <Form.Group>
                 <Form.Control type="text" placeholder="Course Name" value={courseName}

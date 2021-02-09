@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="473"
+   height="612"
+   overflow="hidden"
+   version="1.1"
+   id="svg937"
+   sodipodi:docname="Register_cut.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
+  <metadata
+     id="metadata941">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1017"
+     id="namedview939"
+     showgrid="false"
+     inkscape:zoom="1.3888889"
+     inkscape:cx="236.5"
+     inkscape:cy="334.8"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg937" />
+  <defs
+     id="defs919">
+    <clipPath
+       id="clip0">
+      <rect
+         x="478"
+         y="31"
+         width="473"
+         height="612"
+         id="rect916" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1510">
+      <rect
+         style="opacity:0.5;stroke-width:0.997241"
+         id="rect1512"
+         width="433.20004"
+         height="540.71997"
+         x="518.56"
+         y="101.56" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#clipPath1510)"
+     transform="translate(-478 -31)"
+     id="g935">
+    <path
+       d="M504 44C504 51.1798 498.404 57.0001 491.5 57.0001 484.596 57.0001 479 51.1798 479 44 479 36.8203 484.596 31 491.5 31 498.404 31 504 36.8203 504 44Z"
+       fill="#FFFFFF"
+       fill-rule="evenodd"
+       id="path921" />
+    <path
+       d="M903.471 600.986 565.471 600.986C560.779 600.98 556.977 597.178 556.971 592.486L556.971 187.486C556.977 182.794 560.779 178.991 565.471 178.986L903.471 178.986C908.164 178.991 911.966 182.794 911.971 187.486L911.971 592.486C911.966 597.178 908.163 600.98 903.471 600.986Z"
+       fill="#E6E6E6"
+       fill-rule="evenodd"
+       id="path923" />
+    <path
+       d="M755 124C755 135.046 746.046 144 735 144 723.954 144 715 135.046 715 124 715 112.954 723.954 104 735 104 746.046 104 755 112.954 755 124Z"
+       fill="#2073D9"
+       fill-rule="evenodd"
+       id="path925" />
+    <path
+       d="M747 124C747 130.627 741.404 136 734.5 136 727.596 136 722 130.627 722 124 722 117.373 727.596 112 734.5 112 741.404 112 747 117.373 747 124Z"
+       fill="#FFFFFF"
+       fill-rule="evenodd"
+       id="path927" />
+    <path
+       d="M826.971 202.986 642.971 202.986C638.003 202.98 633.977 198.954 633.971 193.986L633.971 149.986C633.977 145.018 638.003 140.991 642.971 140.986L826.971 140.986C831.94 140.991 835.966 145.018 835.971 149.986L835.971 193.986C835.966 198.954 831.94 202.98 826.971 202.986Z"
+       fill="#2073D9"
+       fill-rule="evenodd"
+       id="path929" />
+    <path
+       d="M521.5 176.006C521.5 163.024 532.024 152.5 545.006 152.5L925.995 152.5C938.976 152.5 949.5 163.024 949.5 176.006L949.5 617.994C949.5 630.976 938.976 641.5 925.995 641.5L545.006 641.5C532.024 641.5 521.5 630.976 521.5 617.994Z"
+       stroke="#000000"
+       stroke-width="3"
+       stroke-miterlimit="8"
+       fill="none"
+       fill-rule="evenodd"
+       id="path931" />
+    <path
+       d="M826.971 203.986 642.971 203.986C638.003 203.98 633.977 199.954 633.971 194.986L633.971 150.986C633.977 146.018 638.003 141.991 642.971 141.986L826.971 141.986C831.94 141.991 835.966 146.018 835.971 150.986L835.971 194.986C835.966 199.954 831.94 203.98 826.971 203.986Z"
+       fill="#2073D9"
+       fill-rule="evenodd"
+       id="path933" />
+  </g>
+</svg>

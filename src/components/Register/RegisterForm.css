@@ -1,34 +1,36 @@
-.register .container {
-    display: flex;
-    min-height: 100vh;
-    margin-top: 50px;
-    background-image: url(../../SVG/undraw_No_data_re_kwbl.svg);
+ .register .container {
+    background-image: url(../../SVG/Register.svg);
     background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: center;
+    background-size: 600px;
+    background-position: top;
     border: solid;
-    
+    position: relative;
+    width: 800px !important;
+    height: 700px;
+    margin: 20px auto;
 } 
 
-.left{
+/* .left{
     padding: 0 40px 40px;
     width: 100%;
-}
-
-.inner {
-    max-width: 600px;
-    margin: auto;
-}
+} */
 
 
-.logo {
+
+
+/* .logo {
     font-size: 60px;
     margin-bottom: 30px;
     color: #2073d9;
-}
+} */
 
 
 
 .form-elem {
-    margin-top: 80px;
+    /* position: relative;
+    top: 50%;
+    left: 20%; */
+    /* transform: translate(-50%, -50%); */
+
+    width: 60%;
 }

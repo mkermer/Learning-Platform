@@ -82,3 +82,8 @@ p {
     cursor: pointer;
 }
 
+.container{
+    width: 60% !important;
+
+}
+
