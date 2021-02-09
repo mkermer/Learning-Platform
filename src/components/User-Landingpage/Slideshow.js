@@ -15,6 +15,7 @@ function Slideshow(props) {
     useEffect(async () => {
 
         setRandomVidFunction();
+        console.log(randomVid)
     }, []);
 
 
@@ -37,14 +38,19 @@ function Slideshow(props) {
 
         let randomVideos = [];
         let randVid = 0;
-        for (let j = 0; j < 3; j++) {
-            randVid = Math.floor(Math.random() * arrVideos.length);
-            randomVideos.push(arrVideos[randVid]);
-            arrVideos = arrVideos.splice(randVid, randVid);
+        for (let j = 0; j <= 3; j++) {
+            randVid = Math.floor(Math.random() * 10);
+            let video = arrVideos[randVid % (arrVideos.length - 1)];
+
+            if (!randomVideos.find(el => el == video)) {
+                randomVideos.push(video);
+            }
+            // arrVideos = arrVideos.splice(randVid, randVid);
+            console.log(randVid);
         }
-        // console.log(randomVideos)
+        console.log(randomVideos)
         setRandomVideos(randomVideos)
-        console.log(randomVid)
+
     }
 
 
@@ -61,9 +67,9 @@ function Slideshow(props) {
 
                 <Carousel>
                     Rendered on userspecific
-                    {randomVid.map(vid => {
+                    {randomVid.map((vid, index) => {
                     return (
-                        <Carousel.Item>
+                        <Carousel.Item key={index}>
                             <iframe
                                 className="d-block w-100"
                                 src={vid}

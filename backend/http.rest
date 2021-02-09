@@ -12,6 +12,8 @@ GET http://localhost:2000/verification
 GET http://localhost:2000/video
 
 ###
+GET http://localhost:2000/review
+###
 POST http://localhost:2000/video/add
 Content-Type: application/json
 

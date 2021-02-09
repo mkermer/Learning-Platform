@@ -8,12 +8,17 @@ import config from '../../config/config';
 import { CloudArrowUp } from 'react-bootstrap-icons';
 
 
+
+
 function Upload(props) {
   const [video, setVideo] = useState("");
   const [url, setUrl] = useState("");
   const [category, setCategory] = useState("");
   const [courseName, setCourseName] = useState("");
+  const [desc, setDesc] = useState("");
   const instructor = props.applicationState.user.instructorName
+  const [text, setText] = useState("Upload");
+  // const timestamp = new Date()
 
 
   const [disabled, setDisabled] = useState(true)
@@ -45,6 +50,7 @@ function Upload(props) {
   }
 
   const setVideoUrl = () => {
+    setText("Your video is currently uploading!")
     const data = new FormData;
     data.append("file", video);
     data.append("upload_preset", "inflog");
@@ -63,7 +69,10 @@ function Upload(props) {
         if (newUrl !== "") {
           setCourseUrl(newUrl);
           setButton();
-
+          setText('Your video was uploaded')
+          setTimeout(() => {
+            setText('Upload')
+          }, 2000)
         }
 
       })
@@ -71,21 +80,21 @@ function Upload(props) {
         console.log(err);
       })
 
-
-
-
   }
 
   const setCourseUrl = (newUrl) => {
     setUrl(newUrl);
   }
 
+
   const debug2 = async () => {
     const newVideo = {
       courseName: courseName,
       category: category,
       instructor: instructor,
-      url: url
+      url: url,
+      description: desc,
+      // timestamp: timestamp
     }
 
     console.log('Hi')
@@ -114,7 +123,7 @@ function Upload(props) {
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        
+
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
@@ -123,50 +132,57 @@ function Upload(props) {
         </Modal.Header>
         <Modal.Body>
           <div className="Upload">
-          <Form className="UploadForm">
-            <Form.Group>
-              <div className="mandatory">*</div>
-              <Form.Control type="text" required controlId="formBasicCategory" placeholder="Course Name" value={courseName}
-                onChange={(e) => setCourseName(e.target.value)
-                } />
-            </Form.Group>
-            <Form.Group required controlId="formBasicCategory">
-              <div className="mandatory">*</div>
-              <Form.Control
-                as="select"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              >
-                <option value=''>Select Category</option>
-                <option value="Coding">Coding</option>
-                <option value="Music">Music</option>
-                <option value="Selfdevelopement">Selfdevelopement</option>
-                <option value="Stocks">Stocks</option>
-                <option value="Technologies">Technologies</option>
-                <option value="Books">Books</option>
-              </Form.Control>
-            </Form.Group>
-                <div className="or"><strong>OR</strong></div>
-            <Form.Group>
-              <Form.Control type="url" placeholder="https://www.youtube.com/embed/" />
-            </Form.Group>
 
-            <Form.Group>
-              <Form.File accept="video/*" onChange={SetVideo} />
-            </Form.Group>
+            <Form className="UploadForm">
+              <Form.Group>
+                <Form.Control type="text" placeholder="Course Name" value={courseName}
+                  onChange={(e) => setCourseName(e.target.value)
+                  } />
+              </Form.Group>
+              <Form.Group controlId="formBasicCategory">
+                <Form.Control
+                  as="select"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                >
+                  <option value=''>Select Category</option>
+                  <option value="Coding">Coding</option>
+                  <option value="Music">Music</option>
+                  <option value="Selfdevelopement">Selfdevelopement</option>
+                  <option value="Stocks">Stocks</option>
+                  <option value="Technologies">Technologies</option>
+                  <option value="Books">Books</option>
+                </Form.Control>
+              </Form.Group>
 
-          </Form>
+
+              <Form.Group>
+                <Form.Control type="text" placeholder="Description" value={desc}
+                  onChange={(e) => setDesc(e.target.value)
+                  } as="textarea" rows={3} />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Control type="url" value="https://www.youtube.com/embed/" />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.File accept="video/*" label="OR" onChange={SetVideo} />
+              </Form.Group>
+
+            </Form>
           </div>
 
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" className="UploadButton" onClick={setVideoUrl} >
-              <CloudArrowUp size= {20} /> Upload
+            <CloudArrowUp size={20} /> {text}
           </Button>
-          {/* <Button variant="primary" onClick={debug2} disabled={disabled}>
-              Debug
-          </Button> */}
-          
+
+          <Button variant="primary" className="UploadButton" onClick={debug2} disabled={disabled}>
+            Update
+          </Button>
+
         </Modal.Footer>
       </Modal>
 

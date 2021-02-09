@@ -21,8 +21,9 @@ const studentRouter = require('./routes/student');
 const instructorRouter = require('./routes/instructor');
 const verificationRouter = require('./routes/verification');
 const videoRouter = require('./routes/video');
+const reviewRouter = require('./routes/review');
 
-
+app.use('/review', reviewRouter)
 app.use('/video', videoRouter)
 app.use('/instructor', instructorRouter)
 app.use('/student', studentRouter);

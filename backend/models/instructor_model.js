@@ -18,6 +18,7 @@ const instructorSchema = new Schema({
     courses: [],
     reviews: [],
     schedules: [],
+    type: { type: String }
 });
 
 const Instructor = mongoose.model('Instructor', instructorSchema);
