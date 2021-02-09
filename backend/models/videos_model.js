@@ -10,7 +10,8 @@ const videoSchema = new Schema({
     instructor: { type: String },
     url: { type: String },
     description: { type: String },
-    // timestamp: { type: Date }
+    videoName: { type: String },
+    timestamp: { type: Number }
 });
 
 const Video = mongoose.model('video', videoSchema);

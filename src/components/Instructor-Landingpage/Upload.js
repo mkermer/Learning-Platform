@@ -18,7 +18,8 @@ function Upload(props) {
   const [desc, setDesc] = useState("");
   const instructor = props.applicationState.user.instructorName
   const [text, setText] = useState("Upload");
-  // const timestamp = new Date()
+  const timestamp = Date.now();
+  const [videoName, setVideoName] = useState("");
 
 
   const [disabled, setDisabled] = useState(true)
@@ -94,7 +95,8 @@ function Upload(props) {
       instructor: instructor,
       url: url,
       description: desc,
-      // timestamp: timestamp
+      timestamp: timestamp,
+      videoName: videoName
     }
 
     console.log('Hi')
@@ -135,13 +137,19 @@ function Upload(props) {
 
             <Form className="UploadForm">
               <Form.Group>
-              <div className="mandatory">*</div>
+                <div className="mandatory">*</div>
                 <Form.Control type="text" required placeholder="Course Name" value={courseName}
                   onChange={(e) => setCourseName(e.target.value)
                   } />
               </Form.Group>
               <Form.Group required controlId="formBasicCategory">
-              <div className="mandatory">*</div>
+                <div className="mandatory">*</div>
+                <Form.Control type="text" required placeholder="Video Name" value={videoName}
+                  onChange={(e) => setVideoName(e.target.value)
+                  } />
+              </Form.Group>
+              <Form.Group required controlId="formBasicCategory">
+                <div className="mandatory">*</div>
                 <Form.Control
                   as="select"
                   value={category}
@@ -156,7 +164,7 @@ function Upload(props) {
                   <option value="Books">Books</option>
                 </Form.Control>
               </Form.Group>
-              
+
 
               <Form.Group>
                 <Form.Control type="text" placeholder="Description" value={desc}
