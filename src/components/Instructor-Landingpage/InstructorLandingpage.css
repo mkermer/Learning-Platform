@@ -51,17 +51,29 @@
 }
 
 .ShowRating img{
-    height: 10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.ShowRating .react-stars{
+    margin-right: 20px;
+}
+
+.ShowRating small{
+    width: 90px;
+    text-align: right;
+    
 }
 
 .MyVideos .Trash, .card-header{
    cursor: pointer;
 }
 
-.slide-out-right{
+/* .slide-out-right{
 	-webkit-animation: slide-out-right 1s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
 	        animation: slide-out-right 1s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
-}
+} */
 
 
 .rotateUp {
@@ -185,7 +197,7 @@
               transform: rotate(0);
     }
   }
-  
+/*   
   @-webkit-keyframes slide-out-right {
     0% {
       -webkit-transform: translateX(0);
@@ -212,4 +224,4 @@
       visibility: hidden;
     }
   }
-  
+   */

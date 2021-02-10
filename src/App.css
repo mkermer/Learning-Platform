@@ -1,3 +1,7 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Play&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Exo&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap');
 
 h1,
 h2,
@@ -5,24 +9,24 @@ h3,
 h4,
 h5,
 h6,
-
-p{
-    font-family: 'Poppins', sans-serif;
+p {
+  /* font-family: 'Play', sans-serif; */
+  /* font-family: 'ABeeZee', sans-serif; */
+  /* font-family: 'Exo', sans-serif; */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 h1 {
     font-size: 72px;
-    font-weight: Semi-bold 60;
     line-height: 1.6;
-    text-transform: uppercase;
     margin-bottom: 42px;
-
+    font-weight: 700;
 }
 
 h2{
     font-size: 24px;
-    font-weight: 40;
-    letter-spacing: 3px;
+    letter-spacing: 3px; 
+    font-weight: 500;
 }
 
 h3 {
@@ -49,7 +53,7 @@ h5{
 
 
 p {
-    font-weight: 30;
+    font-weight: 300;
     margin-bottom: 32px;
     line-height: 1.8;
 }
