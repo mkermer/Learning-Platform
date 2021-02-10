@@ -1,11 +1,11 @@
-import React, {useState, useContext, useEffect} from 'react';
-import { Row, Col, Accordion, Card, Button} from 'react-bootstrap';
+import React, {useState, useContext} from 'react';
+import { Row, Col, Accordion, Card, Button, Collapse} from 'react-bootstrap';
 import { Trash, ChevronBarUp } from 'react-bootstrap-icons';
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import { AccordionContext } from 'react-bootstrap';
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import * as actions from '../../actions/app.action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.action';
 
 function ContextAwareToggle({ children, eventKey, callback }) {
     const currentEventKey = useContext(AccordionContext);
@@ -27,7 +27,7 @@ function ContextAwareToggle({ children, eventKey, callback }) {
   }
 
 function MyVideos(){
-    
+    const [open, setOpen] = useState(true);
 
     return (
     <div className="MyVideos">
@@ -47,23 +47,42 @@ function MyVideos(){
             
             <Accordion.Collapse eventKey="0">
             <Card.Body>
-                <Row>
-                    <Col xs={10}>
+            <Collapse in={open}>
+                <Row id="example-fade-text">
+                
+                    <Col xs={10} >
                         VideoName
                     </Col>
+                    
                     <Col xs={2}>
-                        <Trash className="Trash" size={20}/>
+                        <Trash 
+                            className="Trash"  
+                            size={20}
+                            onClick={() => setOpen(!open)}
+                            aria-controls="example-fade-text"
+                            aria-expanded={open}
+                        />
                     </Col>
                 </Row>
-
-                <Row>
-                    <Col xs={10}>
+            </Collapse>
+            <Collapse in={open}>
+                <Row id="example-fade-text">
+                
+                    <Col xs={10} >
                         VideoName
                     </Col>
+                    
                     <Col xs={2}>
-                        <Trash className="Trash" size={20}/>
+                        <Trash 
+                            className="Trash"  
+                            size={20}
+                            onClick={() => setOpen(!open)}
+                            aria-controls="example-fade-text"
+                            aria-expanded={open}
+                        />
                     </Col>
                 </Row>
+            </Collapse>
             </Card.Body>
             </Accordion.Collapse>
         </Card>
@@ -108,4 +127,6 @@ function MyVideos(){
   );
 }
 
-export default MyVideos;
+const mapStateToProps = state => ({ applicationState: state });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+export default connect(mapStateToProps, mapDispatchToProps)(MyVideos);

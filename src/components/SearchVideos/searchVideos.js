@@ -9,7 +9,7 @@ import { Redirect, useHistory } from "react-router-dom";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
-import { Button } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 import DisplayButton from './DisplayButton';
 
 const SearchVideos = (props) => {
@@ -32,12 +32,14 @@ const SearchVideos = (props) => {
 
 
     return (
-        <div>
+        <Container className="searchVideos">
+            <Row>
             {videos.map(video => {
 
                 if (video.url.indexOf("youtube") === -1) {
                     return (
-                        <Card style={{ width: '18rem' }}>
+                        <Col xs={12} md={6} lg={6} xl={4}>
+                        <Card className="VideoCard">
                             <link
                                 rel="stylesheet"
                                 href="https://video-react.github.io/assets/video-react.css"
@@ -61,11 +63,13 @@ const SearchVideos = (props) => {
                                 <DisplayButton video={video} />
                             </Card.Body>
                         </Card>
+                        </Col>
                     )
                 }
                 if (video.url.indexOf("youtube") !== -1) {
                     return (
-                        <Card style={{ width: '18rem' }}>
+                        <Col  xs={12} lg={6} xl={4}>
+                        <Card className="VideoCard">
 
                             {/* <ReactPlayer url={video.url} /> */}
                             <iframe
@@ -92,13 +96,14 @@ const SearchVideos = (props) => {
                             </Button>
                             </Card.Body>
                         </Card>
+                        </Col>
                     )
 
                 }
 
             })}
-
-        </div>
+            </Row>
+        </Container>
     )
 
 }

@@ -37,7 +37,7 @@ function ShowRating(props){
 
     return(
         <div className="ShowRating">
-            <div className="heading"><h1> Latest Reviews</h1></div> 
+            <div className="heading"><h1> Latest Reviews</h1></div>
             {reviewArray.map(review => {
                 return(
                     <Toast>
