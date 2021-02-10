@@ -1,4 +1,4 @@
-.ShowRating{
+.ShowRating, .MyVideos{
     border: 1px rgb(182, 182, 182) solid;
     border-radius: 10px;
     height: 500px;
@@ -8,11 +8,10 @@
     overflow-y: auto;
 }
 
-.ShowRating .heading{
+.ShowRating .heading, .MyVideos .heading{
     box-shadow: 1px 1px 3px rgb(153, 153, 153);
     border-radius: 3px;
     border-bottom: 1px rgb(182, 182, 182) solid;
-    text-align: center;
     padding: 20px 0;
     margin-bottom: 15px !important;
     width: 100%;
@@ -20,7 +19,17 @@
     position: sticky;
     top: 0;
     z-index: 1;
+ 
 }
+
+.ShowRating .heading{
+    text-align: left;
+    background-image: url(../../SVG/undraw_reviews_lp8w.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom right;
+}
+
 
 .ShowRating .toast .toast-header button{
     display: none;
@@ -64,6 +73,14 @@
     width: 90px;
     text-align: right;
     
+}
+
+.MyVideos .heading{
+    text-align: right;
+    background-image: url(../../SVG/undraw_video_files_fu10.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-right: 30px;
 }
 
 .MyVideos .Trash, .card-header{

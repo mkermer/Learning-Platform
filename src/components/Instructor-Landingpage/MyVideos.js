@@ -31,7 +31,7 @@ function MyVideos(){
 
     return (
     <div className="MyVideos">
-        <h2>My Videos</h2>
+        <div className="heading"><h2>My Videos</h2></div>
         
         <Accordion defaultActiveKey="0">
         <Card>

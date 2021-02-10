@@ -87,7 +87,7 @@ function Login(props) {
                             <Form.Check type="checkbox" label="save password" />
                         </Form.Group>
 
-                        <Button className="btn" variant="primary" onClick={authentication}>
+                        <Button className="btn" variant="primary" type="submit" onClick={authentication}>
                             Login
                             </Button>
                         <div className="registerLink">
