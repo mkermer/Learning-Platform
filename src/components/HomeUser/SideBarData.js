@@ -8,6 +8,7 @@ import * as BiIcons from "react-icons/bi";
 import * as GiIcons from "react-icons/gi";
 
 
+
 const Sidebarfunction = (type) => {
   if (type === "student") {
     const SidebarData =
@@ -263,8 +264,8 @@ const Sidebarfunction = (type) => {
           icon: <FaIcons.FaCartPlus />
         },
         {
-          title: 'Calendar',
-          path: '/Calendar',
+          title: 'Scheduler',
+          path: '/Scheduler',
           icon: <BiIcons.BiCalendar />
         },
         {
@@ -296,6 +297,7 @@ const Sidebarfunction = (type) => {
       ];
 
     return SidebarData
+
   }
 }
 

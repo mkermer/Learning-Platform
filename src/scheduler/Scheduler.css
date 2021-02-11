@@ -1,0 +1,23 @@
+.toolbar {
+  text-align:center;
+   
+    width: 80%;
+    height:70px;
+    position:relative;
+    
+    padding-right:20px; 
+
+}
+.toolbar-item {
+padding-right:20px;
+width:80%;
+}
+.whatever {
+width:80%;
+text-align:center;
+margin-left:120px;
+margin-bottom:50px;
+
+  
+  
+}

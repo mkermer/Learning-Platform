@@ -34,13 +34,15 @@ function ContextAwareToggle({ children, eventKey, callback }) {
 function MyVideos(props) {
     const [open, setOpen] = useState(true);
     const [videoArr, setVideoArray] = useState([]);
+    
     const [courseArr, setCourseArray] = useState([]);
+    const [videoNameArr, setVideoNameArr] = useState();
 
     useEffect(async () => {
 
         setVideoArr();
         debug();
-        console.log(videoArr);
+        console.log("SHOW: " + videoArr);
         console.log(courseArr)
 
     }, [])
@@ -57,7 +59,7 @@ function MyVideos(props) {
             }
         })
         setVideoArray(instructorArr);
-        console.log(instructorArr)
+        console.log("SHOW ME: " + instructorArr)
     }
 
     const debug = async () => {
@@ -77,19 +79,51 @@ function MyVideos(props) {
         }, []);
         const videoArray = [];
         videoArray.push(videosByCourseName);
+        console.log(videosByCourseName)
 
-        for (let i in videosByCourseName) {
-            if (videosByCourseName.hasOwnProperty(i)) {
-                console.log(videosByCourseName[i])
-                videoArray.push(videosByCourseName[i]);
-            }
+        
+            // for (let key of videosByCourseName){
+            //     console.log(key)
+            // }
+            var values = (Object.values(videosByCourseName))
+            setVideoNameArr(values)
+            values.map(videos => {
+                console.log(videos)
+                videos.map(vid => {
+                    console.log(vid.videoName)
+                })
+            })
+
+            
+            const entries = (Object.entries(videosByCourseName))
+            
+            console.log(entries)
+            const keys = (Object.keys(videosByCourseName))
+            setCourseArray(keys)
+            keys.map(course => {
+                
+                    
+                        console.log(course)
+                    
+                })
+
+            
+
+
+        // for (let i in videosByCourseName) {
+        //     if (videosByCourseName.hasOwnProperty(i)) {
+        //         console.log(videosByCourseName[i])
+        //         videoArray.push(videosByCourseName[i]);
+        //     }
             // console.log("object" + i + "=" + videosByCourseName[i])
             // for (let j in videosByCourseName[i]) {
             //     console.log("object" + j + "=" + videosByCourseName[i][j])
             // }
         }
 
+
         console.log(videosByCourseName)
+
         // console.log(videoArray[0]);
         // const vidZERO = videoArray[0];
         // vidZERO.map(vid => {
@@ -119,37 +153,46 @@ function MyVideos(props) {
         //         console.log(cour)
         //     })
         // })
+
         setCourseArray(videosByCourseName);
 
+        // setCourseArray(videoArray);
 
-    }
+
+
+    
 
 
 
 
     return (
-
+        <div className="MyVideos">
         <div className="heading"><h2>My Videos</h2></div>
             <h1>My Videos</h1>
 
-             <Accordion defaultActiveKey="0">
-                <Card>
+            <Accordion defaultActiveKey="0">
+                {courseArr.map(course => {
+                    return(
+                        <Card>
 
                     <Accordion.Toggle as={Card.Header} eventKey="0">
                         <Row>
-                            <Col xs={10}>CourseName</Col>
+                            <Col xs={10}>{course}</Col>
                             <Col xs={2}>
                                 <ContextAwareToggle as={Button} variant="link" eventKey="0" />
                             </Col>
                         </Row>
                     </Accordion.Toggle>
-
-                    <Accordion.Collapse eventKey="0">
+                        {videoNameArr.map(videos => {
+                            videos.map(vid => {
+                                if(course === vid.courseName){
+                                    return(
+                <Accordion.Collapse eventKey="0">
                         <Card.Body>
                            <Collapse in={open}>
                     <Row id="example-fade-text">
                                 <Col xs={10}>
-                                    VideoName
+                                    {vid.courseName}
                                 </Col>
                     
                     <Col xs={2}>
@@ -163,104 +206,27 @@ function MyVideos(props) {
                     </Col>
                 </Row>
             </Collapse>
-            <Collapse in={open}>
-                <Row id="example-fade-text">
-                
-                    <Col xs={10} >
-                        VideoName
-                    </Col>
-                    
-                    <Col xs={2}>
-                        <Trash 
-                            className="Trash"  
-                            size={20}
-                            onClick={() => setOpen(!open)}
-                            aria-controls="example-fade-text"
-                            aria-expanded={open}
-                        />
-                    </Col>
-                </Row>
-            </Collapse>
+            
             </Card.Body>
             </Accordion.Collapse>
+                                    )
+                                }
+                            })
+                        })
+                        }
+                    
         </Card>
+                    )
+                })}
+                
         </Accordion>
-        <Accordion defaultActiveKey="0">
-        <Card>
-            
-                <Accordion.Toggle as={Card.Header} eventKey="0">
-                <Row>
-                    <Col xs={10}>CourseName</Col>
-                    <Col xs={2}>
-                        <ContextAwareToggle as={Button} variant="link" eventKey="0"/>
-                    </Col>
-                </Row>
-                </Accordion.Toggle>
-            
-            <Accordion.Collapse eventKey="0">
-            <Card.Body>
-                <Row>
-                    <Col xs={10}>
-                        VideoName
-                    </Col>
-                                <Col xs={2}>
-                                    <Trash className="Trash" size={20} />
-                                </Col>
-                            </Row>
 
-                            <Row>
-                                <Col xs={10}>
-                                    VideoName
-                    </Col>
-                                <Col xs={2}>
-                                    <Trash className="Trash" size={20} />
-                                </Col>
-                            </Row>
-                        </Card.Body>
-                    </Accordion.Collapse>
-                </Card>
-            </Accordion>
-            <Accordion defaultActiveKey="0">
-                <Card>
-
-                    <Accordion.Toggle as={Card.Header} eventKey="0">
-                        <Row>
-                            <Col xs={10}>CourseName</Col>
-                            <Col xs={2}>
-                                <ContextAwareToggle as={Button} variant="link" eventKey="0" />
-                            </Col>
-                        </Row>
-                    </Accordion.Toggle>
-
-                    <Accordion.Collapse eventKey="0">
-                        <Card.Body>
-                            <Row>
-                                <Col xs={10}>
-                                    VideoName
-                    </Col>
-                                <Col xs={2}>
-                                    <Trash className="Trash" size={20} />
-                                </Col>
-                            </Row>
-
-                            <Row>
-                                <Col xs={10}>
-                                    VideoName
-                    </Col>
-                                <Col xs={2}>
-                                    <Trash className="Trash" size={20} />
-                                </Col>
-                            </Row>
-                        </Card.Body>
-                    </Accordion.Collapse>
-                </Card>
-            </Accordion>
             <Button onClick={debug}>
                 Debug
             </Button>
         </div>
     );
-}
+};
 
 const mapStateToProps = state => ({ applicationState: state });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
