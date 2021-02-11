@@ -1,0 +1,97 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+
+p{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 72px;
+    font-weight: Semi-bold 60;
+    line-height: 1.6;
+    text-transform: uppercase;
+    margin-bottom: 42px;
+
+}
+
+h2{
+    font-size: 24px;
+    font-weight: 40;
+    letter-spacing: 3px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-top: 36px;
+    margin-bottom: 24px;
+    line-height: 36px;
+}
+
+h4{
+    font-size: 32px;
+    margin-top: 72px;
+    margin-bottom: 48px;
+    text-align: center; 
+    text-transform: uppercase;
+}
+
+h5{
+    font-size: 24px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-align: center; 
+}
+
+
+p {
+    font-weight: 30;
+    margin-bottom: 32px;
+    line-height: 1.8;
+}
+
+
+.btn-primary {
+  background-color: #7aadeb !important;
+  border-color: #7aadeb !important;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: #2073d9 !important;
+  border-color: #2073d9 !important;
+}
+
+.jumbotron{
+    background-color:  #e9f2fc !important;
+    text-align: center;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+.table {
+  margin: 0 auto 20px;
+}
+
+
+.today {
+  background-color:#2073d9 !important;
+  color: #fff;
+}
+
+.in-prev-month,
+.in-next-month {
+  opacity: 0.5;
+}
+
+.container{
+    width: 60% !important;
+
+}
+

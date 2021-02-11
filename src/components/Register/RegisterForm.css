@@ -1,0 +1,39 @@
+
+ .register .container {
+    background-image: url(../../SVG/Register.svg);
+
+    background-repeat: no-repeat;
+    background-size: 600px;
+    background-position: top;
+    border: solid;
+    position: relative;
+    width: 800px !important;
+    height: 700px;
+    margin: 20px auto;
+
+} 
+
+/* .left{
+    padding: 0 40px 40px;
+    width: 100%;
+} */
+
+
+
+
+/* .logo {
+    font-size: 60px;
+    margin-bottom: 30px;
+    color: #2073d9;
+} */
+
+
+
+.form-elem {
+    /* position: relative;
+    top: 50%;
+    left: 20%; */
+    /* transform: translate(-50%, -50%); */
+
+    width: 60%;
+}

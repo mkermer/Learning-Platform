@@ -1,0 +1,101 @@
+.main-footer {
+    padding-top:1em;
+    bottom:0;
+    width: 120%;
+    margin: 0 auto !important;
+    height:auto;
+	position:relative;
+	display:block;
+	background-color: #7aadeb !important;
+	box-sizing:border-box;
+	border-color: #2073d9 !important;
+	
+	
+    background-image: url('../../img/pres.png');
+	background-repeat: no-repeat;
+    background-size:20rem;
+	background-position: bottom;
+	background-position: left;
+
+}
+.Footer {
+padding:0 auto;
+width: 100%;
+color:black;
+
+
+}
+.main-footer  {
+	background-color:#7aadeb !important;
+	display:inline-block;
+	vertical-align:top;
+	position:relative;
+	justify-content: center;
+	
+
+}
+.background {
+background-color:  #2073d9 !important;
+border-color:2px solid;
+padding:10px;
+
+border: solid 2px;
+box-sizing: border-box;
+margin:0 auto;
+
+}
+.FooterTwo {
+    text-align:center;
+	background-color: #7aadeb !important;
+	border-color:2px solid;
+	padding:5px;
+}
+
+.list-unstyled li{
+	padding:5px;
+	margin-bottom: 5px;
+	font-size: 15px;
+	text-align: center;
+	
+}
+
+.list-unstyled-link {
+	padding:15px;
+	text-decoration: underline;
+	color:black;
+}
+
+.Twit {
+color: #blue;
+
+}
+.Insta {
+color:black;
+}
+.Face {
+color: #blue;
+}
+.YouTube {
+color: red;
+
+}
+
+.background-social{
+	display: flex;
+	justify-content: space-around;
+	/* border: solid; */
+	
+}
+.background ul li a {
+	color:black;
+	font-size: 18px;
+}
+.mapp {
+	text-align:center;
+}
+.background h3 {
+	text-align: center;
+}
+.background p{
+	margin-top: 20px;
+}

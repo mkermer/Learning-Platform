@@ -1,0 +1,31 @@
+/* .calenderr table {
+    text-align:center;
+    border:3px solid;
+    max-width: 100%;
+    width: 70%;
+    height:100px;
+    position:relative;
+    padding-bottom: 2rem;
+
+}
+.calenderr button  {
+  display:inline-block;
+  justify-content: center;
+  align-items: center;
+  background-color: #2073d9 !important;
+  border-color: #7aadeb !important;
+   height:34px;
+    margin:0 auto;
+    /* margin-right:50px; */
+    /* float:center;
+     width: 10%;
+     padding-bottom:20px;
+}
+.calenderr .button:hover{
+    cursor: pointer;
+}
+.calenderr p {
+    text-align:center;
+    padding-top:20px;
+    font-size:25px;
+}  */

@@ -1,0 +1,123 @@
+
+###
+GET http://localhost:2000/student
+
+###
+GET http://localhost:2000/instructor
+
+###
+GET http://localhost:2000/verification
+
+###
+GET http://localhost:2000/video
+
+###
+GET http://localhost:2000/review
+###
+POST http://localhost:2000/video/add
+Content-Type: application/json
+
+{
+    	"courseName": "React-Tutorial3",
+        "category" : "Coding",
+        "instructor": "ReactInstructor",
+        "url": "https://www.youtube.com/embed/2TofunAI6fU?controls=0"
+}
+
+
+###
+ POST http://localhost:2000/student/add
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "studentName": "JohnDoe",
+    "password": "student",
+    "description": "cool student who wants to learn something",
+    "subHeader": "cool student",
+    "contact": "johndoe@contact",
+    "image": "",
+    "score": 100,
+    "interests": ["coding", "piano"],
+    "courses": [],
+    "reviews": [],
+    "schedules": [] 
+}
+
+###
+ POST http://localhost:2000/instructor/add
+Content-Type: application/json
+
+{
+    "firstName": "Doe",
+    "lastName": "John",
+    "instructorName": "Test3",
+    "password": "instructor",
+    "description": "cool instructor who wants to teach something",
+    "subHeader": "cool instructor",
+    "contact": "doejohn@contact",
+    "image": "",
+    "score": 100,
+    "interests": ["coding", "stocks"],
+    "courses": [{
+        "courseName":"DD",
+        "category": "Technologies",
+        "instructor":"Test3",
+        "url":"http://res.cloudinary.com/davidwalzer/video/upload/v1612455312/eyney0z..."
+    }],
+    "reviews": [],
+    "schedules": [] 
+}
+
+###
+POST http://localhost:2000/verification/add
+Content-Type: application/json
+
+{
+    
+    "username": "Test",
+    "password": "Test"
+    
+}
+
+
+###
+ POST http://localhost:2000/instructor/update/60192ab8b5581925cc2fd0d0
+Content-Type: application/json
+
+{
+    "firstName": "Doe",
+    "lastName": "Jo",
+    "instructorName": "DoeJohn",
+    "password": "instructor",
+    "description": "cool instructor who wants to teach something",
+    "subHeader": "cool instructor",
+    "contact": "doejohn@contact",
+    "image": "",
+    "score": 100,
+    "interests": ["coding", "stocks"],
+    "courses": [],
+    "reviews": [],
+    "schedules": [] 
+}
+
+###
+ POST http://localhost:2000/student/update/601929a3b5581925cc2fd0ce
+Content-Type: application/json
+
+{
+    "firstName": "Jo",
+    "lastName": "Doe",
+    "studentName": "JohnDoe",
+    "password": "student",
+    "description": "cool student who wants to learn something",
+    "subHeader": "cool student",
+    "contact": "johndoe@contact",
+    "image": "",
+    "score": 100,
+    "interests": ["coding", "piano"],
+    "courses": [],
+    "reviews": [],
+    "schedules": [] 
+}
