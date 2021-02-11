@@ -11,3 +11,13 @@ input[type="radio"] {
     cursor: pointer;
     transition:  color 200ms ;
 }
+
+/* .searchVideos{
+    border:solid;
+} */
+
+@media (max-width:991px){
+    .searchVideos iframe{
+        height: 300px;
+    }
+}

@@ -4,7 +4,7 @@ import config from '../../config/config'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
-import { Button } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 import DisplayButton from './DisplayButton';
 import Cards from './Cards'
 
@@ -44,8 +44,15 @@ const SearchVideos = (props) => {
     }
 
     return (
+
         <div>
-            <Cards videos={videos} />
+          <Container className="searchVideos">
+            <Row>
+//              <Col xs={12} md={6} lg={6} xl={4}>
+            <Cards className="VideoCard" videos={videos} />
+//             </Col>
+           </Row>
+          </Container>
         </div>
     )
 
