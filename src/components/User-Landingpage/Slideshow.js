@@ -6,6 +6,7 @@ import config from '../../config/config';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
+import { Player } from 'video-react';
 
 function Slideshow(props) {
     const [category, setCategory] = useState([]);
@@ -60,6 +61,10 @@ function Slideshow(props) {
 
     return (
         <>
+            <link
+                rel="stylesheet"
+                href="https://video-react.github.io/assets/video-react.css"
+            />
             <Col xs={12} md={6} lg={4}>
                 {/* <h2> Featured in {randomInterest} </h2> */}
 
@@ -70,12 +75,9 @@ function Slideshow(props) {
                     {randomVid.map((vid, index) => {
                     return (
                         <Carousel.Item key={index}>
-                            <iframe
-                                className="d-block w-100"
-                                src={vid}
-                                alt="Video Name"
-                            />
-
+                            <Player>
+                                <source src={vid} />
+                            </Player>
                         </Carousel.Item>)
                 })}
 

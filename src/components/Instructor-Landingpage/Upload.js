@@ -99,7 +99,7 @@ function Upload(props) {
       videoName: videoName
     }
 
-    console.log('Hi')
+    
 
     try {
       const response = await axios.post(config.baseUrl +
@@ -158,10 +158,8 @@ function Upload(props) {
                   <option value=''>Select Category</option>
                   <option value="Coding">Coding</option>
                   <option value="Music">Music</option>
-                  <option value="Selfdevelopement">Selfdevelopement</option>
-                  <option value="Stocks">Stocks</option>
                   <option value="Technologies">Technologies</option>
-                  <option value="Books">Books</option>
+
                 </Form.Control>
               </Form.Group>
 

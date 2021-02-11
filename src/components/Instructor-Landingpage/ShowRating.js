@@ -37,14 +37,14 @@ function ShowRating(props){
 
     return(
         <div className="ShowRating">
-            <div className="heading"><h1> Latest Reviews</h1></div> 
+            <div className="heading"><h2> Latest Reviews</h2></div>
             {reviewArray.map(review => {
                 return(
                     <Toast>
             <Toast.Header>
-            <img src={review.image} className="rounded mr-2" alt="" />
+            <img src={review.image} className="mr-2" alt="" />
             <strong className="mr-auto">{review.student}</strong>
-            <ReactStars activeColor="blue" edit={false} size={20} count={5} isHalf={true} value={review.rating}/>
+            <ReactStars color="lightgray" edit={false} size={20} count={5} isHalf={true} value={review.rating}/>
 
 
             <small><Moment fromNow>{review.timestamp}</Moment></small>
