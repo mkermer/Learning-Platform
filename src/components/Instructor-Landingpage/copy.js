@@ -236,3 +236,43 @@ function Upload(props) {
 const mapStateToProps = state => ({ applicationState: state });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
 export default connect(mapStateToProps, mapDispatchToProps)(Upload);
+
+
+
+{/* <Accordion defaultActiveKey="0">
+{courseArr.map((courseName, i) => {
+    return (
+        <Card>
+
+            <Accordion.Toggle as={Card.Header} eventKey="0">
+                <Row>
+                    <Col xs={10}>{courseName}</Col>
+                    <Col xs={2}>
+                        <ContextAwareToggle as={Button} variant="link" eventKey="0" />
+                    </Col>
+                </Row>
+            </Accordion.Toggle>
+            {courseName.map((videoName, i) => {
+                return (
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body>
+                            <Row>
+                                <Col xs={10}>
+                                    {videoName.videoName}
+                                </Col>
+                                <Col xs={2}>
+                                    <DisplayButton video={videoName} />
+                                    <DeleteVideo video={videoName} />
+                                    {/* <Trash className="Trash" size={20} onClick={deleteVideo} /> */}
+        //                         </Col>
+        //                     </Row>
+
+
+        //                 </Card.Body>
+        //             </Accordion.Collapse>
+        //         )
+        //     })}
+
+        // </Card>
+//     )
+// }) */}

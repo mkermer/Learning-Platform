@@ -1,12 +1,15 @@
-  
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { SidebarData } from './SideBarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.action';
+import Sidebarfunction from './SideBarData';
 
 const Nav = styled.div`
   background: #2073d9 !important;
@@ -45,14 +48,18 @@ const SidebarWrap = styled.div`
   width: 100%;
 `;
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
 
+  useEffect(() => {
+    console.log(props.applicationState.user.type)
+  })
+
   return (
     <>
-    
+
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
           <NavIcon to='#'>
@@ -64,7 +71,8 @@ const Sidebar = () => {
             <NavIcon to='#'>
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
-            {SidebarData.map((item, index) => {
+            {/* //callfunction   */}
+            {Sidebarfunction(props.applicationState.user.type).map((item, index) => {
               return <SubMenu item={item} key={index} />;
             })}
           </SidebarWrap>
@@ -74,4 +82,6 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+const mapStateToProps = state => ({ applicationState: state });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
