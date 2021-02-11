@@ -107,6 +107,8 @@ color: red;
 .mapp iframe{
 	margin: 0 10%;
 	width: 80%;
+	border: solid 1px;
+    border-radius: 10px;
 }
 .background h3 {
 	text-align: center;
