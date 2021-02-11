@@ -99,7 +99,7 @@ function Upload(props) {
       videoName: videoName
     }
 
-    console.log('Hi')
+    
 
     try {
       const response = await axios.post(config.baseUrl +
