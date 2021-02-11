@@ -13,6 +13,8 @@ const SearchVideos = (props) => {
 
     const [videos, setVideos] = useState([])
 
+
+
     useEffect(() => {
         GetVideos();
         console.log(videos);
@@ -24,7 +26,22 @@ const SearchVideos = (props) => {
         setVideos(response.data)
     }
 
+    const averageRating = (arr, setAvgRat) => {
+        let sum = 0;
+        arr.map(review => {
 
+            sum += review.rating;
+        })
+
+
+
+        console.log(sum);
+        let average = sum / arr.length;
+        console.log(average)
+        const flooreAvg = Math.floor(average)
+
+        setAvgRat(flooreAvg);
+    }
 
     return (
         <div>

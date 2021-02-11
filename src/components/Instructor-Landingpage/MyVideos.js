@@ -14,9 +14,6 @@ import DeleteVideo from './DeleteVideo';
 function ContextAwareToggle({ children, eventKey, callback }) {
     const currentEventKey = useContext(AccordionContext);
 
-
-
-
     const decoratedOnClick = useAccordionToggle(
         eventKey,
         () => callback && callback(eventKey),
@@ -76,7 +73,7 @@ function MyVideos(props) {
             // console.log(acc)
             return acc;
 
-        }, {});
+        }, []);
         const videoArray = [];
         videoArray.push(videosByCourseName);
 
@@ -90,12 +87,14 @@ function MyVideos(props) {
             //     console.log("object" + j + "=" + videosByCourseName[i][j])
             // }
         }
-        console.log(videoArray[0]);
-        const vidZERO = videoArray[0];
-        vidZERO.map(vid => {
-            console.log(vid)
-        })
+
         console.log(videosByCourseName)
+        // console.log(videoArray[0]);
+        // const vidZERO = videoArray[0];
+        // vidZERO.map(vid => {
+        //     console.log(vid)
+        // })
+        // console.log(videosByCourseName)
 
         // const Array = [
         //     [0] React = [
@@ -119,7 +118,7 @@ function MyVideos(props) {
         //         console.log(cour)
         //     })
         // })
-        setCourseArray(videoArray);
+        setCourseArray(videosByCourseName);
 
 
     }

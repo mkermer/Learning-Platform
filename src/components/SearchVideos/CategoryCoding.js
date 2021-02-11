@@ -11,13 +11,17 @@ const CategoryCoding = (props) => {
         console.log(videos);
     }, [])
 
+    const rating = async () => {
 
+    }
 
     return (
         <div>
-            <Cards videos={videos} />
+
+            <Cards video={videos} />
         </div>
     )
+
 
 }
 

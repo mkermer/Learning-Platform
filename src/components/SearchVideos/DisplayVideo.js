@@ -14,6 +14,7 @@ import Moment from 'react-moment';
 import { Toast } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { Arrow90degLeft } from 'react-bootstrap-icons';
 
 
 
@@ -61,9 +62,13 @@ const DisplayVideo = (props) => {
         })
         setReviewArr(instructorArr);
 
+        averageRating(instructorArr, setAvgRat);
 
+    }
+
+    const averageRating = (arr, setAvgRat) => {
         let sum = 0;
-        instructorArr.map(review => {
+        arr.map(review => {
 
             sum += review.rating;
         })
@@ -71,13 +76,12 @@ const DisplayVideo = (props) => {
 
 
         console.log(sum);
-        let average = sum / instructorArr.length;
+        let average = sum / arr.length;
         console.log(average)
         const flooreAvg = Math.floor(average)
 
         setAvgRat(flooreAvg);
     }
-
 
 
 
