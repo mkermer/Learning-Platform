@@ -9,17 +9,17 @@ import Login from './components/Register/Login';
 import Footer from "./components/FooterSection/Footer";
 import Sidebar from './components/HomeUser/Sidebar';
 import { DashProvider } from './DashContext'
-import Zoom from './components/pages/Zoom';
-import Calendar from './components/Calendar';
+import Login2 from './components/Register/Login2';
+import Zoom from './scheduler/Zoom';
 import SearchVideos from './components/SearchVideos/searchVideos';
 import DisplayVideo from './components/SearchVideos/DisplayVideo';
 import Updateform from './components/UpdateForm/Userupdateform';
+import Scheduler from "./scheduler/Scheduler";
 import CategoryCoding from './components/SearchVideos/CategoryCoding';
 import CategoryMusic from './components/SearchVideos/CategoryMusic';
 import CategoryTechnologies from './components/SearchVideos/CategoryTechnologies';
 
 function App() {
-  return (
 
     <Router>
 
@@ -37,8 +37,9 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/UserLandingpage" component={UserLandingpage} />
           <Route path="/InstructorLandingpage" component={InstructorLandingpage} />
-          <Route path='/Calendar' exact component={Calendar} />
-        </Switch>
+          <Route path='/scheduler' exact component={Scheduler} />
+        </Switch> 
+
       </DashProvider>
       <Footer />
     </Router>

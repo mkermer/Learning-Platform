@@ -1,7 +1,7 @@
 .main-footer {
     padding-top:1em;
     bottom:0;
-    width: 100%;
+    width: 120%;
     margin: 0 auto !important;
     height:auto;
 	position:relative;
@@ -15,6 +15,7 @@
 	background-repeat: no-repeat;
     background-size:22rem;
 	background-position: 2% 78%;
+
 
 }
 .Footer {
