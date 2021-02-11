@@ -1,3 +1,7 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Play&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Exo&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap');
 
 h1,
 h2,
@@ -5,53 +9,54 @@ h3,
 h4,
 h5,
 h6,
-
-p{
-    font-family: 'Poppins', sans-serif;
+p {
+  /* font-family: 'Play', sans-serif; */
+  /* font-family: 'ABeeZee', sans-serif; */
+  /* font-family: 'Exo', sans-serif; */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 h1 {
-    font-size: 72px;
-    font-weight: Semi-bold 60;
-    line-height: 1.6;
-    text-transform: uppercase;
-    margin-bottom: 42px;
-
+    font-size: 50px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 42px !important;
+    font-weight: 500 !important;
 }
 
 h2{
-    font-size: 24px;
-    font-weight: 40;
-    letter-spacing: 3px;
+    font-size: 24px !important;
+    letter-spacing: 3px !important; 
+    font-weight: 500 !important;
+    /* text-transform: uppercase; */
 }
 
 h3 {
-    font-size: 18px;
-    margin-top: 36px;
-    margin-bottom: 24px;
-    line-height: 36px;
+    font-size: 18px !important;
+    margin-top: 36px !important;
+    margin-bottom: 24px !important;
+    line-height: 36px !important;
 }
 
 h4{
-    font-size: 32px;
-    margin-top: 72px;
-    margin-bottom: 48px;
-    text-align: center; 
-    text-transform: uppercase;
+    font-size: 32px !important;
+    margin-top: 72px !important;
+    margin-bottom: 48px !important;
+    text-align: center !important; 
+    text-transform: uppercase !important;
 }
 
 h5{
-    font-size: 24px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    text-align: center; 
+    font-size: 24px !important;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+    text-align: center !important; 
 }
 
 
 p {
-    font-weight: 30;
-    margin-bottom: 32px;
-    line-height: 1.8;
+    font-weight: 300 !important;
+    margin-bottom: 32px !important;
+    line-height: 1.8 !important;
 }
 
 
@@ -91,7 +96,7 @@ p {
 }
 
 .container{
-    width: 60% !important;
+    width: 70% !important;
 
 }
 

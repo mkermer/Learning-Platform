@@ -5,18 +5,22 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import { Player } from 'video-react';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Form } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './SearchVideos.css'
-import { FaStar } from 'react-icons/fa'
+import './SearchVideos.css';
+import './DisplayVideo.css'
 import ReactStars from 'react-rating-stars-component';
 import { Button } from 'react-bootstrap';
+import Moment from 'react-moment';
+import { Toast } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+
+
 
 
 const DisplayVideo = (props) => {
 
-    const [highlighted, highlightRate] = useState(-1);
+
     const [rate, setRating] = useState(null);
     const [text, setText] = useState("");
     const timestamp = Date.now();
@@ -25,13 +29,59 @@ const DisplayVideo = (props) => {
     const student = props.applicationState.user.studentName;
     const courseName = props.applicationState.video.courseName
 
-    useEffect(() => {
+    const [reviewArr, setReviewArr] = useState([]);
+    const [avgRat, setAvgRat] = useState();
 
-    })
+
+    useEffect(async () => {
+        await getReviews();
+        console.log(reviewArr)
+        console.log(avgRat)
+
+    }, [setAvgRat, setReviewArr])
+
+
     const ratingReview = (rating) => {
         setRating(rating);
 
     }
+
+
+    const getReviews = async () => {
+        const response = await axios.get(config.baseUrl + '/review');
+        console.log(response.data);
+        const reviews = response.data;
+        const instructorArr = [];
+
+        reviews.map(review => {
+            if (review.instructor === props.applicationState.video.instructor) {
+                instructorArr.push(review);
+
+            }
+        })
+        setReviewArr(instructorArr);
+
+
+        let sum = 0;
+        instructorArr.map(review => {
+
+            sum += review.rating;
+        })
+
+
+
+        console.log(sum);
+        let average = sum / instructorArr.length;
+        console.log(average)
+        const flooreAvg = Math.floor(average)
+
+        setAvgRat(flooreAvg);
+    }
+
+
+
+
+
 
     const post = async () => {
         const newReview = {
@@ -51,6 +101,8 @@ const DisplayVideo = (props) => {
         } catch (err) {
 
         }
+
+
     }
 
     return (
@@ -64,24 +116,15 @@ const DisplayVideo = (props) => {
             </Player>
 
             <div>
-                {/* {[...Array(5)].map(star => {
-                    // return (<FontAwesomeIcon key={i} icon={faStar} className={highlighted > i - 1 ? 'purple' : ''}
-                    //     onMouseEnter={highlightRate(i)}
-                    //     onMouseLeave={highlightRate(-1)}
-                    // />
-                    return (
-                        <label>
-                            <input type="radio" name="rating">
 
-                            </input>
-                        </label>
-
-                    );
-
-                })
-                } */}
 
                 <Form className="form-elem">
+                    <h1>Overall Rating</h1>
+                    <FontAwesomeIcon icon={faStar} className={avgRat > 0 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={avgRat > 1 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={avgRat > 2 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={avgRat > 3 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={avgRat > 4 ? 'blue' : ''} />
 
                     <h1>Reviews</h1>
 
@@ -96,6 +139,26 @@ const DisplayVideo = (props) => {
                     <Button className="btn" variant="primary" onClick={post} >
                         Post
                     </Button>
+                    <div className="ShowRating">
+                        <div className="heading"><h1> Latest Reviews</h1></div>
+                        {reviewArr.map(review => {
+                            return (
+                                <Toast>
+                                    <Toast.Header>
+                                        <img src={review.image} className="rounded mr-2" alt="" />
+                                        <strong className="mr-auto">{review.student}</strong>
+                                        <ReactStars activeColor="blue" edit={false} size={20} count={5} isHalf={true} value={review.rating} />
+
+
+                                        <small><Moment fromNow>{review.timestamp}</Moment></small>
+                                    </Toast.Header>
+                                    <Toast.Body>{review.text}</Toast.Body>
+                                </Toast>
+                            )
+                        })}
+                    </div>
+
+
 
 
                 </Form>
