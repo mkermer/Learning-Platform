@@ -54,14 +54,9 @@ export const SidebarData = [
       }
     ]
   },
-  {
-    title: 'Easy Access',
-    path: '/',
-    icon: <FaIcons.FaCartPlus />
-  },
-  {
-    title: 'Calendar',
-    path: '/Calendar',
+   {
+    title: 'Schedule',
+    path: '/Scheduler',
     icon: <BiIcons.BiCalendar />
   },
   {
@@ -86,7 +81,7 @@ export const SidebarData = [
     ]
   },
   {
-    title: 'Support',
+    title: 'Logout',
     path: '/Login',
     icon: <IoIcons.IoMdHelpCircle />
   }

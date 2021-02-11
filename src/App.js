@@ -10,15 +10,15 @@ import Footer from "./components/FooterSection/Footer";
 import Sidebar from './components/HomeUser/Sidebar';
 import { DashProvider } from './DashContext'
 import Login2 from './components/Register/Login2';
-import Zoom from './components/pages/Zoom';
+import Zoom from './scheduler/Zoom';
 import Calendar from './components/Calendar';
 import SearchVideos from './components/SearchVideos/searchVideos';
 import DisplayVideo from './components/SearchVideos/DisplayVideo';
 import Updateform from './components/UpdateForm/Userupdateform';
-
+import Scheduler from "./scheduler/Scheduler";
 function App() {
   return (
-    <Fragment>
+    
     <Router>
 
 
@@ -33,6 +33,7 @@ function App() {
           <Route path="/UserLandingpage" component={UserLandingpage}/>
           <Route path="/InstructorLandingpage" component={InstructorLandingpage}/>
           <Route path='/Calendar' exact component={Calendar} />
+          <Route path='/scheduler' exact component={Scheduler} />
         </Switch> 
       </DashProvider>
       <Footer />
