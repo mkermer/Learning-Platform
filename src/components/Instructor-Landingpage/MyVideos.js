@@ -21,13 +21,24 @@ function MyVideos(props) {
     useEffect(async () => {
 
         setVideoArr();
+       
+        // debug();
+        
+        console.log("Effect happend")
+        
+
+    }, [])
+
+    useEffect(async () => {
+
+        
         showVideos()
         // debug();
         
-
+        console.log("Effect happend")
         
 
-    }, [setVideoNameArr, setCourseArray])
+    }, [ videoArr])
 
     const setVideoArr = async () => {
         const response = await axios.get(config.baseUrl + '/video');
