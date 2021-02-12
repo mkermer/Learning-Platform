@@ -11,7 +11,8 @@ const videoSchema = new Schema({
     url: { type: String },
     description: { type: String },
     videoName: { type: String },
-    timestamp: { type: Number }
+    timestamp: { type: Number },
+    avgRat: { type: Number }
 });
 
 const Video = mongoose.model('video', videoSchema);

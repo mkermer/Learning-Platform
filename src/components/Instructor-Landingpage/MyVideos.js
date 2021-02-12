@@ -129,10 +129,10 @@ function MyVideos(props) {
 
     return (
 
-        <div className="heading"><h2>My Videos</h2></div>
+        <div className="heading"><h2>My Videos</h2>
             <h1>My Videos</h1>
 
-             <Accordion defaultActiveKey="0">
+            <Accordion defaultActiveKey="0">
                 <Card>
 
                     <Accordion.Toggle as={Card.Header} eventKey="0">
@@ -146,62 +146,62 @@ function MyVideos(props) {
 
                     <Accordion.Collapse eventKey="0">
                         <Card.Body>
-                           <Collapse in={open}>
-                    <Row id="example-fade-text">
+                            <Collapse in={open}>
+                                <Row id="example-fade-text">
+                                    <Col xs={10}>
+                                        VideoName
+                                </Col>
+
+                                    <Col xs={2}>
+                                        <Trash
+                                            className="Trash"
+                                            size={20}
+                                            onClick={() => setOpen(!open)}
+                                            aria-controls="example-fade-text"
+                                            aria-expanded={open}
+                                        />
+                                    </Col>
+                                </Row>
+                            </Collapse>
+                            <Collapse in={open}>
+                                <Row id="example-fade-text">
+
+                                    <Col xs={10} >
+                                        VideoName
+                    </Col>
+
+                                    <Col xs={2}>
+                                        <Trash
+                                            className="Trash"
+                                            size={20}
+                                            onClick={() => setOpen(!open)}
+                                            aria-controls="example-fade-text"
+                                            aria-expanded={open}
+                                        />
+                                    </Col>
+                                </Row>
+                            </Collapse>
+                        </Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
+            <Accordion defaultActiveKey="0">
+                <Card>
+
+                    <Accordion.Toggle as={Card.Header} eventKey="0">
+                        <Row>
+                            <Col xs={10}>CourseName</Col>
+                            <Col xs={2}>
+                                <ContextAwareToggle as={Button} variant="link" eventKey="0" />
+                            </Col>
+                        </Row>
+                    </Accordion.Toggle>
+
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body>
+                            <Row>
                                 <Col xs={10}>
                                     VideoName
-                                </Col>
-                    
-                    <Col xs={2}>
-                        <Trash 
-                            className="Trash"  
-                            size={20}
-                            onClick={() => setOpen(!open)}
-                            aria-controls="example-fade-text"
-                            aria-expanded={open}
-                        />
-                    </Col>
-                </Row>
-            </Collapse>
-            <Collapse in={open}>
-                <Row id="example-fade-text">
-                
-                    <Col xs={10} >
-                        VideoName
-                    </Col>
-                    
-                    <Col xs={2}>
-                        <Trash 
-                            className="Trash"  
-                            size={20}
-                            onClick={() => setOpen(!open)}
-                            aria-controls="example-fade-text"
-                            aria-expanded={open}
-                        />
-                    </Col>
-                </Row>
-            </Collapse>
-            </Card.Body>
-            </Accordion.Collapse>
-        </Card>
-        </Accordion>
-        <Accordion defaultActiveKey="0">
-        <Card>
-            
-                <Accordion.Toggle as={Card.Header} eventKey="0">
-                <Row>
-                    <Col xs={10}>CourseName</Col>
-                    <Col xs={2}>
-                        <ContextAwareToggle as={Button} variant="link" eventKey="0"/>
-                    </Col>
-                </Row>
-                </Accordion.Toggle>
-            
-            <Accordion.Collapse eventKey="0">
-            <Card.Body>
-                <Row>
-                    <Col xs={10}>
-                        VideoName
                     </Col>
                                 <Col xs={2}>
                                     <Trash className="Trash" size={20} />

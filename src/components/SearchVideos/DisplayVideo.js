@@ -26,9 +26,16 @@ const DisplayVideo = (props) => {
     const [text, setText] = useState("");
     const timestamp = Date.now();
     const image = props.applicationState.user.image;
-    const instructor = props.applicationState.video.instructor;
     const student = props.applicationState.user.studentName;
-    const courseName = props.applicationState.video.courseName
+
+    const instructor = props.applicationState.video.instructor;
+    const courseName = props.applicationState.video.courseName;
+    const url = props.applicationState.video.url;
+    const category = props.applicationState.video.category;
+    const description = props.applicationState.video.description;
+    const videoTimestamp = props.applicationState.video.timestamp;
+    const videoName = props.applicationState.video.videoName;
+
 
     const [reviewArr, setReviewArr] = useState([]);
     const [avgRat, setAvgRat] = useState();
@@ -72,9 +79,6 @@ const DisplayVideo = (props) => {
 
             sum += review.rating;
         })
-
-
-
         console.log(sum);
         let average = sum / arr.length;
         console.log(average)
@@ -85,9 +89,12 @@ const DisplayVideo = (props) => {
 
 
 
-
-
     const post = async () => {
+        newReview();
+        updateAvgRat();
+    }
+
+    const newReview = async () => {
         const newReview = {
             instructor: instructor,
             student: student,
@@ -103,10 +110,29 @@ const DisplayVideo = (props) => {
                 `/review/add`, newReview);
             console.log(response.data);
         } catch (err) {
+            console.log(err)
+        }
+    }
 
+    const updateAvgRat = async () => {
+        const updatedVideo = {
+            instructor: instructor,
+            courseName: courseName,
+            url: url,
+            category: category,
+            description: description,
+            timestamp: videoTimestamp,
+            videoName: videoName,
+            avgRat: avgRat
         }
 
-
+        try {
+            const response = await axios.post(config.baseUrl +
+                `/video/update/${props.applicationState.video._id}`, updatedVideo);
+            console.log(response.data);
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (
@@ -152,8 +178,6 @@ const DisplayVideo = (props) => {
                                         <img src={review.image} className="rounded mr-2" alt="" />
                                         <strong className="mr-auto">{review.student}</strong>
                                         <ReactStars activeColor="blue" edit={false} size={20} count={5} isHalf={true} value={review.rating} />
-
-
                                         <small><Moment fromNow>{review.timestamp}</Moment></small>
                                     </Toast.Header>
                                     <Toast.Body>{review.text}</Toast.Body>
@@ -161,10 +185,6 @@ const DisplayVideo = (props) => {
                             )
                         })}
                     </div>
-
-
-
-
                 </Form>
             </div>
         </div>

@@ -20,7 +20,7 @@ function Upload(props) {
   const [text, setText] = useState("Upload");
   const timestamp = Date.now();
   const [videoName, setVideoName] = useState("");
-
+  const avgRat = 0;
 
   const [disabled, setDisabled] = useState(true)
 
@@ -96,10 +96,11 @@ function Upload(props) {
       url: url,
       description: desc,
       timestamp: timestamp,
-      videoName: videoName
+      videoName: videoName,
+      avgRat: avgRat
     }
 
-    
+
 
     try {
       const response = await axios.post(config.baseUrl +

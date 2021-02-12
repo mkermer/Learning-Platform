@@ -13,12 +13,11 @@ const SearchVideos = (props) => {
 
     const [videos, setVideos] = useState([])
 
-
-
     useEffect(() => {
         GetVideos();
-        console.log(videos);
+
     }, [])
+
 
     const GetVideos = async () => {
         const response = await axios.get(config.baseUrl + '/video');
@@ -26,33 +25,18 @@ const SearchVideos = (props) => {
         setVideos(response.data)
     }
 
-    const averageRating = (arr, setAvgRat) => {
-        let sum = 0;
-        arr.map(review => {
 
-            sum += review.rating;
-        })
-
-
-
-        console.log(sum);
-        let average = sum / arr.length;
-        console.log(average)
-        const flooreAvg = Math.floor(average)
-
-        setAvgRat(flooreAvg);
-    }
 
     return (
 
         <div>
-          <Container className="searchVideos">
-            <Row>
-//              <Col xs={12} md={6} lg={6} xl={4}>
-            <Cards className="VideoCard" videos={videos} />
-//             </Col>
-           </Row>
-          </Container>
+            <Container className="searchVideos">
+                <Row>
+                    <Col xs={12} md={6} lg={6} xl={4}>
+                        <Cards className="VideoCard" videos={videos} />
+                    </Col>
+                </Row>
+            </Container>
         </div>
     )
 

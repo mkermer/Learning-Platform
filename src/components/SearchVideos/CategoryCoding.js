@@ -8,17 +8,14 @@ const CategoryCoding = (props) => {
 
     useEffect(() => {
         categoryfunction("Coding", setVideos)
-        console.log(videos);
+
     }, [])
 
-    const rating = async () => {
-
-    }
 
     return (
         <div>
 
-            <Cards video={videos} />
+            <Cards videos={videos} />
         </div>
     )
 
