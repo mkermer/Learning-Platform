@@ -26,7 +26,6 @@ function Slideshow(props) {
         const interest = props.applicationState.user.interests;
         const category = response.data;
 
-        // const displayVideo = () => {
         const randomInterest = interest[Math.floor(Math.random() * interest.length)];
         console.log(randomInterest);
         let arrVideos = [];

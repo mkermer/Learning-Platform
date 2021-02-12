@@ -13,6 +13,19 @@ GET http://localhost:2000/video
 
 ###
 GET http://localhost:2000/review
+
+
+###
+POST http://localhost:2000/review/add
+Content-Type: application/json
+
+{
+    	"courseName": "React-Tutorial3",
+        "instructor" : "Coding",
+        "student": "ReactInstructor",
+        "text": "https://www.youtube.com/embed/2TofunAI6fU?controls=0",
+        "rating": 5
+}
 ###
 POST http://localhost:2000/video/add
 Content-Type: application/json

@@ -55,6 +55,8 @@ function Login(props) {
         }
 
     }
+
+
     window.addEventListener('keydown', (event) => {
         if (event.isComposing || event.key === "Enter") {
             authentication();
@@ -68,8 +70,6 @@ function Login(props) {
                     <div className="logo">Login</div>
 
                     <Form className="form-elem">
-
-
                         <Form.Group controlId="formBasicUsername">
                             <Form.Label>Username</Form.Label>
                             <Form.Control type="username" placeholder=""
