@@ -170,10 +170,10 @@ function MyVideos(props) {
         <div className="MyVideos">
             <div className="heading"><h2>My Videos</h2></div>
 
-            
-                {courseArr.map(course => {
-                    return (
-                        <Accordion defaultActiveKey="0">
+
+            {courseArr.map(course => {
+                return (
+                    <Accordion defaultActiveKey="0">
                         <Card>
 
                             <Accordion.Toggle as={Card.Header} eventKey="0">
@@ -184,44 +184,43 @@ function MyVideos(props) {
                                     </Col>
                                 </Row>
                             </Accordion.Toggle>
-                            {videoNameArr.map(videos => {
-                                videos.map(vid => {
-                                    if (course === vid.courseName) {
-                                        return (
-                                            <Accordion.Collapse eventKey="0">
-                                                <Card.Body>
-                                                    <Collapse in={open}>
-                                                        <Row id="example-fade-text">
-                                                            <Col xs={10}>
-                                                                {vid.courseName}
-                                                            </Col>
+                            {videoNameArr.flat().filter(vid => course === vid.courseName).map(vid => {
 
-                                                            <Col xs={2}>
-                                                                <Trash
-                                                                    className="Trash"
-                                                                    size={20}
-                                                                    onClick={() => setOpen(!open)}
-                                                                    aria-controls="example-fade-text"
-                                                                    aria-expanded={open}
-                                                                />
-                                                            </Col>
-                                                        </Row>
-                                                    </Collapse>
+                                return (
+                                    <Accordion.Collapse eventKey="0">
+                                        <Card.Body>
+                                            <Collapse in={open}>
+                                                <Row id="example-fade-text">
+                                                    <Col xs={10}>
+                                                        {vid.courseName}
+                                                    </Col>
 
-                                                </Card.Body>
-                                            </Accordion.Collapse>
-                                        )
-                                    }
-                                })
+                                                    <Col xs={2}>
+                                                        <Trash
+                                                            className="Trash"
+                                                            size={20}
+                                                            onClick={() => setOpen(!open)}
+                                                            aria-controls="example-fade-text"
+                                                            aria-expanded={open}
+                                                        />
+                                                    </Col>
+                                                </Row>
+                                            </Collapse>
+
+                                        </Card.Body>
+                                    </Accordion.Collapse>
+                                )
+
                             })
                             }
 
-                        </Card>
-                        </Accordion>
-                    )
-                })}
 
-            
+                        </Card>
+                    </Accordion>
+                )
+            })}
+
+
 
             <Button onClick={debug}>
                 Debug
