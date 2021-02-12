@@ -169,11 +169,11 @@ function MyVideos(props) {
     return (
         <div className="MyVideos">
             <div className="heading"><h2>My Videos</h2></div>
-            <h1>My Videos</h1>
 
-            <Accordion defaultActiveKey="0">
+            
                 {courseArr.map(course => {
                     return (
+                        <Accordion defaultActiveKey="0">
                         <Card>
 
                             <Accordion.Toggle as={Card.Header} eventKey="0">
@@ -217,10 +217,11 @@ function MyVideos(props) {
                             }
 
                         </Card>
+                        </Accordion>
                     )
                 })}
 
-            </Accordion>
+            
 
             <Button onClick={debug}>
                 Debug
