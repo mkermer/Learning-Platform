@@ -1,72 +1,53 @@
 import React, { useContext } from "react";
-import {Popover, OverlayTrigger, Button} from "react-bootstrap";
+import {Popover, OverlayTrigger, Overlay, Button} from "react-bootstrap";
 import { PersonCircle } from "react-bootstrap-icons";
+import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.action';
+
 // import {Link} from 'react-router-dom'
 
-function OverlayNav() {
+function OverlayProfile(props) {
 
-  const notLoggedPopover = (
-    <Popover id="popover-basic">
-      <Popover.Title as="h3">Login or Sign up</Popover.Title>
-      <Popover.Content>
-        <AccordionLog />
-      </Popover.Content>
-    </Popover>
-  );
+  return(
 
-  const loggedInPopover = (
-    <Popover id="popover-basic">
-      <Popover.Title as="p">Already logged in as <b>{getName()} {getLastName()}</b></Popover.Title>
-      <Button as={Link} to='/gift' id='make-gift-button'>Make a gift</Button>
-      <Popover.Content>
-        <button onClick={logout} className="btn btn-primary">Logout</button>
-      </Popover.Content>
-    </Popover>
-  );
-
-  const NotLogged = () => (
-      <OverlayTrigger
+    <>
+    {['bottom'].map((placement) => (
+    <OverlayTrigger
       trigger="click"
-      placement="bottom"
-      overlay={notLoggedPopover}
+      key={placement}
+      placement={placement}
+      overlay={
+        <Popover id={`popover-positioned-${placement}`}>
+          <Popover.Title>
+            <img src={props.applicationState.user.image} alt="pic"/>
+            {/* <h3>{props.applicationState.user.username}</h3> */}
+          </Popover.Title>
+          <Popover.Content>
+            <p> {props.applicationState.user.subheader}</p>
+            <p>{props.applicationState.user.description}</p>
+            <p> {props.applicationState.user.interests}</p>
+            
+            <Button href="/update">
+              Edit Profile
+            </Button>
+            <Button href="/">
+              Logout
+            </Button>
+          </Popover.Content>
+        </Popover>
+      }
     >
-      
-        <Button variant="light" >
-          <PersonCircle size={25} />
-        </Button>
-      
-      
+      <PersonCircle size={25}/>
     </OverlayTrigger>
-  );
+  ))}
 
-  const Logged = () => (
-       <OverlayTrigger
-      trigger="click"
-      placement="bottom"
-      overlay={loggedInPopover}
-    >
-      <Button variant="light" >
-        <PersonCircle size={25} />
-        <span id="cart-length">{orders.length}</span>
-      </Button>
-    </OverlayTrigger>
-   
-  );
+    </>
+  )
 
-  const Check = () => {
-    if (!token) {
-      return <NotLogged />;
-    } else {
-      return <Logged />;
-    }
-  };
-
-
-  return (
-    <div>
-      <Check />
-    </div>
-  );
 }
 
-export default OverlayNav;
+const mapStateToProps = state => ({ applicationState: state });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+export default connect(mapStateToProps, mapDispatchToProps)(OverlayProfile);
