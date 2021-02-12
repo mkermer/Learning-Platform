@@ -45,27 +45,21 @@ function Login(props) {
                 if (loginUser.instructorName !== undefined) {
                     history.push("/InstructorLandingpage")
                 }
-
-
-
-
-
-
             }
 
 
 
 
         } catch (err) {
-
+            console.log(err);
         }
 
     }
     window.addEventListener('keydown', (event) => {
         if (event.isComposing || event.key === "Enter") {
             authentication();
-          }
-        });
+        }
+    });
 
     return (
         <div className="container">
@@ -92,7 +86,7 @@ function Login(props) {
                             <Form.Check type="checkbox" label="save password" />
                         </Form.Group>
 
-                        <Button className="btn" variant="primary"  onClick={authentication}>
+                        <Button className="btn" variant="primary" onClick={authentication}>
                             Login
                             </Button>
                         <div className="registerLink">

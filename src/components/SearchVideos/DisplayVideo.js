@@ -27,7 +27,6 @@ const DisplayVideo = (props) => {
     const timestamp = Date.now();
     const image = props.applicationState.user.image;
     const student = props.applicationState.user.studentName;
-
     const instructor = props.applicationState.video.instructor;
     const courseName = props.applicationState.video.courseName;
     const url = props.applicationState.video.url;
@@ -43,15 +42,13 @@ const DisplayVideo = (props) => {
 
     useEffect(async () => {
         await getReviews();
-        console.log(reviewArr)
-        console.log(avgRat)
+
 
     }, [setAvgRat, setReviewArr])
 
 
     const ratingReview = (rating) => {
         setRating(rating);
-
     }
 
 

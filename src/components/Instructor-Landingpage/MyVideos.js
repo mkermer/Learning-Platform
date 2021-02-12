@@ -109,7 +109,6 @@ function MyVideos(props) {
 
 
 
-
         // for (let i in videosByCourseName) {
         //     if (videosByCourseName.hasOwnProperty(i)) {
         //         console.log(videosByCourseName[i])
@@ -122,7 +121,7 @@ function MyVideos(props) {
     }
 
 
-    console.log(videosByCourseName)
+
 
     // console.log(videoArray[0]);
     // const vidZERO = videoArray[0];
@@ -154,7 +153,7 @@ function MyVideos(props) {
     //     })
     // })
 
-    setCourseArray(videosByCourseName);
+
 
     // setCourseArray(videoArray);
 
