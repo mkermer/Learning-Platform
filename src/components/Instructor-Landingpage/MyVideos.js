@@ -213,8 +213,6 @@ function MyVideos(props) {
 
                             })
                             }
-
-
                         </Card>
                     </Accordion>
                 )
