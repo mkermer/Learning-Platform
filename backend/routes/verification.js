@@ -7,8 +7,6 @@ let Verification = require('../models/verification_model');
 let Student = require('../models/student_model');
 let Instructor = require('../models/instructor_model');
 
-
-
 async function verify(req, res) {
     try {
 

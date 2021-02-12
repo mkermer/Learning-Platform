@@ -19,7 +19,7 @@ const Updateform = (props) => {
     const score = props.applicationState.user.score;
     const firstName = props.applicationState.user.firstName;
     const lastName = props.applicationState.user.lastName;
-    const studentName = props.applicationState.user.studentName;
+    const studentName = props.applicationState.user.username;
     const contact = props.applicationState.user.contact;
     const password = props.applicationState.user.password;
     const type = props.applicationState.user.type;
