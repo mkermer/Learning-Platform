@@ -21,7 +21,8 @@ router.route('/add').post(async (req, res) => {
     const url = req.body.url;
     const description = req.body.description;
     const timestamp = Number(req.body.timestamp);
-    const videoName = req.body.videoName
+    const videoName = req.body.videoName;
+    const avgRat = Number(req.body.avgRat);
 
     const newVideo = new Video({
         courseName,
@@ -30,7 +31,8 @@ router.route('/add').post(async (req, res) => {
         url,
         timestamp,
         description,
-        videoName
+        videoName,
+        avgRat
     });
 
     try {
@@ -40,6 +42,28 @@ router.route('/add').post(async (req, res) => {
         res.json('Error: ' + err);
     }
 })
+
+
+router.route('/update/:id').post((req, res) => {
+    Video.findById(req.params.id)
+        .then(video => {
+            video.courseName = req.body.courseName;
+            video.category = req.body.category;
+            video.videoName = req.body.videoName;
+            video.instructor = req.body.instructor;
+            video.url = req.body.url;
+            video.timestamp = req.body.timestamp;
+            video.description = req.body.description;
+            video.avgRat = req.body.avgRat;
+
+            video.save()
+                .then(() => res.json(video))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+module.exports = router;
 
 
 

@@ -15,8 +15,9 @@ const SearchVideos = (props) => {
 
     useEffect(() => {
         GetVideos();
-        console.log(videos);
+
     }, [])
+
 
     const GetVideos = async () => {
         const response = await axios.get(config.baseUrl + '/video');
@@ -29,13 +30,13 @@ const SearchVideos = (props) => {
     return (
 
         <div>
-          <Container className="searchVideos">
-            <Row>
-//              <Col xs={12} md={6} lg={6} xl={4}>
-            <Cards className="VideoCard" videos={videos} />
-//             </Col>
-           </Row>
-          </Container>
+            <Container className="searchVideos">
+                <Row>
+                    <Col xs={12} md={6} lg={6} xl={4}>
+                        <Cards className="VideoCard" videos={videos} />
+                    </Col>
+                </Row>
+            </Container>
         </div>
     )
 
