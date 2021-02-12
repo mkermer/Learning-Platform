@@ -122,7 +122,7 @@ function MyVideos(props) {
     }
 
 
-    console.log(videosByCourseName)
+    
 
     // console.log(videoArray[0]);
     // const vidZERO = videoArray[0];
@@ -154,7 +154,6 @@ function MyVideos(props) {
     //     })
     // })
 
-    setCourseArray(videosByCourseName);
 
     // setCourseArray(videoArray);
 
@@ -183,16 +182,16 @@ function MyVideos(props) {
                                     </Col>
                                 </Row>
                             </Accordion.Toggle>
-                            {videoNameArr.map(videos => {
-                                videos.map(vid => {
-                                    if (course === vid.courseName) {
+                            {videoNameArr.flat().filter(vid => course === vid.courseName).map(vid => {
+                                
+                                    
                                         return (
                                             <Accordion.Collapse eventKey="0">
                                                 <Card.Body>
                                                     <Collapse in={open}>
-                                                        <Row id="example-fade-text">
+                                                        <Row id="collaps">
                                                             <Col xs={10}>
-                                                                {vid.courseName}
+                                                                {vid.videoName}
                                                             </Col>
 
                                                             <Col xs={2}>
@@ -200,7 +199,7 @@ function MyVideos(props) {
                                                                     className="Trash"
                                                                     size={20}
                                                                     onClick={() => setOpen(!open)}
-                                                                    aria-controls="example-fade-text"
+                                                                    aria-controls="collaps"
                                                                     aria-expanded={open}
                                                                 />
                                                             </Col>
@@ -209,9 +208,9 @@ function MyVideos(props) {
 
                                                 </Card.Body>
                                             </Accordion.Collapse>
-                                        )
-                                    }
-                                })
+                                        );
+                                    
+                                
                             })
                             }
 
