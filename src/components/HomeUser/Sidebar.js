@@ -20,11 +20,11 @@ align-items: center;
 justify-content: space-between;
 font-size: calc(10px + 1vmin);
 color: white;
-padding: 0 6%;
+padding: 0 6%;`;
 
 
-const Nav = styled.div`
-  background: #2073d9 !important;
+const Nav2 = styled.div`
+  background-color: rgb(32, 115, 217);
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -136,7 +136,7 @@ const Sidebar = (props) => {
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
 
-            {SidebarData.map((item, index) => <SubMenu item={item} key={index} />)}
+            
 
             {/* //callfunction   */}
             {Sidebarfunction(props.applicationState.user.type).map((item, index) => {

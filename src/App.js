@@ -9,7 +9,7 @@ import Login from './components/Register/Login';
 import Footer from "./components/FooterSection/Footer";
 import Sidebar from './components/HomeUser/Sidebar';
 import { DashProvider } from './DashContext'
-import Login2 from './components/Register/Login2';
+// import Login2 from './components/Register/Login2';
 import Zoom from './scheduler/Zoom';
 import SearchVideos from './components/SearchVideos/searchVideos';
 import DisplayVideo from './components/SearchVideos/DisplayVideo';
@@ -20,6 +20,8 @@ import CategoryMusic from './components/SearchVideos/CategoryMusic';
 import CategoryTechnologies from './components/SearchVideos/CategoryTechnologies';
 
 function App() {
+
+  return(
 
     <Router>
 
