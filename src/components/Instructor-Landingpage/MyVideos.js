@@ -21,24 +21,24 @@ function MyVideos(props) {
     useEffect(async () => {
 
         setVideoArr();
-       
+
         // debug();
-        
+
         console.log("Effect happend")
-        
+
 
     }, [])
 
     useEffect(async () => {
 
-        
+
         showVideos()
         // debug();
-        
-        console.log("Effect happend")
-        
 
-    }, [ videoArr])
+        console.log("Effect happend")
+
+
+    }, [videoArr])
 
     const setVideoArr = async () => {
         const response = await axios.get(config.baseUrl + '/video');
@@ -51,31 +51,31 @@ function MyVideos(props) {
             }
         })
         setVideoArray(instructorArr);
-        
+
     }
 
-        const showVideos = () =>{
-            const videosByCourseName = videoArr.reduce((acc, value) => {
+    const showVideos = () => {
+        const videosByCourseName = videoArr.reduce((acc, value) => {
 
-                if (!acc[value.courseName]) {
-                    acc[value.courseName] = [];
-                }
-    
-                // Grouping
-                acc[value.courseName].push(value);
-           
-                return acc;
-    
-            }, []);
-            const videoArray = [];
-            videoArray.push(videosByCourseName);
-            
-            var values = (Object.values(videosByCourseName))
-            setVideoNameArr(values)
-            
-            const keys = (Object.keys(videosByCourseName))
-            setCourseArray(keys)
-        }
+            if (!acc[value.courseName]) {
+                acc[value.courseName] = [];
+            }
+
+            // Grouping
+            acc[value.courseName].push(value);
+
+            return acc;
+
+        }, []);
+        const videoArray = [];
+        videoArray.push(videosByCourseName);
+
+        var values = (Object.values(videosByCourseName))
+        setVideoNameArr(values)
+
+        const keys = (Object.keys(videosByCourseName))
+        setCourseArray(keys)
+    }
 
 
 
@@ -83,12 +83,12 @@ function MyVideos(props) {
         <div className="MyVideos">
             <div className="heading"><h2>My Videos</h2></div>
 
-            
-                {courseArr.map(course => {
-                    return (
-                        <Videos course={course} videoNameArr={videoNameArr}/>
-                    )
-                })}
+
+            {courseArr.map(course => {
+                return (
+                    <Videos course={course} videoNameArr={videoNameArr} />
+                )
+            })}
 
         </div>
     );

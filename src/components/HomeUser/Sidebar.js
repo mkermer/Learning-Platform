@@ -125,12 +125,12 @@ const Sidebar = (props) => {
 
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
-          <StyledLink as="a" href="/#">
+          <StyledLink as="a" >
             <FaIcons.FaBars onClick={showSidebar} />
           </StyledLink>
           <SearchBar onSearchClick={() => alert('Search the content')} />
-          <StyledLink as="a" href="/login" onClick={() =>('login')}>Login</StyledLink>
-          <OverlayProfile/>
+          <StyledLink as="a" href="/login" onClick={() => ('login')}>Login</StyledLink>
+          <OverlayProfile />
         </Nav>
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>
@@ -138,7 +138,7 @@ const Sidebar = (props) => {
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
 
-            
+
 
             {/* //callfunction   */}
             {Sidebarfunction(props.applicationState.user.type).map((item, index) => {
