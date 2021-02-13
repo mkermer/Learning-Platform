@@ -1,4 +1,4 @@
-import React ,{useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Toast } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../../config/config';
@@ -9,53 +9,53 @@ import ReactStars from 'react-rating-stars-component';
 import Moment from 'react-moment';
 
 
-function ShowRating(props){
+function ShowRating(props) {
     const [reviewArray, setReviewArray] = useState([]);
 
-    useEffect(async() => {
+    useEffect(async () => {
         setReviewArr();
         console.log(reviewArray)
-    }, []) 
+    }, [])
 
     const setReviewArr = async () => {
         const response = await axios.get(config.baseUrl + '/review');
         console.log(response.data);
         const reviews = response.data;
         const instructorArr = [];
-        
+
         reviews.map(review => {
-            if(review.instructor === props.applicationState.user.instructorName){
+            if (review.instructor === props.applicationState.user.instructorName) {
                 instructorArr.push(review);
             }
-        })      
+        })
 
         setReviewArray(instructorArr);
-        
+
     }
-    const reverseReviewArray = reviewArray.map(item =>item).reverse()
+    const reverseReviewArray = reviewArray.map(item => item).reverse()
     // console.log(reverseReviewArray)
 
-    return(
+    return (
         <div className="ShowRating">
             <div className="heading"><h2> Latest Reviews</h2></div>
-            
+
             {reverseReviewArray.map(review => {
-                
-                return(
+
+                return (
                     <Toast>
-            <Toast.Header>
-            <img src={review.image} className="mr-2" alt="" />
-            <strong className="mr-auto">{review.student}</strong>
-            <ReactStars color="lightgray" edit={false} size={20} count={5} isHalf={false} value={review.rating}/>
+                        <Toast.Header>
+                            <img src={review.image} className="mr-2" alt="" />
+                            <strong className="mr-auto">{review.student}</strong>
+                            <ReactStars color="lightgray" edit={false} size={20} count={5} isHalf={false} value={review.rating} />
 
 
-            <small><Moment fromNow>{review.timestamp}</Moment></small>
-            </Toast.Header>
-            <Toast.Body>{review.text}</Toast.Body>
-        </Toast>
+                            <small><Moment fromNow>{review.timestamp}</Moment></small>
+                        </Toast.Header>
+                        <Toast.Body>{review.text}</Toast.Body>
+                    </Toast>
                 )
             })}
-        
+
         </div>
     )
 }

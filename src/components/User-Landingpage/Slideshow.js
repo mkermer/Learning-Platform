@@ -31,7 +31,7 @@ function Slideshow(props) {
         console.log(randomInterest);
         // interest[Math.floor(Math.random() * interest.length)];
 
-        
+
 
         let arrVideos = [];
         for (let i = 0; i < category.length; i++) {
@@ -82,38 +82,16 @@ function Slideshow(props) {
 
 
                 <Carousel>
-                    Rendered on userspecific
                     {randomVid.map((vid, index) => {
-                    return (
-                        <Carousel.Item key={index}>
-                            <Player>
-                                <source src={vid} />
-                            </Player>
-                        </Carousel.Item>)
-                })}
+                        return (
+                            <Carousel.Item key={index}>
+                                <Player>
+                                    <source src={vid} />
+                                </Player>
+                            </Carousel.Item>)
+                    })}
 
-                    {/* <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/EPxqPw1N1Qk?controls=0"
-                            alt="Video Name"
-                        />
-                        
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/Bcn98eUsUdw?controls=0"
-                            alt="Video Name"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/BBz-Jyr23M4?controls=0"
-                            alt="Video Name"
-                        />
-                    </Carousel.Item> */}
+
                 </Carousel>
             </Col>
 

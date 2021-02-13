@@ -7,9 +7,7 @@ let Verification = require('../models/verification_model');
 let Student = require('../models/student_model');
 let Instructor = require('../models/instructor_model');
 
-
-
-router.route('/').get(async (req, res) => {
+async function verify(req, res) {
     try {
 
 
@@ -61,7 +59,9 @@ router.route('/').get(async (req, res) => {
     } catch (err) {
         res.json('Error:' + err);
     }
-})
+}
+
+router.route('/').get(verify)
 
 
 
