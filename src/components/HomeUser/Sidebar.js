@@ -10,6 +10,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import Sidebarfunction from './SideBarData';
 import './Sidebar.css';
+import OverlayProfile from './OverlayProfile';
 // import {Button} from "react-bootstrap";
 const Nav = styled.header`
 background-color: #2073d9;
@@ -129,6 +130,7 @@ const Sidebar = (props) => {
           </StyledLink>
           <SearchBar onSearchClick={() => alert('Search the content')} />
           <StyledLink as="a" href="/login" onClick={() => ('login')}>Login</StyledLink>
+          <OverlayProfile />
         </Nav>
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Col } from 'react-bootstrap';
+import { Carousel, Col, Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import config from '../../config/config';
@@ -26,8 +26,13 @@ function Slideshow(props) {
         const interest = props.applicationState.user.interests;
         const category = response.data;
 
-        const randomInterest = interest[Math.floor(Math.random() * interest.length)];
+        // const displayVideo = () => {
+        const randomInterest = "Technologies"
         console.log(randomInterest);
+        // interest[Math.floor(Math.random() * interest.length)];
+
+
+
         let arrVideos = [];
         for (let i = 0; i < category.length; i++) {
             if (randomInterest === category[i]["category"]) {
@@ -35,7 +40,7 @@ function Slideshow(props) {
             }
         }
 
-
+        console.log(arrVideos)
         let randomVideos = [];
         let randVid = 0;
         for (let j = 0; j <= 3; j++) {
@@ -53,7 +58,14 @@ function Slideshow(props) {
 
     }
 
+    // const number = () => {
+    //     numberdisplay(3)
+    //     };
 
+    // const numberdisplay = (max) => {
+    //     console.log(Math.floor(Math.random * Math.floor(max)));
+    //     console.log('Hi')
+    // }
 
 
 
