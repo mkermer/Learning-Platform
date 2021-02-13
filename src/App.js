@@ -9,6 +9,10 @@ import Login from './components/Register/Login';
 import Footer from "./components/FooterSection/Footer";
 import Sidebar from './components/HomeUser/Sidebar';
 import { DashProvider } from './DashContext'
+import Home from './components/LandingPage/Home';
+
+// import Login2 from './components/Register/Login2';
+
 import Zoom from './scheduler/Zoom';
 import Calendar from './components/Calendar';
 import SearchVideos from './components/SearchVideos/searchVideos';
@@ -16,14 +20,21 @@ import DisplayVideo from './components/SearchVideos/DisplayVideo';
 import Updateform from './components/UpdateForm/Userupdateform';
 import Scheduler from "./scheduler/Scheduler";
 function App() {
-  return (
-    
+
+ 
+
+  return(
+
+
     <Router>
 
 
       <DashProvider>
         <Sidebar />
+        
         <Switch>
+          
+          <Route path="/Home" component={Home} />
           <Route path="/" exact component={RegisterForm} />
           <Route path="/update" exact component={Updateform} />
           <Route path="/videoSearch" component={SearchVideos} />

@@ -8,16 +8,17 @@ const CategoryCoding = (props) => {
 
     useEffect(() => {
         categoryfunction("Coding", setVideos)
-        console.log(videos);
-    }, [])
 
+    }, [])
 
 
     return (
         <div>
+
             <Cards videos={videos} />
         </div>
     )
+
 
 }
 

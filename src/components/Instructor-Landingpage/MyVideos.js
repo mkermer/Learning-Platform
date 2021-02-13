@@ -15,9 +15,6 @@ import DeleteVideo from './DeleteVideo';
 function ContextAwareToggle({ children, eventKey, callback }) {
     const currentEventKey = useContext(AccordionContext);
 
-
-
-
     const decoratedOnClick = useAccordionToggle(
         eventKey,
         () => callback && callback(eventKey),
@@ -37,7 +34,7 @@ function ContextAwareToggle({ children, eventKey, callback }) {
 function MyVideos(props) {
     const [open, setOpen] = useState(true);
     const [videoArr, setVideoArray] = useState([]);
-    
+
     const [courseArr, setCourseArray] = useState([]);
     const [videoNameArr, setVideoNameArr] = useState();
 
@@ -79,38 +76,38 @@ function MyVideos(props) {
             // console.log(acc)
             return acc;
 
-        }, {});
+        }, []);
         const videoArray = [];
         videoArray.push(videosByCourseName);
         console.log(videosByCourseName)
 
-        
-            // for (let key of videosByCourseName){
-            //     console.log(key)
-            // }
-            var values = (Object.values(videosByCourseName))
-            setVideoNameArr(values)
-            values.map(videos => {
-                console.log(videos)
-                videos.map(vid => {
-                    console.log(vid.videoName)
-                })
+
+        // for (let key of videosByCourseName){
+        //     console.log(key)
+        // }
+        var values = (Object.values(videosByCourseName))
+        setVideoNameArr(values)
+        values.map(videos => {
+            console.log(videos)
+            videos.map(vid => {
+                console.log(vid.videoName)
             })
+        })
 
-            
-            const entries = (Object.entries(videosByCourseName))
-            
-            console.log(entries)
-            const keys = (Object.keys(videosByCourseName))
-            setCourseArray(keys)
-            keys.map(course => {
-                
-                    
-                        console.log(course)
-                    
-                })
 
-            
+        const entries = (Object.entries(videosByCourseName))
+
+        console.log(entries)
+        const keys = (Object.keys(videosByCourseName))
+        setCourseArray(keys)
+        keys.map(course => {
+
+
+            console.log(course)
+
+        })
+
+
 
 
         // for (let i in videosByCourseName) {
@@ -118,103 +115,110 @@ function MyVideos(props) {
         //         console.log(videosByCourseName[i])
         //         videoArray.push(videosByCourseName[i]);
         //     }
-            // console.log("object" + i + "=" + videosByCourseName[i])
-            // for (let j in videosByCourseName[i]) {
-            //     console.log("object" + j + "=" + videosByCourseName[i][j])
-            // }
-        }
-        // console.log(videoArray[0]);
-        // const vidZERO = videoArray[0];
-        // vidZERO.map(vid => {
-        //     console.log(vid)
-        // })
-        // console.log(videosByCourseName)
-
-        // const Array = [
-        //     [0] React = [
-        //         {},
-        //         {},
-        //         {}
-        //     ],
-        //     [1] Framework = [
-        //         {}
-        //     ]
-        // ]
-        // for (let i = -1; i <= videosByCourseName.length; i++) {
-
-        //     for (let j = 0; j <= videosByCourseName[i].length; j++) {
-        //         console.log(videosByCourseName[i][j]);
-        //     }
+        // console.log("object" + i + "=" + videosByCourseName[i])
+        // for (let j in videosByCourseName[i]) {
+        //     console.log("object" + j + "=" + videosByCourseName[i][j])
         // }
-
-        // videosByCourseName.map(course => {
-        //     course.map(cour => {
-        //         console.log(cour)
-        //     })
-        // })
-        // setCourseArray(videoArray);
+    }
 
 
     
+
+    // console.log(videoArray[0]);
+    // const vidZERO = videoArray[0];
+    // vidZERO.map(vid => {
+    //     console.log(vid)
+    // })
+    // console.log(videosByCourseName)
+
+    // const Array = [
+    //     [0] React = [
+    //         {},
+    //         {},
+    //         {}
+    //     ],
+    //     [1] Framework = [
+    //         {}
+    //     ]
+    // ]
+    // for (let i = -1; i <= videosByCourseName.length; i++) {
+
+    //     for (let j = 0; j <= videosByCourseName[i].length; j++) {
+    //         console.log(videosByCourseName[i][j]);
+    //     }
+    // }
+
+    // videosByCourseName.map(course => {
+    //     course.map(cour => {
+    //         console.log(cour)
+    //     })
+    // })
+
+
+    // setCourseArray(videoArray);
+
+
+
+
 
 
 
 
     return (
         <div className="MyVideos">
-        <div className="heading"><h2>My Videos</h2></div>
+            <div className="heading"><h2>My Videos</h2></div>
             <h1>My Videos</h1>
 
             <Accordion defaultActiveKey="0">
                 {courseArr.map(course => {
-                    return(
+                    return (
                         <Card>
 
-                    <Accordion.Toggle as={Card.Header} eventKey="0">
-                        <Row>
-                            <Col xs={10}>{course}</Col>
-                            <Col xs={2}>
-                                <ContextAwareToggle as={Button} variant="link" eventKey="0" />
-                            </Col>
-                        </Row>
-                    </Accordion.Toggle>
-                        {videoNameArr.map(videos => {
-                            videos.map(vid => {
-                                if(course === vid.courseName){
-                                    return(
-                <Accordion.Collapse eventKey="0">
-                        <Card.Body>
-                           <Collapse in={open}>
-                    <Row id="example-fade-text">
-                                <Col xs={10}>
-                                    {vid.courseName}
-                                </Col>
-                    
-                    <Col xs={2}>
-                        <Trash 
-                            className="Trash"  
-                            size={20}
-                            onClick={() => setOpen(!open)}
-                            aria-controls="example-fade-text"
-                            aria-expanded={open}
-                        />
-                    </Col>
-                </Row>
-            </Collapse>
-            
-            </Card.Body>
-            </Accordion.Collapse>
-                                    )
-                                }
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                                <Row>
+                                    <Col xs={10}>{course}</Col>
+                                    <Col xs={2}>
+                                        <ContextAwareToggle as={Button} variant="link" eventKey="0" />
+                                    </Col>
+                                </Row>
+                            </Accordion.Toggle>
+                            {videoNameArr.flat().filter(vid => course === vid.courseName).map(vid => {
+                                
+                                    
+                                        return (
+                                            <Accordion.Collapse eventKey="0">
+                                                <Card.Body>
+                                                    <Collapse in={open}>
+                                                        <Row id="collaps">
+                                                            <Col xs={10}>
+                                                                {vid.videoName}
+                                                            </Col>
+
+                                                            <Col xs={2}>
+                                                                <Trash
+                                                                    className="Trash"
+                                                                    size={20}
+                                                                    onClick={() => setOpen(!open)}
+                                                                    aria-controls="collaps"
+                                                                    aria-expanded={open}
+                                                                />
+                                                            </Col>
+                                                        </Row>
+                                                    </Collapse>
+
+                                                </Card.Body>
+                                            </Accordion.Collapse>
+                                        );
+                                    
+                                
                             })
-                        })
-                        }
-                    
-        </Card>
+                            }
+
+                        </Card>
                     )
                 })}
-                
-        </Accordion>
+
+            </Accordion>
 
             <Button onClick={debug}>
                 Debug

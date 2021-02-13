@@ -10,14 +10,14 @@ import './Sidebar.css';
 // import {Button} from "react-bootstrap";
 const Nav = styled.header`
 background-color: #2073d9;
-min-height: 8vh;
+min-height: 10vh;
 display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
 font-size: calc(10px + 1vmin);
 color: white;
-padding: 0 6%;
+padding: 0 3%;
 `;
 
 // const Nav = styled.div`
@@ -30,17 +30,18 @@ padding: 0 6%;
 
 const NavIcon = styled(Link)`
   margin-left: 2rem;
-  font-size: 2rem;
+  font-size: 4rem;
   height: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
 `;
 
 const SidebarNav = styled.nav`
   background: #7aadeb !important;
   width: 190px;
-  height: 100vh;
+  height: 150vh;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -48,7 +49,7 @@ const SidebarNav = styled.nav`
   left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
   z-index: 10;
-  border:2px solid;
+  border:2px solid silver;
 `;
 const SearchBar = styled(({ className, onSearchClick }) => (
   <div className={className}>
@@ -58,20 +59,26 @@ const SearchBar = styled(({ className, onSearchClick }) => (
 ))`
 display: flex;
 flex-direction: row;
-width: 50%;
+width: 25%;
+
+
+
 `;
 const SearchInput = styled.input.attrs((props) => ({
   type: 'text',
   placeholder: 'Search for Videos',
-  size: props.size || '0.2em',
+  size: props.size || '0.1em',
+  
 }))`
 color: grey;
-font-size: 1em;
-border: 2px solid silver;
-border-radius: 4px;
+font-size: 1.2em;
+border: 3px solid silver;
+border-radius: 3px;
 width: 100%;
 margin: ${(props) => props.size};
 padding: ${(props) => props.size};
+
+
 `;
 const SearchBtn = styled.button`
 display: inline-block;
@@ -82,6 +89,7 @@ border: 1px solid silver;
 border-radius: 3px;
 display: block;
 background-color:#fff;
+
 `;
 const SidebarWrap = styled.div`
   width: 100%;
@@ -116,7 +124,7 @@ const Sidebar = () => {
             <NavIcon to="#">
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
-            {SideB arData.map((item, index) => <SubMenu item={item} key={index} />)}
+            {SideBarData.map((item, index) => <SubMenu item={item} key={index} />)}
           </SidebarWrap>
         </SidebarNav>
       </IconContext.Provider>
