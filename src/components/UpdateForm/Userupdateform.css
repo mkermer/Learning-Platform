@@ -1,0 +1,42 @@
+.UpdateProfil{
+    padding: 25px 0 !important;
+    margin: 40px auto 100px auto; 
+}
+
+.UpdateProfil .inner{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.UpdateProfil img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-left: 15%;
+
+}
+
+.UpdateProfil h1{
+    text-align: center;
+}
+
+.UpdateProfil h2, h3, h4{
+    margin: 10px 0 !important;
+}
+
+.UpdateProfil .formImg{
+    padding: 10px;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 10px;
+    width: 250px;
+
+    
+}
+
+.UpdateProfil .header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
