@@ -7,11 +7,29 @@ let Verification = require('../models/verification_model');
 let Student = require('../models/student_model');
 let Instructor = require('../models/instructor_model');
 
+
+
+
+
+const getLatestUserData = (arr) => {
+    let latestUserDataInput = arr.reduce(function (prev, current) {
+        if (+current.id > +prev.id) {
+            return current;
+        } else {
+            return prev;
+        }
+    });
+
+    return latestUserDataInput;
+}
+
+
 async function verify(req, res) {
     try {
 
 
         const verification = await Verification.find();
+        // getLatestUserData(verification)
         var latestUserDataInput = verification.reduce(function (prev, current) {
             if (+current.id > +prev.id) {
                 return current;
@@ -19,7 +37,6 @@ async function verify(req, res) {
                 return prev;
             }
         });
-
 
         const student = await Student.find();
 
@@ -87,6 +104,8 @@ router.route('/add').post(async (req, res) => {
 
 
 
-
+module.exports = getLatestUserData;
 
 module.exports = router;
+
+module.exports = sum; 

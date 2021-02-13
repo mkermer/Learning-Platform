@@ -147,11 +147,11 @@ const DisplayVideo = (props) => {
 
                 <Form className="form-elem">
                     <h1>Overall Rating</h1>
-                    <FontAwesomeIcon icon={faStar} className={avgRat > 0 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={avgRat > 1 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={avgRat > 2 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={avgRat > 3 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={avgRat > 4 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 0 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 1 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 2 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 3 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 4 ? 'blue' : ''} />
 
                     <h1>Reviews</h1>
 

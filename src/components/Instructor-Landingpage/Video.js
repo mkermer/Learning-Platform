@@ -7,14 +7,14 @@ import DisplayButton from '../SearchVideos/DisplayButton'
 import DeleteVideo from './DeleteVideo';
 
 
-function Video(props){
-    
+function Video(props) {
+
     const [open, setOpen] = useState(true);
 
     const vid = props.vid;
 
-    return(
-       
+    return (
+
         <Card.Body>
             <Collapse in={open}>
                 <Row id="collaps">
@@ -23,17 +23,18 @@ function Video(props){
                     </Col>
 
                     <Col xs={2}>
+                        <DisplayButton video={vid} />
                         <Button
-                        onClick={() => setOpen(!open)}>
-                            <DeleteVideo vid={vid}/>
+                            onClick={() => setOpen(!open)}>
+                            <DeleteVideo vid={vid} />
                         </Button>
                     </Col>
                 </Row>
             </Collapse>
         </Card.Body>
 
-                                        );
-                                    
+    );
+
 
 
 
