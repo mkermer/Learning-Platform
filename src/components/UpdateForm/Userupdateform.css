@@ -1,11 +1,16 @@
 .UpdateProfil{
-    padding: 25px 0 !important;
+    padding: 0 0 25px 0 !important;
     margin: 40px auto 100px auto; 
+}
+
+.UpdateProfil .jumbotron{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .UpdateProfil .inner{
     width: 80%;
-    margin: 0 auto;
+    margin: 50px auto 20px auto;
 
 }
 
@@ -29,7 +34,7 @@
     padding: 10px;
     border: 1px solid rgb(207, 207, 207);
     border-radius: 10px;
-    width: 250px;
+    width: 100%;
 
     
 }
@@ -39,4 +44,17 @@
     align-items: center;
     margin-bottom: 30px;
 }
+
+.UpdateProfil button{
+    width: 100%;
+    
+}
+
+.UpdateProfil .discardChanges{
+    text-align: right;
+}
+
+/* .UpdateProfil .form-control{
+    text-align: right;
+} */
 

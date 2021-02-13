@@ -4,7 +4,7 @@ import config from '../../config/config';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Col, Container, Form, Jumbotron, Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 import './Userupdateform.css'
@@ -80,8 +80,10 @@ const Updateform = (props) => {
 
     return (
         <Container className="container-content UpdateProfil">
+            <Jumbotron fluid>
+                    <h1>Update Profile</h1>
+            </Jumbotron>
             <div className="inner">
-            <h1>Update Profile</h1>
             
             <Row className="header">
                 <Col xs={12} lg={4}>
@@ -90,7 +92,7 @@ const Updateform = (props) => {
                 </Col>
                 <Col xs={12} lg={3}>
                     {/* <h2>{username}</h2> */}
-                    <h2>Username</h2>
+                    <h2>Username </h2>
                     <h3>{firstName} {lastName}</h3>
                     <h4> Emailadresse</h4>
                 </Col>
@@ -116,12 +118,12 @@ const Updateform = (props) => {
 
                 <Form className="form-elem">
                     <Row>
-                        <Col>
+                        <Col md={4}>
                             <p>
                                 Username
                             </p>
                         </Col>
-                        <Col>
+                        <Col md={8}>
                             <Form.Group controlId="formBasicUsername">
                                 <Form.Control value={username} onChange={(e) => setUsername(e.target.value)}
                                     type="username"  />
@@ -129,12 +131,12 @@ const Updateform = (props) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
+                        <Col md={4}>
                             <p>
                                 Email
                             </p>
                         </Col>
-                        <Col>
+                        <Col md={8}>
                             <Form.Group controlId="formBasicUsername">
                                 <Form.Control value={contact} onChange={(e) => setContact(e.target.value)}
                                     type="e-mail"  />
@@ -142,36 +144,36 @@ const Updateform = (props) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
+                        <Col md={4}>
                             <p>
                                 Password
                             </p>
                         </Col>
-                        <Col>
+                        <Col md={8}>
                             <Form.Group controlId="formBasicPassword">
-                                <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                <Form.Control type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
                             </Form.Group>
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
+                        <Col md={4}>
                             <p>
                                 Short description
                             </p>
                         </Col>
-                        <Col>
+                        <Col md={8}>
                             <Form.Group controlId="formBasicUsername">
                                 <Form.Control type="text" value={subHeader} onChange={(e) => setSubHeader(e.target.value)} />
                             </Form.Group>
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
+                        <Col md={4}>
                             <p>
                                 About me
                             </p>
                         </Col>
-                        <Col>
+                        <Col md={8}>
                         <Form.Group controlId="formBasicUsername">
                             <Form.Control
                                 value={description} onChange={(e) => setDescription(e.target.value)} as="textarea" rows={5} placeholder="" />
@@ -179,12 +181,12 @@ const Updateform = (props) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
+                        <Col md={4}>
                             <p>
                                 Interests
                             </p>
                         </Col>
-                        <Col>
+                        <Col md={8}>
                         <Form.Group controlId="formBasicUsername">
                             <DropdownMultiselect
                                 options={["Coding", "Music", "Selfdevelopement", "Stocks", "Technolgies", "Books"]}
@@ -196,18 +198,24 @@ const Updateform = (props) => {
                         </Form.Group>
                         </Col>
                     </Row>
-
+                    <hr/>
                         {/* <Form.Group controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="save changes" />
                         </Form.Group> */}
+                    <Row>
+                        <Col md={4}>
+                        </Col>
+                        <Col md={8}>
+                            <Button className="btn" variant="primary" onClick={update}>
+                                Update
+                            </Button>
 
-                        <Button className="btn" variant="primary" onClick={update}>
-                            Update
-                        </Button>
-
-                        <div className="discardChanges">
-                            <a href="/profile">discard changes</a>
-                        </div>
+                            <div className="discardChanges">
+                                <a href="/profile">Discard changes</a>
+                            </div>
+                        </Col>
+                    </Row>
+                        
                     </Form>
             </div>
         </Container>

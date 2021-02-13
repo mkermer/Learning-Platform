@@ -14,7 +14,7 @@ p {
 h1 {
     font-size: 50px !important;
     line-height: 1.6 !important;
-    margin-bottom: 42px !important;
+    /* margin-bottom: 42px !important; */
     font-weight: 500 !important;
 }
 
