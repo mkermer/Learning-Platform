@@ -27,7 +27,6 @@ const DisplayVideo = (props) => {
     const timestamp = Date.now();
     const image = props.applicationState.user.image;
     const student = props.applicationState.user.studentName;
-
     const instructor = props.applicationState.video.instructor;
     const courseName = props.applicationState.video.courseName;
     const url = props.applicationState.video.url;
@@ -43,15 +42,13 @@ const DisplayVideo = (props) => {
 
     useEffect(async () => {
         await getReviews();
-        console.log(reviewArr)
-        console.log(avgRat)
+
 
     }, [setAvgRat, setReviewArr])
 
 
     const ratingReview = (rating) => {
         setRating(rating);
-
     }
 
 
@@ -150,11 +147,11 @@ const DisplayVideo = (props) => {
 
                 <Form className="form-elem">
                     <h1>Overall Rating</h1>
-                    <FontAwesomeIcon icon={faStar} className={avgRat > 0 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={avgRat > 1 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={avgRat > 2 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={avgRat > 3 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={avgRat > 4 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 0 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 1 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 2 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 3 ? 'blue' : ''} />
+                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 4 ? 'blue' : ''} />
 
                     <h1>Reviews</h1>
 

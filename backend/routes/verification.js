@@ -9,11 +9,27 @@ let Instructor = require('../models/instructor_model');
 
 
 
-router.route('/').get(async (req, res) => {
+
+
+const getLatestUserData = (arr) => {
+    let latestUserDataInput = arr.reduce(function (prev, current) {
+        if (+current.id > +prev.id) {
+            return current;
+        } else {
+            return prev;
+        }
+    });
+
+    return latestUserDataInput;
+}
+
+
+async function verify(req, res) {
     try {
 
 
         const verification = await Verification.find();
+        // getLatestUserData(verification)
         var latestUserDataInput = verification.reduce(function (prev, current) {
             if (+current.id > +prev.id) {
                 return current;
@@ -21,7 +37,6 @@ router.route('/').get(async (req, res) => {
                 return prev;
             }
         });
-
 
         const student = await Student.find();
 
@@ -61,7 +76,9 @@ router.route('/').get(async (req, res) => {
     } catch (err) {
         res.json('Error:' + err);
     }
-})
+}
+
+router.route('/').get(verify)
 
 
 
@@ -87,6 +104,8 @@ router.route('/add').post(async (req, res) => {
 
 
 
-
+module.exports = getLatestUserData;
 
 module.exports = router;
+
+module.exports = sum; 

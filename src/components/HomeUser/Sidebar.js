@@ -7,6 +7,7 @@ import { SideBarData } from './SideBarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 import './Sidebar.css';
+import OverlayProfile from './OverlayProfile';
 // import {Button} from "react-bootstrap";
 const Nav = styled.header`
 background-color: #2073d9;
@@ -113,18 +114,24 @@ const Sidebar = () => {
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
-          <StyledLink as="a" href="/#">
+          <StyledLink as="a" >
             <FaIcons.FaBars onClick={showSidebar} />
           </StyledLink>
-          <SearchBar onSearchClick={() => alert('Search the content')} />
-          <StyledLink as="a" href="/login" onClick={() =>('login')}>Login</StyledLink>
+
+          <StyledLink as="a" href="/login" onClick={() => ('login')}>Login</StyledLink>
+          <OverlayProfile />
         </Nav>
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>
             <NavIcon to="#">
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
-            {SideBarData.map((item, index) => <SubMenu item={item} key={index} />)}
+
+            {/* //callfunction   */}
+            {Sidebarfunction(props.applicationState.user.type).map((item, index) => {
+              return <SubMenu item={item} key={index} />;
+            })}
+
           </SidebarWrap>
         </SidebarNav>
       </IconContext.Provider>

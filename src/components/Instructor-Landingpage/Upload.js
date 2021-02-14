@@ -176,7 +176,7 @@ function Upload(props) {
               </Form.Group>
 
               <Form.Group>
-                <Form.File accept="video/*" label="OR" onChange={SetVideo} />
+                <Form.File accept="video/*" onChange={SetVideo} />
               </Form.Group>
 
             </Form>

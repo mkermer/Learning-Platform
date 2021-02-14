@@ -7,7 +7,7 @@ const DeleteVideo = (props) => {
 
     const deleteVideo = async () => {
 
-        const response = await axios.delete(config.baseUrl + `/video/${props.video._id}`);
+        const response = await axios.delete(config.baseUrl + `/video/${props.vid._id}`);
         console.log(response.data);
     }
     return (

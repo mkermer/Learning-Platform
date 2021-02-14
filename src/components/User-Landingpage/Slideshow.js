@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Col } from 'react-bootstrap';
+import { Carousel, Col, Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import config from '../../config/config';
@@ -12,7 +12,7 @@ function Slideshow(props) {
     const [category, setCategory] = useState([]);
     const [randomVid, setRandomVideos] = useState([]);
 
-
+//TEST
     useEffect(async () => {
 
         setRandomVidFunction();
@@ -27,8 +27,12 @@ function Slideshow(props) {
         const category = response.data;
 
         // const displayVideo = () => {
-        const randomInterest = interest[Math.floor(Math.random() * interest.length)];
+        const randomInterest = "Technologies"
         console.log(randomInterest);
+        // interest[Math.floor(Math.random() * interest.length)];
+
+
+
         let arrVideos = [];
         for (let i = 0; i < category.length; i++) {
             if (randomInterest === category[i]["category"]) {
@@ -36,7 +40,7 @@ function Slideshow(props) {
             }
         }
 
-
+        console.log(arrVideos)
         let randomVideos = [];
         let randVid = 0;
         for (let j = 0; j <= 3; j++) {
@@ -54,7 +58,14 @@ function Slideshow(props) {
 
     }
 
+    // const number = () => {
+    //     numberdisplay(3)
+    //     };
 
+    // const numberdisplay = (max) => {
+    //     console.log(Math.floor(Math.random * Math.floor(max)));
+    //     console.log('Hi')
+    // }
 
 
 
@@ -71,38 +82,16 @@ function Slideshow(props) {
 
 
                 <Carousel>
-                    Rendered on userspecific
                     {randomVid.map((vid, index) => {
-                    return (
-                        <Carousel.Item key={index}>
-                            <Player>
-                                <source src={vid} />
-                            </Player>
-                        </Carousel.Item>)
-                })}
+                        return (
+                            <Carousel.Item key={index}>
+                                <Player>
+                                    <source src={vid} />
+                                </Player>
+                            </Carousel.Item>)
+                    })}
 
-                    {/* <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/EPxqPw1N1Qk?controls=0"
-                            alt="Video Name"
-                        />
-                        
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/Bcn98eUsUdw?controls=0"
-                            alt="Video Name"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/BBz-Jyr23M4?controls=0"
-                            alt="Video Name"
-                        />
-                    </Carousel.Item> */}
+
                 </Carousel>
             </Col>
 

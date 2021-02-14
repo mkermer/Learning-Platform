@@ -153,7 +153,7 @@ const RegisterForm = (props) => {
                             <Form.Group controlId="formBasicUsername">
                                 <Form.Label>Interests/Expertise</Form.Label>
                                 <DropdownMultiselect
-                                    options={["Coding", "Music", "Technolgies",]}
+                                    options={["Coding", "Music", "Technologies",]}
                                     name="countries"
                                     handleOnChange={(selected) => {
                                         setExpInt(selected);
