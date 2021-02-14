@@ -10,9 +10,6 @@ import Footer from "./components/FooterSection/Footer";
 import Sidebar from './components/HomeUser/Sidebar';
 import { DashProvider } from './DashContext'
 import Home from './components/LandingPage/Home';
-
-// import Login2 from './components/Register/Login2';
-
 import Zoom from './scheduler/Zoom';
 import Calendar from './components/Calendar';
 import SearchVideos from './components/SearchVideos/searchVideos';
@@ -51,7 +48,9 @@ function App(props) {
           <Route path="/InstructorLandingpage" component={InstructorLandingpage}/>
           <Route path='/Calendar' exact component={Calendar} />
           <Route path='/scheduler' exact component={Scheduler} />
+          <Route path="/Home" component={Home} />
           <Route path="*" component={Page404}/>
+
         </Switch> 
       </DashProvider>
       <Footer />
@@ -69,6 +68,7 @@ function App(props) {
         <Switch>
           <Route path="/" exact component={RegisterForm} />
           <Route path="/login" component={Login} />
+          <Route path="/Home" component={Home} />
           <Route path="*" component={Page404}/>
         </Switch> 
 

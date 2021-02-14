@@ -94,13 +94,13 @@ const Updateform = (props) => {
             <Row className="header">
                 <Col xs={12} lg={4}>
                     <img src={props.applicationState.user.image} alt="pic"/>
-                    {/* <img src="https://www.garten-blogg.de/wp-content/uploads/2019/01/Tests.jpg" alt="pic"/> */}
+                
                 </Col>
                 <Col xs={12} lg={3}>
                     <h2>{username}</h2>
-                    {/* <h2>Username </h2> */}
+                    
                     <h3>{firstName} {lastName}</h3>
-                    {/* <h4> Emailadresse</h4> */}
+                    
                     <h4>{contact}</h4>
                 </Col>
                 <Col xs={12} lg={5}>

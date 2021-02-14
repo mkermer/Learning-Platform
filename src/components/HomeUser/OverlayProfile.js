@@ -50,7 +50,7 @@ function OverlayProfile(props) {
                       )}
                     )}
                     
-                  </ul> {}
+                  </ul>
                 </div>
 
                 <Button href="/update">

@@ -20,6 +20,11 @@
     margin-bottom: 15px;
 }
 
+.popover div{
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
 .person{
     cursor: pointer;
 }
