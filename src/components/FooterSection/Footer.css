@@ -9,15 +9,28 @@
 	background-color: #7aadeb !important;
 	box-sizing:border-box;
 	border-color: #2073d9 !important;
-	
-	
-    background-image: url('../../SVG/Teach.svg');
-	background-repeat: no-repeat;
-    background-size:22rem;
-	background-position: 2% 78%;
-
 
 }
+
+@media (min-width: 1700px){
+	.main-footer{
+		background-image: url('../../SVG/Teach.svg');
+		background-repeat: no-repeat;
+		background-size:22rem;
+		background-position: 2% 78%;
+	}
+}
+
+@media (max-width: 1699px){
+	.main-footer{
+		background-image: url('../../SVG/Teach.svg');
+		background-repeat: no-repeat;
+		background-size:15rem;
+		background-position: 100% 88%;
+	}
+}
+
+
 .Footer {
 padding:0 auto;
 width: 100%;

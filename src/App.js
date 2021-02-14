@@ -18,6 +18,7 @@ import Scheduler from "./scheduler/Scheduler";
 import CategoryCoding from './components/SearchVideos/CategoryCoding';
 import CategoryMusic from './components/SearchVideos/CategoryMusic';
 import CategoryTechnologies from './components/SearchVideos/CategoryTechnologies';
+import Page404 from './Page404';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './actions/app.action';
@@ -44,6 +45,7 @@ function App(props) {
           <Route path="/UserLandingpage" component={UserLandingpage} />
           <Route path="/InstructorLandingpage" component={InstructorLandingpage} />
           <Route path='/scheduler' exact component={Scheduler} />
+          <Route path="*" component={Page404}/>
         </Switch> 
 
       </DashProvider>
@@ -61,6 +63,7 @@ function App(props) {
         <Switch>
           <Route path="/" exact component={RegisterForm} />
           <Route path="/login" component={Login} />
+          <Route path="*" component={Page404}/>
         </Switch> 
 
       </DashProvider>

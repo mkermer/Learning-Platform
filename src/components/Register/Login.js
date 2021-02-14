@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import config from '../../config/config';
-import { Form } from 'react-bootstrap';
+import { Container, Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Alert } from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -64,10 +64,9 @@ function Login(props) {
     });
 
     return (
-        <div className="container">
-            <div className="left">
+        <Container className="cont">
+            
                 <div className="inner">
-                    <div className="logo">Login</div>
 
                     <Form className="form-elem">
                         <Form.Group controlId="formBasicUsername">
@@ -82,23 +81,21 @@ function Login(props) {
                                 value={password} onChange={(e) => setPassword(e.target.value)} />
                         </Form.Group>
 
-                        <Form.Group controlId="formBasicCheckbox">
+                        {/* <Form.Group controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="save password" />
-                        </Form.Group>
+                        </Form.Group> */}
 
                         <Button className="btn" variant="primary" onClick={authentication}>
                             Login
-                            </Button>
+                        </Button>
                         <div className="registerLink">
                             <a href="/">do not have an account yet? Register</a>
                         </div>
                     </Form>
                 </div>
-            </div>
-            <div className="right">
+            
 
-            </div>
-        </div>
+        </Container>
     )
 
 
