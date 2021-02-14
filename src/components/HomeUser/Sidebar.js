@@ -128,7 +128,7 @@ const Sidebar = (props) => {
           <StyledLink as="a" >
             <FaIcons.FaBars onClick={showSidebar} />
           </StyledLink>
-          <SearchBar onSearchClick={() => alert('Search the content')} />
+
           <StyledLink as="a" href="/login" onClick={() => ('login')}>Login</StyledLink>
           <OverlayProfile />
         </Nav>

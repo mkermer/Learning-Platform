@@ -21,7 +21,8 @@ function appReducer(state = initialState, action) {
                 ...state,
                 video: action.video
             }
-        }
+        };
+
         default:
             return state;
     }

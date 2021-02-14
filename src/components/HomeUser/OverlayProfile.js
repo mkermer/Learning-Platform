@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {Popover, OverlayTrigger, Overlay, Button} from "react-bootstrap";
+import { Popover, OverlayTrigger, Overlay, Button } from "react-bootstrap";
 import { PersonCircle } from "react-bootstrap-icons";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
@@ -10,31 +10,38 @@ import './OverlayProfile.css'
 
 function OverlayProfile(props) {
 
-  return(
+  const logout = () => {
+    props.actions.storeUserData(false)
+  }
+
+  return (
 
     <>
-    {['bottom'].map((placement) => (
-    <OverlayTrigger
-      trigger="click"
-      key={placement}
-      placement={placement}
-      overlay={
-        <Popover id={`popover-positioned-${placement}`} className="popover">
-          <Popover.Title>
-            <img src={props.applicationState.user.image} alt="pic"/>
-            <h3>{props.applicationState.user.username}</h3>
-          </Popover.Title>
-          <Popover.Content>
-            <p> {props.applicationState.user.subHeader}</p>
-            <p>{props.applicationState.user.description}</p>
-            <p> {props.applicationState.user.interests}</p>
-            
-            <Button href="/update">
-              Edit Profile
+
+      {['bottom'].map((placement) => (
+        <OverlayTrigger
+          trigger="click"
+          key={placement}
+          placement={placement}
+          overlay={
+            <Popover id={`popover-positioned-${placement}`} className="popover">
+              <Popover.Title>
+                <img src={props.applicationState.user.image} alt="pic" />
+                {/* <h3>{props.applicationState.user.username}</h3> */}
+              </Popover.Title>
+              <Popover.Content>
+                <p> {props.applicationState.user.subHeader}</p>
+                <p>{props.applicationState.user.description}</p>
+                <p> {props.applicationState.user.interests}</p>
+
+                <Button href="/update">
+                  Edit Profile
+
             </Button>
-            <Button href="/">
-              Logout
+                <Button href="/" onClick={logout}>
+                  Logout
             </Button>
+
           </Popover.Content>
         </Popover>
       }
@@ -42,6 +49,7 @@ function OverlayProfile(props) {
       <PersonCircle className="person" size={25}/>
     </OverlayTrigger>
   ))}
+
 
     </>
   )

@@ -5,6 +5,8 @@ import DisplayButton from './DisplayButton';
 import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import Moment from 'react-moment';
+
 
 const Cards = (props) => {
     const videos = props.videos;
@@ -27,13 +29,13 @@ const Cards = (props) => {
                             <source src={video.url} />
                         </Player>
                         <Card.Body>
-                            <Card.Title>{video.courseName}</Card.Title>
+                            <Card.Title>{video.videoName}</Card.Title>
                             <Card.Text>
                                 {video.description}
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroupItem>{video.instructor}</ListGroupItem>
+                            <ListGroupItem>{video.courseName}</ListGroupItem>
                             <ListGroupItem>
                                 <FontAwesomeIcon icon={faStar} className={video.avgRat > 0 ? 'blue' : ''} />
                                 <FontAwesomeIcon icon={faStar} className={video.avgRat > 1 ? 'blue' : ''} />
@@ -41,7 +43,8 @@ const Cards = (props) => {
                                 <FontAwesomeIcon icon={faStar} className={video.avgRat > 3 ? 'blue' : ''} />
                                 <FontAwesomeIcon icon={faStar} className={video.avgRat > 4 ? 'blue' : ''} />
                             </ListGroupItem>
-                            <ListGroupItem>Vestibulum at eros</ListGroupItem>
+                            <ListGroupItem>{video.instructor}</ListGroupItem>
+                            <ListGroupItem><Moment fromNow>{video.timestamp}</Moment></ListGroupItem>
                         </ListGroup>
                         <Card.Body>
                             <DisplayButton video={video} />
