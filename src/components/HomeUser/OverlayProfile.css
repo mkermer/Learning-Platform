@@ -1,5 +1,23 @@
 .popover p{
-    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0 !important;
+}
+
+.popover img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 10px 0 0 3px;
+}
+
+.popover h3{
+    margin:0 !important;
+}
+
+.popover .btn{
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .person{

@@ -19,10 +19,17 @@ import SearchVideos from './components/SearchVideos/searchVideos';
 import DisplayVideo from './components/SearchVideos/DisplayVideo';
 import Updateform from './components/UpdateForm/Userupdateform';
 import Scheduler from "./scheduler/Scheduler";
-function App() {
+import CategoryCoding from './components/SearchVideos/CategoryCoding';
+import CategoryMusic from './components/SearchVideos/CategoryMusic';
+import CategoryTechnologies from './components/SearchVideos/CategoryTechnologies';
+import Page404 from './Page404';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from './actions/app.action';
 
- 
+function App(props) {
 
+  if(props.applicationState.user !== false){
   return(
 
 
@@ -44,6 +51,7 @@ function App() {
           <Route path="/InstructorLandingpage" component={InstructorLandingpage}/>
           <Route path='/Calendar' exact component={Calendar} />
           <Route path='/scheduler' exact component={Scheduler} />
+          <Route path="*" component={Page404}/>
         </Switch> 
       </DashProvider>
       <Footer />
@@ -51,6 +59,26 @@ function App() {
     </Router>
 
   );
+  }
+  else{
+    return(
+      <Router>
+
+
+      <DashProvider>
+        <Switch>
+          <Route path="/" exact component={RegisterForm} />
+          <Route path="/login" component={Login} />
+          <Route path="*" component={Page404}/>
+        </Switch> 
+
+      </DashProvider>
+      <Footer />
+    </Router>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({ applicationState: state });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+export default connect(mapStateToProps, mapDispatchToProps)(App);
