@@ -1,6 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Play&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Exo&display=swap'); */
+
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap');
 
 h1,
@@ -10,16 +8,13 @@ h4,
 h5,
 h6,
 p {
-  /* font-family: 'Play', sans-serif; */
-  /* font-family: 'ABeeZee', sans-serif; */
-  /* font-family: 'Exo', sans-serif; */
   font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 h1 {
     font-size: 50px !important;
     line-height: 1.6 !important;
-    margin-bottom: 42px !important;
+    /* margin-bottom: 42px !important; */
     font-weight: 500 !important;
 }
 
@@ -27,7 +22,7 @@ h2{
     font-size: 24px !important;
     letter-spacing: 3px !important; 
     font-weight: 500 !important;
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
 }
 
 h3 {
@@ -38,15 +33,13 @@ h3 {
 }
 
 h4{
-    font-size: 32px !important;
+    font-size: 14px !important;
     margin-top: 72px !important;
     margin-bottom: 48px !important;
-    text-align: center !important; 
-    text-transform: uppercase !important;
 }
 
 h5{
-    font-size: 24px !important;
+    font-size: 12px !important;
     margin-top: 16px !important;
     margin-bottom: 16px !important;
     text-align: center !important; 
@@ -95,8 +88,15 @@ p {
   opacity: 0.5;
 }
 
-.container{
+.container {
     width: 70% !important;
+}
 
+.container-content {
+  width: 70% !important;
+  /* border: 1px solid rgb(255, 255, 255); */
+  box-shadow:rgb(230, 230, 230) -1px -1px 6px 1px;
+  border-radius: 10px;
+  
 }
 

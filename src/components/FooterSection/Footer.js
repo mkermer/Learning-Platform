@@ -53,7 +53,7 @@ function Footer() {
       <Container className="Footer">
         <Row>
           <Col xs={12} sm={6} md={4}  className="background">
-            <h4> TeachYourBest INC  </h4>
+            <h3> TeachYourBest INC  </h3>
            <p> We are a newly created teaching platform aiming to make your quarantine more productive and fun !
                Here you will find endless opportunities to learn new things or you will be the one who teach to the 
                thousands !
@@ -64,7 +64,7 @@ function Footer() {
           </Col>
         
           <Col xs={12} sm={6} md={4}   className="background">
-          <h4>Useful Links</h4>
+          <h3>Useful Links</h3>
             <ul>
               <li className="list-unstyled-link">
                 <a href="#!">Fun</a>
@@ -87,7 +87,7 @@ function Footer() {
           </Col>
           <Col xs={12} sm={6} md={4}   className="background">
          
-          <h4> Find Us</h4>
+          <h3> Find Us</h3>
            
           <ul className ="list-unstyled">
 

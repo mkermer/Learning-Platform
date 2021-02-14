@@ -1,0 +1,7 @@
+.popover p{
+    display: block;
+}
+
+.person{
+    cursor: pointer;
+}

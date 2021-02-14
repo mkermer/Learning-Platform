@@ -4,9 +4,10 @@ import config from '../../config/config';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
-import { Form } from 'react-bootstrap';
+import { Col, Container, Form, Jumbotron, Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
+import './Userupdateform.css'
 
 
 
@@ -15,15 +16,17 @@ const Updateform = (props) => {
     const [urlImage, setUrl] = useState("");
     const [subHeader, setSubHeader] = useState(props.applicationState.user.subHeader);
     const [description, setDescription] = useState(props.applicationState.user.description);
-    const [interests, setInterests] = useState(props.applicationState.user.interests)
-    const score = props.applicationState.user.score;
+    const [interests, setInterests] = useState(props.applicationState.user.interests);
+    const [contact, setContact] = useState(props.applicationState.user.contact);
+    const [username, setUsername] = useState(props.applicationState.user.username);
+    const [password, setPassword] = useState(props.applicationState.user.password);
+    // const score = props.applicationState.user.score;
     const firstName = props.applicationState.user.firstName;
     const lastName = props.applicationState.user.lastName;
     const studentName = props.applicationState.user.username;
-    const contact = props.applicationState.user.contact;
-    const password = props.applicationState.user.password;
     const type = props.applicationState.user.type;
     const courses = props.applicationState.user.courses;
+    
 
 
 
@@ -58,7 +61,7 @@ const Updateform = (props) => {
             subHeader: subHeader,
             contact: contact,
             image: urlImage,
-            score: score,
+            // score: score,
             interests: interests,
             courses: courses,
             type: type
@@ -76,39 +79,115 @@ const Updateform = (props) => {
 
 
     return (
-        <div className="container">
-            <div className="left">
-                <div className="inner">
+        <Container className="container-content UpdateProfil">
+            <Jumbotron fluid>
+                    <h1>Update Profile</h1>
+            </Jumbotron>
+            <div className="inner">
+            
+            <Row className="header">
+                <Col xs={12} lg={4}>
+                    {/* <img src={props.applicationState.user.image} alt="pic"/> */}
+                    <img src="https://www.garten-blogg.de/wp-content/uploads/2019/01/Tests.jpg" alt="pic"/>
+                </Col>
+                <Col xs={12} lg={3}>
+                    {/* <h2>{username}</h2> */}
+                    <h2>Username </h2>
+                    <h3>{firstName} {lastName}</h3>
+                    <h4> Emailadresse</h4>
+                </Col>
+                <Col xs={12} lg={5}>
+                    <div className="formImg">
+                        <Form className="form-elem">
 
-                    <div className="logo">Update Profile</div>
+                            <Form.Group controlId="formBasicUsername">
+                                <Form.Label>Update Image</Form.Label>
+                                <Form.Control onChange={(e) => setImage(e.target.files[0])} accept="image/*" type="file"  />
+                            </Form.Group>
 
-                    <Form className="form-elem">
+                        </Form>
+                            <Button variant="primary" onClick={postDetails}>
+                                Upload Image
+                            </Button>
+                    </div>
+                    
+                </Col>
+                
+            </Row>
+            <hr/>
 
+                <Form className="form-elem">
+                    <Row>
+                        <Col md={4}>
+                            <p>
+                                Username
+                            </p>
+                        </Col>
+                        <Col md={8}>
+                            <Form.Group controlId="formBasicUsername">
+                                <Form.Control value={username} onChange={(e) => setUsername(e.target.value)}
+                                    type="username"  />
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={4}>
+                            <p>
+                                Email
+                            </p>
+                        </Col>
+                        <Col md={8}>
+                            <Form.Group controlId="formBasicUsername">
+                                <Form.Control value={contact} onChange={(e) => setContact(e.target.value)}
+                                    type="e-mail"  />
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={4}>
+                            <p>
+                                Password
+                            </p>
+                        </Col>
+                        <Col md={8}>
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Control type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={4}>
+                            <p>
+                                Short description
+                            </p>
+                        </Col>
+                        <Col md={8}>
+                            <Form.Group controlId="formBasicUsername">
+                                <Form.Control type="text" value={subHeader} onChange={(e) => setSubHeader(e.target.value)} />
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={4}>
+                            <p>
+                                About me
+                            </p>
+                        </Col>
+                        <Col md={8}>
                         <Form.Group controlId="formBasicUsername">
-                            <Form.Label>Short description</Form.Label>
-                            <Form.Control type="username" placeholder="" value={subHeader}
-                                onChange={(e) => setSubHeader(e.target.value)} />
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicUsername">
-                            <Form.Label>Description</Form.Label>
                             <Form.Control
                                 value={description} onChange={(e) => setDescription(e.target.value)} as="textarea" rows={5} placeholder="" />
                         </Form.Group>
-
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={4}>
+                            <p>
+                                Interests
+                            </p>
+                        </Col>
+                        <Col md={8}>
                         <Form.Group controlId="formBasicUsername">
-                            <Form.Label>Image</Form.Label>
-                            <Form.Control onChange={(e) => setImage(e.target.files[0])} type="file" placeholder="" />
-                        </Form.Group>
-
-                        <Button variant="primary" onClick={postDetails}>
-                            Upload Image
-                            </Button>
-
-
-
-                        <Form.Group controlId="formBasicUsername">
-                            <Form.Label>Interests/Expertise</Form.Label>
                             <DropdownMultiselect
                                 options={["Coding", "Music", "Selfdevelopement", "Stocks", "Technolgies", "Books"]}
                                 name="countries"
@@ -117,28 +196,29 @@ const Updateform = (props) => {
                                 }}
                             />
                         </Form.Group>
-
-
-                        <Form.Group controlId="formBasicCheckbox">
+                        </Col>
+                    </Row>
+                    <hr/>
+                        {/* <Form.Group controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="save changes" />
-                        </Form.Group>
+                        </Form.Group> */}
+                    <Row>
+                        <Col md={4}>
+                        </Col>
+                        <Col md={8}>
+                            <Button className="btn" variant="primary" onClick={update}>
+                                Update
+                            </Button>
 
-                        <Button className="btn" variant="primary" onClick={update}>
-                            Update
-                        </Button>
-
-                        <div className="discardChanges">
-                            <a href="/profile">discard changes</a>
-                        </div>
+                            <div className="discardChanges">
+                                <a href="/profile">Discard changes</a>
+                            </div>
+                        </Col>
+                    </Row>
+                        
                     </Form>
-                </div>
             </div>
-
-            <div className="right">
-
-            </div>
-
-        </div>
+        </Container>
 
     )
 }
