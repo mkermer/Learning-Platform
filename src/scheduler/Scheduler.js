@@ -10,7 +10,7 @@ class Scheduler extends Component {
 
         this.state = {
             startDate: "2021-02-01",
-            days: 14,
+            days: 28,
             scale: "Day",
             timeHeaders: [
                 { groupBy: "Month"},
@@ -107,6 +107,7 @@ class Scheduler extends Component {
                     });
                   }}
                   ref={component => { this.scheduler = component && component.control; }}
+                  
                 />
             </div>
             </div>
