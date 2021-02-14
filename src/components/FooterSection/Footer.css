@@ -1,0 +1,134 @@
+.main-footer {
+    padding-top:1em;
+    bottom:0;
+    width: 100%;
+    margin: 0 auto !important;
+    height:auto;
+	position:relative;
+	display:block;
+	background-color: #7aadeb !important;
+	box-sizing:border-box;
+	border-color: #2073d9 !important;
+
+}
+
+@media (min-width: 1700px){
+	.main-footer{
+		background-image: url('../../SVG/Teach.svg');
+		background-repeat: no-repeat;
+		background-size:22rem;
+		background-position: 2% 78%;
+	}
+}
+
+@media (max-width: 1699px){
+	.main-footer{
+		background-image: url('../../SVG/Teach.svg');
+		background-repeat: no-repeat;
+		background-size:15rem;
+		background-position: 100% 88%;
+	}
+}
+
+
+.Footer {
+padding:0 auto;
+width: 100%;
+color:black;
+
+
+}
+.main-footer  {
+	background-color:#e9f2fc !important;
+	display:inline-block;
+	vertical-align:top;
+	position:relative;
+	justify-content: center;
+	
+
+}
+.background {
+padding:10px;
+/* border: solid 0.5px #7aadeb; */
+box-sizing: border-box;
+margin:0 auto;
+
+}
+
+.background:nth-of-type(even){
+	/* background-color: #dbecff; */
+	border-left: 1px solid #7aadeb;
+	border-right: 1px solid #7aadeb;
+	/* background-image: radial-gradient(#dbecff,#e9f2fc); */
+
+}
+.FooterTwo {
+	text-align:center;
+	padding:5px;
+}
+
+.list-unstyled li{
+	padding:5px;
+	margin-bottom: 5px;
+	font-size: 15px;
+	text-align: center;
+	
+}
+
+.list-unstyled-link {
+	padding:15px;
+	text-decoration: underline;
+	color:black;
+}
+/* TEST */
+.Twit {
+color:#1DA1F2;
+
+}
+.Insta {
+	background-image: linear-gradient(315deg, #FFDC80, #FCAF45,#F77737,#F56040,#FD1D1D,#E1306C,#C13584,#833AB4,#5851DB,#405DE6);
+	color: white;
+	padding:5px;
+	border-radius:15px;
+
+}
+.Face {
+color: #4267B2;
+}
+.YouTube {
+color: red;
+
+}
+
+.background-social{
+	display: flex;
+	justify-content: space-around;
+	/* border: solid; */
+	
+}
+.background ul li a {
+	color:black;
+	font-size: 18px;
+}
+
+.background ul {
+		list-style-type: none;
+		text-align: center;
+		padding: 0;
+		margin:0;
+}
+
+.mapp iframe{
+	margin: 0 10%;
+	width: 80%;
+	border: solid 1px;
+    border-radius: 10px;
+}
+.background h3 {
+	text-align: center;
+}
+.background p{
+	margin-top: 20px;
+	padding: 0 20px;
+	text-align: justify;
+}

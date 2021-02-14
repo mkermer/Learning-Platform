@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { persistor, store } from './reducers/store';
 import { PersistGate } from 'redux-persist/integration/react';
+// import * as serviceWorker from './serviceWorker';
 
 
 
