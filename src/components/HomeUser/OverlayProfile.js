@@ -27,7 +27,7 @@ function OverlayProfile(props) {
             <Popover id={`popover-positioned-${placement}`} className="popover">
               <Popover.Title>
                 <img src={props.applicationState.user.image} alt="pic" />
-                {/* <h3>{props.applicationState.user.username}</h3> */}
+                <h3>{props.applicationState.user.firstName}</h3>
               </Popover.Title>
               <Popover.Content>
                 <p> {props.applicationState.user.subHeader}</p>

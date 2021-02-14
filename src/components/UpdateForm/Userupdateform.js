@@ -13,17 +13,17 @@ import './Userupdateform.css'
 
 const Updateform = (props) => {
     const [image, setImage] = useState("");
-    const [urlImage, setUrl] = useState("");
+    const [urlImage, setUrl] = useState(props.applicationState.user.image);
     const [subHeader, setSubHeader] = useState(props.applicationState.user.subHeader);
     const [description, setDescription] = useState(props.applicationState.user.description);
     const [interests, setInterests] = useState(props.applicationState.user.interests);
     const [contact, setContact] = useState(props.applicationState.user.contact);
-    const [username, setUsername] = useState(props.applicationState.user.username);
+    const [username, setUsername] = useState(props.applicationState.user.studentName);
     const [password, setPassword] = useState(props.applicationState.user.password);
     // const score = props.applicationState.user.score;
     const firstName = props.applicationState.user.firstName;
     const lastName = props.applicationState.user.lastName;
-    const studentName = props.applicationState.user.username;
+    // const studentName = props.applicationState.user.studentName;
     const type = props.applicationState.user.type;
     const courses = props.applicationState.user.courses;
     
@@ -55,7 +55,7 @@ const Updateform = (props) => {
 
             firstName: firstName,
             lastName: lastName,
-            studentName: studentName,
+            studentName: username,
             password: password,
             description: description,
             subHeader: subHeader,
@@ -69,6 +69,8 @@ const Updateform = (props) => {
         try {
             const response = await axios.post(`http://localhost:2000/student/update/${props.applicationState.user._id}`, updatedUser);
             console.log(response.data);
+            props.actions.storeUserData(response.data)
+
 
 
         } catch (err) {
@@ -87,14 +89,15 @@ const Updateform = (props) => {
             
             <Row className="header">
                 <Col xs={12} lg={4}>
-                    {/* <img src={props.applicationState.user.image} alt="pic"/> */}
-                    <img src="https://www.garten-blogg.de/wp-content/uploads/2019/01/Tests.jpg" alt="pic"/>
+                    <img src={props.applicationState.user.image} alt="pic"/>
+                    {/* <img src="https://www.garten-blogg.de/wp-content/uploads/2019/01/Tests.jpg" alt="pic"/> */}
                 </Col>
                 <Col xs={12} lg={3}>
-                    {/* <h2>{username}</h2> */}
-                    <h2>Username </h2>
+                    <h2>{username}</h2>
+                    {/* <h2>Username </h2> */}
                     <h3>{firstName} {lastName}</h3>
-                    <h4> Emailadresse</h4>
+                    {/* <h4> Emailadresse</h4> */}
+                    <h4>{contact}</h4>
                 </Col>
                 <Col xs={12} lg={5}>
                     <div className="formImg">
@@ -189,8 +192,9 @@ const Updateform = (props) => {
                         <Col md={8}>
                         <Form.Group controlId="formBasicUsername">
                             <DropdownMultiselect
-                                options={["Coding", "Music", "Selfdevelopement", "Stocks", "Technolgies", "Books"]}
-                                name="countries"
+                                options={["Coding", "Music", "Technolgies"]}
+                                name="categories"
+                                selected={props.applicationState.user.interests}
                                 handleOnChange={(selected) => {
                                     setInterests(selected);
                                 }}
