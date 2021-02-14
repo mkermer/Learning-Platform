@@ -4,7 +4,7 @@ import config from '../../config/config';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
-import { Col, Container, Form, Jumbotron, Row } from 'react-bootstrap';
+import { Col, Container, Form, Jumbotron, Row, Alert } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 import './Userupdateform.css'
@@ -29,26 +29,6 @@ const Updateform = (props) => {
     
 
 
-
-    const postDetails = () => {
-        const data = new FormData;
-        data.append("file", image);
-        data.append("upload_preset", "inflog");
-        data.append("cloud_name", "davidwalzer");
-        fetch("https://api.cloudinary.com/v1_1/davidwalzer/image/upload", {
-            method: "post",
-            body: data
-        })
-            .then(res => res.json())
-            .then(data => {
-                setUrl(data.url)
-
-
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    }
 
     const update = async () => {
         const updatedUser = {
@@ -76,7 +56,31 @@ const Updateform = (props) => {
         } catch (err) {
             console.log(err);
         }
+        window.location.reload()
+        alert("Your Profil has been successfully updated!")
 
+    }
+
+    const postDetails = () => {
+        const data = new FormData;
+        data.append("file", image);
+        data.append("upload_preset", "inflog");
+        data.append("cloud_name", "davidwalzer");
+        fetch("https://api.cloudinary.com/v1_1/davidwalzer/image/upload", {
+            method: "post",
+            body: data
+        })
+            .then(res => res.json())
+            .then(data => {
+                setUrl(data.url)
+
+
+            })
+            .catch(err => {
+                console.log(err);
+            })
+        
+        update();
     }
 
 
