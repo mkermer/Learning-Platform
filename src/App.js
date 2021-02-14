@@ -18,9 +18,13 @@ import Scheduler from "./scheduler/Scheduler";
 import CategoryCoding from './components/SearchVideos/CategoryCoding';
 import CategoryMusic from './components/SearchVideos/CategoryMusic';
 import CategoryTechnologies from './components/SearchVideos/CategoryTechnologies';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from './actions/app.action';
 
-function App() {
+function App(props) {
 
+  if(props.applicationState.user !== false){
   return(
 
     <Router>
@@ -47,6 +51,25 @@ function App() {
     </Router>
 
   );
+  }
+  else{
+    return(
+      <Router>
+
+
+      <DashProvider>
+        <Switch>
+          <Route path="/" exact component={RegisterForm} />
+          <Route path="/login" component={Login} />
+        </Switch> 
+
+      </DashProvider>
+      <Footer />
+    </Router>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({ applicationState: state });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -85,7 +85,7 @@ const Updateform = (props) => {
 
 
     return (
-        <Container className="container-content UpdateProfil">
+        <Container className="content UpdateProfil">
             <Jumbotron fluid>
                     <h1>Update Profile</h1>
             </Jumbotron>
