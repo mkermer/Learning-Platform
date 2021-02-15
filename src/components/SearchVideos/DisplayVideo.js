@@ -82,6 +82,7 @@ const DisplayVideo = (props) => {
         const flooreAvg = Math.floor(average)
 
         setAvgRat(flooreAvg);
+        return flooreAvg
     }
 
 

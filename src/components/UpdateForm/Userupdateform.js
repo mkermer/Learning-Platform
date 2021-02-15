@@ -26,13 +26,8 @@ const Updateform = (props) => {
     // const studentName = props.applicationState.user.studentName;
     const type = props.applicationState.user.type;
     const courses = props.applicationState.user.courses;
-    
-
-
-
     const update = async () => {
         const updatedUser = {
-
             firstName: firstName,
             lastName: lastName,
             studentName: username,
@@ -50,17 +45,12 @@ const Updateform = (props) => {
             const response = await axios.post(`http://localhost:2000/student/update/${props.applicationState.user._id}`, updatedUser);
             console.log(response.data);
             props.actions.storeUserData(response.data)
-
-
-
         } catch (err) {
             console.log(err);
         }
         window.location.reload()
         alert("Your Profil has been successfully updated!")
-
     }
-
     const postDetails = () => {
         const data = new FormData;
         data.append("file", image);
@@ -73,56 +63,42 @@ const Updateform = (props) => {
             .then(res => res.json())
             .then(data => {
                 setUrl(data.url)
-
-
             })
             .catch(err => {
                 console.log(err);
             })
-        
         update();
     }
-
-
     return (
         <Container className="content UpdateProfil">
             <Jumbotron fluid>
-                    <h1>Update Profile</h1>
+                <h1>Update Profile</h1>
             </Jumbotron>
             <div className="inner">
-            
-            <Row className="header">
-                <Col xs={12} lg={4}>
-                    <img src={props.applicationState.user.image} alt="pic"/>
-                
-                </Col>
-                <Col xs={12} lg={3}>
-                    <h2>{username}</h2>
-                    
-                    <h3>{firstName} {lastName}</h3>
-                    
-                    <h4>{contact}</h4>
-                </Col>
-                <Col xs={12} lg={5}>
-                    <div className="formImg">
-                        <Form className="form-elem">
-
-                            <Form.Group controlId="formBasicUsername">
-                                <Form.Label>Update Image</Form.Label>
-                                <Form.Control onChange={(e) => setImage(e.target.files[0])} accept="image/*" type="file"  />
-                            </Form.Group>
-
-                        </Form>
+                <Row className="header">
+                    <Col xs={12} lg={4}>
+                        <img src={props.applicationState.user.image} alt="pic" />
+                    </Col>
+                    <Col xs={12} lg={3}>
+                        <h2>{username}</h2>
+                        <h3>{firstName} {lastName}</h3>
+                        <h4>{contact}</h4>
+                    </Col>
+                    <Col xs={12} lg={5}>
+                        <div className="formImg">
+                            <Form className="form-elem">
+                                <Form.Group controlId="formBasicUsername">
+                                    <Form.Label>Update Image</Form.Label>
+                                    <Form.Control onChange={(e) => setImage(e.target.files[0])} accept="image/*" type="file" />
+                                </Form.Group>
+                            </Form>
                             <Button variant="primary" onClick={postDetails}>
                                 Upload Image
                             </Button>
-                    </div>
-                    
-                </Col>
-                
-            </Row>
-            <hr/>
-
+                        </div>
+                    </Col>
+                </Row>
+                <hr />
                 <Form className="form-elem">
                     <Row>
                         <Col md={4}>
@@ -133,7 +109,7 @@ const Updateform = (props) => {
                         <Col md={8}>
                             <Form.Group controlId="formBasicUsername">
                                 <Form.Control value={username} onChange={(e) => setUsername(e.target.value)}
-                                    type="username"  />
+                                    type="username" />
                             </Form.Group>
                         </Col>
                     </Row>
@@ -146,7 +122,7 @@ const Updateform = (props) => {
                         <Col md={8}>
                             <Form.Group controlId="formBasicUsername">
                                 <Form.Control value={contact} onChange={(e) => setContact(e.target.value)}
-                                    type="e-mail"  />
+                                    type="e-mail" />
                             </Form.Group>
                         </Col>
                     </Row>
@@ -181,10 +157,10 @@ const Updateform = (props) => {
                             </p>
                         </Col>
                         <Col md={8}>
-                        <Form.Group controlId="formBasicUsername">
-                            <Form.Control
-                                value={description} onChange={(e) => setDescription(e.target.value)} as="textarea" rows={5} placeholder="" />
-                        </Form.Group>
+                            <Form.Group controlId="formBasicUsername">
+                                <Form.Control
+                                    value={description} onChange={(e) => setDescription(e.target.value)} as="textarea" rows={5} placeholder="" />
+                            </Form.Group>
                         </Col>
                     </Row>
                     <Row>
@@ -194,20 +170,20 @@ const Updateform = (props) => {
                             </p>
                         </Col>
                         <Col md={8}>
-                        <Form.Group controlId="formBasicUsername">
-                            <DropdownMultiselect
-                                options={["Coding", "Music", "Technolgies"]}
-                                name="categories"
-                                selected={props.applicationState.user.interests}
-                                handleOnChange={(selected) => {
-                                    setInterests(selected);
-                                }}
-                            />
-                        </Form.Group>
+                            <Form.Group controlId="formBasicUsername">
+                                <DropdownMultiselect
+                                    options={["Coding", "Music", "Technolgies"]}
+                                    name="categories"
+                                    selected={props.applicationState.user.interests}
+                                    handleOnChange={(selected) => {
+                                        setInterests(selected);
+                                    }}
+                                />
+                            </Form.Group>
                         </Col>
                     </Row>
-                    <hr/>
-                        {/* <Form.Group controlId="formBasicCheckbox">
+                    <hr />
+                    {/* <Form.Group controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="save changes" />
                         </Form.Group> */}
                     <Row>
@@ -217,26 +193,16 @@ const Updateform = (props) => {
                             <Button className="btn" variant="primary" onClick={update}>
                                 Update
                             </Button>
-
                             <div className="discardChanges">
                                 <a href="/profile">Discard changes</a>
                             </div>
                         </Col>
                     </Row>
-                        
-                    </Form>
+                </Form>
             </div>
         </Container>
-
     )
 }
-
-
-
-
-
-
-
 const mapStateToProps = state => ({ applicationState: state });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
 export default connect(mapStateToProps, mapDispatchToProps)(Updateform)

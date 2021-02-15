@@ -38,13 +38,6 @@ const Nav2 = styled.div`
   align-items: center;
 `;
 
-// const Nav = styled.div`
-//   background: #2073d9 !important;
-//   height: 80px;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-// `;
 
 const NavIcon = styled(Link)`
   margin-left: 2rem;

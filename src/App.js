@@ -26,12 +26,11 @@ import * as actions from './actions/app.action';
 
 function App(props) {
 
-  if(props.applicationState.user !== false){
-  return(
+  if (props.applicationState.user !== false) {
+    return (
 
 
-    <Router>
-
+      <Router>
 
       <DashProvider>
         <Sidebar />
@@ -50,17 +49,15 @@ function App(props) {
           <Route path='/scheduler' exact component={Scheduler} />
           <Route path="/" component={Home} />
           <Route path="*" component={Page404}/>
-
         </Switch> 
-      </DashProvider>
-      <Footer />
-     
-    </Router>
 
-  );
+        </DashProvider>
+        <Footer />
+      </Router>
+    );
   }
-  else{
-    return(
+  else {
+    return (
       <Router>
 
 
@@ -73,9 +70,9 @@ function App(props) {
           <Route path="*" component={Page404}/>
         </Switch> 
 
-      </DashProvider>
-      <Footer />
-    </Router>
+        </DashProvider>
+        <Footer />
+      </Router>
     )
   }
 }

@@ -7,7 +7,7 @@ import * as actions from '../../actions/app.action';
 import { Button, Container, Row, Col, Form } from 'react-bootstrap';
 import DisplayButton from './DisplayButton';
 import Cards from './Cards'
-
+import Filter from './Filter'
 
 const SearchVideos = (props) => {
 
@@ -28,67 +28,13 @@ const SearchVideos = (props) => {
     }
 
 
-    function handleChange(e) {
-
-        if (e.target.value === '') {
-            GetVideos();
-        } else {
-            var filteredVideo = videos.filter(
-                (video) =>
-                    video.videoName.toLowerCase().indexOf(e.target.value.toLowerCase()) >=
-                    0
-            );
-            setVideos(filteredVideo);
-        }
-
-    }
-
-    function sort(e) {
-        if (e.target.value === '') {
-            GetVideos();
-        } else if (e.target.value === 'name') {
-            let newVideos = [...videos];
-            let sorted = newVideos.sort((a, b) =>
-                a.instructor.localeCompare(b.instructor)
-            );
-            console.log(sorted);
-            setVideos(sorted);
-        } else if (e.target.value === 'latest') {
-            let newVideos = [...videos];
-            let sorted = newVideos.sort((a, b) => b.timestamp - a.timestamp);
-            console.log(sorted);
-            setVideos(sorted);
-        }
-    }
-
-
 
     return (
 
         <div>
             <Container className="searchVideos">
-                <Form inline>
-
-                    <Form.Control type="text" placeholder="search" onChange={handleChange} />
-
-                    <Form.Label className="my-1 mr-2" htmlFor="inlineFormCustomSelectPref">
-                        SortyBy
-                            </Form.Label>
-                    <Form.Control
-                        as="select"
-                        className="my-1 mr-sm-2"
-                        id="inlineFormCustomSelectPref"
-                        custom
-                        onChange={sort}
-                    >
-                        <option value="">Choose...</option>
-                        <option value="name">Instructor</option>
-                        <option value="latest">Latest Video</option>
-                        <option value="3">Three</option>
-                    </Form.Control>
-
-
-                </Form>
+                <Filter videos={videos} vidFunction={GetVideos}
+                    setVideos={setVideos} />
                 <Row>
 
                     <Col xs={12} md={6} lg={6} xl={4}>
