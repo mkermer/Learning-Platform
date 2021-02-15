@@ -4,12 +4,14 @@ import { CssBaseline } from '@material-ui/core';
 import LandingPage from '../../components/LandingPage/LandingPage';
 import Lectures from '../../components/LandingPage/Lectures';
 import Team from '../../components/LandingPage/Team';
+import MissionJumbotron from '../../components/LandingPage/MissionJumbotron';
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '100vh',
     backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/tech.jpg'})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    
   },
 }));
 export default function Home() {
@@ -21,6 +23,7 @@ export default function Home() {
       <LandingPage/>
       <Lectures />
       < Team />
+      <CssBaseline />
     </div>
   );
 }
