@@ -26,55 +26,58 @@ import * as actions from './actions/app.action';
 
 function App(props) {
 
-  if(props.applicationState.user !== false){
-  return(
+  if (props.applicationState.user !== false) {
+    return (
 
 
-    <Router>
-
-
-      <DashProvider>
-        <Sidebar />
-        
-        <Switch>
-          
-          <Route path="/Home" component={Home} />
-          <Route path="/" exact component={RegisterForm} />
-          <Route path="/update" exact component={Updateform} />
-          <Route path="/videoSearch" component={SearchVideos} />
-          <Route path="/displayVideo" component={DisplayVideo} />
-          <Route path="/login" component={Login} />
-          <Route path="/UserLandingpage" component={UserLandingpage}/>
-          <Route path="/InstructorLandingpage" component={InstructorLandingpage}/>
-          <Route path='/Calendar' exact component={Calendar} />
-          <Route path='/scheduler' exact component={Scheduler} />
-          <Route path="/Home" component={Home} />
-          <Route path="*" component={Page404}/>
-
-        </Switch> 
-      </DashProvider>
-      <Footer />
-     
-    </Router>
-
-  );
-  }
-  else{
-    return(
       <Router>
 
 
-      <DashProvider>
-        <Switch>
-          <Route path="/" exact component={RegisterForm} />
-          <Route path="/login" component={Login} />
-          <Route path="/Home" component={Home} />
-          <Route path="*" component={Page404}/>
-        </Switch> 
+        <DashProvider>
+          <Sidebar />
 
-      </DashProvider>
-      <Footer />
-    </Router>
+          <Switch>
+
+            <Route path="/Home" component={Home} />
+            <Route path="/" exact component={RegisterForm} />
+            <Route path="/update" exact component={Updateform} />
+            <Route path="/videoCoding" component={CategoryCoding} />
+            <Route path="/videoMusic" component={CategoryMusic} />
+            <Route path="/videoTechnologies" component={CategoryTechnologies} />
+            <Route path="/videoSearch" component={SearchVideos} />
+            <Route path="/displayVideo" component={DisplayVideo} />
+            <Route path="/login" component={Login} />
+            <Route path="/UserLandingpage" component={UserLandingpage} />
+            <Route path="/InstructorLandingpage" component={InstructorLandingpage} />
+            <Route path='/Calendar' exact component={Calendar} />
+            <Route path='/scheduler' exact component={Scheduler} />
+            <Route path="/Home" component={Home} />
+            <Route path="*" component={Page404} />
+
+          </Switch>
+        </DashProvider>
+        <Footer />
+
+      </Router>
+
+    );
+  }
+  else {
+    return (
+      <Router>
+
+
+        <DashProvider>
+          <Switch>
+            <Route path="/" exact component={RegisterForm} />
+            <Route path="/login" component={Login} />
+            <Route path="/Home" component={Home} />
+            <Route path="*" component={Page404} />
+          </Switch>
+
+        </DashProvider>
+        <Footer />
+      </Router>
     )
   }
 }

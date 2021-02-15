@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Upload from './Upload';
-import Upload2 from './Upload2';
 import ShowRating from './ShowRating';
 import MyVideos from './MyVideos';
 import './InstructorLandingpage.css';
@@ -29,17 +28,17 @@ function InstructorLandingpage(props) {
     return (
 
         <div className="Instr">
-             <Jumbotron fluid>
+            <Jumbotron fluid>
                 <h1>{daytime(date)} {props.applicationState.user.instructorName}</h1>
             </Jumbotron>
 
             <Container>
                 <Row>
                     <Col>
-                        <ShowRating/>
+                        <ShowRating />
                     </Col>
                     <Col>
-                        <MyVideos/>
+                        <MyVideos />
                     </Col>
                 </Row>
             </Container>

@@ -24,6 +24,51 @@ const getLatestUserData = (arr) => {
 }
 
 
+const correctStudent = (latestInput, student) => {
+    student.map(student => {
+        if (student.studentName === latestInput.username &&
+            student.password === latestInput.password) {
+            return student
+        }
+
+    })
+}
+
+const correctInstructor = (latestInput, instructor) => {
+    instructor.map(instructor => {
+        if (instructor.instructorName === latestInput.username &&
+            instructor.password === latestInput.password) {
+            return instructor
+        }
+    })
+
+}
+
+
+const incorrectStudent = (latestInput, student) => {
+
+    student.map(student => {
+        if (student.studentName !== latestInput.username &&
+            student.password !== latestInput.password) {
+            const res = 'Wrong login information';
+            return res
+        }
+    })
+}
+
+const incorrectInstructor = (latestInput, instructor) => {
+    instructor.map(instructor => {
+        if (instructor.instructorName !== latestInput.username &&
+            instructor.password !== latestInput.password) {
+            const res = 'Wrong login information';
+            return res
+
+        }
+    })
+}
+
+
+
 async function verify(req, res) {
     try {
 
@@ -108,3 +153,10 @@ module.exports = getLatestUserData;
 
 module.exports = router;
 
+module.exports = correctStudent;
+
+module.exports = correctInstructor;
+
+module.exports = incorrectStudent;
+
+module.exports = incorrectInstructor; 
