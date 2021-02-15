@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import config from '../../config/config';
-import { Container, Form } from 'react-bootstrap';
+import { Col, Container, Form, Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Alert } from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -9,6 +9,8 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import { Redirect, useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import {KeyFill} from "react-bootstrap-icons";
+import loginpic from '../../SVG/undraw_authentication_fsn5.svg'
 
 
 
@@ -68,41 +70,33 @@ function Login(props) {
     });
 
     return (
-        <Container className="cont">
-
-            <div className="inner">
-                <div className="logo">Login</div>
-                <Alert variant={variant} show={show}>
-                    {text}
-                </Alert>
+        <div className="login">
+        
+                <img src={loginpic} />
+                <div className="centeredForm">
                 <Form className="form-elem">
-                    <Form.Group controlId="formBasicUsername">
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control type="username" placeholder=""
-                            value={username} onChange={(e) => setUsername(e.target.value)} />
-                    </Form.Group>
+                            <Form.Group controlId="formBasicUsername">
+                                <Form.Label>Username</Form.Label>
+                                <Form.Control type="username" placeholder=""
+                                    value={username} onChange={(e) => setUsername(e.target.value)} />
+                            </Form.Group>
 
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder=""
-                            value={password} onChange={(e) => setPassword(e.target.value)} />
-                    </Form.Group>
-
-                    {/* <Form.Group controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="save password" />
-                        </Form.Group> */}
-
-                    <Button className="btn" variant="primary" onClick={authentication}>
-                        Login
-                        </Button>
-                    <div className="registerLink">
-                        <a href="/">do not have an account yet? Register</a>
-                    </div>
-                </Form>
-            </div>
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder=""
+                                    value={password} onChange={(e) => setPassword(e.target.value)} />
+                            </Form.Group>
 
 
-        </Container>
+                            <Button className="btn" variant="primary" onClick={authentication}>
+                                <KeyFill size={30}/> <br/> Login
+                                </Button>
+                            
+                        </Form>
+                    
+                </div>
+
+        </div>
     )
 
 
