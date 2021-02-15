@@ -40,6 +40,9 @@ function App(props) {
 
             <Route path="/Home" component={Home} />
             <Route path="/register" exact component={RegisterForm} />
+            <Route path='/videoCoding' component={CategoryCoding} />
+            <Route path='/videoMusic' component={CategoryMusic} />
+            <Route path='/videoTechnologies' component={CategoryTechnologies} />
             <Route path="/update" exact component={Updateform} />
             <Route path="/videoSearch" component={SearchVideos} />
             <Route path="/displayVideo" component={DisplayVideo} />
