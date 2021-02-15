@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 import config from '../../config/config'
-import { Button, Container, Form, Row, Col } from 'react-bootstrap';
+import { Button, Container, Form, Row, Col, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import './RegisterForm.css'
 import { Link } from "react-router-dom";
@@ -9,8 +9,9 @@ import regpic from '../../SVG/Register_cut.svg'
 
 
 
-
 const RegisterForm = (props) => {
+    //verification
+    const [existingName, setExistingName] = useState("");
     // set state for input fields
     const [type, setType] = useState("")
     const [username, setUsername] = useState("");
@@ -23,78 +24,145 @@ const RegisterForm = (props) => {
     const image = "";
     const description = "";
     const subHeader = "";
-    const score = 0;
-    const courses = [];
-    const reviews = [];
-    const schedules = [];
+    // state of Alert
+    const [variant, setVariant] = useState('success');
+    const [show, setShow] = useState(false);
+    const [text, setText] = useState('');
 
     const register = async () => {
 
+        // if (verificationUsername() === false) {
+        //     AlertWarning('existing Username')
+        // } else if (verificationFields() === false) {
+        //     AlertWarning('Please fill out the input fields')
+        // } else if (verificationEmail() === false) {
+        //     AlertWarning('Please enter a valid e-mail address')
+        // }
         if (type === 'student') {
-            const student = {
-                firstName: firstName,
-                lastName: lastName,
-                studentName: username,
-                password: password,
-                description: description,
-                subHeader: subHeader,
-                contact: contact,
-                image: image,
-                score: score,
-                interests: expInt,
-                courses: courses,
-                reviews: reviews,
-                schedules: schedules,
-                type: type
-            }
-
-            try {
-                const response = await axios.post(config.baseUrl + '/student/add', student);
-                console.log(response.data);
-
-
-            } catch (err) {
-                console.log(err);
-            }
+            registerStudent();
 
         } else if (type === "instructor") {
-            const instructor = {
-                firstName: firstName,
-                lastName: lastName,
-                instructorName: username,
-                password: password,
-                description: description,
-                subHeader: subHeader,
-                contact: contact,
-                image: image,
-                score: score,
-                expertise: expInt,
-                courses: courses,
-                reviews: reviews,
-                schedules: schedules,
-                type: type
-            }
-
-            try {
-                const response = await axios.post(config.baseUrl + '/instructor/add', instructor);
-                console.log(response.data);
-
-
-            } catch (err) {
-                console.log(err);
-            }
+            registerInstructor();
         }
     }
 
 
+    const verificationFields = () => {
+        if (firstName === "" || lastName === "" || username === "" || password === "") {
+            return false
+        }
+    }
+
+    const verificationEmail = () => {
+        if (contact.indexOf("@") === -1) {
+            return false
+        }
+    }
+
+    const verificationUsername = async () => {
+        try {
+            const studentRes = await axios.get(config.baseUrl + '/student')
+            const students = studentRes.data;
+
+            const instructorRes = await axios.get(config.baseUrl + '/instructor')
+            const instructors = instructorRes.data;
+
+            students.map(student => {
+                if (student.studentName === username) {
+                    return false
+                }
+            })
+
+            instructors.map(instructor => {
+                if (instructor.instructorName === username) {
+                    return false
+                }
+            })
+
+
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
+
+
+
+    const registerStudent = async () => {
+        const student = {
+            firstName: firstName,
+            lastName: lastName,
+            studentName: username,
+            password: password,
+            description: description,
+            subHeader: subHeader,
+            contact: contact,
+            image: image,
+            interests: expInt,
+            type: type
+        }
+
+        try {
+            const response = await axios.post(config.baseUrl + '/student/add', student);
+            console.log(response.data);
+            AlertSuccess()
+
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+
+    const registerInstructor = async () => {
+        const instructor = {
+            firstName: firstName,
+            lastName: lastName,
+            instructorName: username,
+            password: password,
+            description: description,
+            subHeader: subHeader,
+            contact: contact,
+            image: image,
+            interests: expInt,
+            type: type
+        }
+
+        try {
+            const response = await axios.post(config.baseUrl + '/instructor/add', instructor);
+            console.log(response.data);
+            AlertSuccess()
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    const AlertSuccess = () => {
+        setShow(true);
+        setText("You have registered successfully!")
+
+
+    }
+
+    const AlertWarning = (text) => {
+        setShow(true);
+        setVariant('warning');
+        setText(text)
+    }
+
     return (
         <div className="register">
+
+                <Alert variant={variant} show={show}>
+                    {text}
+                </Alert>
+
             
             <img src={regpic} />
             <div className="label">
                 <h1>Register</h1>
             </div>
             <div className="centeredForm">
+
                 <Form className="form-elem">
                     <Row>
                         <Col md={12}>

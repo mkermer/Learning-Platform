@@ -21,11 +21,7 @@ router.route('/add').post(async (req, res) => {
     const subHeader = req.body.subHeader;
     const contact = req.body.contact;
     const image = req.body.image;
-    const score = Number(req.body.score);
-    const expertise = req.body.expertise;
-    const courses = req.body.courses;
-    const reviews = req.body.reviews;
-    const schedules = req.body.schedules;
+    const interests = req.body.interests;
     const type = req.body.type
 
 
@@ -38,11 +34,7 @@ router.route('/add').post(async (req, res) => {
         subHeader,
         contact,
         image,
-        score,
-        expertise,
-        courses,
-        reviews,
-        schedules,
+        interests,
         type
     });
 
@@ -65,11 +57,7 @@ router.route('/update/:id').post((req, res) => {
             instructor.subHeader = req.body.subHeader;
             instructor.contact = req.body.contact;
             instructor.image = req.body.image;
-            instructor.score = req.body.score;
-            instructor.expertise = req.body.expertise;
-            instructor.courses = req.body.courses;
-            instructor.reviews = req.body.reviews;
-            instructor.schedules = req.body.schedules;
+            instructor.interests = req.body.interests;
             instructor.type = req.body.type;
 
 

@@ -11,61 +11,61 @@ let Instructor = require('../models/instructor_model');
 
 
 
-const getLatestUserData = (arr) => {
-    let latestUserDataInput = arr.reduce(function (prev, current) {
-        if (+current.id > +prev.id) {
-            return current;
-        } else {
-            return prev;
-        }
-    });
+// const getLatestUserData = (arr) => {
+//     let latestUserDataInput = arr.reduce(function (prev, current) {
+//         if (+current.id > +prev.id) {
+//             return current;
+//         } else {
+//             return prev;
+//         }
+//     });
 
-    return latestUserDataInput;
-}
-
-
-const correctStudent = (latestInput, student) => {
-    student.map(student => {
-        if (student.studentName === latestInput.username &&
-            student.password === latestInput.password) {
-            return student
-        }
-
-    })
-}
-
-const correctInstructor = (latestInput, instructor) => {
-    instructor.map(instructor => {
-        if (instructor.instructorName === latestInput.username &&
-            instructor.password === latestInput.password) {
-            return instructor
-        }
-    })
-
-}
+//     return latestUserDataInput;
+// }
 
 
-const incorrectStudent = (latestInput, student) => {
+// const correctStudent = (latestInput, student) => {
+//     student.map(student => {
+//         if (student.studentName === latestInput.username &&
+//             student.password === latestInput.password) {
+//             return student
+//         }
 
-    student.map(student => {
-        if (student.studentName !== latestInput.username &&
-            student.password !== latestInput.password) {
-            const res = 'Wrong login information';
-            return res
-        }
-    })
-}
+//     })
+// }
 
-const incorrectInstructor = (latestInput, instructor) => {
-    instructor.map(instructor => {
-        if (instructor.instructorName !== latestInput.username &&
-            instructor.password !== latestInput.password) {
-            const res = 'Wrong login information';
-            return res
+// const correctInstructor = (latestInput, instructor) => {
+//     instructor.map(instructor => {
+//         if (instructor.instructorName === latestInput.username &&
+//             instructor.password === latestInput.password) {
+//             return instructor
+//         }
+//     })
 
-        }
-    })
-}
+// }
+
+
+// const incorrectStudent = (latestInput, student) => {
+
+//     student.map(student => {
+//         if (student.studentName !== latestInput.username &&
+//             student.password !== latestInput.password) {
+//             const res = 'Wrong login information';
+//             return res
+//         }
+//     })
+// }
+
+// const incorrectInstructor = (latestInput, instructor) => {
+//     instructor.map(instructor => {
+//         if (instructor.instructorName !== latestInput.username &&
+//             instructor.password !== latestInput.password) {
+//             const res = 'Wrong login information';
+//             return res
+
+//         }
+//     })
+// }
 
 
 
@@ -149,14 +149,14 @@ router.route('/add').post(async (req, res) => {
 
 
 
-module.exports = getLatestUserData;
+// module.exports = getLatestUserData;
 
 module.exports = router;
 
-module.exports = correctStudent;
+// module.exports = correctStudent;
 
-module.exports = correctInstructor;
+// module.exports = correctInstructor;
 
-module.exports = incorrectStudent;
+// module.exports = incorrectStudent;
 
-module.exports = incorrectInstructor; 
+// module.exports = incorrectInstructor; 

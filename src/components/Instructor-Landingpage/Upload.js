@@ -31,25 +31,6 @@ function Upload(props) {
   }
 
 
-
-  const addVideo = async () => {
-
-    const newVideo = {
-      courseName: courseName,
-      category: category,
-      instructor: instructor,
-      url: url
-    }
-
-    try {
-      const response = await axios.post(config.baseUrl +
-        `/video/add`, newVideo);
-      console.log(response.data);
-    } catch (err) {
-
-    }
-  }
-
   const setVideoUrl = () => {
     setText("Your video is currently uploading!")
     const data = new FormData;
@@ -88,7 +69,7 @@ function Upload(props) {
   }
 
 
-  const debug2 = async () => {
+  const addVideo = async () => {
     const newVideo = {
       courseName: courseName,
       category: category,
@@ -188,7 +169,7 @@ function Upload(props) {
             <CloudArrowUp size={20} /> {text}
           </Button>
 
-          <Button variant="primary" className="UploadButton" onClick={debug2} disabled={disabled}>
+          <Button variant="primary" className="UploadButton" onClick={addVideo} disabled={disabled}>
             Update
           </Button>
 

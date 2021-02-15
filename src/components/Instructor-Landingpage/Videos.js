@@ -1,10 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Row, Col, Accordion, Card, Button, Collapse } from 'react-bootstrap';
-import { Trash, ChevronBarUp } from 'react-bootstrap-icons';
+import React, { useContext } from 'react';
+import { Row, Col, Accordion, Card, Button } from 'react-bootstrap';
+import { ChevronBarUp } from 'react-bootstrap-icons';
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import { AccordionContext } from 'react-bootstrap';
-import DisplayButton from '../SearchVideos/DisplayButton'
-import DeleteVideo from './DeleteVideo';
 import Video from './Video';
 
 
@@ -26,39 +24,38 @@ function ContextAwareToggle({ children, eventKey, callback }) {
     );
 }
 
-function Videos(props){
- 
+function Videos(props) {
+
 
     const course = props.course;
     const videoNameArr = props.videoNameArr;
 
-    return(
+    return (
         <Accordion defaultActiveKey="0">
-                        <Card>
+            <Card>
 
-                            <Accordion.Toggle as={Card.Header} eventKey="0">
-                                <Row>
-                                    <Col xs={10}>{course}</Col>
-                                    <Col xs={2}>
-                                        <ContextAwareToggle as={Button} variant="link" eventKey="0" />
-                                    </Col>
-                                </Row>
-                            </Accordion.Toggle>
-                            {videoNameArr.flat().filter(vid => course === vid.courseName).map(vid => {
-                                // TEST
-                                    
-                                        return (
-                                            <Accordion.Collapse eventKey="0">
-                                                <Video vid={vid}/>
-                                            </Accordion.Collapse>
-                                        );
-                                    
-                                
-                            })
-                            }
+                <Accordion.Toggle as={Card.Header} eventKey="0">
+                    <Row>
+                        <Col xs={10}>{course}</Col>
+                        <Col xs={2}>
+                            <ContextAwareToggle as={Button} variant="link" eventKey="0" />
+                        </Col>
+                    </Row>
+                </Accordion.Toggle>
+                {videoNameArr.flat().filter(vid => course === vid.courseName).map(vid => {
 
-                        </Card>
-                        </Accordion>
+                    return (
+                        <Accordion.Collapse eventKey="0">
+                            <Video vid={vid} />
+                        </Accordion.Collapse>
+                    );
+
+
+                })
+                }
+
+            </Card>
+        </Accordion>
 
     );
 };
