@@ -19,7 +19,7 @@ function MissionJumbotron() {
             <Col>
               <h1>Our Mission</h1>
               <h3>
-                SEcon Text
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
               </h3>
             </Col>
           </Row>

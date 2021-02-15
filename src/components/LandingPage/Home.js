@@ -20,7 +20,7 @@ export default function Home() {
       
       <LandingPage/>
       <Lectures />
-      {/* < Team /> */}
+      < Team />
     </div>
   );
 }

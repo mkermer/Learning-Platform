@@ -68,7 +68,7 @@ export default function LandingPage() {
            Do your <span className={classes.colorText}>BEST</span> <br />
            And <Link to="/Login">Register </Link><span className={classes.colorText}>Now</span>
           </h1>
-          <Scroll to="lectures" smooth={true}>
+          <Scroll to="./footer" smooth={true}>
             <IconButton>
               <ExpandMoreIcon className={classes.goDown} />
             </IconButton>

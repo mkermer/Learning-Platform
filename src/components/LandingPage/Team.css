@@ -3,6 +3,14 @@
     margin-bottom: 160px;
    
 }
+.TeamMembers h1{
+  margin-top: 24px;
+  margin-bottom: 70px;
+  background-color: #2073d9 !important;
+  text-align: center;
+  border:2px grey;
+ 
+}
 
 #TeamMembersCard{
     border-radius: 15px;
