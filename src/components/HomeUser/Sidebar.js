@@ -11,6 +11,8 @@ import * as actions from '../../actions/app.action';
 import Sidebarfunction from './SideBarData';
 import './Sidebar.css';
 import OverlayProfile from './OverlayProfile';
+import Logo from '../../Logo/Green/logo3TYB-removebg.png'
+
 // import {Button} from "react-bootstrap";
 const Nav = styled.header`
 background-color: #2073d9;
@@ -21,11 +23,15 @@ align-items: center;
 justify-content: space-between;
 font-size: calc(10px + 1vmin);
 color: white;
-padding: 0 6%;`;
+padding: 0 6%;
+position: sticky;
+top: 0;
+z-index: 10;
+`;
 
 
 const Nav2 = styled.div`
-  background-color: rgb(32, 115, 217);
+  background-color: #7aadeb;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -43,7 +49,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-  background: #7aadeb !important;
+  background: #2073d9 !important;
   width: 15%;
   height: 100vh;
   display: flex;
@@ -53,7 +59,6 @@ const SidebarNav = styled.nav`
   left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
   z-index: 10;
-  border:2px solid;
   overflow-y: auto;
   
 `;
@@ -89,6 +94,8 @@ border: 1px solid silver;
 border-radius: 3px;
 display: block;
 background-color:#fff;
+
+}
 `;
 const SidebarWrap = styled.div`
   width: 100%;
@@ -99,7 +106,11 @@ color: white;
 font-weight: bold;
 font-size: 1em;
 background: transparent;
-border: 0px;
+
+cursor: pointer;
+&:hover {
+  -webkit-transform: perspective(1px) scale(0.98) translateZ(0);
+  transform: perspective(1px) scale(0.98) translateZ(0);
 `;
 
 
@@ -110,16 +121,45 @@ const Sidebar = (props) => {
 
 
 
+  if(props.applicationState.user !== false){
   return (
     <>
 
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
           <StyledLink as="a" >
-            <FaIcons.FaBars onClick={showSidebar} />
+            <FaIcons.FaBars size={30} onClick={showSidebar} />
           </StyledLink>
+          <img src={Logo} style={{width:"80px"}}/>
+          <OverlayProfile/>
+        </Nav>
+        <SidebarNav sidebar={sidebar}>
+          <SidebarWrap>
+            <NavIcon to="#">
+              <AiIcons.AiOutlineClose onClick={showSidebar} />
+            </NavIcon>
 
-          <StyledLink as="a" href="/login" onClick={() => ('login')}>Login</StyledLink>
+
+
+            {/* //callfunction   */}
+            {Sidebarfunction(props.applicationState.user.type).map((item, index) => {
+              return <SubMenu item={item} key={index} />;
+            })}
+
+          </SidebarWrap>
+        </SidebarNav>
+      </IconContext.Provider>
+    </>
+  );
+} else{
+  return(
+    <>
+
+      <IconContext.Provider value={{ color: '#fff' }}>
+        <Nav>
+          <img src={Logo} style={{width:"80px"}}/>
+          <StyledLink as="a" href="/login" className="links">Login</StyledLink>
+          <StyledLink as="a" href="/register" className="links">Register</StyledLink>
           <OverlayProfile />
         </Nav>
         <SidebarNav sidebar={sidebar}>
@@ -135,7 +175,9 @@ const Sidebar = (props) => {
         </SidebarNav>
       </IconContext.Provider>
     </>
-  );
+
+  )
+}
 }
 
 

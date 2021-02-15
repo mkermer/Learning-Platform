@@ -35,14 +35,12 @@ function App(props) {
 
         <DashProvider>
           <Sidebar />
+
           <Switch>
 
             <Route path="/Home" component={Home} />
-            <Route path="/" exact component={RegisterForm} />
+            <Route path="/register" exact component={RegisterForm} />
             <Route path="/update" exact component={Updateform} />
-            <Route path="/videoCoding" component={CategoryCoding} />
-            <Route path="/videoMusic" component={CategoryMusic} />
-            <Route path="/videoTechnologies" component={CategoryTechnologies} />
             <Route path="/videoSearch" component={SearchVideos} />
             <Route path="/displayVideo" component={DisplayVideo} />
             <Route path="/login" component={Login} />
@@ -50,26 +48,26 @@ function App(props) {
             <Route path="/InstructorLandingpage" component={InstructorLandingpage} />
             <Route path='/Calendar' exact component={Calendar} />
             <Route path='/scheduler' exact component={Scheduler} />
-            <Route path="/Home" component={Home} />
+            <Route path="/" component={Home} />
             <Route path="*" component={Page404} />
-
           </Switch>
+
         </DashProvider>
         <Footer />
-
       </Router>
-
     );
   }
   else {
     return (
       <Router>
 
+
         <DashProvider>
+          <Sidebar />
           <Switch>
-            <Route path="/" exact component={RegisterForm} />
+            <Route path="/register" exact component={RegisterForm} />
             <Route path="/login" component={Login} />
-            <Route path="/Home" component={Home} />
+            <Route path="/" component={Home} />
             <Route path="*" component={Page404} />
           </Switch>
 
