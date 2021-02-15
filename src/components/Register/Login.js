@@ -15,7 +15,9 @@ import { Link } from "react-router-dom";
 function Login(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    // const history = useHistory();
+    const [variant, setVariant] = useState('warning');
+    const [show, setShow] = useState(false);
+    const [text, setText] = useState('');
 
     const history = useHistory();
 
@@ -45,9 +47,11 @@ function Login(props) {
                 if (loginUser.instructorName !== undefined) {
                     history.push("/InstructorLandingpage")
                 }
+            } else {
+                setVariant('warning');
+                setShow(true);
+                setText('wrong login information!')
             }
-
-
 
 
         } catch (err) {
@@ -65,35 +69,38 @@ function Login(props) {
 
     return (
         <Container className="cont">
-            
-                <div className="inner">
 
-                    <Form className="form-elem">
-                        <Form.Group controlId="formBasicUsername">
-                            <Form.Label>Username</Form.Label>
-                            <Form.Control type="username" placeholder=""
-                                value={username} onChange={(e) => setUsername(e.target.value)} />
-                        </Form.Group>
+            <div className="inner">
+                <div className="logo">Login</div>
+                <Alert variant={variant} show={show}>
+                    {text}
+                </Alert>
+                <Form className="form-elem">
+                    <Form.Group controlId="formBasicUsername">
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control type="username" placeholder=""
+                            value={username} onChange={(e) => setUsername(e.target.value)} />
+                    </Form.Group>
 
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder=""
-                                value={password} onChange={(e) => setPassword(e.target.value)} />
-                        </Form.Group>
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" placeholder=""
+                            value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </Form.Group>
 
-                        {/* <Form.Group controlId="formBasicCheckbox">
+                    {/* <Form.Group controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="save password" />
                         </Form.Group> */}
 
-                        <Button className="btn" variant="primary" onClick={authentication}>
-                            Login
+                    <Button className="btn" variant="primary" onClick={authentication}>
+                        Login
                         </Button>
-                        <div className="registerLink">
-                            <a href="/">do not have an account yet? Register</a>
-                        </div>
-                    </Form>
-                </div>
-            
+                    <div className="registerLink">
+                        <a href="/">do not have an account yet? Register</a>
+                    </div>
+                </Form>
+            </div>
+
 
         </Container>
     )
