@@ -14,16 +14,21 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     height: '100vh',
     fontFamily: 'Nunito',
+    
+   
   },
   appbar: {
     background: 'none',
+    display:'flex',
+    margin:'0 auto',
   },
   appbarWrapper: {
     width: '80%',
-    margin: '0 auto',
+   
   },
   appbarTitle: {
-    flexGrow: '1',
+    flexGrow: '0',
+    position: 'relative',
   },
  
   colorText: {
@@ -49,6 +54,7 @@ export default function LandingPage() {
   }, []);
   return (
     <div className={classes.root} id="landingPage">
+    
       <AppBar className={classes.appbar} elevation={0}>
         <Toolbar className={classes.appbarWrapper}>
           <h1 className={classes.appbarTitle}>
@@ -68,7 +74,7 @@ export default function LandingPage() {
            Do your <span className={classes.colorText}>BEST</span> <br />
            And <Link to="/Login">Register </Link><span className={classes.colorText}>Now</span>
           </h1>
-          <Scroll to="./footer" smooth={true}>
+          <Scroll to="images" smooth={true}>
             <IconButton>
               <ExpandMoreIcon className={classes.goDown} />
             </IconButton>

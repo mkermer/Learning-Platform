@@ -6,7 +6,7 @@ import useWindowPosition from '../../hook/useWindowPosition';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '100vh',
+    minHeight: '200vh',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -19,7 +19,7 @@ export default function Lectures () {
   const classes = useStyles();
   const checked = useWindowPosition('landingPage');
   return (
-    <div className={classes.root} >
+    <div className={classes.root} id="images">
       <ImageCard lecture = {lectures[1]} checked={checked} />
       <ImageCard lecture = {lectures[0]} checked ={checked}/>
       <ImageCard lecture = {lectures[2]} checked ={checked}/>

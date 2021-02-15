@@ -34,22 +34,20 @@ function Team() {
           </Col>
         </Row>
         <Row>
-          <Col
+          <Col className ="picEdit"
             data-aos="fade-right"
             data-aos-offset="500"
             data-aos-duration="400" 
             lg={12} md={12} sm={12}>
-            <img src={Pict} id="picTeam" alt="tree" />
+            <img src={Pict} id="picLand" alt="Picture" />
           </Col>
-          <Col 
+          <Col className="land1"
             data-aos="fade-left"
             data-aos-offset="500"
             data-aos-duration="400" 
-            lg={6} md={12}>
-            <h3>TeachYourBest</h3>
-            <p>
-              Here can come a text
-            </p>
+            lg={4} md={6} sm={6}>
+            <h3>TeachYourBest INC</h3>
+            
           </Col>
         </Row>
       </Container>
@@ -63,7 +61,7 @@ function Team() {
             md={12}>
             <h1>Team</h1>
           </Col>
-          <Col lg={4} md={6} sm={6}>
+          <Col lg={4} md={6} sm={6} className="edit">
             <Card 
               data-aos="fade-up-right" id="TeamMembersCard">
               <CardBody>

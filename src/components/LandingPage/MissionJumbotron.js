@@ -19,7 +19,7 @@ function MissionJumbotron() {
             <Col>
               <h1>Our Mission</h1>
               <h3>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              The mission of TeachYourBest is to inspire excellence and innovation in teaching, learning and having fun during the Corona Time. 
               </h3>
             </Col>
           </Row>
