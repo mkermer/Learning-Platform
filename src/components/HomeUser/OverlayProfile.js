@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Popover, OverlayTrigger, Overlay, Button, Row, Col } from "react-bootstrap";
-import { PersonCircle, PencilSquare, BoxArrowRight, BoxArrowInRight } from "react-bootstrap-icons";
+import { PersonCircle, PencilSquare, BoxArrowRight, BoxArrowInRight, Pen } from "react-bootstrap-icons";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import { bindActionCreators } from 'redux';
@@ -35,9 +35,14 @@ function OverlayProfile(props) {
                     <h3>{props.applicationState.user.lastName}</h3>
                   </Col>
                 </Row>
+                <Row>
+                  <Col xs={12}>
+                    <p> <em>{props.applicationState.user.subHeader}</em></p>
+                  </Col>
+                </Row>
               </Popover.Title>
               <Popover.Content>
-                <p className="content-small"> <i>{props.applicationState.user.subHeader}</i></p>
+                
                 <p className="content-small">{props.applicationState.user.description}</p>
                 <div className="content-small"> 
                   <p> Interested in: </p>
@@ -90,6 +95,10 @@ function OverlayProfile(props) {
                 <Button href="/login">
                   Login &nbsp; 
                   <BoxArrowInRight size={20}/>
+                </Button>
+                <Button href="/register">
+                  Register &nbsp; 
+                  <Pen size={20}/>
                 </Button>
               </Popover.Content>
         </Popover>
