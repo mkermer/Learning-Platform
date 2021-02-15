@@ -23,7 +23,7 @@ export default function Home() {
       <LandingPage/>
       <Lectures />
       < Team />
-      <CssBaseline />
+      
     </div>
   );
 }
