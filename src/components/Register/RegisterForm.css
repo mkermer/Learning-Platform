@@ -1,22 +1,50 @@
 
- .register .cont {
-    background-image: url(../../SVG/Register.svg);
-
-    background-repeat: no-repeat;
-    background-size: 600px;
-    background-position: top;
-    border: solid;
+ .register{
     position: relative;
-    width: 800px !important;
-    height: 700px;
-    margin: 20px auto;
-
+    text-align: center;
+ }
+ 
+ .register .centeredForm {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 38%;
+    height: 73%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    text-align-last:center;
+    padding-top: 20px;
 } 
 
-/* .left{
-    padding: 0 40px 40px;
-    width: 100%;
-} */
+@media (min-width: 1200px){
+    .register .form-group{
+        margin-bottom: 3vw !important;
+    }
+}
+
+.register .btn{
+    margin-bottom: 20px;
+    width: ;
+}
+
+.register img{
+    width: 50%;
+}
+
+.register .hide{
+        display: none; 
+}
+
+.register .label{
+    color: white;
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 
 
@@ -29,11 +57,72 @@
 
 
 
-.register .form-elem {
-    /* position: relative;
-    top: 50%;
-    left: 20%; */
-    /* transform: translate(-50%, -50%); */
+.login {
+    position: relative;
+    text-align: center;
+    color: white;
+}
 
-    width: 60%;
+.login img{
+    width:100%;
+}
+
+.login .centeredForm{
+    position: absolute;
+    top: 45%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+.login button{
+    position: absolute;
+    right: 30%;
+    top: 35%;
+    background-color: transparent !important;
+}
+
+.login svg{
+    color: gold;
+    transform: rotate(330deg);
+}
+
+.login .form-elem{
+    width:50%;
+}
+
+@media (min-width:1025px){
+    .login .form-control{
+        height: 60px;
+    }
+    .login button{
+        position: absolute;
+        right: 30%;
+        top: 30%;
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem !important;
+    }
+    .login svg{
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (min-width:2560px){
+    .login .form-control{
+        height: 60px;
+    }
+    .login button{
+        position: absolute;
+        right: 35%;
+        top: 15%;
+        width: 165px;
+        height: 165px;
+        font-size: 2rem !important;
+    }
+    .login svg{
+        width: 50px;
+        height: 50px;
+    }
 }

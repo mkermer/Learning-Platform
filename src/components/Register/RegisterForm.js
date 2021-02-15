@@ -5,6 +5,7 @@ import { Button, Container, Form, Row, Col, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import './RegisterForm.css'
 import { Link } from "react-router-dom";
+import regpic from '../../SVG/Register_cut.svg'
 
 
 
@@ -150,21 +151,29 @@ const RegisterForm = (props) => {
 
     return (
         <div className="register">
-            <Container>
+
                 <Alert variant={variant} show={show}>
                     {text}
                 </Alert>
+
+            
+            <img src={regpic} />
+            <div className="label">
+                <h1>Register</h1>
+            </div>
+            <div className="centeredForm">
+
                 <Form className="form-elem">
                     <Row>
                         <Col md={12}>
                             <Form.Group controlId="formBasicCategory">
-                                <Form.Label><h3>Learn or teach ?</h3></Form.Label>
+                                <Form.Label>Learn or teach ?</Form.Label>
                                 <Form.Control
                                     as="select"
                                     value={type}
                                     onChange={(e) => setType(e.target.value)}
                                 >
-                                    <option value=''>please select type</option>
+                                    <option className="hide" value="" disabled>please select type</option>
                                     <option value="student">Student</option>
                                     <option value="instructor">Instructor</option>
                                 </Form.Control>
@@ -216,7 +225,7 @@ const RegisterForm = (props) => {
                             <Form.Group controlId="formBasicUsername">
                                 <Form.Label>Interests/Expertise</Form.Label>
                                 <DropdownMultiselect
-                                    options={["Coding", "Music", "Technologies",]}
+                                    options={["Coding", "Music", "Technologies"]}
                                     name="countries"
                                     handleOnChange={(selected) => {
                                         setExpInt(selected);
@@ -225,39 +234,29 @@ const RegisterForm = (props) => {
                             </Form.Group>
                         </Col>
                     </Row>
-                    <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Save password" />
-                    </Form.Group>
 
 
                     <Button className="btn" variant="primary" onClick={register} >
                         Register
-                            </Button>
-                    <Button className="btn" variant="primary" >
-                        <Link to="/login">Return to Login</Link>
                     </Button>
+                    <br/>
+                    <Link to="/login">
+                            Return to Login
+                    </Link>
                 </Form>
-                {/* </Col>
-                            <Col xs={12} xl={1}> */}
-                <div className="logo">
-                    <div className="logo-text">
-                        <span>SHARE</span> <span>VALUEABLE</span> <span>SKILLS AT</span>
-                    </div>
-                    <div className="logo-brand">
-                        <span> TeachYourBest </span>
-                    </div>
-                </div>
-                {/* </Col>
-                        
-                        </Row> */}
-
-            </Container>
-
-
-
+            </div>
         </div>
 
     )
 }
 
 export default RegisterForm;
+
+{/*     <div className="logo">
+                    <div className="logo-text">
+                        <span>SHARE</span> <span>VALUEABLE</span> <span>SKILLS AT</span>
+                    </div>
+                    <div className="logo-brand">
+                        <span> TeachYourBest </span>
+                    </div>
+                </div> */}
