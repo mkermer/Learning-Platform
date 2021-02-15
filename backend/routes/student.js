@@ -21,11 +21,7 @@ router.route('/add').post(async (req, res) => {
     const subHeader = req.body.subHeader;
     const contact = req.body.contact;
     const image = req.body.image;
-    const score = Number(req.body.score);
     const interests = req.body.interests;
-    const courses = req.body.courses;
-    const reviews = req.body.reviews;
-    const schedules = req.body.schedules;
     const type = req.body.type;
 
     const newStudent = new Student({
@@ -37,11 +33,7 @@ router.route('/add').post(async (req, res) => {
         subHeader,
         contact,
         image,
-        score,
         interests,
-        courses,
-        reviews,
-        schedules,
         type
     });
 
@@ -64,11 +56,7 @@ router.route('/update/:id').post((req, res) => {
             student.subHeader = req.body.subHeader;
             student.contact = req.body.contact;
             student.image = req.body.image;
-            student.score = req.body.score;
             student.interests = req.body.interests;
-            student.courses = req.body.courses;
-            student.reviews = req.body.reviews;
-            student.schedules = req.body.schedules;
             student.type = req.body.type;
 
             student.save()

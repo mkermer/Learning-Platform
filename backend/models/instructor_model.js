@@ -14,10 +14,7 @@ const instructorSchema = new Schema({
     contact: { type: String },
     image: { type: String },
     score: { type: Number },
-    expertise: [],
-    courses: [],
-    reviews: [],
-    schedules: [],
+    interests: [],
     type: { type: String }
 });
 

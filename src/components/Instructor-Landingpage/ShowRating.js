@@ -33,7 +33,7 @@ function ShowRating(props) {
 
     }
     const reverseReviewArray = reviewArray.map(item => item).reverse()
-    // console.log(reverseReviewArray)
+
 
     return (
         <div className="ShowRating">

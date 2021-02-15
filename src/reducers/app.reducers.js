@@ -1,7 +1,19 @@
 import { STORE_USER_DATA, STORE_VIDEO_DATA } from '../actions/app.action';
 
 const initialState = {
-    user: false,
+    user: {
+
+        firstName: "",
+        lastName: "",
+        studentName: "",
+        password: "",
+        description: "",
+        subHeader: "",
+        contact: "",
+        image: "",
+        interests: [],
+        type: "",
+    },
     video: false
 };
 

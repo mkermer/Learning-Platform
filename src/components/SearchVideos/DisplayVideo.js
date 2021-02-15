@@ -24,9 +24,9 @@ const DisplayVideo = (props) => {
 
     const [rate, setRating] = useState(null);
     const [text, setText] = useState("");
-    const timestamp = Date.now();
     const image = props.applicationState.user.image;
     const student = props.applicationState.user.studentName;
+    // video schema
     const instructor = props.applicationState.video.instructor;
     const courseName = props.applicationState.video.courseName;
     const url = props.applicationState.video.url;
@@ -34,6 +34,7 @@ const DisplayVideo = (props) => {
     const description = props.applicationState.video.description;
     const videoTimestamp = props.applicationState.video.timestamp;
     const videoName = props.applicationState.video.videoName;
+    const timestamp = Date.now();
 
 
     const [reviewArr, setReviewArr] = useState([]);
@@ -52,24 +53,6 @@ const DisplayVideo = (props) => {
     }
 
 
-    const getReviews = async () => {
-        const response = await axios.get(config.baseUrl + '/review');
-        console.log(response.data);
-        const reviews = response.data;
-        const instructorArr = [];
-
-        reviews.map(review => {
-            if (review.instructor === props.applicationState.video.instructor) {
-                instructorArr.push(review);
-
-            }
-        })
-        setReviewArr(instructorArr);
-
-        averageRating(instructorArr, setAvgRat);
-
-    }
-
     const averageRating = (arr, setAvgRat) => {
         let sum = 0;
         arr.map(review => {
@@ -86,13 +69,37 @@ const DisplayVideo = (props) => {
     }
 
 
+    const getReviews = async () => {
+        const response = await axios.get(config.baseUrl + '/review');
+        console.log(response.data);
+        const reviews = response.data;
+        const instructorArr = [];
 
-    const post = async () => {
-        newReview();
-        updateAvgRat();
+        reviews.map(review => {
+            if (review.instructor === props.applicationState.video.instructor) {
+                instructorArr.push(review);
+
+            }
+        })
+        const reverseReviewArray = instructorArr.map(item => item).reverse()
+        setReviewArr(reverseReviewArray);
+
+        averageRating(instructorArr, setAvgRat);
     }
 
-    const newReview = async () => {
+
+    const addNewReview = async (newReview) => {
+        try {
+            const response = await axios.post(config.baseUrl +
+                `/review/add`, newReview);
+            console.log(response.data);
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+
+    const studentReview = () => {
         const newReview = {
             instructor: instructor,
             student: student,
@@ -103,14 +110,35 @@ const DisplayVideo = (props) => {
             timestamp: timestamp
         }
 
-        try {
-            const response = await axios.post(config.baseUrl +
-                `/review/add`, newReview);
-            console.log(response.data);
-        } catch (err) {
-            console.log(err)
-        }
+        addNewReview(newReview);
     }
+
+
+    const instructorReview = () => {
+        const newReview = {
+            instructor: instructor,
+            student: props.applicationState.user.instructorName,
+            courseName: courseName,
+            text: text,
+            rating: rate,
+            image: image,
+            timestamp: timestamp
+        }
+
+        addNewReview(newReview);
+    }
+
+
+    const newReview = async () => {
+        if (props.applicationState.user.type === "student") {
+            studentReview();
+
+        } else if (props.applicationState.user.type === "instructor") {
+            instructorReview()
+        }
+
+    }
+
 
     const updateAvgRat = async () => {
         const updatedVideo = {
@@ -128,10 +156,21 @@ const DisplayVideo = (props) => {
             const response = await axios.post(config.baseUrl +
                 `/video/update/${props.applicationState.video._id}`, updatedVideo);
             console.log(response.data);
+            props.actions.storeVideoData(response.data);
+
         } catch (err) {
             console.log(err)
         }
     }
+
+
+    const post = async () => {
+        newReview();
+        updateAvgRat();
+        window.location.reload()
+    }
+
+
 
     return (
         <div>
@@ -171,7 +210,7 @@ const DisplayVideo = (props) => {
                         <div className="heading"><h1> Latest Reviews</h1></div>
                         {reviewArr.map(review => {
                             return (
-                                <Toast>
+                                <Toast key={review._id}>
                                     <Toast.Header>
                                         <img src={review.image} className="rounded mr-2" alt="" />
                                         <strong className="mr-auto">{review.student}</strong>

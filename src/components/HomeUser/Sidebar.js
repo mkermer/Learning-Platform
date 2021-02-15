@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
@@ -108,9 +108,7 @@ const Sidebar = (props) => {
 
   const showSidebar = () => setSidebar(!sidebar);
 
-  useEffect(() => {
-    console.log(props.applicationState.user.type)
-  })
+
 
   return (
     <>
@@ -129,10 +127,6 @@ const Sidebar = (props) => {
             <NavIcon to="#">
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
-
-
-
-            {/* //callfunction   */}
             {Sidebarfunction(props.applicationState.user.type).map((item, index) => {
               return <SubMenu item={item} key={index} />;
             })}

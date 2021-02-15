@@ -20,37 +20,65 @@ const Updateform = (props) => {
     const [contact, setContact] = useState(props.applicationState.user.contact);
     const [username, setUsername] = useState(props.applicationState.user.studentName);
     const [password, setPassword] = useState(props.applicationState.user.password);
-    // const score = props.applicationState.user.score;
     const firstName = props.applicationState.user.firstName;
     const lastName = props.applicationState.user.lastName;
-    // const studentName = props.applicationState.user.studentName;
     const type = props.applicationState.user.type;
-    const courses = props.applicationState.user.courses;
+
+
+
     const update = async () => {
-        const updatedUser = {
-            firstName: firstName,
-            lastName: lastName,
-            studentName: username,
-            password: password,
-            description: description,
-            subHeader: subHeader,
-            contact: contact,
-            image: urlImage,
-            // score: score,
-            interests: interests,
-            courses: courses,
-            type: type
+
+        if (type === "student") {
+
+            const updatedUser = {
+                firstName: firstName,
+                lastName: lastName,
+                studentName: username,
+                password: password,
+                description: description,
+                subHeader: subHeader,
+                contact: contact,
+                image: urlImage,
+                interests: interests,
+                type: type
+            }
+            try {
+                const response = await axios.post(`http://localhost:2000/student/update/${props.applicationState.user._id}`, updatedUser);
+                console.log(response.data);
+                props.actions.storeUserData(response.data)
+            } catch (err) {
+                console.log(err);
+            }
+
+            alert("Your Profil has been successfully updated!")
+
+        } else if (type === "instructor") {
+            const updatedUser = {
+                firstName: firstName,
+                lastName: lastName,
+                instructorName: props.applicationState.user.instructorName,
+                password: password,
+                description: description,
+                subHeader: subHeader,
+                contact: contact,
+                image: urlImage,
+                interests: interests,
+                type: type
+            }
+            console.log(updatedUser)
+            try {
+                const response = await axios.post(`http://localhost:2000/instructor/update/${props.applicationState.user._id}`, updatedUser);
+                console.log(response.data);
+                props.actions.storeUserData(response.data)
+            } catch (err) {
+                console.log(err);
+            }
+
+            alert("Your Profil has been successfully updated!")
         }
-        try {
-            const response = await axios.post(`http://localhost:2000/student/update/${props.applicationState.user._id}`, updatedUser);
-            console.log(response.data);
-            props.actions.storeUserData(response.data)
-        } catch (err) {
-            console.log(err);
-        }
-        window.location.reload()
-        alert("Your Profil has been successfully updated!")
     }
+
+
     const postDetails = () => {
         const data = new FormData;
         data.append("file", image);
@@ -67,7 +95,7 @@ const Updateform = (props) => {
             .catch(err => {
                 console.log(err);
             })
-        update();
+
     }
     return (
         <Container className="content UpdateProfil">
@@ -183,9 +211,6 @@ const Updateform = (props) => {
                         </Col>
                     </Row>
                     <hr />
-                    {/* <Form.Group controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="save changes" />
-                        </Form.Group> */}
                     <Row>
                         <Col md={4}>
                         </Col>

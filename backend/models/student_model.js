@@ -13,11 +13,7 @@ const studentSchema = new Schema({
     subHeader: { type: String },
     contact: { type: String },
     image: { type: String },
-    score: { type: Number },
     interests: [],
-    courses: [],
-    reviews: [],
-    schedules: [],
     type: { type: String }
 });
 

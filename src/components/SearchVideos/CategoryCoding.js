@@ -14,8 +14,8 @@ const CategoryCoding = (props) => {
 
     return (
         <div>
-            {/* <Filter videos={videos} vidFunction={categoryfunction}
-                setVideos={setVideos} /> */}
+            <Filter videos={videos} vidFunction={categoryfunction}
+                setVideos={setVideos} />
             <Cards videos={videos} />
         </div>
     )
