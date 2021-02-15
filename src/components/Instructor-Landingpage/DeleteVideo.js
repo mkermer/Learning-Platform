@@ -10,6 +10,7 @@ const DeleteVideo = (props) => {
         const response = await axios.delete(config.baseUrl + `/video/${props.vid._id}`);
         console.log(response.data);
     }
+
     return (
         <Trash className="Trash" size={20} onClick={deleteVideo} />
     )

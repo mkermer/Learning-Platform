@@ -15,7 +15,9 @@ import { Link } from "react-router-dom";
 function Login(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    // const history = useHistory();
+    const [variant, setVariant] = useState('warning');
+    const [show, setShow] = useState(false);
+    const [text, setText] = useState('');
 
     const history = useHistory();
 
@@ -45,9 +47,11 @@ function Login(props) {
                 if (loginUser.instructorName !== undefined) {
                     history.push("/InstructorLandingpage")
                 }
+            } else {
+                setVariant('warning');
+                setShow(true);
+                setText('wrong login information!')
             }
-
-
 
 
         } catch (err) {
@@ -68,7 +72,9 @@ function Login(props) {
             <div className="left">
                 <div className="inner">
                     <div className="logo">Login</div>
-
+                    <Alert variant={variant} show={show}>
+                        {text}
+                    </Alert>
                     <Form className="form-elem">
                         <Form.Group controlId="formBasicUsername">
                             <Form.Label>Username</Form.Label>
