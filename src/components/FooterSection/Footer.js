@@ -4,12 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Facebook, Instagram, Twitter, Youtube } from 'react-bootstrap-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import UsefulLinks from './UsefulLinks';
-import TermsOfService from './TermsOfService';
-
 import './Footer.css';
-import { Link } from "react-router-dom";
 
 
 
@@ -27,22 +22,22 @@ function Footer() {
                 <a href="https:/www.youtube.com"
                 
                 >
-                <Youtube className="YouTube"size={50} />
+                <Youtube className="YouTube"size={30} />
                 </a>
                 <a href="https:/www.facebook.com"
                 
                 >
-                <Facebook className="Face"size={50}/>
+                <Facebook className="Face"size={30}/>
                 </a>
                 <a href="https:/www.twitter.com"
                 
                 >
-                <Twitter className="Twit" size={50}/>
+                <Twitter className="Twit" size={30}/>
                 </a>
                 <a href="https:/www.instagram.com"
                 
                 >
-                <Instagram className="Insta" size={50}/>
+                <Instagram className="Insta" size={30}/>
 
                 </a>
               
@@ -67,13 +62,13 @@ function Footer() {
           <h3>Useful Links</h3>
             <ul>
               <li className="list-unstyled-link">
-                <a href="#!">Fun</a>
+                <a href="/Home">What we do</a>
               </li>
               <li className="list-unstyled-link">
-                <a href="#!">DIY</a>
+                <a href="#!">Who we are</a>
               </li>
               <li className="list-unstyled-link">
-                <a href="#!">Something3</a>
+                <a href="#!">How you can help</a>
               </li>
               <li className="list-unstyled-link">
                 <a href="#!">Something4</a>
@@ -92,7 +87,7 @@ function Footer() {
           <ul className ="list-unstyled">
 
            <li>Liechtensteinstraße 111/115</li>
-           <li>1190,Vienna</li>
+           <li>1190 Vienna</li>
            <li> Austria</li>
           
         </ul>
