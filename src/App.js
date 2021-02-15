@@ -27,7 +27,7 @@ import * as actions from './actions/app.action';
 
 function App(props) {
 
-  if (props.applicationState.user.type !== "") {
+  if (props.applicationState.user !== false) {
     return (
 
 
