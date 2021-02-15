@@ -39,7 +39,7 @@ function App(props) {
         <Switch>
           
           <Route path="/Home" component={Home} />
-          <Route path="/" exact component={RegisterForm} />
+          <Route path="/register" exact component={RegisterForm} />
           <Route path="/update" exact component={Updateform} />
           <Route path="/videoSearch" component={SearchVideos} />
           <Route path="/displayVideo" component={DisplayVideo} />
@@ -48,7 +48,7 @@ function App(props) {
           <Route path="/InstructorLandingpage" component={InstructorLandingpage}/>
           <Route path='/Calendar' exact component={Calendar} />
           <Route path='/scheduler' exact component={Scheduler} />
-          <Route path="/Home" component={Home} />
+          <Route path="/" component={Home} />
           <Route path="*" component={Page404}/>
 
         </Switch> 
@@ -65,10 +65,11 @@ function App(props) {
 
 
       <DashProvider>
+      <Sidebar />
         <Switch>
-          <Route path="/" exact component={RegisterForm} />
+          <Route path="/register" exact component={RegisterForm} />
           <Route path="/login" component={Login} />
-          <Route path="/Home" component={Home} />
+          <Route path="/" component={Home} />
           <Route path="*" component={Page404}/>
         </Switch> 
 

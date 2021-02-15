@@ -5,6 +5,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
 import { Link } from "react-router-dom";
 import ButtonBase from '@material-ui/core/ButtonBase';
+import Logo from '../../Logo/Green/logo3TYB-removebg.png'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,24 +50,25 @@ export default function LandingPage() {
   }, []);
   return (
     <div className={classes.root} id="landingPage">
-      <AppBar className={classes.appbar} elevation={0}>
+      {/* <AppBar className={classes.appbar} elevation={0}>
         <Toolbar className={classes.appbarWrapper}>
           <h1 className={classes.appbarTitle}>
             TeachYour<span className={classes.colorText}>BEST</span>
           </h1>
           
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
 
       <Collapse
         in={checked}
         {...(checked ? { timeout: 1000 } : {})}
         collapsedHeight={50}
       >
-        <div className={classes.container}>
-          <h1 className={classes.title}>
-           Do your <span className={classes.colorText}>BEST</span> <br />
-           And <Link to="/Login">Register </Link><span className={classes.colorText}>Now</span>
+        <div className={classes.container} >
+          <img src={Logo} style={{width: "300px"}} />
+          <h1 className={classes.title} >
+           Do your <span className={classes.colorText} id="homefont">BEST</span> <br />
+           And <Link to="/register" className="links">Register</Link><span className={classes.colorText} id="homefont"> NOW</span>
           </h1>
           <Scroll to="lectures" smooth={true}>
             <IconButton>
