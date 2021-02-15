@@ -108,4 +108,3 @@ module.exports = getLatestUserData;
 
 module.exports = router;
 
-module.exports = sum; 

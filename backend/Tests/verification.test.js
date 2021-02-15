@@ -1,5 +1,5 @@
 const getLatestUserData = require('../routes/verification');
-const sum = require('../routes/verification')
+
 
 const array = [
     {
