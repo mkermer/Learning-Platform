@@ -6,7 +6,7 @@ import Lectures from '../../components/LandingPage/Lectures';
 import Team from '../../components/LandingPage/Team';
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '80vh',
+    minHeight: '100vh',
     backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/tech.jpg'})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -20,7 +20,7 @@ export default function Home() {
       
       <LandingPage/>
       <Lectures />
-      {/* < Team /> */}
+      < Team />
     </div>
   );
 }
