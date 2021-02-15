@@ -19,43 +19,69 @@ import Scheduler from "./scheduler/Scheduler";
 import CategoryCoding from './components/SearchVideos/CategoryCoding';
 import CategoryMusic from './components/SearchVideos/CategoryMusic';
 import CategoryTechnologies from './components/SearchVideos/CategoryTechnologies';
+import Page404 from './Page404';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from './actions/app.action';
+
+function App(props) {
+
+  if (props.applicationState.user !== false) {
+    return (
 
 
-function App() {
+      <Router>
 
 
+        <DashProvider>
+          <Sidebar />
 
-  return (
+          <Switch>
+
+            <Route path="/Home" component={Home} />
+            <Route path="/" exact component={RegisterForm} />
+            <Route path="/update" exact component={Updateform} />
+            <Route path="/videoCoding" component={CategoryCoding} />
+            <Route path="/videoMusic" component={CategoryMusic} />
+            <Route path="/videoTechnologies" component={CategoryTechnologies} />
+            <Route path="/videoSearch" component={SearchVideos} />
+            <Route path="/displayVideo" component={DisplayVideo} />
+            <Route path="/login" component={Login} />
+            <Route path="/UserLandingpage" component={UserLandingpage} />
+            <Route path="/InstructorLandingpage" component={InstructorLandingpage} />
+            <Route path='/Calendar' exact component={Calendar} />
+            <Route path='/scheduler' exact component={Scheduler} />
+            <Route path="/Home" component={Home} />
+            <Route path="*" component={Page404} />
+
+          </Switch>
+        </DashProvider>
+        <Footer />
+
+      </Router>
+
+    );
+  }
+  else {
+    return (
+      <Router>
 
 
-    <Router>
+        <DashProvider>
+          <Switch>
+            <Route path="/" exact component={RegisterForm} />
+            <Route path="/login" component={Login} />
+            <Route path="/Home" component={Home} />
+            <Route path="*" component={Page404} />
+          </Switch>
 
-
-      <DashProvider>
-        <Sidebar />
-
-        <Switch>
-
-          <Route path="/Home" component={Home} />
-          <Route path="/" exact component={RegisterForm} />
-          <Route path="/update" exact component={Updateform} />
-          <Route path="/videoCoding" component={CategoryCoding} />
-          <Route path="/videoMusic" component={CategoryMusic} />
-          <Route path="/videoTechnologies" component={CategoryTechnologies} />
-          <Route path="/videoSearch" component={SearchVideos} />
-          <Route path="/displayVideo" component={DisplayVideo} />
-          <Route path="/login" component={Login} />
-          <Route path="/UserLandingpage" component={UserLandingpage} />
-          <Route path="/InstructorLandingpage" component={InstructorLandingpage} />
-          <Route path='/Calendar' exact component={Calendar} />
-          <Route path='/scheduler' exact component={Scheduler} />
-        </Switch>
-      </DashProvider>
-      <Footer />
-
-    </Router>
-
-  );
+        </DashProvider>
+        <Footer />
+      </Router>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({ applicationState: state });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+export default connect(mapStateToProps, mapDispatchToProps)(App);

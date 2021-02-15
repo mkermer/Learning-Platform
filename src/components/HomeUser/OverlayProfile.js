@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { Popover, OverlayTrigger, Overlay, Button } from "react-bootstrap";
-import { PersonCircle } from "react-bootstrap-icons";
+import { Popover, OverlayTrigger, Overlay, Button, Row, Col } from "react-bootstrap";
+import { PersonCircle, PencilSquare, BoxArrowRight, BoxArrowInRight } from "react-bootstrap-icons";
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import { bindActionCreators } from 'redux';
@@ -14,33 +14,54 @@ function OverlayProfile(props) {
     props.actions.storeUserData(false)
   }
 
+  if(props.applicationState.user !== false){
+
   return (
 
     <>
 
-      {['bottom'].map((placement) => (
         <OverlayTrigger
           trigger="click"
-          key={placement}
-          placement={placement}
+          placement="bottom"
           overlay={
-            <Popover id={`popover-positioned-${placement}`} className="popover">
+            <Popover id="popover-positioned-bottom" className="popover">
               <Popover.Title>
-                <img src={props.applicationState.user.image} alt="pic" />
-                <h3>{props.applicationState.user.firstName}</h3>
+                <Row>
+                  <Col xs={5}>
+                    <img src={props.applicationState.user.image} alt="pic" />
+                  </Col>
+                  <Col xs={7}>
+                    <h3>{props.applicationState.user.firstName}</h3>
+                    <h3>{props.applicationState.user.lastName}</h3>
+                  </Col>
+                </Row>
               </Popover.Title>
               <Popover.Content>
-                <p> {props.applicationState.user.subHeader}</p>
-                <p>{props.applicationState.user.description}</p>
-                <p> {props.applicationState.user.interests}</p>
+                <p className="content-small"> <i>{props.applicationState.user.subHeader}</i></p>
+                <p className="content-small">{props.applicationState.user.description}</p>
+                <div className="content-small"> 
+                  <p> Interested in: </p>
+                  <ul>
+                    {props.applicationState.user.interests.map(interest =>  {
+                      return(
+                          <li>
+                            {interest}
+                          </li>
+                      )}
+                    )}
+                    
+                  </ul>
+                </div>
 
                 <Button href="/update">
-                  Edit Profile
-
-            </Button>
-                <Button href="/" onClick={logout}>
-                  Logout
-            </Button>
+                  Edit Profile &nbsp; 
+                  <PencilSquare size={20}/>
+                </Button>
+                
+                <Button variant="danger" href="/" onClick={logout}>
+                  Logout &nbsp; 
+                  <BoxArrowRight size={20}/>
+                </Button>
 
           </Popover.Content>
         </Popover>
@@ -48,11 +69,38 @@ function OverlayProfile(props) {
     >
       <PersonCircle className="person" size={25}/>
     </OverlayTrigger>
-  ))}
+
 
 
     </>
   )
+    } else {
+      return (
+      <>
+      
+      <OverlayTrigger
+          trigger="click"
+          placement="bottom"
+          overlay={
+            <Popover id="popover-positioned-bottom" className="popover">
+              <Popover.Title>
+                <p> Please login or register first</p>
+              </Popover.Title>
+              <Popover.Content>
+                <Button href="/login">
+                  Login &nbsp; 
+                  <BoxArrowInRight size={20}/>
+                </Button>
+              </Popover.Content>
+        </Popover>
+      }
+    >
+      <PersonCircle className="person" size={25}/>
+    </OverlayTrigger>
+
+      </>
+  )
+    }
 
 }
 

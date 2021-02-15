@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import config from '../../config/config';
-import { Form } from 'react-bootstrap';
+import { Container, Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Alert } from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -68,43 +68,41 @@ function Login(props) {
     });
 
     return (
-        <div className="container">
-            <div className="left">
-                <div className="inner">
-                    <div className="logo">Login</div>
-                    <Alert variant={variant} show={show}>
-                        {text}
-                    </Alert>
-                    <Form className="form-elem">
-                        <Form.Group controlId="formBasicUsername">
-                            <Form.Label>Username</Form.Label>
-                            <Form.Control type="username" placeholder=""
-                                value={username} onChange={(e) => setUsername(e.target.value)} />
-                        </Form.Group>
+        <Container className="cont">
 
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder=""
-                                value={password} onChange={(e) => setPassword(e.target.value)} />
-                        </Form.Group>
+            <div className="inner">
+                <div className="logo">Login</div>
+                <Alert variant={variant} show={show}>
+                    {text}
+                </Alert>
+                <Form className="form-elem">
+                    <Form.Group controlId="formBasicUsername">
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control type="username" placeholder=""
+                            value={username} onChange={(e) => setUsername(e.target.value)} />
+                    </Form.Group>
 
-                        <Form.Group controlId="formBasicCheckbox">
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" placeholder=""
+                            value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </Form.Group>
+
+                    {/* <Form.Group controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="save password" />
-                        </Form.Group>
+                        </Form.Group> */}
 
-                        <Button className="btn" variant="primary" onClick={authentication}>
-                            Login
-                            </Button>
-                        <div className="registerLink">
-                            <a href="/">do not have an account yet? Register</a>
-                        </div>
-                    </Form>
-                </div>
+                    <Button className="btn" variant="primary" onClick={authentication}>
+                        Login
+                        </Button>
+                    <div className="registerLink">
+                        <a href="/">do not have an account yet? Register</a>
+                    </div>
+                </Form>
             </div>
-            <div className="right">
 
-            </div>
-        </div>
+
+        </Container>
     )
 
 

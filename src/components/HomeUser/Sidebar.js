@@ -148,4 +148,3 @@ const Sidebar = (props) => {
 const mapStateToProps = state => ({ applicationState: state });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
-
