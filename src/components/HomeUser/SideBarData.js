@@ -68,7 +68,7 @@ const Sidebarfunction = (type) => {
       [
         {
           title: 'Home',
-          path: '/UserLandingpage',
+          path: '/InstructorLandingpage',
           icon: <AiIcons.AiFillHome />,
           iconClosed: <RiIcons.RiArrowDownSFill />,
           iconOpened: <RiIcons.RiArrowUpSFill />,

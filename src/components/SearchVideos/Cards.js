@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Moment from 'react-moment';
-
+import './SearchVideos.css'
 
 class CustomPlayer extends Component {
     constructor(props) {
