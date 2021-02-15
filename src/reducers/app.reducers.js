@@ -34,7 +34,9 @@ function appReducer(state = initialState, action) {
                 video: action.video
             }
         };
-
+        case "RESET_REDUX":
+            console.log('Reducer: RESET_REDUX')
+            return initialState; //Always return the initial state
         default:
             return state;
     }
