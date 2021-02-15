@@ -23,7 +23,7 @@ export default function Lectures () {
       <ImageCard lecture = {lectures[1]} checked={checked} />
       <ImageCard lecture = {lectures[0]} checked ={checked}/>
       <ImageCard lecture = {lectures[2]} checked ={checked}/>
-      <ImageCard lecture = {lectures[3]} checked ={checked}/>
+      
       
     </div>
   );

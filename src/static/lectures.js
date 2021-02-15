@@ -1,38 +1,31 @@
 const lectures = [
     {
-      title: 'Cooking',
+      title: 'Coding',
       description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "Learn How to Code; Improve Your Future Career! Learn Computer Science in Your Own Home! No drag & drop coding! Learn & write REAL code to build REAL websites, apps and softwares.Here it is, learn now, CSS, JavaScript and much more. Register right now to find out the lectures from the best teachers in many different languages. "
         ,
   
-      imageUrl: process.env.PUBLIC_URL + '/assets/cooking.png',
+      imageUrl: process.env.PUBLIC_URL + '/assets/coding.png',
       time: 1500,
     },
     {
       title: 'Music ',
       description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Have you ever wondered who makes the music for the ads or shows that you see on TV and hear on the radio? Are you curious about how this music is made, how it is sold, who buys it and why? If you want to look under the hood at the world of commercial music, both from a process standpoint as well as a business standpoint, this course is for you.",
        
       imageUrl: process.env.PUBLIC_URL + '/assets/music.png',
       time: 1500,
     },
     {
-      title: 'Yoga ',
+      title: 'Technology ',
       description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "Learning technology is an umbrella term that describes communication, information and technological tools used to enhance learning, teaching and assessment. This may involve computer-based learning or multimedia materials used to supplement in-class activities. So if you are interested in Tech and a be part of it, you are in the right place. "
         ,
   
-      imageUrl: process.env.PUBLIC_URL + '/assets/yoga.png',
+      imageUrl: process.env.PUBLIC_URL + '/assets/tech.png',
       time: 1500,
     },
-    {
-      title: 'Dance ',
-      description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-       
-      imageUrl: process.env.PUBLIC_URL + '/assets/dance.png',
-      time: 1500,
-    },
+   
   ];
   
   export default lectures;
