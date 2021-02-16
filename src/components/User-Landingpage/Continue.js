@@ -5,6 +5,10 @@ import config from '../../config/config'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
+import Moment from 'react-moment';
+import MusicPic from '../../img/music.png'
+import TechPic from '../../img/tech.png'
+import CodingPic from '../../img/coding.png'
 
 
 function Continue(props) {
@@ -26,50 +30,61 @@ function Continue(props) {
             const filteredMeetings = meetings.filter(meeting =>
                 meeting.student === user.studentName)
             setMeetings(filteredMeetings);
+            console.log(filteredMeetings)
 
         } else if (user.type === "instructor") {
             const filteredMeetings = meetings.filter(meeting =>
                 meeting.instructor === user.instructorName)
             setMeetings(filteredMeetings);
         }
-
+        
 
 
 
     }
 
+    // const joinMeeting = () => {
+    //     return(
+    //         <iframe src="https://meet.jit.si/ + {meeting.course}" style={{height: '100%', width: '100%'}}/>
+    //     )
+    // }
+    const picture = () => {
+        if(props.applicationState.course.category === "Music"){
+            return (MusicPic)
+        } else if(props.applicationState.course.category === "Coding"){
+            return (CodingPic)
+        } else if(props.applicationState.course.category === "Technologies"){
+            return (TechPic)
+        }
+    }
 
 
+    // 
     return (
-        <Container>
-            <h2>Continue</h2>
+        <>
+            <h2>Booked Meetings</h2>
+            
             <Row>
-                <Col xs={12} lg={8}>
-                    <iframe
-                        className="video"
-                        src="https://www.youtube.com/embed/hQAHSlTtcmY?controls=0"
-                        alt="Video Name"
-                    />
-                </Col>
-                <Col xs={12} lg={4}>
+                
                     {meetings.map(meeting => {
                         return (
+                            <Col xs={12} lg={4} className="content">
                             <Card>
-                                <Card.Img variant="top" src="https://cdn0.iconfinder.com/data/icons/different-characters/1200/Untitled-1-17-512.png" />
+                                <Card.Img variant="top" src={picture()} />
                                 <Card.Body>
-                                    {/* <Card.Title>Course Name starring {props.applicationState.user.instructorName}</Card.Title> */}
-                                    <Card.Text>
-                                        {meeting.course}
+                                    <Card.Title>{meeting.course} hosted by {meeting.instructor} </Card.Title>
+                                    <Card.Text> 
+                                        at <Moment>{meeting.timestamp}</Moment>
                                     </Card.Text>
-                                    <Button variant="primary">Start your next meeting</Button>
+                                    <a href={`https://meet.jit.si/${meeting.course}`}><Button variant="primary">Start your meeting</Button></a>
                                 </Card.Body>
                             </Card>
+                            </Col>
                         )
                     })}
-
-                </Col>
+                
             </Row>
-        </Container>
+        </>
     )
 }
 
