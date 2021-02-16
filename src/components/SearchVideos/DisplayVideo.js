@@ -202,7 +202,7 @@ const DisplayVideo = (props) => {
 
             <div>
 
-
+                
                 <Form className="form-elem">
                     <h1>Overall Rating</h1>
                     <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 0 ? 'blue' : ''} />

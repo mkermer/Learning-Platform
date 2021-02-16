@@ -51,7 +51,7 @@ function UserLandingpage(props) {
                         <Slideshow />
                     </Col>
                 </Row>
-                <Row>
+                <Row className="bigButton">
                     <Col xs={12} md={6} className="content">
                         <h2>Browse all Videos</h2>
                         <Link to="/videoSearch"><Button><img src={videoPic}/></Button></Link>
@@ -63,7 +63,7 @@ function UserLandingpage(props) {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12}>
+                    <Col xs={12} >
                         <Continue user={props.applicationState.user} />
                     </Col>
                 </Row>

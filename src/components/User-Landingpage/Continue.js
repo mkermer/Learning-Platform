@@ -43,20 +43,8 @@ function Continue(props) {
 
     }
 
-    // const joinMeeting = () => {
-    //     return(
-    //         <iframe src="https://meet.jit.si/ + {meeting.course}" style={{height: '100%', width: '100%'}}/>
-    //     )
-    // }
-    const picture = () => {
-        if(props.applicationState.course.category === "Music"){
-            return (MusicPic)
-        } else if(props.applicationState.course.category === "Coding"){
-            return (CodingPic)
-        } else if(props.applicationState.course.category === "Technologies"){
-            return (TechPic)
-        }
-    }
+    
+    
 
 
     // 
@@ -67,16 +55,35 @@ function Continue(props) {
             <Row>
                 
                     {meetings.map(meeting => {
+                        const picture = () => {
+                            if(meeting.category === "Music"){
+                                return (MusicPic)
+                            } else if(meeting.category === "Coding"){
+                                return (CodingPic)
+                            } else if(meeting.category === "Technologies"){
+                                return (TechPic)
+                            }
+                        }
+
+                        // const joinMeeting = () => {
+                        //     return(
+                        //         <div style={{height: '500px', width: '500px'}}>
+                        //         <iframe src={`https://meet.jit.si/${meeting.course}`} style={{height: '100%', width: '100%'}}/>
+                        //         </div>
+                        //     )
+                        // }
+
                         return (
-                            <Col xs={12} lg={4} className="content">
-                            <Card>
+                            <Col xs={12} lg={4}>
+                            <Card className="content">
                                 <Card.Img variant="top" src={picture()} />
                                 <Card.Body>
-                                    <Card.Title>{meeting.course} hosted by {meeting.instructor} </Card.Title>
+                                    <Card.Title><strong>{meeting.course}</strong> <p>hosted by</p> <strong>{meeting.instructor}</strong> </Card.Title>
                                     <Card.Text> 
-                                        at <Moment>{meeting.timestamp}</Moment>
+                                        at <strong>{meeting.timestamp}</strong>
                                     </Card.Text>
                                     <a href={`https://meet.jit.si/${meeting.course}`}><Button variant="primary">Start your meeting</Button></a>
+                                    {/* <Button onclick={joinMeeting} variant="primary">Start your meeting</Button> */}
                                 </Card.Body>
                             </Card>
                             </Col>

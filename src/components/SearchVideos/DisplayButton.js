@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import { Button } from 'react-bootstrap';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { ArrowsFullscreen, Star } from "react-bootstrap-icons";
 
 const DisplayButton = (props) => {
     const history = useHistory();
@@ -15,9 +16,11 @@ const DisplayButton = (props) => {
     }
 
     return (
+        <>
         <Button className="btn" variant="primary" onClick={displayVideo}>
-            Watch Video
+            <Star size={18} /> Rate this Video! <Star size={18} />
         </Button>
+        </>
     )
 }
 

@@ -1,9 +1,15 @@
+.UserLPage .container{
+  margin-bottom: 100px !important;
+}
 
 .UserLPage .card{
     width: 100% !important;
-    height: 100% !important;
     text-align: center !important;
 
+}
+
+.UserLPage p{
+  margin: 8px 0 !important;
 }
 
 .UserLPage h2{
@@ -19,22 +25,22 @@
   cursor: pointer;
 }
 
-.UserLPage button{
- background-color: transparent !important;
- border: none !important;
-}
+
 
 .UserLPage #dashboardbutton{
   width: 75%;
   margin-left: 12%;
  }
 
+.UserLPage .bigButton button{
+ background-color: transparent !important;
+ border: none !important;
+}
 
-
-.UserLPage button:hover,
-.UserLPage button:active,
-.UserLPage button:visited,
-.UserLPage button:focus{
+.UserLPage .bigButton button:hover,
+.UserLPage .bigButton button:active,
+.UserLPage .bigButton button:visited,
+.UserLPage .bigButton button:focus{
   background-color: transparent !important;
   border-color: transparent !important;
  }
