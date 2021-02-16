@@ -48,7 +48,7 @@ const NavIcon = styled(Link)`
   align-items: center;
 `;
 
-const SidebarNav = styled.nav`
+const SidebarNav = styled.nav`   
   background: #2073d9 !important;
   width: 15%;
   height: 100vh;
@@ -131,7 +131,7 @@ const Sidebar = (props) => {
             <StyledLink as="a" >
               <FaIcons.FaBars size={30} onClick={showSidebar} />
             </StyledLink>
-            <img src={Logo} style={{ width: "80px" }} />
+            <a href="/"><img src={Logo} style={{ width: "80px" }} /></a>
             <OverlayProfile />
           </Nav>
           <SidebarNav sidebar={sidebar}>
@@ -158,7 +158,7 @@ const Sidebar = (props) => {
 
         <IconContext.Provider value={{ color: '#fff' }}>
           <Nav>
-            <img src={Logo} style={{ width: "80px" }} />
+            <a href="/"><img src={Logo} style={{ width: "80px" }} /></a>
             <StyledLink as="a" href="/login" className="links">Login</StyledLink>
             <StyledLink as="a" href="/register" className="links">Register</StyledLink>
             <OverlayProfile />

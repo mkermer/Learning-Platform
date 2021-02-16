@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Col, Button } from 'react-bootstrap';
+import { Carousel, Col, Button, Container } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import config from '../../config/config';
@@ -68,7 +68,7 @@ function Slideshow(props) {
     // }
 
 
-
+    
 
     return (
         <>
@@ -76,9 +76,9 @@ function Slideshow(props) {
                 rel="stylesheet"
                 href="https://video-react.github.io/assets/video-react.css"
             />
-            <Col xs={12} md={6} lg={4}>
+            
                 {/* <h2> Featured in {randomInterest} </h2> */}
-
+                <h2> Featured in Technology</h2>
 
 
                 <Carousel>
@@ -93,70 +93,10 @@ function Slideshow(props) {
 
 
                 </Carousel>
-            </Col>
+            
 
-            <Col xs={12} md={6} lg={4}>
-                {/* <h2> Featured in {category} </h2> */}
-
-                <Carousel>
-                    <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/p3NXd3DhH08?controls=0"
-                            alt="Video Name"
-                        />
-                        {/* <Carousel.Caption>
-                            <h3>Video Name</h3>
-                            </Carousel.Caption> */}
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/pH_G1f6KzfI?controls=0"
-                            alt="Video Name"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/4AGhtOHoASg?controls=0"
-                            alt="Video Name"
-                        />
-                    </Carousel.Item>
-                </Carousel>
-            </Col>
-
-            <Col xs={12} md={6} lg={4}>
-
-                {/* <h2> Featured in {category} </h2> */}
-
-                <Carousel>
-                    <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/hQAHSlTtcmY?controls=0"
-                            alt="Video Name"
-                        />
-                        {/* <Carousel.Caption>
-                            <h3>Video Name</h3>
-                            </Carousel.Caption> */}
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/OZaFqY8UF6I?controls=0"
-                            alt="Video Name"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <iframe
-                            className="d-block w-100"
-                            src="https://www.youtube.com/embed/2TofunAI6fU?controls=0"
-                            alt="Video Name"
-                        />
-                    </Carousel.Item>
-                </Carousel>
-            </Col>
+            
+           
         </>
     )
 };

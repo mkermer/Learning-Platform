@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import moment from 'moment';
-import { Jumbotron, Container, Row, Button } from 'react-bootstrap';
+import { Jumbotron, Container, Row, Button, Col } from 'react-bootstrap';
 import Slideshow from './Slideshow';
 import Continue from './Continue';
 import Dashboard from './Dashboard';
@@ -11,7 +11,8 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import videoPic from '../../SVG/undraw_video_files_fu10.svg'
+import dashPic from '../../SVG/undraw_Selection_re_poer.svg'
 
 
 function UserLandingpage(props) {
@@ -37,25 +38,38 @@ function UserLandingpage(props) {
         <div className="UserLPage">
             <div className={sidebar ? "cart-menu active" : "cart-menu"}>
                 <Dashboard />
-
-
             </div>
-            <Button onClick={showSidebar}>Dashboard</Button>
-            <Button className="btn" variant="primary" ><Link to="/update">Update</Link></Button>
-            <Button className="btn" variant="primary" ><Link to="/videoSearch">Videos</Link></Button>
 
             <Jumbotron fluid>
                 <h1>{daytime(date)} {props.applicationState.user.firstName}</h1>
             </Jumbotron>
 
 
-            <Container className="carousel">
+            <Container >
                 <Row>
-                    <Slideshow />
+                    <Col xs={12} md={12} className="content">
+                        <Slideshow />
+                    </Col>
+                </Row>
+                <Row className="bigButton">
+                    <Col xs={12} md={6} className="content">
+                        <h2>Browse all Videos</h2>
+                        <Link to="/videoSearch"><Button><img src={videoPic}/></Button></Link>
+                    </Col>
+                    <Col xs={12} md={6} className="content">
+                        <h2> Check the Dashboard</h2>
+                        <Button id="dashboardbutton" onClick={showSidebar}><img src={dashPic}/></Button>
+                        
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12}>
+                        <Continue user={props.applicationState.user} />
+                    </Col>
                 </Row>
             </Container>
 
-            <Continue user={props.applicationState.user} />
+            
 
 
 

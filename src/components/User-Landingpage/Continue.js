@@ -5,6 +5,10 @@ import config from '../../config/config'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
+import Moment from 'react-moment';
+import MusicPic from '../../img/music.png'
+import TechPic from '../../img/tech.png'
+import CodingPic from '../../img/coding.png'
 
 
 function Continue(props) {
@@ -27,32 +31,30 @@ function Continue(props) {
             const filteredMeetings = meetings.filter(meeting =>
                 meeting.student === user.studentName)
             setMeetings(filteredMeetings);
+            console.log(filteredMeetings)
 
         } else if (user.type === "instructor") {
             const filteredMeetings = meetings.filter(meeting =>
                 meeting.instructor === user.instructorName)
             setMeetings(filteredMeetings);
         }
-
+        
 
     }
 
 
 
+    
+    
 
 
+    // 
     return (
-        <Container>
-            <h2>Continue</h2>
+        <>
+            <h2>Booked Meetings</h2>
+            
             <Row>
-                <Col xs={12} lg={8}>
-                    <iframe
-                        className="video"
-                        src="https://www.youtube.com/embed/hQAHSlTtcmY?controls=0"
-                        alt="Video Name"
-                    />
-                </Col>
-                <Col xs={12} lg={4}>
+                
                     {meetings.map(meeting => {
                         const updateTime = async () => {
                             const updatedCourse = {
@@ -72,10 +74,18 @@ function Continue(props) {
 
 
                         }
-
+                        const picture = () => {
+                            if(meeting.category === "Music"){
+                                return (MusicPic)
+                            } else if(meeting.category === "Coding"){
+                                return (CodingPic)
+                            } else if(meeting.category === "Technologies"){
+                                return (TechPic)
+                            }
+                        }
 
                         return (
-                            <div>
+                            <>
                                 <Form.Group controlId="formBasicUsername">
                                     <Form.Label>Set Time for meeting</Form.Label>
                                     <Form.Control value={time} onChange={(e) => setTime(e.target.value)} placeholder="14:00"
@@ -89,23 +99,27 @@ function Continue(props) {
                                 <Button onClick={updateTime}>
                                     Update Time
                                 </Button>
-                                <Card>
-                                    <Card.Img variant="top" src="https://cdn0.iconfinder.com/data/icons/different-characters/1200/Untitled-1-17-512.png" />
-                                    <Card.Body>
-                                        {/* <Card.Title>Course Name starring {props.applicationState.user.instructorName}</Card.Title> */}
-                                        <Card.Text>
-                                            {meeting.course}
-                                        </Card.Text>
-                                        <Button variant="primary">Start your next meeting</Button>
-                                    </Card.Body>
-                                </Card>
-                            </div>
+                               
+                        
+                            <Col xs={12} sm={6} lg={4}>
+                            <Card className="content">
+                                <Card.Img variant="top" src={picture()} />
+                                <Card.Body>
+                                    <Card.Title><strong>{meeting.course}</strong> <p>hosted by</p> <strong>{meeting.instructor}</strong> </Card.Title>
+                                    <Card.Text> 
+                                        at <strong>{meeting.timestamp}</strong>
+                                    </Card.Text>
+                                    <a href={`https://meet.jit.si/${meeting.course}`}><Button variant="primary">Start your meeting</Button></a>
+                                    {/* <Button onclick={joinMeeting} variant="primary">Start your meeting</Button> */}
+                                </Card.Body>
+                            </Card>
+                            </Col>
+
                         )
                     })}
-
-                </Col>
+                
             </Row>
-        </Container>
+        </>
     )
 }
 

@@ -1,22 +1,55 @@
 .UserLPage .container{
-    margin: 80px auto;
-}
-
-.UserLPage .video{
-    height: 100%;
-    width: 100%;
+  margin-bottom: 100px !important;
 }
 
 .UserLPage .card{
     width: 100% !important;
-    height: 100% !important;
     text-align: center !important;
 
+}
+
+.UserLPage p{
+  margin: 8px 0 !important;
 }
 
 .UserLPage h2{
     text-align: center;
     margin-bottom: 30px;
+}
+
+.UserLPage img{
+  width: 100%;
+}
+
+.UserLPage a{
+  cursor: pointer;
+}
+
+.UserLPage .card-img-top {
+  height: 250px;
+}
+
+
+.UserLPage #dashboardbutton{
+  width: 75%;
+  margin-left: 12%;
+ }
+
+.UserLPage .bigButton button{
+ background-color: transparent !important;
+ border: none !important;
+}
+
+.UserLPage .bigButton button:hover,
+.UserLPage .bigButton button:active,
+.UserLPage .bigButton button:visited,
+.UserLPage .bigButton button:focus{
+  background-color: transparent !important;
+  border-color: transparent !important;
+ }
+
+.UserLPage .content{
+  margin: 20px 0;
 }
 
 .Dashboard{
@@ -36,6 +69,8 @@
     float: right;
     color: black;
   }
+
+
 
   .cart-menu {
     overflow: auto;

@@ -29,13 +29,15 @@ const SearchVideos = (props) => {
 
         <div>
             <Container className="searchVideos">
+
                 <Filter videos={videos} vidFunction={categoryfunction}
                     setVideos={setVideos} category={'all'} />
-                <Row>
 
-                    <Col xs={12} md={6} lg={6} xl={4}>
-                        <Cards className="VideoCard" videos={videos} />
-                    </Col>
+                <Row>
+                    <Filter videos={videos} vidFunction={GetVideos} setVideos={setVideos} />
+                </Row>
+                <Row>
+                    <Cards className="VideoCard content" videos={videos} />
                 </Row>
             </Container>
         </div>
