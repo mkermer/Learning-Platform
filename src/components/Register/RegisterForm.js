@@ -31,19 +31,20 @@ const RegisterForm = (props) => {
 
     const register = async () => {
 
-        // if (verificationUsername() === false) {
-        //     AlertWarning('existing Username')
+        if (verificationUsername() === false) {
+            AlertWarning('existing Username')
+        }
         // } else if (verificationFields() === false) {
         //     AlertWarning('Please fill out the input fields')
         // } else if (verificationEmail() === false) {
         //     AlertWarning('Please enter a valid e-mail address')
         // }
-        if (type === 'student') {
-            registerStudent();
+        // if (type === 'student') {
+        //     registerStudent();
 
-        } else if (type === "instructor") {
-            registerInstructor();
-        }
+        // } else if (type === "instructor") {
+        //     registerInstructor();
+        // }
     }
 
 
@@ -67,11 +68,18 @@ const RegisterForm = (props) => {
             const instructorRes = await axios.get(config.baseUrl + '/instructor')
             const instructors = instructorRes.data;
 
-            students.map(student => {
-                if (student.studentName === username) {
-                    return false
-                }
+            var foundStudent = students.find(student => {
+                return student.studentName === username
             })
+
+            
+
+            if (foundStudent != null) {
+                console.warn(foundStudent);
+                return false
+                
+            }
+
 
             instructors.map(instructor => {
                 if (instructor.instructorName === username) {
@@ -152,11 +160,11 @@ const RegisterForm = (props) => {
     return (
         <div className="register">
 
-                <Alert variant={variant} show={show}>
-                    {text}
-                </Alert>
+            <Alert variant={variant} show={show}>
+                {text}
+            </Alert>
 
-            
+
             <img src={regpic} />
             <div className="label">
                 <h1>Register</h1>
@@ -239,9 +247,9 @@ const RegisterForm = (props) => {
                     <Button className="btn" variant="primary" onClick={register} >
                         Register
                     </Button>
-                    <br/>
+                    <br />
                     <Link to="/login">
-                            Return to Login
+                        Return to Login
                     </Link>
                 </Form>
             </div>

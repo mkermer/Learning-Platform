@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from './actions/app.actions'
+import * as actions from '../../actions/app.action';
 function ReduxResetPage(props) {
     const handlerResetRedux = () => {
         props.actions.storeResetRedux()

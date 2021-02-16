@@ -19,10 +19,13 @@ mongoose.connect(
 
 const studentRouter = require('./routes/student');
 const instructorRouter = require('./routes/instructor');
-const verificationRouter = require('./routes/verification');
+const verificationRouter = require('./routes/verification').router;
 const videoRouter = require('./routes/video');
 const reviewRouter = require('./routes/review');
+const courseRouter = require('./routes/course');
 
+
+app.use('/course', courseRouter)
 app.use('/review', reviewRouter)
 app.use('/video', videoRouter)
 app.use('/instructor', instructorRouter)

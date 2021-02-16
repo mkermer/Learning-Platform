@@ -121,63 +121,61 @@ const Sidebar = (props) => {
 
 
 
-  if(props.applicationState.user !== false){
-  return (
-    <>
+  if (props.applicationState.user !== false) {
+    return (
+      <>
 
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <Nav>
-          <StyledLink as="a" >
-            <FaIcons.FaBars size={30} onClick={showSidebar} />
-          </StyledLink>
-          <img src={Logo} style={{width:"80px"}}/>
-          <OverlayProfile/>
-        </Nav>
-        <SidebarNav sidebar={sidebar}>
-          <SidebarWrap>
-            <NavIcon to="#">
-              <AiIcons.AiOutlineClose onClick={showSidebar} />
-            </NavIcon>
+        <IconContext.Provider value={{ color: '#fff' }}>
+          <Nav>
+            <StyledLink as="a" >
+              <FaIcons.FaBars size={30} onClick={showSidebar} />
+            </StyledLink>
+            <img src={Logo} style={{ width: "80px" }} />
+            <OverlayProfile />
+          </Nav>
+          <SidebarNav sidebar={sidebar}>
+            <SidebarWrap>
+              <NavIcon to="#">
+                <AiIcons.AiOutlineClose onClick={showSidebar} />
+              </NavIcon>
 
 
 
-            {/* //callfunction   */}
-            {Sidebarfunction(props.applicationState.user.type).map((item, index) => {
-              return <SubMenu item={item} key={index} />;
-            })}
+              {/* //callfunction   */}
+              {Sidebarfunction(props.applicationState.user.type).map((item, index) => {
+                return <SubMenu item={item} key={index} />;
+              })}
 
-          </SidebarWrap>
-        </SidebarNav>
-      </IconContext.Provider>
-    </>
-  );
-} else{
-  return(
-    <>
+            </SidebarWrap>
+          </SidebarNav>
+        </IconContext.Provider>
+      </>
+    );
+  } else {
+    return (
+      <>
 
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <Nav>
-          <img src={Logo} style={{width:"80px"}}/>
-          <StyledLink as="a" href="/login" className="links">Login</StyledLink>
-          <StyledLink as="a" href="/register" className="links">Register</StyledLink>
-          <OverlayProfile />
-        </Nav>
-        <SidebarNav sidebar={sidebar}>
-          <SidebarWrap>
-            <NavIcon to="#">
-              <AiIcons.AiOutlineClose onClick={showSidebar} />
-            </NavIcon>
-            {Sidebarfunction(props.applicationState.user.type).map((item, index) => {
-              return <SubMenu item={item} key={index} />;
-            })}
+        <IconContext.Provider value={{ color: '#fff' }}>
+          <Nav>
+            <img src={Logo} style={{ width: "80px" }} />
+            <StyledLink as="a" href="/login" className="links">Login</StyledLink>
+            <StyledLink as="a" href="/register" className="links">Register</StyledLink>
+            <OverlayProfile />
+          </Nav>
+          <SidebarNav sidebar={sidebar}>
+            <SidebarWrap>
+              <NavIcon to="#">
+                <AiIcons.AiOutlineClose onClick={showSidebar} />
+              </NavIcon>
 
-          </SidebarWrap>
-        </SidebarNav>
-      </IconContext.Provider>
-    </>
 
-  )
-}
+            </SidebarWrap>
+          </SidebarNav>
+        </IconContext.Provider>
+      </>
+
+    )
+  }
 }
 
 

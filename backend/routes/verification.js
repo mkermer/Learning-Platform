@@ -11,28 +11,29 @@ let Instructor = require('../models/instructor_model');
 
 
 
-// const getLatestUserData = (arr) => {
-//     let latestUserDataInput = arr.reduce(function (prev, current) {
-//         if (+current.id > +prev.id) {
-//             return current;
-//         } else {
-//             return prev;
-//         }
-//     });
+const getLatestUserData = (arr) => {
+    let latestUserDataInput = arr.reduce(function (prev, current) {
+        if (+current.id > +prev.id) {
+            return current;
+        } else {
+            return prev;
+        }
+    });
 
-//     return latestUserDataInput;
-// }
+    return latestUserDataInput;
+}
 
 
-// const correctStudent = (latestInput, student) => {
-//     student.map(student => {
-//         if (student.studentName === latestInput.username &&
-//             student.password === latestInput.password) {
-//             return student
-//         }
+const correctStudent = (latestInput, student) => {
 
-//     })
-// }
+
+    var foundStudent = student.find(s => s.studentName === latestInput.username
+        && s.password === latestInput.password)
+
+
+    return foundStudent
+
+}
 
 // const correctInstructor = (latestInput, instructor) => {
 //     instructor.map(instructor => {
@@ -74,14 +75,8 @@ async function verify(req, res) {
 
 
         const verification = await Verification.find();
-        // getLatestUserData(verification)
-        var latestUserDataInput = verification.reduce(function (prev, current) {
-            if (+current.id > +prev.id) {
-                return current;
-            } else {
-                return prev;
-            }
-        });
+        var latestUserDataInput = getLatestUserData(verification)
+
 
         const student = await Student.find();
 
@@ -90,8 +85,8 @@ async function verify(req, res) {
                 student.password === latestUserDataInput.password) {
                 res.json(student)
             }
-
         })
+        // res.json(correctStudent(latestUserDataInput, student))
 
         const instructor = await Instructor.find();
 
@@ -149,11 +144,13 @@ router.route('/add').post(async (req, res) => {
 
 
 
-// module.exports = getLatestUserData;
 
-module.exports = router;
 
-// module.exports = correctStudent;
+module.exports = {
+    correctStudent,
+    getLatestUserData,
+    router
+}
 
 // module.exports = correctInstructor;
 

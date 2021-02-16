@@ -171,6 +171,24 @@ const DisplayVideo = (props) => {
     }
 
 
+    const scheduleMeeting = async () => {
+        const newMeeting = {
+            instructor: instructor,
+            student: student,
+            course: courseName,
+            category: category,
+            timestamp: "not set yet from instructor"
+        }
+        try {
+            const response = await axios.post(config.baseUrl + '/course/add', newMeeting);
+            console.log(response.data)
+        } catch (err) {
+            console.log(err);
+        }
+
+
+    }
+
 
     return (
         <div>
@@ -224,6 +242,9 @@ const DisplayVideo = (props) => {
                     </div>
                 </Form>
             </div>
+            <Button onClick={scheduleMeeting}>
+                Book meeting
+            </Button>
         </div>
 
     )
