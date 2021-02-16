@@ -49,7 +49,7 @@ const Updateform = (props) => {
             } catch (err) {
                 console.log(err);
             }
-
+            
             alert("Your Profil has been successfully updated!")
 
         } else if (type === "instructor") {
@@ -73,9 +73,10 @@ const Updateform = (props) => {
             } catch (err) {
                 console.log(err);
             }
-
+            
             alert("Your Profil has been successfully updated!")
         }
+        window.location.reload()
     }
 
 
@@ -202,11 +203,12 @@ const Updateform = (props) => {
                                 <DropdownMultiselect
                                     options={["Coding", "Music", "Technolgies"]}
                                     name="categories"
-                                    selected={props.applicationState.user.interests}
+                                    
                                     handleOnChange={(selected) => {
                                         setInterests(selected);
                                     }}
                                 />
+                                <p>Currently selected: {props.applicationState.user.interests} </p>
                             </Form.Group>
                         </Col>
                     </Row>

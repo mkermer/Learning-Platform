@@ -4,8 +4,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 function ReduxResetPage(props) {
+    console.log("ReduxResetPage")
     const handlerResetRedux = () => {
         props.actions.storeResetRedux()
+        
     }
     return (
         <div>
