@@ -55,7 +55,7 @@ function UserLandingpage(props) {
                 </Row>
             </Container>
 
-            <Continue />
+            <Continue user={props.applicationState.user} />
 
 
 

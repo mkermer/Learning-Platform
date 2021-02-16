@@ -29,14 +29,9 @@ function OverlayProfile(props) {
                     <h3>{props.applicationState.user.lastName}</h3>
                   </Col>
                 </Row>
-                <Row>
-                  <Col xs={12}>
-                    <p> <em>{props.applicationState.user.subHeader}</em></p>
-                  </Col>
-                </Row>
               </Popover.Title>
               <Popover.Content>
-                
+                <p className="content-small"> <i>{props.applicationState.user.subHeader}</i></p>
                 <p className="content-small">{props.applicationState.user.description}</p>
                 <div className="content-small">
                   <p> Interested in: </p>
@@ -87,7 +82,6 @@ function OverlayProfile(props) {
                   Register &nbsp;
                   <Pen size={20} />
                 </Button>
-                
               </Popover.Content>
             </Popover>
           }

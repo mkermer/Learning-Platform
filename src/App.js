@@ -22,8 +22,10 @@ import Page404 from './Page404';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './actions/app.action';
+import Updateformcopy from './components/UpdateForm/Updateformcopy'
 import ReduxResetPage from './components/ResetRedux/ReduxResetPage';
 import JitsiCall from './components/Jitsi/JitsiCall'
+
 
 
 function App(props) {
@@ -44,7 +46,7 @@ function App(props) {
             <Route path='/videoCoding' component={CategoryCoding} />
             <Route path='/videoMusic' component={CategoryMusic} />
             <Route path='/videoTechnologies' component={CategoryTechnologies} />
-            <Route path="/update" exact component={Updateform} />
+            <Route path='/update' component={Updateformcopy} />
             <Route path="/videoSearch" component={SearchVideos} />
             <Route path="/displayVideo" component={DisplayVideo} />
             <Route path="/login" component={Login} />
