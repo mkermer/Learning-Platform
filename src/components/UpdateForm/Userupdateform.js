@@ -202,11 +202,12 @@ const Updateform = (props) => {
                                 <DropdownMultiselect
                                     options={["Coding", "Music", "Technolgies"]}
                                     name="categories"
-                                    selected={props.applicationState.user.interests}
+                                    
                                     handleOnChange={(selected) => {
                                         setInterests(selected);
                                     }}
                                 />
+                                <p>Currently selected: {props.applicationState.user.interests} </p>
                             </Form.Group>
                         </Col>
                     </Row>

@@ -1,35 +1,53 @@
-import React, { useState } from 'react'
-import Jitsi from 'react-jitsi'
-// import Loader from './components/Loader'
+import React, { useState, useEffect } from 'react'
+import './JitsiCall.css'
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
  
 function JitsiCall(props){
- 
-  const [displayName, setDisplayName] = useState('')
-  const [roomName, setRoomName] = useState('')
-  const [password, setPassword] = useState('')
-  const [onCall, setOnCall] = useState(false)
- 
-  return onCall
-    ? (
-      <Jitsi
-        roomName={roomName}
-        displayName={displayName}
-        password={password}
-        // loadingComponent={Loader}
-        onAPILoad={JitsiMeetAPI => console.log('Good Morning everyone!')}
-      />)
-    : (
-      <>
-        <h1>Create a Meeting</h1>
-        <input type='text' placeholder='Room name' value={roomName} onChange={e => setRoomName(e.target.value)} />
-        <input type='text' placeholder='Your name' value={displayName} onChange={e => setDisplayName(e.target.value)} />
-        <button onClick={() => setOnCall(true)}> Let&apos;s start!</button>
-      </>
-    )
- 
+  const jitsiContainerId = "jitsi-container-id";
+
+  const [jitsi, setJitsi] = useState({});
+
+  const loadJitsiScript = () => {
+    let resolveLoadJitsiScriptPromise = null;
+
+    const loadJitsiScriptPromise = new Promise((resolve) => {
+      resolveLoadJitsiScriptPromise = resolve;
+    });
+
+    const script = document.createElement("script");
+    script.src = "https://meet.jit.si/external_api.js";
+    script.async = true;
+    script.onload = resolveLoadJitsiScriptPromise
+    document.body.appendChild(script);
+
+    return loadJitsiScriptPromise;
+  };
+
+  const initialiseJitsi = async () => {
+    if (!window.JitsiMeetExternalAPI) {
+      await loadJitsiScript();
+    }
+
+    const _jitsi = new window.JitsiMeetExternalAPI("meet.jit.si", {
+      parentNode: document.getElementById(jitsiContainerId),
+    });
+
+    setJitsi(_jitsi)
+  };
+
+  useEffect(() => {
+    initialiseJitsi();
+
+    return () => jitsi?.dispose?.();
+  }, []);
+
+  return (
+  <div id={jitsiContainerId} style={{ height: 720, width: "100%" }} />
+      
+  )
 }
 
 const mapStateToProps = state => ({ applicationState: state });
