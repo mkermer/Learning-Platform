@@ -26,6 +26,7 @@
     "daypilot-pro-react": "https://npm.daypilot.org/daypilot-pro-react/trial/2020.4.4766.tar.gz",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "googleapis": "^67.0.0",
     "moment": "^2.29.1",
     "mongoose": "^5.11.14",
     "mongoose-auto-increment": "^5.0.1",
@@ -81,5 +82,17 @@
   "devDependencies": {
     "nodemon": "^2.0.7",
     "react-social-icons": "^4.1.0"
-  }
+  },
+  "description": "1. Fork this Repo\r 2. Clone it to your own\r 3. Create and switch to feature branch:\r    - git checkout -b feature_name\r 4. Commit regulary to automatically:\r    - git add .\r    - git commit -m \"message\"\r    - git push\r 5. Create a pull request **once** as soon as you have changed or added something and make sure you chose **develop**\r 6. After finishing a feature, merge to your main branch:\r    - git checkout main\r    - git merge feature_name",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuliaKlchv/Learning-Platform.git"
+  },
+  "author": "TeachYourBest",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YuliaKlchv/Learning-Platform/issues"
+  },
+  "homepage": "https://github.com/YuliaKlchv/Learning-Platform#readme"
 }
