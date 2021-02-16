@@ -9,7 +9,8 @@ const courseSchema = new Schema({
     student: { type: String },
     course: { type: String },
     category: { type: String },
-    timestamp: { type: String }
+    timestamp: { type: String },
+    day: { type: String }
 });
 
 const Course = mongoose.model('course', courseSchema);

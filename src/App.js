@@ -43,7 +43,7 @@ function App(props) {
             <Route path='/videoCoding' component={CategoryCoding} />
             <Route path='/videoMusic' component={CategoryMusic} />
             <Route path='/videoTechnologies' component={CategoryTechnologies} />
-            <Route path='/update' component={Updateformcopy} />
+            <Route path='/update' component={Updateform} />
             <Route path="/videoSearch" component={SearchVideos} />
             <Route path="/displayVideo" component={DisplayVideo} />
             <Route path="/login" component={Login} />

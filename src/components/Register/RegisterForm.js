@@ -30,8 +30,10 @@ const RegisterForm = (props) => {
     const [text, setText] = useState('');
 
     const register = async () => {
-
-        if (verificationUsername() === false) {
+        console.log(username);
+        console.log(verificationUsername())
+        if (await verificationUsername() === username) {
+            console.log('it works');
             AlertWarning('existing Username')
         }
         // } else if (verificationFields() === false) {
@@ -71,14 +73,8 @@ const RegisterForm = (props) => {
             var foundStudent = students.find(student => {
                 return student.studentName === username
             })
-
-            
-
-            if (foundStudent != null) {
-                console.warn(foundStudent);
-                return false
-                
-            }
+            console.log(foundStudent)
+            return foundStudent.studentName
 
 
             instructors.map(instructor => {

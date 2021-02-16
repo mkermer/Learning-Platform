@@ -6,17 +6,19 @@ import config from '../config/config'
 const categoryfunction = async (category, setVideos) => {
     const response = await axios.get(config.baseUrl + '/video');
     const allVideos = response.data
-    const categoryVid = allVideos.filter(video => video.category === category)
-    // allVideos.map(video => {
-    //     if (video.category === category) {
-    //         categoryVid.push(video);
-    //     }
-    // })
+    if (category === "all") {
+        setVideos(allVideos);
+    } else {
+        const categoryVid = allVideos.filter(video => video.category === category)
 
-    console.log(categoryVid);
-    if (setVideos) {
+
+        console.log(categoryVid);
+        console.log(setVideos)
+
         setVideos(categoryVid);
     }
+
+
 
 }
 

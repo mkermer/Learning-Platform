@@ -35,38 +35,39 @@ const correctStudent = (latestInput, student) => {
 
 }
 
-// const correctInstructor = (latestInput, instructor) => {
-//     instructor.map(instructor => {
-//         if (instructor.instructorName === latestInput.username &&
-//             instructor.password === latestInput.password) {
-//             return instructor
-//         }
-//     })
-
-// }
+const correctInstructor = (latestInput, instructor) => {
+    var foundInstructor = instructor.find(i => i.instructorName === latestInput.username
+        && i.password === latestInput.password)
 
 
-// const incorrectStudent = (latestInput, student) => {
+    return foundInstructor
 
-//     student.map(student => {
-//         if (student.studentName !== latestInput.username &&
-//             student.password !== latestInput.password) {
-//             const res = 'Wrong login information';
-//             return res
-//         }
-//     })
-// }
+}
 
-// const incorrectInstructor = (latestInput, instructor) => {
-//     instructor.map(instructor => {
-//         if (instructor.instructorName !== latestInput.username &&
-//             instructor.password !== latestInput.password) {
-//             const res = 'Wrong login information';
-//             return res
 
-//         }
-//     })
-// }
+const incorrectStudent = (latestInput, student) => {
+    var response = "";
+    let didNotFoundStudent = student.find(s => s.studentName !== latestInput.username
+        && s.password !== latestInput.password)
+
+    if (didNotFoundStudent === undefined) {
+        response = "Wrong login information"
+    }
+    return response;
+
+}
+
+const incorrectInstructor = (latestInput, instructor) => {
+    var response = "";
+    let didNotFoundInstructor = instructor.find(i => i.instructorName !== latestInput.username
+        && i.password !== latestInput.password)
+
+    if (didNotFoundInstructor === undefined) {
+        response = "Wrong login information"
+    }
+    return response;
+
+}
 
 
 
@@ -149,6 +150,9 @@ router.route('/add').post(async (req, res) => {
 module.exports = {
     correctStudent,
     getLatestUserData,
+    correctInstructor,
+    incorrectStudent,
+    incorrectInstructor,
     router
 }
 

@@ -8,11 +8,12 @@ const Filter = (props) => {
     const videos = props.videos;
     const setVideos = props.setVideos;
     const vidFunction = props.vidFunction;
+    const category = props.category;
 
     function handleChange(e) {
 
         if (e.target.value === '') {
-            vidFunction();
+            vidFunction(category, setVideos);
         } else {
             var filteredVideo = videos.filter(
                 (video) =>
@@ -25,7 +26,7 @@ const Filter = (props) => {
 
     function sort(e) {
         if (e.target.value === '') {
-            vidFunction();
+            vidFunction(category, setVideos);
         } else if (e.target.value === 'name') {
             let newVideos = [...videos];
             let sorted = newVideos.sort((a, b) =>
