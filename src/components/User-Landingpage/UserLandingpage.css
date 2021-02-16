@@ -25,6 +25,9 @@
   cursor: pointer;
 }
 
+.UserLPage .card-img-top {
+  height: 250px;
+}
 
 
 .UserLPage #dashboardbutton{

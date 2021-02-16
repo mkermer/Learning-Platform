@@ -63,7 +63,7 @@ function UserLandingpage(props) {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} >
+                    <Col xs={12}>
                         <Continue user={props.applicationState.user} />
                     </Col>
                 </Row>

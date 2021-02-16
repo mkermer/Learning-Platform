@@ -74,7 +74,7 @@ function Continue(props) {
                         // }
 
                         return (
-                            <Col xs={12} lg={4}>
+                            <Col xs={12} sm={6} lg={4}>
                             <Card className="content">
                                 <Card.Img variant="top" src={picture()} />
                                 <Card.Body>

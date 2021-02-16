@@ -7,13 +7,19 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import './OverlayProfile.css'
 // import {Link} from 'react-router-dom'
+
 function OverlayProfile(props) {
+
   const logout = () => {
     props.actions.storeUserData(false)
   }
-  if (props.applicationState.user !== false) {
-    return (
-      <>
+
+  if(props.applicationState.user !== false){
+
+  return (
+
+    <>
+
         <OverlayTrigger
           trigger="click"
           placement="bottom"
@@ -29,43 +35,55 @@ function OverlayProfile(props) {
                     <h3>{props.applicationState.user.lastName}</h3>
                   </Col>
                 </Row>
+                <Row>
+                  <Col xs={12}>
+                    <p> <em>{props.applicationState.user.subHeader}</em></p>
+                  </Col>
+                </Row>
               </Popover.Title>
               <Popover.Content>
-                <p className="content-small"> <i>{props.applicationState.user.subHeader}</i></p>
+                
                 <p className="content-small">{props.applicationState.user.description}</p>
-                <div className="content-small">
+                <div className="content-small"> 
                   <p> Interested in: </p>
                   <ul>
-                    {props.applicationState.user.interests.map(interest => {
-                      return (
-                        <li key={interest}>
-                          {interest}
-                        </li>
-                      )
-                    }
+                    {props.applicationState.user.interests.map(interest =>  {
+                      return(
+                          <li>
+                            {interest}
+                          </li>
+                      )}
                     )}
+                    
                   </ul>
                 </div>
+
                 <Button href="/update">
-                  Edit Profile &nbsp;
-                  <PencilSquare size={20} />
+                  Edit Profile &nbsp; 
+                  <PencilSquare size={20}/>
                 </Button>
+                
                 <Button variant="danger" href="/" onClick={logout}>
-                  Logout &nbsp;
-                  <BoxArrowRight size={20} />
+                  Logout &nbsp; 
+                  <BoxArrowRight size={20}/>
                 </Button>
-              </Popover.Content>
-            </Popover>
-          }
-        >
-          <PersonCircle className="person" size={25} />
-        </OverlayTrigger>
-      </>
-    )
-  } else {
-    return (
+
+          </Popover.Content>
+        </Popover>
+      }
+    >
+      <PersonCircle className="person" size={35}/>
+    </OverlayTrigger>
+
+
+
+    </>
+  )
+    } else {
+      return (
       <>
-        <OverlayTrigger
+      
+      <OverlayTrigger
           trigger="click"
           placement="bottom"
           overlay={
@@ -75,23 +93,26 @@ function OverlayProfile(props) {
               </Popover.Title>
               <Popover.Content>
                 <Button href="/login">
-                  Login &nbsp;
-                  <BoxArrowInRight size={20} />
+                  Login &nbsp; 
+                  <BoxArrowInRight size={20}/>
                 </Button>
                 <Button href="/register">
-                  Register &nbsp;
-                  <Pen size={20} />
+                  Register &nbsp; 
+                  <Pen size={20}/>
                 </Button>
               </Popover.Content>
-            </Popover>
-          }
-        >
-          <PersonCircle className="person" size={25} />
-        </OverlayTrigger>
+        </Popover>
+      }
+    >
+      <PersonCircle className="person" size={35}/>
+    </OverlayTrigger>
+
       </>
-    )
-  }
+  )
+    }
+
 }
+
 const mapStateToProps = state => ({ applicationState: state });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
 export default connect(mapStateToProps, mapDispatchToProps)(OverlayProfile);
