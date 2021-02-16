@@ -48,7 +48,7 @@ const NavIcon = styled(Link)`
   align-items: center;
 `;
 
-const SidebarNav = styled.nav`
+const SidebarNav = styled.nav`   
   background: #2073d9 !important;
   width: 15%;
   height: 100vh;

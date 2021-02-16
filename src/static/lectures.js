@@ -19,7 +19,7 @@ const lectures = [
     {
       title: 'Technology ',
       description:
-      "Learning technology is an umbrella term that describes communication, information and technological tools used to enhance learning, teaching and assessment. This may involve computer-based learning or multimedia materials used to supplement in-class activities. So if you are interested in Tech and a be part of it, you are in the right place. "
+      "Learning technology is an umbrella term that describes communication, information and technological tools used to enhance learning, teaching and assessment. This may involve computer-based learning or multimedia materials used to supplement in-class activities. Join if you are interested in Tech and a be part of it! "
         ,
   
       imageUrl: process.env.PUBLIC_URL + '/assets/tech.png',
