@@ -30,11 +30,10 @@ const SearchVideos = (props) => {
         <div>
             <Container className="searchVideos">
 
-                <Filter videos={videos} vidFunction={categoryfunction}
-                    setVideos={setVideos} category={'all'} />
 
                 <Row>
-                    <Filter videos={videos} vidFunction={GetVideos} setVideos={setVideos} />
+                <Filter videos={videos} vidFunction={categoryfunction}
+                    setVideos={setVideos} category={'all'} />
                 </Row>
                 <Row>
                     <Cards className="VideoCard content" videos={videos} />
