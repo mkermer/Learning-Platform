@@ -20,6 +20,7 @@ router.route('/add').post(async (req, res) => {
     const course = req.body.course;
     const category = req.body.category;
     const timestamp = req.body.timestamp;
+    const day = req.body.timestamp
 
 
     const newCourse = new Course({
@@ -27,7 +28,8 @@ router.route('/add').post(async (req, res) => {
         instructor,
         course,
         category,
-        timestamp
+        timestamp,
+        day
     });
 
     try {
@@ -38,6 +40,7 @@ router.route('/add').post(async (req, res) => {
     }
 })
 
+
 router.route('/update/:id').post((req, res) => {
     Course.findById(req.params.id)
         .then(course => {
@@ -46,6 +49,7 @@ router.route('/update/:id').post((req, res) => {
             course.course = req.body.course;
             course.category = req.body.category;
             course.timestamp = req.body.timestamp;
+            course.day = req.body.day
 
 
             course.save()

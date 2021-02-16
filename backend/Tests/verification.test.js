@@ -1,8 +1,8 @@
 const getLatestUserData = require('../routes/verification').getLatestUserData;
 const correctStudent = require('../routes/verification').correctStudent;
-// const correctInstructor = require('../routes/verification');
-// const incorrectStudent = require('../routes/verification');
-// const incorrectInstructor = require('../routes/verification');
+const correctInstructor = require('../routes/verification').correctInstructor;
+const incorrectStudent = require('../routes/verification').incorrectStudent;
+const incorrectInstructor = require('../routes/verification').incorrectInstructor;
 
 const array = [
     {
@@ -68,39 +68,45 @@ test(('finds matching userdata of student'), () => {
 
 
 
-// const instructor = [
-//     {
-//         studentName: "DW",
-//         password: "password"
-//     },
-//     {
-//         studentName: "Yuliya",
-//         password: "password"
-//     }
-// ]
+const instructor = [
+    {
+        instructorName: "DW",
+        password: "password"
+    },
+    {
+        instructorName: "Yuliya",
+        password: "password"
+    }
+]
 
-// test(('finds matching userdata of instructor'), () => {
-//     expect(correctInstructor(latestInput, instructor)).toBe({
-//         instructorName: "Yuliya",
-//         password: "password",
+test(('finds matching userdata of instructor'), () => {
+    expect(correctInstructor(latestInput, instructor)).toEqual({
+        instructorName: "Yuliya",
+        password: "password",
 
-//     })
-// })
+    })
+})
 
-// test(('finds mismatching userdata of instructor'), () => {
-//     expect(incorrectStudent(latestInput, student)).toBe(
-//         'Wrong login information'
-
-//     )
-// })
+const wrongTestInput = {
+    username: "Yuliy",
+    password: "password"
+}
 
 
-// test(('finds mismatching userdata of instructor'), () => {
-//     expect(correctStudent(latestInput, instructor)).toBe(
-//         'Wrong login information'
+test(('finds mismatching userdata of instructor'), () => {
+    expect(incorrectStudent(wrongTestInput, student)).toEqual(
+        'Wrong login information'
 
-//     )
-// })
+    )
+})
+
+
+test(('finds mismatching userdata of instructor'), () => {
+    expect(incorrectInstructor(wrongTestInput, instructor)).toEqual(
+        'Wrong login information'
+
+    )
+})
 
 
 

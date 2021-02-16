@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, Form } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../../config/config'
 import { connect } from 'react-redux';
@@ -13,7 +13,8 @@ import CodingPic from '../../img/coding.png'
 
 function Continue(props) {
     const [meetings, setMeetings] = useState([]);
-
+    const [time, setTime] = useState("");
+    const [date, setDate] = useState("");
     const user = props.user;
 
     useEffect(async () => {
@@ -39,9 +40,9 @@ function Continue(props) {
         }
         
 
-
-
     }
+
+
 
     
     
@@ -55,6 +56,24 @@ function Continue(props) {
             <Row>
                 
                     {meetings.map(meeting => {
+                        const updateTime = async () => {
+                            const updatedCourse = {
+                                instructor: meeting.instructor,
+                                student: meeting.student,
+                                course: meeting.course,
+                                category: meeting.category,
+                                timestamp: time,
+                                day: date
+                            }
+                            try {
+                                const response = await axios.post(config.baseUrl + `/course/update/${meeting._id}`, updatedCourse)
+                                console.log(response.data);
+                            } catch (err) {
+                                console.log(err);
+                            }
+
+
+                        }
                         const picture = () => {
                             if(meeting.category === "Music"){
                                 return (MusicPic)
@@ -65,15 +84,23 @@ function Continue(props) {
                             }
                         }
 
-                        // const joinMeeting = () => {
-                        //     return(
-                        //         <div style={{height: '500px', width: '500px'}}>
-                        //         <iframe src={`https://meet.jit.si/${meeting.course}`} style={{height: '100%', width: '100%'}}/>
-                        //         </div>
-                        //     )
-                        // }
-
                         return (
+                            <>
+                                <Form.Group controlId="formBasicUsername">
+                                    <Form.Label>Set Time for meeting</Form.Label>
+                                    <Form.Control value={time} onChange={(e) => setTime(e.target.value)} placeholder="14:00"
+                                        type="username" />
+                                </Form.Group>
+                                <Form.Group controlId="formBasicUsername">
+                                    <Form.Label>Set Date for meeting</Form.Label>
+                                    <Form.Control value={date} onChange={(e) => setDate(e.target.value)} placeholder="DD/MM/YYYY"
+                                        type="username" />
+                                </Form.Group>
+                                <Button onClick={updateTime}>
+                                    Update Time
+                                </Button>
+                               
+                        
                             <Col xs={12} sm={6} lg={4}>
                             <Card className="content">
                                 <Card.Img variant="top" src={picture()} />
@@ -87,6 +114,7 @@ function Continue(props) {
                                 </Card.Body>
                             </Card>
                             </Col>
+
                         )
                     })}
                 

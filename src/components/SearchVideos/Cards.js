@@ -49,10 +49,7 @@ const Cards = (props) => {
                             href="https://video-react.github.io/assets/video-react.css"
                         />
                         <CustomPlayer url={video.url} />
-                        {/* <Player key={video.url}>
-                            <source src={video.url} />
 
-                        </Player> */}
                         <Card.Body>
                             <Card.Title>{video.videoName}</Card.Title>
                             <Card.Text>
