@@ -167,9 +167,7 @@ const Sidebar = (props) => {
             <NavIcon to="#">
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
-            {Sidebarfunction(props.applicationState.user.type).map((item, index) => {
-              return <SubMenu item={item} key={index} />;
-            })}
+          
 
           </SidebarWrap>
         </SidebarNav>

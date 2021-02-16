@@ -22,7 +22,8 @@ import Page404 from './Page404';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './actions/app.action';
-
+import ReduxResetPage from './components/ResetRedux/ReduxResetPage';
+import JitsiCall from './components/Jitsi/JitsiCall'
 
 
 function App(props) {
@@ -51,6 +52,7 @@ function App(props) {
             <Route path="/InstructorLandingpage" component={InstructorLandingpage} />
             <Route path='/Calendar' exact component={Calendar} />
             <Route path='/scheduler' exact component={Scheduler} />
+            <Route path="/call" component={JitsiCall} />
             <Route path="/" component={Home} />
             <Route path="*" component={Page404} />
           </Switch>
@@ -79,6 +81,7 @@ function App(props) {
       </Router>
     )
   }
+  // <ReduxResetPage/>
 }
 
 

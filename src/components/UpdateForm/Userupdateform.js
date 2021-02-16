@@ -49,7 +49,7 @@ const Updateform = (props) => {
             } catch (err) {
                 console.log(err);
             }
-
+            window.location.reload()
             alert("Your Profil has been successfully updated!")
 
         } else if (type === "instructor") {
@@ -73,7 +73,7 @@ const Updateform = (props) => {
             } catch (err) {
                 console.log(err);
             }
-
+            window.location.reload()
             alert("Your Profil has been successfully updated!")
         }
     }

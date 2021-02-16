@@ -87,10 +87,7 @@ function OverlayProfile(props) {
                   Register &nbsp;
                   <Pen size={20} />
                 </Button>
-                <Button href="/register">
-                  Register &nbsp; 
-                  <Pen size={20}/>
-                </Button>
+                
               </Popover.Content>
             </Popover>
           }
