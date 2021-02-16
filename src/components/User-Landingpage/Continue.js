@@ -114,7 +114,7 @@ function Continue(props) {
                                 </Card.Body>
                             </Card>
                             </Col>
-
+                            </>
                         )
                     })}
                 
