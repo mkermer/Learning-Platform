@@ -76,6 +76,7 @@ const Updateform = (props) => {
 
             alert("Your Profil has been successfully updated!")
         }
+        window.location.reload()
     }
 
 
@@ -202,10 +203,12 @@ const Updateform = (props) => {
                                 <DropdownMultiselect
                                     options={["Coding", "Music", "Technolgies"]}
                                     name="categories"
+
                                     handleOnChange={(selected) => {
                                         setInterests(selected);
                                     }}
                                 />
+                                <p>Currently selected: {props.applicationState.user.interests} </p>
                             </Form.Group>
                         </Col>
                     </Row>

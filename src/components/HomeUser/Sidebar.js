@@ -121,6 +121,7 @@ const Sidebar = (props) => {
 
 
 
+
   if (props.applicationState.user !== false) {
     return (
       <>
@@ -176,6 +177,7 @@ const Sidebar = (props) => {
 
     )
   }
+
 }
 
 
