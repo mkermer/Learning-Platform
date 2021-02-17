@@ -15,6 +15,8 @@ const CategoryTechnologies = (props) => {
 
     return (
         <div>
+            <Filter videos={videos} vidFunction={categoryfunction}
+                setVideos={setVideos} />
             <Cards videos={videos} />
         </div>
     )
