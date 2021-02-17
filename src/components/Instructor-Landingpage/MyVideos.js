@@ -85,7 +85,7 @@ function MyVideos(props) {
 
             <div className="footer">
                 <Button variant="primary" onClick={() => setModalShow(true)}>
-                    <CloudArrowUp size={25} /> Upload
+                    <CloudArrowUp size={25} /> Upload new Video
                 </Button>
 
                 <Upload

@@ -24,10 +24,7 @@ function Video(props) {
 
                     <Col xs={3}>
                         {/* <DisplayButton video={vid} /> */}
-                        <Button
-                            onClick={() => setOpen(!open)}>
-                            <DeleteVideo vid={vid} />
-                        </Button>
+                            <DeleteVideo onClick={() => setOpen(!open)} vid={vid} />
                     </Col>
                 </Row>
             </Collapse>

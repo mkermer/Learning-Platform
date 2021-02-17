@@ -36,7 +36,7 @@ function Videos(props) {
 
                 <Accordion.Toggle as={Card.Header} eventKey="0">
                     <Row>
-                        <Col xs={10}>{course}</Col>
+                        <Col xs={10}><span className="courseHeader">{course}</span></Col>
                         <Col xs={2}>
                             <ContextAwareToggle as={Button} variant="link" eventKey="0" />
                         </Col>

@@ -44,14 +44,11 @@ const Filter = (props) => {
 
 
     return (
-        <div>
+        <div className="filters">
             <Form inline>
 
-                <Form.Control type="text" placeholder="search" onChange={handleChange} />
+                <Form.Control type="text" placeholder="Type to search" onChange={handleChange} />
 
-                <Form.Label className="my-1 mr-2" htmlFor="inlineFormCustomSelectPref">
-                    SortyBy
-                        </Form.Label>
                 <Form.Control
                     as="select"
                     className="my-1 mr-sm-2"
@@ -59,10 +56,9 @@ const Filter = (props) => {
                     custom
                     onChange={sort}
                 >
-                    <option value="">Choose...</option>
+                    <option value="">Sort by ...</option>
                     <option value="name">Instructor</option>
                     <option value="latest">Latest Video</option>
-
                 </Form.Control>
 
             </Form>

@@ -103,7 +103,7 @@ function ContinueInstr(props) {
                                 <Form.Group controlId="formBasicUsername">
                                     <Form.Label>Set Date for meeting</Form.Label>
                                     <Form.Control value={date} onChange={(e) => setDate(e.target.value)} placeholder="DD/MM/YYYY"
-                                        type="username" />
+                                        type="date" />
                                 </Form.Group>
                                     <Form.Group controlId="formBasicUsername">
                                     <Form.Label>Set Time for meeting</Form.Label>

@@ -9,12 +9,14 @@ import Moment from 'react-moment';
 import MusicPic from '../../img/music.png'
 import TechPic from '../../img/tech.png'
 import CodingPic from '../../img/coding.png'
-
+import {useHistory} from 'react-router-dom'
 
 function Continue(props) {
     const [meetings, setMeetings] = useState([]);
     const [time, setTime] = useState("");
     const [date, setDate] = useState("");
+    const history = useHistory();
+
     const user = props.user;
 
     useEffect(async () => {
@@ -43,7 +45,7 @@ function Continue(props) {
     }
 
 
-
+    
     
     
 
@@ -74,6 +76,12 @@ function Continue(props) {
 
 
                         }
+
+                        const redirect = () => {
+                            props.actions.storeMeetingData(meeting)
+                            // history.push('/meeting')
+                        }
+
                         const picture = () => {
                             if(meeting.category === "Music"){
                                 return (MusicPic)
@@ -94,8 +102,8 @@ function Continue(props) {
                                             <Card.Text> 
                                                 at <strong>{meeting.day} {meeting.timestamp}</strong>
                                             </Card.Text>
-                                            <a href={`https://meet.jit.si/${meeting.course}-by-${meeting.instructor}`}><Button variant="primary">Start your meeting</Button></a>
-                                            {/* <Button onclick={joinMeeting} variant="primary">Start your meeting</Button> */}
+                                            {/* <a href={`https://meet.jit.si/${meeting.course}-by-${meeting.instructor}`}><Button variant="primary">Start your meeting</Button></a> */}
+                                            <Button onclick={redirect} variant="primary">Start your meeting</Button>
                                         </Card.Body>
                                     </Card>
                                 </Col>

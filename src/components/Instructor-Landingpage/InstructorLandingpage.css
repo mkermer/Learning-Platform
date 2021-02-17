@@ -19,6 +19,10 @@
   margin: 20px 0;
 }
 
+.Instr .form-control{
+  text-align: center;
+}
+
 .ShowRating, .MyVideos{
     border: 1px rgb(182, 182, 182) solid;
     border-radius: 10px;
@@ -109,6 +113,17 @@
    cursor: pointer;
 }
 
+.MyVideos .Trash{
+  -webkit-transform: perspective(1px) scale(0.98) translateZ(0);
+  transform: perspective(1px) scale(0.98) translateZ(0);
+}
+
+.MyVideos .courseHeader{
+  font-size: 1.5vw;
+  font-weight: 600;
+  letter-spacing: 3px !important;
+}
+
 .MyVideos {
   margin-left: 5%;
 }
@@ -135,6 +150,24 @@
   min-height: 40px;
   margin-left: 5%;
 }
+
+.MyVideos .accordion:nth-of-type(4n+2) .card-header{
+  background-image: linear-gradient(to right, rgba(32, 115, 217, 0.1) 0%, white 80%);
+}
+
+.MyVideos .accordion:nth-of-type(4n+3) .card-header{
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0.1) 0%, white 80%);
+}
+
+.MyVideos .accordion:nth-of-type(4n+4) .card-header{
+  background-image: linear-gradient(to right, rgba(102, 255, 51, 0.1) 0%, white 80%);
+}
+
+.MyVideos .accordion:nth-of-type(4n+5) .card-header{
+  background-image: linear-gradient(to right, rgba(255, 255, 0, 0.1) 0%, white 80%);
+}
+
+
 /* .slide-out-right{
 	-webkit-animation: slide-out-right 1s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
 	        animation: slide-out-right 1s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
@@ -172,6 +205,7 @@
 .UploadButton{
     width: 90%;
     margin: 0 auto;
+    
 }
 
 .Upload .form-control, .form-file{
