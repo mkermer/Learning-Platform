@@ -18,7 +18,8 @@ const CategoryCoding = (props) => {
     }, [])
 
     return (
-<div>
+
+        <div>
             <Jumbotron fluid>
                 <h1>Browse all Videos in <strong>Coding</strong></h1>
             </Jumbotron>
