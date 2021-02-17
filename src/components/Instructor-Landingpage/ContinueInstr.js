@@ -108,7 +108,7 @@ function ContinueInstr(props) {
                                     <Form.Group controlId="formBasicUsername">
                                     <Form.Label>Set Time for meeting</Form.Label>
                                     <Form.Control value={time} onChange={(e) => setTime(e.target.value)} placeholder="14:00"
-                                        type="username" />
+                                        type="time" />
                                 </Form.Group>
                                 <Button onClick={updateTime}>
                                     Update Time
