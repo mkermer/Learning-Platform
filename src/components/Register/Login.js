@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import { Redirect, useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import {KeyFill} from "react-bootstrap-icons";
+import { KeyFill } from "react-bootstrap-icons";
 import loginpic from '../../SVG/undraw_authentication_fsn5.svg'
 
 
@@ -71,30 +71,33 @@ function Login(props) {
 
     return (
         <div className="login">
-        
-                <img src={loginpic} />
-                <div className="centeredForm">
+            <Alert variant={variant} show={show}>
+                {text}
+            </Alert>
+            <img src={loginpic} />
+            <div className="centeredForm">
+
                 <Form className="form-elem">
-                            <Form.Group controlId="formBasicUsername">
-                                <Form.Label>Username</Form.Label>
-                                <Form.Control type="username" placeholder=""
-                                    value={username} onChange={(e) => setUsername(e.target.value)} />
-                            </Form.Group>
+                    <Form.Group controlId="formBasicUsername">
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control type="username" placeholder=""
+                            value={username} onChange={(e) => setUsername(e.target.value)} />
+                    </Form.Group>
 
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder=""
-                                    value={password} onChange={(e) => setPassword(e.target.value)} />
-                            </Form.Group>
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" placeholder=""
+                            value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </Form.Group>
 
 
-                            <Button className="btn" variant="primary" onClick={authentication}>
-                                <KeyFill size={30}/> <br/> Login
+                    <Button className="btn" variant="primary" onClick={authentication}>
+                        <KeyFill size={30} /> <br /> Login
                                 </Button>
-                            
-                        </Form>
-                    
-                </div>
+
+                </Form>
+
+            </div>
 
         </div>
     )

@@ -9,13 +9,11 @@ import Moment from 'react-moment';
 import MusicPic from '../../img/music.png'
 import TechPic from '../../img/tech.png'
 import CodingPic from '../../img/coding.png'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 function Continue(props) {
     const [meetings, setMeetings] = useState([]);
-    const [time, setTime] = useState("");
-    const [date, setDate] = useState("");
-    const history = useHistory();
+
 
     const user = props.user;
 
@@ -40,77 +38,54 @@ function Continue(props) {
                 meeting.instructor === user.instructorName)
             setMeetings(filteredMeetings);
         }
-        
+
 
     }
 
 
-    
-    
-    
+
+
+
 
 
     // 
     return (
         <>
             <h2>Booked Meetings</h2>
-            
+
             <Row>
-                
-                    {meetings.map(meeting => {
-                        const updateTime = async () => {
-                            const updatedCourse = {
-                                instructor: meeting.instructor,
-                                student: meeting.student,
-                                course: meeting.course,
-                                category: meeting.category,
-                                timestamp: time,
-                                day: date
-                            }
-                            try {
-                                const response = await axios.post(config.baseUrl + `/course/update/${meeting._id}`, updatedCourse)
-                                console.log(response.data);
-                            } catch (err) {
-                                console.log(err);
-                            }
 
+                {meetings.map(meeting => {
 
+                    const picture = () => {
+                        if (meeting.category === "Music") {
+                            return (MusicPic)
+                        } else if (meeting.category === "Coding") {
+                            return (CodingPic)
+                        } else if (meeting.category === "Technologies") {
+                            return (TechPic)
                         }
+                    }
 
-                        const redirect = () => {
-                            props.actions.storeMeetingData(meeting)
-                            // history.push('/meeting')
-                        }
+                    return (
+                        <>
+                            <Col xs={12} sm={6} lg={4}>
+                                <Card className="content">
+                                    <Card.Img variant="top" src={picture()} />
+                                    <Card.Body>
+                                        <Card.Title><strong>{meeting.course}</strong> <p>hosted by</p> <strong>{meeting.instructor}</strong> </Card.Title>
+                                        <Card.Text>
+                                            at <strong>{meeting.day} {meeting.timestamp}</strong>
+                                        </Card.Text>
+                                        <a href={`https://meet.jit.si/${meeting.course}-by-${meeting.instructor}`}><Button variant="primary">Start your meeting</Button></a>
 
-                        const picture = () => {
-                            if(meeting.category === "Music"){
-                                return (MusicPic)
-                            } else if(meeting.category === "Coding"){
-                                return (CodingPic)
-                            } else if(meeting.category === "Technologies"){
-                                return (TechPic)
-                            }
-                        }
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        </>
+                    )
+                })}
 
-                        return (
-                            <>                        
-                                <Col xs={12} sm={6} lg={4}>
-                                    <Card className="content">
-                                        <Card.Img variant="top" src={picture()} />
-                                        <Card.Body>
-                                            <Card.Title><strong>{meeting.course}</strong> <p>hosted by</p> <strong>{meeting.instructor}</strong> </Card.Title>
-                                            <Card.Text> 
-                                                at <strong>{meeting.day} {meeting.timestamp}</strong>
-                                            </Card.Text>
-                                            {/* <a href={`https://meet.jit.si/${meeting.course}-by-${meeting.instructor}`}><Button variant="primary">Start your meeting</Button></a> */}
-                                            <Button onclick={redirect} variant="primary">Start your meeting</Button>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            </>
-                        )
-                    })}
-                
             </Row>
         </>
     )
