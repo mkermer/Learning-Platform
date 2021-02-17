@@ -5,16 +5,15 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import { Player } from 'video-react';
-import { Form, Alert } from 'react-bootstrap';
+import { Col, Container, Form, Row, Jumbotron, Card, Alert } from 'react-bootstrap';
 import './SearchVideos.css';
-import './DisplayVideo.css'
 import ReactStars from 'react-rating-stars-component';
 import { Button } from 'react-bootstrap';
 import Moment from 'react-moment';
 import { Toast } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { Arrow90degLeft } from 'react-bootstrap-icons';
+import { Envelope } from 'react-bootstrap-icons';
 
 
 
@@ -195,41 +194,73 @@ const DisplayVideo = (props) => {
 
 
     return (
-        <div>
+        <div className="displayVideo">
             <link
                 rel="stylesheet"
                 href="https://video-react.github.io/assets/video-react.css"
             />
-            <Player>
-                <source src={props.applicationState.video.url} />
-            </Player>
 
-            <div>
-
-
-                <Form className="form-elem">
-                    <h1>Overall Rating</h1>
-                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 0 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 1 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 2 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 3 ? 'blue' : ''} />
-                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 4 ? 'blue' : ''} />
-
-                    <h1>Reviews</h1>
-
+            <Jumbotron fluid>
+                <h1>Video Player</h1>
+            </Jumbotron>
+            <Container>
+                <Row>
+                    <Col >
+                    <Card>
+                        <Player>
+                            <source src={props.applicationState.video.url} />
+                        </Player>
+                        <Card.Body>
+                            <Card.Title>
+                                <h2><strong>{props.applicationState.video.videoName}</strong> by <strong>{props.applicationState.video.instructor}</strong></h2>
+                                <Alert variant='success' show={show}>
+                                    Successfully booked a meeting!
+                                </Alert>
+                                <Button onClick={scheduleMeeting}>
+                                    Book meeting
+                                </Button>
+                            </Card.Title>
+                            <hr/>
+                                <h2>Overall Rating</h2>
+                                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 0 ? 'blue' : ''} />
+                                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 1 ? 'blue' : ''} />
+                                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 2 ? 'blue' : ''} />
+                                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 3 ? 'blue' : ''} />
+                                    <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 4 ? 'blue' : ''} />
+                        </Card.Body>
+                    </Card>
+                        
+                    </Col>
+                </Row>
+                
+                <Row >
+                    <Col>
+                    
+                    <Form className="form-elem">
+                        <div className="reviewHeader" >
+                            <h2>Your Review <FontAwesomeIcon style={{color:"gold", fontSize: "30px"}} icon={faStar}/></h2>
+                        </div>
+                        <div className="form-content">
+      
                     <Form.Group controlId="formBasicUsername">
-                        <Form.Label><h3>Your Review</h3></Form.Label><br />
-                        <ReactStars activeColor="blue" size={30} count={5} isHalf={true}
-                            onChange={ratingReview} />
-
+                        <div className="stars">
+                            <ReactStars activeColor="gold" size={50} count={5} isHalf={false} onChange={ratingReview} />
+                        </div>
+                        <br/>
                         <Form.Control
-                            type="firstName" value={text} placeholder="" as="textarea" rows={5} onChange={(e) => setText(e.target.value)} />
+                            type="text" value={text} placeholder="Write your Review here! Always remember to be friendly and do not use bad words." as="textarea" rows={8} onChange={(e) => setText(e.target.value)} />
                     </Form.Group>
                     <Button className="btn" variant="primary" onClick={post} >
-                        Post
+                        Post <Envelope size={20}/>
                     </Button>
+                    </div>
+                    </Form>
+                    </Col>
+                    
+                    <Col>
+                    
                     <div className="ShowRating">
-                        <div className="heading"><h1> Latest Reviews</h1></div>
+                        <div className="heading"><h2> Latest Reviews</h2></div>
                         {reviewArr.map(review => {
                             return (
                                 <Toast key={review._id}>
@@ -244,14 +275,11 @@ const DisplayVideo = (props) => {
                             )
                         })}
                     </div>
-                </Form>
-            </div>
-            <Alert variant='success' show={show}>
-                Successfully booked a meeting!
-            </Alert>
-            <Button onClick={scheduleMeeting}>
-                Book meeting
-            </Button>
+                
+                    </Col>
+                </Row>
+            </Container>
+            
         </div>
 
     )

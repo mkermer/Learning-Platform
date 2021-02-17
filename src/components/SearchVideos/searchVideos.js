@@ -34,7 +34,7 @@ const SearchVideos = (props) => {
                     <Filter videos={videos} vidFunction={categoryfunction}
                         setVideos={setVideos} category={'all'} />
                 </Row>
-                <hr />
+       
                 <Row>
                     <Cards className="VideoCard content" videos={videos} />
                 </Row>

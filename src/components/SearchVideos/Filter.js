@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
+import { Form, FormControl, InputGroup } from 'react-bootstrap';
 
 
 
@@ -47,8 +47,6 @@ const Filter = (props) => {
         <div className="filters">
             <Form inline>
 
-                <Form.Control type="text" placeholder="Type to search" onChange={handleChange} />
-
                 <Form.Control
                     as="select"
                     className="my-1 mr-sm-2"
@@ -61,7 +59,32 @@ const Filter = (props) => {
                     <option value="latest">Latest Video</option>
                 </Form.Control>
 
+                <Form.Control type="text" placeholder="Type to search" onChange={handleChange} />
+
             </Form>
+
+
+
+
+
+            {/* <InputGroup size="lg">
+                <InputGroup.Prepend>
+                <InputGroup.Text id="inputGroup-sizing-lg">
+                    <FormControl
+                        as="select"
+                        className="my-1 mr-sm-2"
+                        id="inlineFormCustomSelectPref"
+                        custom
+                        onChange={sort}
+                    >
+                        <option value="">Sort by ...</option>
+                        <option value="name">Instructor</option>
+                        <option value="latest">Latest Video</option>
+                    </FormControl>
+                </InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" type="text" placeholder="Type to search" onChange={handleChange} />
+            </InputGroup> */}
         </div>
     )
 }

@@ -85,6 +85,7 @@ function ContinueInstr(props) {
                                         <SelectTime meeting={meeting} />
                                     </Card.Body>
                                 </Card>
+
                             </Col>
                         </>
                     )
