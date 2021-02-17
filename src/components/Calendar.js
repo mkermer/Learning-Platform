@@ -1,7 +1,7 @@
 import React from 'react'
 import './Calender.css'
 
-function Calender() {
+function Calendar() {
 var gapi = window.gapi
 var CLIENT_ID = "504117259116-rp9nks5ab732vf0vrh3t6a76gu4ddrik.apps.googleusercontent.com"
 var API_KEY = "QJoHtbak_XFD7TeTRqoA-pbO"
@@ -94,4 +94,4 @@ var SCOPES = "https://www.googleapis.com/auth/calendar.events"
   );
 }
 
-export default Calender;
+export default Calendar;
