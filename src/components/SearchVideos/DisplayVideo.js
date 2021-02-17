@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import { Player } from 'video-react';
-import { Col, Container, Form, Row, Jumbotron, Card } from 'react-bootstrap';
+import { Col, Container, Form, Row, Jumbotron, Card, Alert } from 'react-bootstrap';
 import './SearchVideos.css';
 import ReactStars from 'react-rating-stars-component';
 import { Button } from 'react-bootstrap';
@@ -19,6 +19,8 @@ import { Envelope } from 'react-bootstrap-icons';
 
 
 const DisplayVideo = (props) => {
+    const [variant, setVariant] = useState('warning');
+    const [show, setShow] = useState(false);
 
 
     const [rate, setRating] = useState(null);
@@ -182,6 +184,7 @@ const DisplayVideo = (props) => {
         try {
             const response = await axios.post(config.baseUrl + '/course/add', newMeeting);
             console.log(response.data)
+            setShow(true)
         } catch (err) {
             console.log(err);
         }
@@ -210,6 +213,9 @@ const DisplayVideo = (props) => {
                         <Card.Body>
                             <Card.Title>
                                 <h2><strong>{props.applicationState.video.videoName}</strong> by <strong>{props.applicationState.video.instructor}</strong></h2>
+                                <Alert variant='success' show={show}>
+                                    Successfully booked a meeting!
+                                </Alert>
                                 <Button onClick={scheduleMeeting}>
                                     Book meeting
                                 </Button>
@@ -235,6 +241,7 @@ const DisplayVideo = (props) => {
                             <h2>Your Review <FontAwesomeIcon style={{color:"gold", fontSize: "30px"}} icon={faStar}/></h2>
                         </div>
                         <div className="form-content">
+      
                     <Form.Group controlId="formBasicUsername">
                         <div className="stars">
                             <ReactStars activeColor="gold" size={50} count={5} isHalf={false} onChange={ratingReview} />
@@ -273,26 +280,11 @@ const DisplayVideo = (props) => {
                 </Row>
             </Container>
             
-
-         
-            
         </div>
 
     )
 
-
-
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

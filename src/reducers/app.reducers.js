@@ -28,10 +28,10 @@ function appReducer(state = initialState, action) {
                 ...state,
                 meeting: action.meeting
             }
-        }
-        case "RESET_REDUX":
-            console.log('Reducer: RESET_REDUX')
-            return initialState; //Always return the initial state
+        };
+        // case "RESET_REDUX":
+        //     console.log('Reducer: RESET_REDUX')
+        //     return initialState; //Always return the initial state
         default:
             return state;
     }
