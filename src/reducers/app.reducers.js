@@ -1,8 +1,9 @@
-import { STORE_USER_DATA, STORE_VIDEO_DATA } from '../actions/app.action';
+import { STORE_USER_DATA, STORE_VIDEO_DATA, STORE_MEETING_DATA } from '../actions/app.action';
 
 const initialState = {
     user: false,
-    video: false
+    video: false,
+    meeting: false
 };
 
 function appReducer(state = initialState, action) {
@@ -22,6 +23,12 @@ function appReducer(state = initialState, action) {
                 video: action.video
             }
         };
+        case STORE_MEETING_DATA: {
+            return {
+                ...state,
+                meeting: action.meeting
+            }
+        }
         case "RESET_REDUX":
             console.log('Reducer: RESET_REDUX')
             return initialState; //Always return the initial state

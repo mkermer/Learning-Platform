@@ -22,7 +22,7 @@ import Page404 from './Page404';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './actions/app.action';
-import Updateformcopy from './components/UpdateForm/Updateformcopy'
+import MeetingRoom from './components/Jitsi/MeetingRoom';
 import ReduxResetPage from './components/ResetRedux/ReduxResetPage';
 import JitsiCall from './components/Jitsi/JitsiCall'
 
@@ -42,7 +42,7 @@ function App(props) {
           <Switch>
 
             <Route path="/Home" component={Home} />
-            <Route path="/register" exact component={RegisterForm} />
+            <Route path="/register"  component={RegisterForm} />
             <Route path='/videoCoding' component={CategoryCoding} />
             <Route path='/videoMusic' component={CategoryMusic} />
             <Route path='/videoTechnologies' component={CategoryTechnologies} />
@@ -55,7 +55,8 @@ function App(props) {
             <Route path='/Calendar' exact component={Calendar} />
             <Route path='/scheduler' exact component={Scheduler} />
             <Route path="/call" component={JitsiCall} />
-            <Route path="/" component={Home} />
+            <Route path="/meeting" component={MeetingRoom} />
+            <Route path="/" exact component={Home} />
             <Route path="*" component={Page404} />
           </Switch>
 
@@ -72,9 +73,9 @@ function App(props) {
         <DashProvider>
           <Sidebar />
           <Switch>
-            <Route path="/register" exact component={RegisterForm} />
+            <Route path="/register"  component={RegisterForm} />
             <Route path="/login" component={Login} />
-            <Route path="/" component={Home} />
+            <Route path="/" exact component={Home} />
             <Route path="*" component={Page404} />
           </Switch>
 

@@ -11,6 +11,7 @@ import { Player } from 'video-react';
 function Slideshow(props) {
     const [category, setCategory] = useState([]);
     const [randomVid, setRandomVideos] = useState([]);
+    const [randomInterest, setRandomInterest] = useState("");
 
 //TEST
     useEffect(async () => {
@@ -27,7 +28,8 @@ function Slideshow(props) {
         const category = response.data;
 
         // const displayVideo = () => {
-        const randomInterest = "Technologies"
+        const randomInterest = interest[Math.floor(Math.random() * interest.length)];
+        setRandomInterest(randomInterest);
         console.log(randomInterest);
         // interest[Math.floor(Math.random() * interest.length)];
 
@@ -77,8 +79,8 @@ function Slideshow(props) {
                 href="https://video-react.github.io/assets/video-react.css"
             />
             
-                {/* <h2> Featured in {randomInterest} </h2> */}
-                <h2> Featured in Technology</h2>
+                <h2> Featured in {randomInterest} </h2>
+                {/* <h2> Featured in Technology</h2> */}
 
 
                 <Carousel>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Upload from './Upload';
 import ShowRating from './ShowRating';
 import MyVideos from './MyVideos';
 import './InstructorLandingpage.css';
@@ -10,12 +9,12 @@ import config from '../../config/config';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
-import Continue from '../User-Landingpage/Continue';
+import ContinueInstr from './ContinueInstr';
 
 
 
 function InstructorLandingpage(props) {
-    const [modalShow, setModalShow] = useState(false);
+    
     const [time, setTime] = useState("");
 
 
@@ -41,34 +40,32 @@ function InstructorLandingpage(props) {
             </Jumbotron>
 
             <Container>
-                <Row>
-                    <Col>
+                <Row className="marg">
+                    <Col className="marg">
                         <ShowRating />
                     </Col>
-                    <Col>
+                    <Col className="marg">
                         <MyVideos />
                     </Col>
                 </Row>
+                <hr/>
+                <Row className="marg">
+                    <ContinueInstr />
+                </Row>
+                
             </Container>
 
-            <Button variant="primary" onClick={() => setModalShow(true)}>
-                Upload
-                </Button>
+            
 
-            <Upload
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-            />
-
-            <Form.Group controlId="formBasicUsername">
+            {/* <Form.Group controlId="formBasicUsername">
                 <Form.Label>Set Time for meeting</Form.Label>
                 <Form.Control value={time} onChange={(e) => setTime(e.target.value)} placeholder="14:00"
                     type="username" />
             </Form.Group>
             <Button >
                 Update Time
-            </Button>
-            <Continue user={props.applicationState.user} />
+            </Button> */}
+            
 
         </div>
     )

@@ -151,12 +151,9 @@ function Upload(props) {
                   onChange={(e) => setDesc(e.target.value)
                   } as="textarea" rows={3} />
               </Form.Group>
-              <div className="or"><strong>OR</strong></div>
-              <Form.Group>
-                <Form.Control type="url" value="https://www.youtube.com/embed/" />
-              </Form.Group>
 
               <Form.Group>
+              <div className="mandatory">*</div>
                 <Form.File accept="video/*" onChange={SetVideo} />
               </Form.Group>
 

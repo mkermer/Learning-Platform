@@ -177,7 +177,8 @@ const DisplayVideo = (props) => {
             student: student,
             course: courseName,
             category: category,
-            timestamp: "not set yet from instructor"
+            timestamp: "/",
+            day: "/"
         }
         try {
             const response = await axios.post(config.baseUrl + '/course/add', newMeeting);

@@ -18,16 +18,13 @@ function Video(props) {
         <Card.Body>
             <Collapse in={open}>
                 <Row id="collaps">
-                    <Col xs={10}>
+                    <Col xs={9}>
                         {vid.videoName}
                     </Col>
 
-                    <Col xs={2}>
-                        <DisplayButton video={vid} />
-                        <Button
-                            onClick={() => setOpen(!open)}>
-                            <DeleteVideo vid={vid} />
-                        </Button>
+                    <Col xs={3}>
+                        {/* <DisplayButton video={vid} /> */}
+                            <DeleteVideo onClick={() => setOpen(!open)} vid={vid} />
                     </Col>
                 </Row>
             </Collapse>
