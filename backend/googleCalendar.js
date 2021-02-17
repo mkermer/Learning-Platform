@@ -13,12 +13,12 @@ const calendar = google.calendar({ version: 'v3', auth: oAuth2Client })
 
 
 const eventStartTime = new Date()
-eventStartTime.setDate(eventStartTime.getDate() +2 )
+eventStartTime.setDate(eventStartTime.getDate() +7 )
 eventStartTime.setMinutes(eventStartTime.getMinutes() + 15)
 
 
 const eventEndTime = new Date()
-eventEndTime.setDate(eventEndTime.getDate() + 2)
+eventEndTime.setDate(eventEndTime.getDate() + 7)
 eventEndTime.setMinutes(eventEndTime.getMinutes() + 45)
 
 
