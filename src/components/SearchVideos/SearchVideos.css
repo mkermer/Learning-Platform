@@ -45,3 +45,23 @@ input[type="radio"] {
 .searchVideos .list-group-item{
     text-align: center;
 }
+
+.searchVideos .filters{
+    margin: 40px auto;
+    width: 97%;
+    height: 100px;
+}
+
+.searchVideos .filters input{
+    width: 48%;
+    height: 50px;
+}
+
+.searchVideos .filters select{
+    width: 48%;
+    height: 50px;
+}
+
+.searchVideos .filters .form-inline{
+    justify-content: space-between;
+}

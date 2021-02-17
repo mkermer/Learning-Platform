@@ -132,19 +132,6 @@ const Updateform = (props) => {
                     <Row>
                         <Col md={4}>
                             <p>
-                                Username
-                            </p>
-                        </Col>
-                        <Col md={8}>
-                            <Form.Group controlId="formBasicUsername">
-                                <Form.Control value={username} onChange={(e) => setUsername(e.target.value)}
-                                    type="username" />
-                            </Form.Group>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md={4}>
-                            <p>
                                 Email
                             </p>
                         </Col>

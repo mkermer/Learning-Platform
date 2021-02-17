@@ -4,7 +4,7 @@ import config from '../../config/config'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
-import { Button, Container, Row, Col, Form } from 'react-bootstrap';
+import { Button, Container, Row, Jumbotron } from 'react-bootstrap';
 import DisplayButton from './DisplayButton';
 import Cards from './Cards'
 import Filter from './Filter'
@@ -28,14 +28,15 @@ const SearchVideos = (props) => {
     return (
 
         <div>
+            <Jumbotron fluid>
+                <h1>Browse all Videos</h1>
+            </Jumbotron>
+
             <Container className="searchVideos">
-
-                <Filter videos={videos} vidFunction={categoryfunction}
-                    setVideos={setVideos} category={'all'} />
-
                 <Row>
-                    <Filter videos={videos} vidFunction={GetVideos} setVideos={setVideos} />
+                    <Filter videos={videos} vidFunction={categoryfunction} setVideos={setVideos} category={'all'} />
                 </Row>
+                <hr/>
                 <Row>
                     <Cards className="VideoCard content" videos={videos} />
                 </Row>

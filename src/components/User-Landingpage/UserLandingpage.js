@@ -47,21 +47,28 @@ function UserLandingpage(props) {
 
             <Container >
                 <Row>
-                    <Col xs={12} md={12} className="content">
-                        <Slideshow />
-                    </Col>
-                </Row>
-                <Row className="bigButton">
-                    <Col xs={12} md={6} className="content">
-                        <h2>Browse all Videos</h2>
-                        <Link to="/videoSearch"><Button><img src={videoPic}/></Button></Link>
-                    </Col>
-                    <Col xs={12} md={6} className="content">
-                        <h2> Check the Dashboard</h2>
-                        <Button id="dashboardbutton" onClick={showSidebar}><img src={dashPic}/></Button>
+                    <Col xs={12} md={12} >
+                        <div className="content">
+                            <Slideshow />
+                        </div>
                         
                     </Col>
                 </Row>
+                <Row className="bigButton">
+                    <Col xs={12} md={6} >
+                        <div className="content">
+                            <h2>Browse all Videos</h2>
+                            <Link to="/videoSearch"><Button><img src={videoPic}/></Button></Link>
+                        </div>
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <div className="content">
+                            <h2> Check the Dashboard</h2>
+                            <Button id="dashboardbutton" onClick={showSidebar}><img src={dashPic}/></Button>
+                        </div>
+                    </Col>
+                </Row>
+                <hr/>
                 <Row>
                     <Col xs={12}>
                         <Continue user={props.applicationState.user} />
