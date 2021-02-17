@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import { Facebook, Instagram, Twitter, Youtube } from 'react-bootstrap-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Footer.css';
+import { NavHashLink } from "react-router-hash-link";
 
 
 
@@ -62,20 +63,15 @@ function Footer() {
           <h3>Useful Links</h3>
             <ul>
               <li className="list-unstyled-link">
-                <a href="/Home">What we do</a>
+                <NavHashLink smooth to="/#mission">What we do</NavHashLink>
               </li>
               <li className="list-unstyled-link">
-                <a href="#!">Who we are</a>
+                <NavHashLink smooth to="/#team">Who we are</NavHashLink>
               </li>
               <li className="list-unstyled-link">
-                <a href="#!">How you can help</a>
+                <NavHashLink smooth to="/register">What you can do is...</NavHashLink>
               </li>
-              <li className="list-unstyled-link">
-                <a href="#!">Something4</a>
-              </li>
-              <li className="list-unstyled-link">
-                <a href="#!">Something5</a>
-              </li>
+            
             </ul>
            
           

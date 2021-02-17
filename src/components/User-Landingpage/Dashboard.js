@@ -40,8 +40,11 @@ function Dashboard(props){
 
     return (
         <div className="Dashboard">        
+        <div>
             <XSquare className="close" onClick={showSidebar}/>
- 
+        </div>
+            
+            
             <table>
                 <thead>
                     <tr>
@@ -69,7 +72,7 @@ function Dashboard(props){
                                     {meeting.timestamp}
                                 </td>
                                 <td>
-                                    <a href={`https://meet.jit.si/${meeting.course}`}>{meeting.course}</a>
+                                    <a href={`https://meet.jit.si/${meeting.course}-by-${meeting.instructor}`}>{meeting.course}</a>
                                 </td>
                             </tr>
                         )

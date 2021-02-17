@@ -51,7 +51,9 @@ function Team() {
           </Col>
         </Row>
       </Container>
+      <div className="HashTo" id="mission"/>
       <MissionJumbotron />
+      <div className="HashTo" id="team"/>
       <Container className="TeamMembers">
         <Row>
           <Col

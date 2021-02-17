@@ -4,7 +4,7 @@ import { CssBaseline } from '@material-ui/core';
 import LandingPage from '../../components/LandingPage/LandingPage';
 import Lectures from '../../components/LandingPage/Lectures';
 import Team from '../../components/LandingPage/Team';
-import MissionJumbotron from '../../components/LandingPage/MissionJumbotron';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '100vh',
