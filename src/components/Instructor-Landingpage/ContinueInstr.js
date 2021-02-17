@@ -11,11 +11,11 @@ import TechPic from '../../img/tech.png'
 import CodingPic from '../../img/coding.png'
 
 
-function Continue(props) {
+function ContinueInstr(props) {
     const [meetings, setMeetings] = useState([]);
     const [time, setTime] = useState("");
     const [date, setDate] = useState("");
-    const user = props.user;
+    const user = props.applicationState.user;
 
     useEffect(async () => {
         await getMeetings();
@@ -51,7 +51,7 @@ function Continue(props) {
     // 
     return (
         <>
-            <h2>Booked Meetings</h2>
+            <h2 className="head">Booked Meetings</h2>
             
             <Row>
                 
@@ -85,20 +85,38 @@ function Continue(props) {
                         }
 
                         return (
-                            <>                        
-                                <Col xs={12} sm={6} lg={4}>
-                                    <Card className="content">
-                                        <Card.Img variant="top" src={picture()} />
-                                        <Card.Body>
-                                            <Card.Title><strong>{meeting.course}</strong> <p>hosted by</p> <strong>{meeting.instructor}</strong> </Card.Title>
-                                            <Card.Text> 
-                                                at <strong>{meeting.day} {meeting.timestamp}</strong>
-                                            </Card.Text>
-                                            <a href={`https://meet.jit.si/${meeting.course}-by-${meeting.instructor}`}><Button variant="primary">Start your meeting</Button></a>
-                                            {/* <Button onclick={joinMeeting} variant="primary">Start your meeting</Button> */}
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
+                            <>
+                                
+                        
+                            <Col xs={12} sm={6} lg={4}>
+                            <Card className="content">
+                                <Card.Img variant="top" src={picture()} />
+                                <Card.Body>
+                                    <Card.Title><strong>{meeting.course}</strong> <p>booked by</p> <strong>{meeting.student}</strong> </Card.Title>
+                                    <Card.Text> 
+                                        at <strong>{meeting.day} / {meeting.timestamp}</strong>
+                                    </Card.Text>
+                                    <a href={`https://meet.jit.si/${meeting.course}-by-${meeting.instructor}`}><Button variant="primary">Start your meeting</Button></a>
+                                    {/* <Button onclick={joinMeeting} variant="primary">Start your meeting</Button> */}
+                                
+                                <div className="content">
+                                <Form.Group controlId="formBasicUsername">
+                                    <Form.Label>Set Date for meeting</Form.Label>
+                                    <Form.Control value={date} onChange={(e) => setDate(e.target.value)} placeholder="DD/MM/YYYY"
+                                        type="username" />
+                                </Form.Group>
+                                    <Form.Group controlId="formBasicUsername">
+                                    <Form.Label>Set Time for meeting</Form.Label>
+                                    <Form.Control value={time} onChange={(e) => setTime(e.target.value)} placeholder="14:00"
+                                        type="username" />
+                                </Form.Group>
+                                <Button onClick={updateTime}>
+                                    Update Time
+                                </Button>
+                                </div>
+                                </Card.Body>
+                            </Card>
+                            </Col>
                             </>
                         )
                     })}
@@ -110,4 +128,4 @@ function Continue(props) {
 
 const mapStateToProps = state => ({ applicationState: state });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
-export default connect(mapStateToProps, mapDispatchToProps)(Continue)
+export default connect(mapStateToProps, mapDispatchToProps)(ContinueInstr)

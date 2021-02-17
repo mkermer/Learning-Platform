@@ -6,7 +6,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import Videos from './Videos';
-
+import Upload from './Upload';
+import { Button } from 'react-bootstrap';
+import { CloudArrowUp } from 'react-bootstrap-icons';
 
 
 
@@ -14,9 +16,9 @@ import Videos from './Videos';
 function MyVideos(props) {
 
     const [videoArr, setVideoArray] = useState([]);
-
     const [courseArr, setCourseArray] = useState([]);
     const [videoNameArr, setVideoNameArr] = useState();
+    const [modalShow, setModalShow] = useState(false);
 
     useEffect(async () => {
 
@@ -81,6 +83,16 @@ function MyVideos(props) {
                 )
             })}
 
+            <div className="footer">
+                <Button variant="primary" onClick={() => setModalShow(true)}>
+                    <CloudArrowUp size={25} /> Upload
+                </Button>
+
+                <Upload
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
+            </div>
         </div>
     );
 };
