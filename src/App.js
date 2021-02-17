@@ -42,7 +42,7 @@ function App(props) {
           <Switch>
 
             <Route path="/Home" component={Home} />
-            <Route path="/register"  component={RegisterForm} />
+            <Route path="/register" component={RegisterForm} />
             <Route path='/videoCoding' component={CategoryCoding} />
             <Route path='/videoMusic' component={CategoryMusic} />
             <Route path='/videoTechnologies' component={CategoryTechnologies} />
@@ -73,7 +73,7 @@ function App(props) {
         <DashProvider>
           <Sidebar />
           <Switch>
-            <Route path="/register"  component={RegisterForm} />
+            <Route path="/register" component={RegisterForm} />
             <Route path="/login" component={Login} />
             <Route path="/" exact component={Home} />
             <Route path="*" component={Page404} />
@@ -84,7 +84,10 @@ function App(props) {
       </Router>
     )
   }
-  // <ReduxResetPage/>
+  // return (
+  //   <ReduxResetPage />
+  // )
+
 }
 
 

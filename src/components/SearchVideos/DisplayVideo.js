@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.action';
 import { Player } from 'video-react';
-import { Form } from 'react-bootstrap';
+import { Form, Alert } from 'react-bootstrap';
 import './SearchVideos.css';
 import './DisplayVideo.css'
 import ReactStars from 'react-rating-stars-component';
@@ -20,6 +20,8 @@ import { Arrow90degLeft } from 'react-bootstrap-icons';
 
 
 const DisplayVideo = (props) => {
+    const [variant, setVariant] = useState('warning');
+    const [show, setShow] = useState(false);
 
 
     const [rate, setRating] = useState(null);
@@ -183,6 +185,7 @@ const DisplayVideo = (props) => {
         try {
             const response = await axios.post(config.baseUrl + '/course/add', newMeeting);
             console.log(response.data)
+            setShow(true)
         } catch (err) {
             console.log(err);
         }
@@ -203,7 +206,7 @@ const DisplayVideo = (props) => {
 
             <div>
 
-                
+
                 <Form className="form-elem">
                     <h1>Overall Rating</h1>
                     <FontAwesomeIcon icon={faStar} className={props.applicationState.video.avgRat > 0 ? 'blue' : ''} />
@@ -243,6 +246,9 @@ const DisplayVideo = (props) => {
                     </div>
                 </Form>
             </div>
+            <Alert variant='success' show={show}>
+                Successfully booked a meeting!
+            </Alert>
             <Button onClick={scheduleMeeting}>
                 Book meeting
             </Button>
@@ -250,19 +256,7 @@ const DisplayVideo = (props) => {
 
     )
 
-
-
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

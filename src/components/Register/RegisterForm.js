@@ -30,23 +30,23 @@ const RegisterForm = (props) => {
     const [text, setText] = useState('');
 
     const register = async () => {
-        console.log(username);
-        console.log(verificationUsername())
-        if (await verificationUsername() === username) {
-            console.log('it works');
-            AlertWarning('existing Username')
-        }
-        // } else if (verificationFields() === false) {
-        //     AlertWarning('Please fill out the input fields')
-        // } else if (verificationEmail() === false) {
-        //     AlertWarning('Please enter a valid e-mail address')
-        // }
-        // if (type === 'student') {
-        //     registerStudent();
 
-        // } else if (type === "instructor") {
-        //     registerInstructor();
-        // }
+
+        if (verificationFields() === false) {
+            AlertWarning('Please fill out the input fields')
+        }
+        else if (verificationEmail() === false) {
+            AlertWarning('Please enter a valid e-mail address')
+        }
+        else {
+            if (type === 'student') {
+                registerStudent();
+
+            } else if (type === "instructor") {
+                registerInstructor();
+            }
+        }
+
     }
 
 
@@ -62,33 +62,7 @@ const RegisterForm = (props) => {
         }
     }
 
-    const verificationUsername = async () => {
-        try {
-            const studentRes = await axios.get(config.baseUrl + '/student')
-            const students = studentRes.data;
 
-            const instructorRes = await axios.get(config.baseUrl + '/instructor')
-            const instructors = instructorRes.data;
-
-            var foundStudent = students.find(student => {
-                return student.studentName === username
-            })
-            console.log(foundStudent)
-            return foundStudent.studentName
-
-
-            instructors.map(instructor => {
-                if (instructor.instructorName === username) {
-                    return false
-                }
-            })
-
-
-        } catch (err) {
-            console.log(err)
-        }
-
-    }
 
 
 
@@ -144,8 +118,8 @@ const RegisterForm = (props) => {
         setShow(true);
         setText("You have registered successfully!")
 
-
     }
+
 
     const AlertWarning = (text) => {
         setShow(true);

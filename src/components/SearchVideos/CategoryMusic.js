@@ -8,7 +8,7 @@ const CategoryMusic = (props) => {
 
     useEffect(() => {
         categoryfunction("Music", setVideos)
-        console.log(videos);
+
     }, [])
 
 
