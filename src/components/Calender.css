@@ -1,31 +1,25 @@
-/* .calenderr table {
-    text-align:center;
-    border:3px solid;
-    max-width: 100%;
-    width: 70%;
-    height:100px;
-    position:relative;
-    padding-bottom: 2rem;
+.Calendar {
+  text-align: center;
+  margin-top:20px;
+  margin-bottom:20px;
+}
 
-}
-.calenderr button  {
-  display:inline-block;
-  justify-content: center;
+
+
+
+.Calender-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  background-color: #2073d9 !important;
-  border-color: #7aadeb !important;
-   height:34px;
-    margin:0 auto;
-    /* margin-right:50px; */
-    /* float:center;
-     width: 10%;
-     padding-bottom:20px;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-top:20px;
 }
-.calenderr .button:hover{
-    cursor: pointer;
+
+.Calender-link {
+  color: #61dafb;
 }
-.calenderr p {
-    text-align:center;
-    padding-top:20px;
-    font-size:25px;
-}  */
+

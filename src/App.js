@@ -52,7 +52,7 @@ function App(props) {
             <Route path="/login" component={Login} />
             <Route path="/UserLandingpage" component={UserLandingpage} />
             <Route path="/InstructorLandingpage" component={InstructorLandingpage} />
-            <Route path='/Calendar' exact component={Calendar} />
+            <Route path='/Calendar' component={Calendar} />
             <Route path='/scheduler' exact component={Scheduler} />
             <Route path="/call" component={JitsiCall} />
             <Route path="/meeting" component={MeetingRoom} />
