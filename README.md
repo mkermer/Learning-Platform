@@ -1,22 +1,36 @@
-# Learning Platform
+# E-learning Platform - TeachYourBEST
 
-1. Fork this Repo
-2. Clone it to your own
-3. Create and switch to feature branch:
-   - git checkout -b feature_name
-4. Commit regulary to automatically:
-   - git add .
-   - git commit -m "message"
-   - git push
-5. Create a pull request **once** as soon as you have changed or added something and make sure you chose **develop**
-6. After finishing a feature, merge to your main branch:
-   - git checkout main
-   - git merge feature_name
+![TeachYourBEST Logo](https://github.com/mkermer/Learning-Platform/blob/main/src/Logo/Green/logo3TYB-removebg.png)
 
-After a merge, type **git pull upstream develop**!!!
+[TeachYourBEST Website](https://teach-your-best.herokuapp.com/)
 
-Note: This React App is running on Port 8000
+This is a 2 1/2 week project for an e-learning platform with two types of users - instructors and students. 
+It offers three categories: 
+
+**Music, Technologies and Coding.** 
+
+**Instructors** can upload videos, recieve reviews and set a time and date for a meeting via Jitsi with the student. 
+
+**Students** can watch and rate videos, book meetings with the instructors and view their dashboard. 
+
+## This app uses:
+- create react app
+- mongoDB
+- nodemon
+- axios
+- bootstrap
+- cors
+- dotenv
+- aos
+- express
+- moment
+- mongoose
+- fontawesome
+- redux
+- and many more...
 
 **Product Owner:** David Walzer
+
 **Scrum Master:** Morgane Kermer
+
 **Tester:** Yuliya Kalcheva
