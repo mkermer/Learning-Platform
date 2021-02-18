@@ -13,25 +13,21 @@ function Slideshow(props) {
     const [randomVid, setRandomVideos] = useState([]);
     const [randomInterest, setRandomInterest] = useState("");
 
-//TEST
+
     useEffect(async () => {
 
         setRandomVidFunction();
-        console.log(randomVid)
+
     }, []);
 
 
     const setRandomVidFunction = async () => {
         const response = await axios.get(config.baseUrl + '/video');
-        console.log(response.data);
         const interest = props.applicationState.user.interests;
         const category = response.data;
-
-        // const displayVideo = () => {
         const randomInterest = interest[Math.floor(Math.random() * interest.length)];
         setRandomInterest(randomInterest);
-        console.log(randomInterest);
-        // interest[Math.floor(Math.random() * interest.length)];
+
 
 
 
@@ -42,7 +38,7 @@ function Slideshow(props) {
             }
         }
 
-        console.log(arrVideos)
+
         let randomVideos = [];
         let randVid = 0;
         for (let j = 0; j <= 3; j++) {
@@ -52,25 +48,15 @@ function Slideshow(props) {
             if (!randomVideos.find(el => el == video)) {
                 randomVideos.push(video);
             }
-            // arrVideos = arrVideos.splice(randVid, randVid);
-            console.log(randVid);
+
         }
-        console.log(randomVideos)
+
         setRandomVideos(randomVideos)
 
     }
 
-    // const number = () => {
-    //     numberdisplay(3)
-    //     };
-
-    // const numberdisplay = (max) => {
-    //     console.log(Math.floor(Math.random * Math.floor(max)));
-    //     console.log('Hi')
-    // }
 
 
-    
 
     return (
         <>
@@ -78,27 +64,23 @@ function Slideshow(props) {
                 rel="stylesheet"
                 href="https://video-react.github.io/assets/video-react.css"
             />
-            
-                <h2> Featured in {randomInterest} </h2>
-                {/* <h2> Featured in Technology</h2> */}
+
+            <h2> Featured in {randomInterest} </h2>
 
 
-                <Carousel>
-                    {randomVid.map((vid, index) => {
-                        return (
-                            <Carousel.Item key={index}>
-                                <Player>
-                                    <source src={vid} />
-                                </Player>
-                            </Carousel.Item>)
-                    })}
+            <Carousel>
+                {randomVid.map((vid, index) => {
+                    return (
+                        <Carousel.Item key={index}>
+                            <Player>
+                                <source src={vid} />
+                            </Player>
+                        </Carousel.Item>)
+                })}
 
 
-                </Carousel>
-            
+            </Carousel>
 
-            
-           
         </>
     )
 };

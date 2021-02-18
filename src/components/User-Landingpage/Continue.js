@@ -45,10 +45,6 @@ function Continue(props) {
 
 
 
-
-
-
-    // 
     return (
         <>
             <h2>Booked Meetings</h2>
