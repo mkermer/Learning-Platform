@@ -17,12 +17,12 @@ mongoose.connect(
     () => console.log('connected to DB')
 );
 
-const studentRouter = require('./routes/student');
-const instructorRouter = require('./routes/instructor');
-const verificationRouter = require('./routes/verification').router;
-const videoRouter = require('./routes/video');
-const reviewRouter = require('./routes/review');
-const courseRouter = require('./routes/course');
+const studentRouter = require('./backend/routes/student');
+const instructorRouter = require('./backend/routes/instructor');
+const verificationRouter = require('./backend/routes/verification').router;
+const videoRouter = require('./backend/routes/video');
+const reviewRouter = require('./backend/routes/review');
+const courseRouter = require('./backend/routes/course');
 
 
 app.use('/course', courseRouter)
