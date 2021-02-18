@@ -4,8 +4,9 @@
 
 [TeachYourBEST Website](https://teach-your-best.herokuapp.com/)
 
-This is a 2 1/2 week project for a e-learning platform with two types of users - instructors and students. 
-It offers three categories: **Music, Technologies and Coding.** 
+This is a 2 1/2 week project for an e-learning platform with two types of users - instructors and students. 
+It offers three categories: 
+**Music, Technologies and Coding.** 
 
 **Instructors** can upload videos, recieve reviews and set a time and date for a meeting via Jitsi with the student. 
 **Students** can watch and rate videos, book meetings with the instructors and view their dashboard. 
