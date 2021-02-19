@@ -1,3 +1,3 @@
 export default {
-    baseUrl: 'http://localhost:2000'
+    baseUrl: 'https://teach-your-best-server.herokuapp.com'
 }
