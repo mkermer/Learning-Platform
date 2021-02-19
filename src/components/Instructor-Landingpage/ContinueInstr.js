@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Card, } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../../config/config'
 import { connect } from 'react-redux';
@@ -79,8 +79,8 @@ function ContinueInstr(props) {
                                         <Card.Text>
                                             at <strong>{meeting.day} / {meeting.timestamp}</strong>
                                         </Card.Text>
-                                        {/* <a href={`https://meet.jit.si/${meeting.course}-by-${meeting.instructor}`}><Button variant="primary">Start your meeting</Button></a> */}
-                                        <JoinMeeting meeting={meeting} />
+                                        <a href={`https://meet.jit.si/${meeting.course}-by-${meeting.instructor}`}><Button variant="primary">Start your meeting</Button></a>
+
 
                                         <SelectTime meeting={meeting} />
                                     </Card.Body>

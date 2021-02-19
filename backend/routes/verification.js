@@ -87,7 +87,7 @@ async function verify(req, res) {
                 res.json(student)
             }
         })
-        // res.json(correctStudent(latestUserDataInput, student))
+
 
         const instructor = await Instructor.find();
 
@@ -156,8 +156,4 @@ module.exports = {
     router
 }
 
-// module.exports = correctInstructor;
 
-// module.exports = incorrectStudent;
-
-// module.exports = incorrectInstructor; 
